@@ -51,7 +51,18 @@ public enum SkippedDirs {
 
     /// Directory names to skip when scanning a project. Defaults to
     /// ``defaultNames``; assign to override (e.g. from a user preference).
-    public static var names: Set<String> = defaultNames
+    ///
+    /// Lock-guarded because the access pattern genuinely crosses threads: this is written
+    /// from a settings pane on the main thread and read by directory scans running on
+    /// background queues. A `Set` is not atomic, so an unsynchronized write during a scan
+    /// could be read torn — rare, but a crash rather than a wrong answer.
+    public static var names: Set<String> {
+        get { lock.lock(); defer { lock.unlock() }; return storedNames }
+        set { lock.lock(); defer { lock.unlock() }; storedNames = newValue }
+    }
+
+    private static let lock = NSLock()
+    private nonisolated(unsafe) static var storedNames: Set<String> = defaultNames
 
     /// Restores ``names`` to ``defaultNames``, discarding any override.
     public static func resetToDefault() {

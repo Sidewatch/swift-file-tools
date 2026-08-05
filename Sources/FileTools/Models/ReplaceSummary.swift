@@ -12,7 +12,7 @@ import Foundation
 /// The result of a project-wide replace: how many files were rewritten, how many
 /// individual occurrences were replaced, and how many matching files could not be
 /// written (permissions, disk error).
-public struct ReplaceSummary: Equatable {
+public struct ReplaceSummary: Equatable, Sendable {
 
     /// Number of files that were actually rewritten on disk.
     public let filesChanged: Int

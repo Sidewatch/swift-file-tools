@@ -11,7 +11,8 @@ let package = Package(
     ],
     targets: [
         // macOS-only: DirectoryEventStream wraps FSEvents/CoreServices.
-        .target(name: "FileTools", path: "Sources"),
+        .target(name: "FileTools", path: "Sources",
+                swiftSettings: [.unsafeFlags(["-strict-concurrency=complete"])]),
         .testTarget(name: "FileToolsTests", dependencies: ["FileTools"], path: "Tests"),
     ]
 )
