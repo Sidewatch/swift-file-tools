@@ -88,6 +88,39 @@ final class FileToolsTests: XCTestCase {
 
     // MARK: - ProjectSearch
 
+    func testSearchExplicitFileListScopesExactly() throws {
+        try write("target here\n", to: "in.swift")
+        try write("target here too\n", to: "out.swift")
+        let results = ProjectSearch.search(
+            query: "target", files: [tmp.appendingPathComponent("in.swift")],
+            caseSensitive: false, regex: false, isCancelled: { false })
+        XCTAssertEqual(results.count, 1, "only the listed file may be searched")
+        XCTAssertEqual(results.first?.url.lastPathComponent, "in.swift")
+    }
+
+    func testSearchIncludeFilterPrunesTheWalk() throws {
+        try write("needle\n", to: "a.php")
+        try write("needle\n", to: "b.js")
+        let results = ProjectSearch.search(
+            query: "needle", in: tmp, caseSensitive: false, regex: false,
+            isCancelled: { false }, include: { $0.pathExtension == "php" })
+        XCTAssertEqual(results.count, 1)
+        XCTAssertEqual(results.first?.url.lastPathComponent, "a.php")
+    }
+
+    func testReplaceAllHonorsIncludeFilter() throws {
+        try write("needle\n", to: "a.php")
+        try write("needle\n", to: "b.js")
+        let summary = ProjectSearch.replaceAll(
+            query: "needle", in: tmp, caseSensitive: false, regex: false,
+            replacement: "thread", commit: true, isCancelled: { false },
+            include: { $0.pathExtension == "php" })
+        XCTAssertEqual(summary.filesChanged, 1)
+        XCTAssertEqual(try String(contentsOf: tmp.appendingPathComponent("a.php"), encoding: .utf8), "thread\n")
+        XCTAssertEqual(try String(contentsOf: tmp.appendingPathComponent("b.js"), encoding: .utf8), "needle\n",
+                       "a file outside the include filter must never be rewritten")
+    }
+
     func testProjectSearchFindsMatch() throws {
         try write("let x = 1\nhello world\nlet y = 2\n", to: "a.swift")
         try write("nothing here\n", to: "b.swift")

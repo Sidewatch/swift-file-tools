@@ -47,7 +47,8 @@ public enum ProjectSearch {
         in root: URL,
         caseSensitive: Bool,
         regex: Bool,
-        isCancelled: () -> Bool
+        isCancelled: () -> Bool,
+        include: ((URL) -> Bool)? = nil
     ) -> [SearchFileResult] {
         guard !query.isEmpty else { return [] }
 
@@ -60,7 +61,7 @@ public enum ProjectSearch {
         let mightMatch = prefilter(query: query, caseSensitive: caseSensitive, regexMode: regex)
         var results: [SearchFileResult] = []
         var total = 0
-        enumerateTextFiles(in: root, isCancelled: isCancelled) { url, text, _ in
+        enumerateTextFiles(in: root, isCancelled: isCancelled, include: include) { url, text, _ in
             guard mightMatch(text) else { return true }
             let fileMatches = matches(in: text, query: query,
                                       caseSensitive: caseSensitive, regex: regexObj)
@@ -74,6 +75,52 @@ public enum ProjectSearch {
         return results
     }
 
+    /// Searches an EXPLICIT file list instead of walking a root — the
+    /// "changed files only" scope, where the caller already knows the files
+    /// (e.g. from `git status`). The same size/binary/encoding guards apply,
+    /// so the two entry points can't diverge on what counts as searchable.
+    public static func search(
+        query: String,
+        files: [URL],
+        caseSensitive: Bool,
+        regex: Bool,
+        isCancelled: () -> Bool
+    ) -> [SearchFileResult] {
+        guard !query.isEmpty else { return [] }
+        let regexObj: NSRegularExpression? = regex
+            ? try? NSRegularExpression(pattern: query,
+                                       options: caseSensitive ? [] : [.caseInsensitive])
+            : nil
+        if regex && regexObj == nil { return [] }
+        let mightMatch = prefilter(query: query, caseSensitive: caseSensitive, regexMode: regex)
+        var results: [SearchFileResult] = []
+        var total = 0
+        for url in files {
+            if isCancelled() || total >= maxTotalMatches { break }
+            guard let (text, _) = readTextFile(url) else { continue }
+            guard mightMatch(text) else { continue }
+            let fileMatches = matches(in: text, query: query,
+                                      caseSensitive: caseSensitive, regex: regexObj)
+            guard !fileMatches.isEmpty else { continue }
+            results.append(SearchFileResult(url: url, matches: fileMatches))
+            total += fileMatches.count
+        }
+        results.sort { $0.url.path.localizedCaseInsensitiveCompare($1.url.path) == .orderedAscending }
+        return results
+    }
+
+    /// One file through the shared searchability guards: regular, under the size
+    /// cap, non-binary, UTF-8-or-Latin-1. The single-file twin of the walk below.
+    public static func readTextFile(_ url: URL) -> (text: String, encoding: String.Encoding)? {
+        let attrs = try? url.resourceValues(forKeys: [.isRegularFileKey, .fileSizeKey])
+        guard attrs?.isRegularFile == true else { return nil }
+        if (attrs?.fileSize ?? 0) > maxFileBytes { return nil }
+        guard let data = try? Data(contentsOf: url), !data.prefix(4000).contains(0) else { return nil }
+        if let utf8 = String(data: data, encoding: .utf8) { return (utf8, .utf8) }
+        if let latin1 = String(data: data, encoding: .isoLatin1) { return (latin1, .isoLatin1) }
+        return nil
+    }
+
     /// Walks `root` yielding each eligible text file's URL + decoded contents,
     /// applying the shared skip/size/binary guards. `body` returns `false` to stop
     /// the walk early. The single source of truth for "which files are searchable",
@@ -83,6 +130,7 @@ public enum ProjectSearch {
     private static func enumerateTextFiles(
         in root: URL,
         isCancelled: () -> Bool,
+        include: ((URL) -> Bool)? = nil,
         body: (URL, String, String.Encoding) -> Bool
     ) {
         let fm = FileManager.default
@@ -102,6 +150,7 @@ public enum ProjectSearch {
                 continue
             }
             if SkippedDirs.names.contains(name) { continue }
+            if let include, !include(url) { continue }
 
             // Only read regular files. Symlinks report the size of the LINK
             // (a few bytes) here while `Data(contentsOf:)` would follow them
@@ -241,7 +290,8 @@ public enum ProjectSearch {
         regex: Bool,
         replacement: String,
         commit: Bool,
-        isCancelled: () -> Bool
+        isCancelled: () -> Bool,
+        include: ((URL) -> Bool)? = nil
     ) -> ReplaceSummary {
         guard !query.isEmpty else { return .empty }
 
@@ -256,7 +306,7 @@ public enum ProjectSearch {
 
         let mightMatch = prefilter(query: query, caseSensitive: caseSensitive, regexMode: regex)
         var filesChanged = 0, totalReplacements = 0, filesFailed = 0
-        enumerateTextFiles(in: root, isCancelled: isCancelled) { url, text, encoding in
+        enumerateTextFiles(in: root, isCancelled: isCancelled, include: include) { url, text, encoding in
             guard mightMatch(text) else { return true }
             let (newText, count) = replaced(in: text, query: query, caseSensitive: caseSensitive,
                                             regex: regexObj, replacement: replacement)
