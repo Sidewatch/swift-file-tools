@@ -146,26 +146,41 @@ public enum ProjectSearch {
     /// file would bypass the size cap through `Data(contentsOf:)`, a symlinked
     /// directory could loop). Hidden entries and the skip list are dropped as before.
     /// `body` returns false to stop.
+    /// Honour `.gitignore` / `.ignore` / `.rgignore` / `.fdignore` (see ``IgnoreRules``) —
+    /// on by default, as in ripgrep and fd. A host exposes this as a preference.
+    nonisolated(unsafe) public static var respectIgnoreFiles = true
+
     private static func walkRegularFiles(in root: URL, isCancelled: () -> Bool,
                                          include: ((URL) -> Bool)?,
                                          body: (URL, Int) -> Bool) {
-        var stack: [URL] = [root]
-        while let dir = stack.popLast() {
+        let rules: IgnoreRules? = respectIgnoreFiles ? IgnoreRulesCache.rules(for: root) : nil
+        // Each frame carries the directory, its path relative to the root, and the ignore
+        // files in force there (root's first, deeper ones override).
+        var stack: [(dir: URL, rel: String, ignore: IgnoreStack)] = [(root, "", IgnoreStack())]
+        while let frame = stack.popLast() {
             if isCancelled() { return }
+            let (dir, rel) = (frame.dir, frame.rel)
+            var ignore = frame.ignore
+            if let rules {
+                for file in rules.files(in: dir, relativeDirectory: rel) { ignore.push(file) }
+            }
             let entries = FastDirectoryListing.list(dir, includeHidden: false, skipping: SkippedDirs.names)
-            var subdirs: [URL] = []
+            var subdirs: [(URL, String)] = []
             for entry in entries {
                 if isCancelled() { return }
                 var st = stat()
                 guard lstat(entry.url.path, &st) == 0 else { continue }
                 let mode = st.st_mode & S_IFMT
-                if mode == S_IFDIR { subdirs.append(entry.url); continue }
-                guard mode == S_IFREG else { continue }   // symlinks, FIFOs, sockets, devices
+                let isDir = mode == S_IFDIR
+                if !isDir, mode != S_IFREG { continue }   // symlinks, FIFOs, sockets, devices
+                let relPath = rel.isEmpty ? entry.url.lastPathComponent : rel + "/" + entry.url.lastPathComponent
+                if let rules, rules.isIgnored(relativePath: relPath, isDirectory: isDir, stack: ignore) { continue }
+                if isDir { subdirs.append((entry.url, relPath)); continue }
                 if let include, !include(entry.url) { continue }
                 if !body(entry.url, Int(st.st_size)) { return }
             }
             // Directories were listed in Finder order; push reversed so they pop in order.
-            stack.append(contentsOf: subdirs.reversed())
+            for (url, relPath) in subdirs.reversed() { stack.append((url, relPath, ignore)) }
         }
     }
 
