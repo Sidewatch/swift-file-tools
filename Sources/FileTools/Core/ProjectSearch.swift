@@ -48,7 +48,8 @@ public enum ProjectSearch {
         caseSensitive: Bool,
         regex: Bool,
         isCancelled: () -> Bool,
-        include: ((URL) -> Bool)? = nil
+        include: ((URL) -> Bool)? = nil,
+        onProgress: ((Int) -> Void)? = nil
     ) -> [SearchFileResult] {
         guard !query.isEmpty else { return [] }
 
@@ -61,7 +62,7 @@ public enum ProjectSearch {
         let mightMatch = prefilter(query: query, caseSensitive: caseSensitive, regexMode: regex)
         var results: [SearchFileResult] = []
         var total = 0
-        enumerateTextFiles(in: root, isCancelled: isCancelled, include: include) { url, text, _ in
+        enumerateTextFiles(in: root, isCancelled: isCancelled, include: include, onProgress: onProgress) { url, text, _ in
             guard mightMatch(text) else { return true }
             let fileMatches = matches(in: text, query: query,
                                       caseSensitive: caseSensitive, regex: regexObj)
@@ -84,7 +85,8 @@ public enum ProjectSearch {
         files: [URL],
         caseSensitive: Bool,
         regex: Bool,
-        isCancelled: () -> Bool
+        isCancelled: () -> Bool,
+        onProgress: ((Int) -> Void)? = nil
     ) -> [SearchFileResult] {
         guard !query.isEmpty else { return [] }
         let regexObj: NSRegularExpression? = regex
@@ -95,8 +97,10 @@ public enum ProjectSearch {
         let mightMatch = prefilter(query: query, caseSensitive: caseSensitive, regexMode: regex)
         var results: [SearchFileResult] = []
         var total = 0
+        var scanned = 0
         for url in files {
             if isCancelled() || total >= maxTotalMatches { break }
+            scanned += 1; onProgress?(scanned)
             guard let (text, _) = readTextFile(url) else { continue }
             guard mightMatch(text) else { continue }
             let fileMatches = matches(in: text, query: query,
@@ -121,63 +125,78 @@ public enum ProjectSearch {
         return nil
     }
 
-    /// Walks `root` yielding each eligible text file's URL + decoded contents,
-    /// applying the shared skip/size/binary guards. `body` returns `false` to stop
-    /// the walk early. The single source of truth for "which files are searchable",
-    /// shared by ``search(query:in:caseSensitive:regex:isCancelled:)`` and
-    /// ``replaceAll(query:in:caseSensitive:regex:replacement:isCancelled:)`` so the
-    /// two can never diverge on what they touch.
+    /// The files a search would consider under `root` — one fast pass, for a
+    /// "Searching 1,234 of 20,000 files" counter. Same walk and filters as the
+    /// search itself (skip list, hidden files, symlinks, `include`), so the total
+    /// and the running count agree; the only thing NOT applied is the per-file size
+    /// cap, which the scan still counts as it passes over.
+    public static func countCandidateFiles(in root: URL, include: ((URL) -> Bool)? = nil,
+                                           isCancelled: () -> Bool = { false }) -> Int {
+        var n = 0
+        walkRegularFiles(in: root, isCancelled: isCancelled, include: include) { _, _ in n += 1; return true }
+        return n
+    }
+
+    /// Walks `root` for regular files, cheaply. `FileManager.enumerator` costs a
+    /// `getattrlist` per entry and this used to add two `resourceValues` calls on
+    /// top — 255 ms of walking a 10k-file folder before a byte was read (the same
+    /// measurement that put `FastDirectoryListing` under the sidebar). This reads
+    /// `d_type` from the directory listing and one `lstat` per entry for the size
+    /// and the regular-file check; symlinks are skipped both ways (a symlinked
+    /// file would bypass the size cap through `Data(contentsOf:)`, a symlinked
+    /// directory could loop). Hidden entries and the skip list are dropped as before.
+    /// `body` returns false to stop.
+    private static func walkRegularFiles(in root: URL, isCancelled: () -> Bool,
+                                         include: ((URL) -> Bool)?,
+                                         body: (URL, Int) -> Bool) {
+        var stack: [URL] = [root]
+        while let dir = stack.popLast() {
+            if isCancelled() { return }
+            let entries = FastDirectoryListing.list(dir, includeHidden: false, skipping: SkippedDirs.names)
+            var subdirs: [URL] = []
+            for entry in entries {
+                if isCancelled() { return }
+                var st = stat()
+                guard lstat(entry.url.path, &st) == 0 else { continue }
+                let mode = st.st_mode & S_IFMT
+                if mode == S_IFDIR { subdirs.append(entry.url); continue }
+                guard mode == S_IFREG else { continue }   // symlinks, FIFOs, sockets, devices
+                if let include, !include(entry.url) { continue }
+                if !body(entry.url, Int(st.st_size)) { return }
+            }
+            // Directories were listed in Finder order; push reversed so they pop in order.
+            stack.append(contentsOf: subdirs.reversed())
+        }
+    }
+
+    /// The single walker behind `search` and `replaceAll`: every regular text file
+    /// under `root` that passes the skip list, the size cap and the binary sniff,
+    /// decoded as UTF-8 else Latin-1 (tracked so a rewrite round-trips the original
+    /// encoding). `onProgress` receives the running count of files considered —
+    /// including ones the size cap then skips, so it climbs to the candidate total.
     private static func enumerateTextFiles(
         in root: URL,
         isCancelled: () -> Bool,
         include: ((URL) -> Bool)? = nil,
+        onProgress: ((Int) -> Void)? = nil,
         body: (URL, String, String.Encoding) -> Bool
     ) {
-        let fm = FileManager.default
-        guard let enumerator = fm.enumerator(
-            at: root,
-            includingPropertiesForKeys: [.isDirectoryKey, .isRegularFileKey, .fileSizeKey],
-            options: [.skipsHiddenFiles]
-        ) else { return }
-
-        for case let url as URL in enumerator {
-            if isCancelled() { break }
-
-            let name = url.lastPathComponent
-            let isDir = (try? url.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) ?? false
-            if isDir {
-                if SkippedDirs.names.contains(name) { enumerator.skipDescendants() }
-                continue
-            }
-            if SkippedDirs.names.contains(name) { continue }
-            if let include, !include(url) { continue }
-
-            // Only read regular files. Symlinks report the size of the LINK
-            // (a few bytes) here while `Data(contentsOf:)` would follow them
-            // and read the whole target — bypassing the size guard — and
-            // special files (FIFOs, sockets, devices) aren't searchable text.
-            let attrs = try? url.resourceValues(forKeys: [.isRegularFileKey, .fileSizeKey])
-            guard attrs?.isRegularFile == true else { continue }
-
-            let size = attrs?.fileSize ?? 0
-            if size > maxFileBytes { continue }
-
+        var scanned = 0
+        walkRegularFiles(in: root, isCancelled: isCancelled, include: include) { url, size in
+            scanned += 1; onProgress?(scanned)
+            if size > maxFileBytes { return true }
             guard let data = try? Data(contentsOf: url),
                   !data.prefix(4000).contains(0)                  // skip binary
-            else { continue }
-            // Decode as UTF-8, else fall back to Latin-1. Track WHICH so a rewrite
-            // (replaceAll) can round-trip the file in its original encoding instead
-            // of silently converting a Latin-1 / Windows-1252 file to UTF-8.
+            else { return true }
             let text: String, encoding: String.Encoding
             if let utf8 = String(data: data, encoding: .utf8) {
                 text = utf8; encoding = .utf8
             } else if let latin1 = String(data: data, encoding: .isoLatin1) {
                 text = latin1; encoding = .isoLatin1
             } else {
-                continue
+                return true
             }
-
-            if !body(url, text, encoding) { break }
+            return body(url, text, encoding)
         }
     }
 

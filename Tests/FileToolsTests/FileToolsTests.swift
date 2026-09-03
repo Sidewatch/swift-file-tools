@@ -98,6 +98,33 @@ final class FileToolsTests: XCTestCase {
         XCTAssertEqual(results.first?.url.lastPathComponent, "in.swift")
     }
 
+    func testCountCandidateFilesMatchesWhatTheSearchScans() throws {
+        try write("needle\n", to: "a.php")
+        try write("hay\n", to: "b.js")
+        try FileManager.default.createDirectory(at: tmp.appendingPathComponent("node_modules"), withIntermediateDirectories: true)
+        try write("needle\n", to: "node_modules/skipped.js")   // on the skip list
+        try write("hidden\n", to: ".secret")                    // hidden
+        XCTAssertEqual(ProjectSearch.countCandidateFiles(in: tmp), 2)
+        XCTAssertEqual(ProjectSearch.countCandidateFiles(in: tmp, include: { $0.pathExtension == "php" }), 1)
+        var reported: [Int] = []
+        let results = ProjectSearch.search(query: "needle", in: tmp, caseSensitive: false, regex: false,
+                                           isCancelled: { false }, onProgress: { reported.append($0) })
+        XCTAssertEqual(results.count, 1)
+        XCTAssertEqual(reported, [1, 2], "progress climbs once per file considered, to the candidate total")
+    }
+
+    func testSearchDoesNotFollowSymlinkedDirectoriesOrFiles() throws {
+        try write("needle\n", to: "real.txt")
+        try FileManager.default.createDirectory(at: tmp.appendingPathComponent("sub"), withIntermediateDirectories: true)
+        try FileManager.default.createSymbolicLink(at: tmp.appendingPathComponent("sub/loop"), withDestinationURL: tmp)
+        try FileManager.default.createSymbolicLink(at: tmp.appendingPathComponent("alias.txt"),
+                                                   withDestinationURL: tmp.appendingPathComponent("real.txt"))
+        let results = ProjectSearch.search(query: "needle", in: tmp, caseSensitive: false, regex: false, isCancelled: { false })
+        XCTAssertEqual(results.map(\.url.lastPathComponent), ["real.txt"],
+                       "a symlinked file is not a second hit; a symlinked directory is not entered")
+        XCTAssertEqual(ProjectSearch.countCandidateFiles(in: tmp), 1)
+    }
+
     func testSearchIncludeFilterPrunesTheWalk() throws {
         try write("needle\n", to: "a.php")
         try write("needle\n", to: "b.js")
