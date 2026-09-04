@@ -16,7 +16,7 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 ## Requirements
 
 - macOS 14+
-- Swift 6.0+ (Swift 6 language mode)
+- Swift 6.2+ (Swift 6 language mode)
 
 > **Platform note:** `DirectoryEventStream` wraps the FSEvents/CoreServices API, so the package is macOS-only.
 
