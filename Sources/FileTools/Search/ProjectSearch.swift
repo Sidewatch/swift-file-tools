@@ -120,7 +120,7 @@ public enum ProjectSearch {
         guard attrs?.isRegularFile == true else { return nil }
         if (attrs?.fileSize ?? 0) > maxFileBytes { return nil }
         guard let data = try? Data(contentsOf: url), !data.prefix(4000).contains(0) else { return nil }
-        if let utf8 = String(data: data, encoding: .utf8) { return (utf8, .utf8) }
+        if let utf8 = data.utf8String { return (utf8, .utf8) }
         if let latin1 = String(data: data, encoding: .isoLatin1) { return (latin1, .isoLatin1) }
         return nil
     }
@@ -204,7 +204,7 @@ public enum ProjectSearch {
                   !data.prefix(4000).contains(0)                  // skip binary
             else { return true }
             let text: String, encoding: String.Encoding
-            if let utf8 = String(data: data, encoding: .utf8) {
+            if let utf8 = data.utf8String {
                 text = utf8; encoding = .utf8
             } else if let latin1 = String(data: data, encoding: .isoLatin1) {
                 text = latin1; encoding = .isoLatin1

@@ -14,7 +14,7 @@ public enum ProjectScripts {
     private static func npm(_ root: URL) -> [ProjectScript] {
         let file = root.appendingPathComponent("package.json")
         guard let data = try? Data(contentsOf: file),
-              let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let json = JSONObject.parse(data),
               let scripts = json["scripts"] as? [String: Any] else { return [] }
         let runner = npmRunner(root)   // "npm run" / "pnpm run" / "yarn" / "bun run"
         return scripts.keys.sorted().map {
@@ -37,7 +37,7 @@ public enum ProjectScripts {
     private static func composer(_ root: URL) -> [ProjectScript] {
         let file = root.appendingPathComponent("composer.json")
         guard let data = try? Data(contentsOf: file),
-              let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let json = JSONObject.parse(data),
               let scripts = json["scripts"] as? [String: Any] else { return [] }
         // composer's own reserved lifecycle hooks aren't things you "run" directly.
         let reserved: Set<String> = ["pre-install-cmd", "post-install-cmd", "pre-update-cmd",

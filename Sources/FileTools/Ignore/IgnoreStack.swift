@@ -125,7 +125,7 @@ public struct IgnoreStack: Sendable {
             let fileURL = directory.appendingPathComponent(name)
             guard fileManager.fileExists(atPath: fileURL.path),
                   let data = try? Data(contentsOf: fileURL),
-                  let text = String(data: data, encoding: .utf8) else { continue }
+                  let text = data.utf8String else { continue }
             result.append(IgnoreFile(text: text, directory: relativeDirectory))
         }
         return result

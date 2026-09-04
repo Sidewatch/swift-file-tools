@@ -140,7 +140,7 @@ public struct GitIgnoredSet: Sendable {
         process.waitUntilExit()
         guard process.terminationStatus == 0 else { return nil }
 
-        return String(data: box.data, encoding: .utf8)
+        return box.data.utf8String
     }
 }
 
