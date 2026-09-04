@@ -11,6 +11,7 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 - `Extensions/` — URL.isDirectory
 - `Enums/` — enums with no behaviour beyond their cases and labels: FSEvent
 - `Ignore/` — the engine: ignore: GitIgnoredSet, IgnoreFile, IgnoreFileNames, IgnoreMatcher, IgnorePattern, IgnoreRules, IgnoreRulesCache, IgnoreStack
+- `Library/` — the engine: library: FileLibrary (global + per-project folder of one file kind)
 - `Listing/` — the engine: listing: FastDirectoryListing, FileTree, SkippedDirs
 - `Models/` — value types — the shape of a thing, nothing else: ReplaceSummary, SearchFileResult, SearchMatch
 - `Search/` — the engine: search: ProjectSearch
