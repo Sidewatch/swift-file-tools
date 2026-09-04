@@ -3,16 +3,14 @@ import PackageDescription
 
 let package = Package(
     name: "FileTools",
-    platforms: [
-        .macOS(.v10_15)
-    ],
+    platforms: [.macOS(.v14)],
     products: [
         .library(name: "FileTools", targets: ["FileTools"]),
     ],
     targets: [
         // macOS-only: DirectoryEventStream wraps FSEvents/CoreServices.
         .target(name: "FileTools", path: "Sources",
-                swiftSettings: [.unsafeFlags(["-strict-concurrency=complete"])]),
+                swiftSettings: [.swiftLanguageMode(.v6)]),
         .testTarget(name: "FileToolsTests", dependencies: ["FileTools"], path: "Tests"),
     ]
 )
