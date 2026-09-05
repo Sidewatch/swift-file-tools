@@ -2,7 +2,7 @@
 //  DirectoryChildrenTests.swift
 //  FileToolsTests
 //
-//  DirectoryChildrenTests.
+//  Tests for Directory Children.
 //
 //  Created by David Sherlock on 9/5/26.
 //

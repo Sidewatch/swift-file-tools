@@ -2,7 +2,7 @@
 //  FileLibraryTests.swift
 //  FileToolsTests
 //
-//  FileLibraryTests.
+//  Tests for File Library.
 //
 //  Created by David Sherlock on 9/5/26.
 //

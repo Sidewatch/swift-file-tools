@@ -2,7 +2,7 @@
 //  TerminalPathParserTests.swift
 //  FileToolsTests
 //
-//  TerminalPathParserTests.
+//  Tests for Terminal Path Parser.
 //
 //  Created by David Sherlock on 7/21/26.
 //
