@@ -1,3 +1,12 @@
+//
+//  JSONObject.swift
+//  FileTools
+//
+//  JSON the way this package reads it: a top-level object, or nil.
+//
+//  Created by David Sherlock on 9/5/26.
+//
+
 import Foundation
 
 /// JSON the way this package reads it: a top-level object, or nil.

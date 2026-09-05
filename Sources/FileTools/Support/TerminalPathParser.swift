@@ -1,3 +1,13 @@
+//
+//  TerminalPathParser.swift
+//  FileTools
+//
+//  Extracts a clickable file reference from a line of terminal output — the
+//  `path/to/File.swift:42:10` style an agent prints when it edits a file or reports an error.
+//
+//  Created by David Sherlock on 7/21/26.
+//
+
 import Foundation
 
 /// Extracts a clickable file reference from a line of terminal output — the

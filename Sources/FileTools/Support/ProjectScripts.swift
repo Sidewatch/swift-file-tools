@@ -1,3 +1,13 @@
+//
+//  ProjectScripts.swift
+//  FileTools
+//
+//  Reads the popular project manifests at a folder root and lists what can be run —
+//  npm/pnpm/yarn/bun scripts, Makefile targets, composer scripts.
+//
+//  Created by David Sherlock on 7/19/26.
+//
+
 import Foundation
 
 /// Reads the popular project manifests at a folder root and lists what can be run —

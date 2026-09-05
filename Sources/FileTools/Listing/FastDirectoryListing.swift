@@ -1,3 +1,12 @@
+//
+//  FastDirectoryListing.swift
+//  FileTools
+//
+//  A single directory listing, cheap enough to run on the main thread.
+//
+//  Created by David Sherlock on 8/1/26.
+//
+
 import Foundation
 
 /// A single directory listing, cheap enough to run on the main thread.

@@ -1,3 +1,12 @@
+//
+//  FileLibraryTests.swift
+//  FileToolsTests
+//
+//  FileLibraryTests.
+//
+//  Created by David Sherlock on 9/5/26.
+//
+
 import XCTest
 @testable import FileTools
 

@@ -1,3 +1,13 @@
+//
+//  FastDirectoryListingTests.swift
+//  FileToolsTests
+//
+//  The listing replaces a `FileManager` call that was 50× slower, so these pin the behaviour
+//  that has to survive the swap — especially the `d_type` edge cases the fast path skips over.
+//
+//  Created by David Sherlock on 8/1/26.
+//
+
 import XCTest
 @testable import FileTools
 
