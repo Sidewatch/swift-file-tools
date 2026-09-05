@@ -2,7 +2,11 @@
 //  IgnorePattern.swift
 //  FileTools
 //
-//  One .gitignore-style pattern and the glob machinery that matches it.
+//  One compiled rule from a `.gitignore`-syntax ignore file. A pattern is parsed once
+//  (`init?(line:)`) into a small set of path-segment matchers, then reused across a whole tree
+//  walk.
+//
+//  Created by David Sherlock on 9/3/26.
 //
 
 import Foundation

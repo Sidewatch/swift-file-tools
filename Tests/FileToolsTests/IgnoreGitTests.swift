@@ -1,12 +1,18 @@
 //
 //  IgnoreGitTests.swift
-//  Tests for GitIgnoredSet: the git-backed exact ignored set, exercised against
-//  a real, throwaway git repository created in a temp directory.
+//  FileToolsTests
+//
+//  Tests for the git-backed ignore rules: `.gitignore` files at every level,
+//  `.git/info/exclude`, and negation.
+//
+//  Created by David Sherlock on 9/3/26.
 //
 
 import XCTest
 @testable import FileTools
 
+/// Tests for the git-backed ignore rules: `.gitignore` files at every level,
+/// `.git/info/exclude`, and negation.
 final class IgnoreGitTests: XCTestCase {
 
     private var tmp: URL!

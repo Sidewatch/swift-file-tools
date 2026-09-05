@@ -1,15 +1,18 @@
 //
 //  DiskStormDetectorTests.swift
-//  Tests for SwiftFileTools
+//  FileToolsTests
 //
-//  The storm rule, pinned: sustained (three hot seconds of five), a per-second
-//  floor, a deepest-shared-folder pick, and decay. Every threshold is a
-//  judgement, so each has a test that fails if it is quietly dropped.
+//  Tests for `DiskStormDetector`: three hot seconds of five is a storm, a quiet tree is not,
+//  and the per-second and per-directory thresholds hold.
+//
+//  Created by David Sherlock on 9/2/26.
 //
 
 import XCTest
 @testable import FileTools
 
+/// Tests for `DiskStormDetector`: three hot seconds of five is a storm, a quiet tree is not,
+/// and the per-second and per-directory thresholds hold.
 final class DiskStormDetectorTests: XCTestCase {
 
     private let root = URL(fileURLWithPath: "/proj", isDirectory: true)

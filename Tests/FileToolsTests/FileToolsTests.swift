@@ -2,12 +2,15 @@
 //  FileToolsTests.swift
 //  Tests for SwiftFileTools
 //
+//  Tests for the FileTools helpers over a temporary directory fixture.
+//
 //  Created by David Sherlock on 7/9/26.
 //
 
 import XCTest
 @testable import FileTools
 
+/// Tests for the FileTools helpers over a temporary directory fixture.
 final class FileToolsTests: XCTestCase {
 
     private var tmp: URL!

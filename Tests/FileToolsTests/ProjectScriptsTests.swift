@@ -1,13 +1,18 @@
 //
 //  ProjectScriptsTests.swift
-//  Tests for ProjectScripts.detect: manifest parsing (package.json, composer.json,
-//  Makefile), lockfile-driven runner choice, reserved-hook filtering, and the
-//  Makefile target heuristics. All run against temp-dir fixtures.
+//  FileToolsTests
+//
+//  Tests for `ProjectScripts.detect`: npm scripts, Make targets and composer scripts found in
+//  temp-dir fixtures.
+//
+//  Created by David Sherlock on 7/19/26.
 //
 
 import XCTest
 @testable import FileTools
 
+/// Tests for `ProjectScripts.detect`: npm scripts, Make targets and composer scripts found in
+/// temp-dir fixtures.
 final class ProjectScriptsTests: XCTestCase {
 
     private var tmp: URL!

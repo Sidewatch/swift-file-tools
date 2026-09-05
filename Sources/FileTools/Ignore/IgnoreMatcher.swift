@@ -2,6 +2,11 @@
 //  IgnoreMatcher.swift
 //  FileTools
 //
+//  Answers "is this URL ignored?" for consumers that do not walk the tree themselves — a file
+//  tree dimming rows, a symbol index driven by `FileManager.enumerator`.
+//
+//  Created by David Sherlock on 9/5/26.
+//
 
 import Foundation
 

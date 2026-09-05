@@ -2,7 +2,8 @@
 //  FileLibraryTests.swift
 //  FileToolsTests
 //
-//  Tests for File Library.
+//  Tests for `FileLibrary`: project entries come first, each folder sorts like Finder, and
+//  global and per-project files merge.
 //
 //  Created by David Sherlock on 9/5/26.
 //
@@ -10,6 +11,8 @@
 import XCTest
 @testable import FileTools
 
+/// Tests for `FileLibrary`: project entries come first, each folder sorts like Finder, and
+/// global and per-project files merge.
 final class FileLibraryTests: XCTestCase {
 
     private func temporaryFolder() throws -> URL {

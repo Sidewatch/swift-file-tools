@@ -2,6 +2,11 @@
 //  IgnoreRulesCache.swift
 //  FileTools
 //
+//  Per-root cache with a short lifetime: a search re-runs on every keystroke and must not spawn
+//  `git` each time, yet a `.gitignore` edit should be noticed within seconds.
+//
+//  Created by David Sherlock on 9/5/26.
+//
 
 import Foundation
 

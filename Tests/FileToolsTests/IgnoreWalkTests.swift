@@ -1,16 +1,18 @@
 //
 //  IgnoreWalkTests.swift
-//  An end-to-end test: a small directory tree walked with a real
-//  IgnoreStack.load(directory:relativeDirectory:) at each level, pruning
-//  ignored directories rather than descending into them. This is what proves
-//  the documented "a file inside an excluded directory cannot be re-included"
-//  rule in practice — `build/keep.txt` has an explicit `!` negation, but is
-//  never even visited because `build/` itself is pruned first.
+//  FileToolsTests
+//
+//  Tests for the ignore-aware directory walk: ignored directories are pruned rather than
+//  descended, so their contents are never listed.
+//
+//  Created by David Sherlock on 9/3/26.
 //
 
 import XCTest
 @testable import FileTools
 
+/// Tests for the ignore-aware directory walk: ignored directories are pruned rather than
+/// descended, so their contents are never listed.
 final class IgnoreWalkTests: XCTestCase {
 
     private var tmp: URL!

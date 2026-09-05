@@ -1,12 +1,18 @@
 //
 //  IgnoreSearchTests.swift
-//  ProjectSearch honours .gitignore (via git) and .ignore (parsed), per directory, and
-//  the toggle turns it off. Uses real temp git repos, like IgnoreGitTests.
+//  FileToolsTests
+//
+//  Tests for search over an ignore-aware walk: ignored directories are skipped in a git
+//  repository and honoured without one.
+//
+//  Created by David Sherlock on 9/3/26.
 //
 
 import XCTest
 @testable import FileTools
 
+/// Tests for search over an ignore-aware walk: ignored directories are skipped in a git
+/// repository and honoured without one.
 final class IgnoreSearchTests: XCTestCase {
 
     private func makeRepo(git: Bool) throws -> URL {

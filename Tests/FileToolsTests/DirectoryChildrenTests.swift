@@ -2,7 +2,8 @@
 //  DirectoryChildrenTests.swift
 //  FileToolsTests
 //
-//  Tests for Directory Children.
+//  Tests for `DirectoryChildren.sorted`: directories first, then case-insensitive names, with
+//  the noise list skipped.
 //
 //  Created by David Sherlock on 9/5/26.
 //
@@ -10,6 +11,8 @@
 import XCTest
 @testable import FileTools
 
+/// Tests for `DirectoryChildren.sorted`: directories first, then case-insensitive names, with
+/// the noise list skipped.
 final class DirectoryChildrenTests: XCTestCase {
     func testDirectoriesFirstThenCaseInsensitiveNamesSkippingTheNoiseList() throws {
         let d = FileManager.default.temporaryDirectory.appendingPathComponent("children-\(UUID().uuidString)")

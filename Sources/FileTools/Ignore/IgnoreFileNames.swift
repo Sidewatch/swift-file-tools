@@ -2,6 +2,11 @@
 //  IgnoreFileNames.swift
 //  FileTools
 //
+//  The ignore-file names a directory walker should look for, in ripgrep's precedence order: a
+//  name later in this list wins over an earlier one when both exist in the SAME directory (e.g.
+//
+//  Created by David Sherlock on 9/5/26.
+//
 
 import Foundation
 

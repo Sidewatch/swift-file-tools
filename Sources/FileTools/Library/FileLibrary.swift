@@ -2,8 +2,10 @@
 //  FileLibrary.swift
 //  FileTools
 //
-//  A library of plain files of one kind: a user-global folder plus an optional per-project
-//  folder, listed by name, saved without ever overwriting, seeded additively.
+//  Plain files of one extension in a global folder (Application Support, say) plus a
+//  per-project folder (`<root>/<projectSubpath>`).
+//
+//  Created by David Sherlock on 9/5/26.
 //
 
 import Foundation

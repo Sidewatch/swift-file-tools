@@ -2,7 +2,8 @@
 //  TerminalPathParserTests.swift
 //  FileToolsTests
 //
-//  Tests for Terminal Path Parser.
+//  Tests for `TerminalPathParser.parse`: `path:line:column`, `path:line`, bare paths, and the
+//  shapes that must not match.
 //
 //  Created by David Sherlock on 7/21/26.
 //
@@ -10,6 +11,8 @@
 import XCTest
 @testable import FileTools
 
+/// Tests for `TerminalPathParser.parse`: `path:line:column`, `path:line`, bare paths, and the
+/// shapes that must not match.
 final class TerminalPathParserTests: XCTestCase {
     typealias Match = TerminalPathParser.Match
 

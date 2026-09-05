@@ -1,14 +1,18 @@
 //
 //  IgnoreFileTests.swift
-//  Table-driven coverage of gitignore pattern semantics (IgnorePattern/IgnoreFile)
-//  and cross-file precedence (IgnoreStack), following
-//  https://git-scm.com/docs/gitignore's PATTERN FORMAT section case by case,
-//  plus a few direct API-shape checks.
+//  FileToolsTests
+//
+//  Table-driven tests for `IgnoreFile` against the gitignore specification: each case is a set
+//  of ignore files, a path, and the expected verdict.
+//
+//  Created by David Sherlock on 9/3/26.
 //
 
 import XCTest
 @testable import FileTools
 
+/// Table-driven tests for `IgnoreFile` against the gitignore specification: each case is a set
+/// of ignore files, a path, and the expected verdict.
 final class IgnoreFileTests: XCTestCase {
 
     /// One matching scenario: either a single root-level ignore file (`gitignore`)

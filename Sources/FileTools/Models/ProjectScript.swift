@@ -2,6 +2,11 @@
 //  ProjectScript.swift
 //  FileTools
 //
+//  A runnable task discovered in a project manifest — the command to type at the terminal, plus
+//  where it came from.
+//
+//  Created by David Sherlock on 9/5/26.
+//
 
 import Foundation
 

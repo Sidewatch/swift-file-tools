@@ -2,11 +2,10 @@
 //  IgnoreRules.swift
 //  FileTools
 //
-//  What ripgrep and fd do by default, for one scan root: honour `.gitignore` (exactly, by
-//  asking git — see ``GitIgnoredSet``) and the tool-agnostic `.ignore` / `.rgignore` /
-//  `.fdignore` files (parsed, see ``IgnoreStack``), per directory, as a walker descends.
-//  Outside a git work tree the `.gitignore` files are parsed too, so a plain folder with a
-//  `.gitignore` still behaves as its author intended.
+//  The ignore decision for one scan root. Build one with ``load(root:)`` (runs `git` once),
+//  then hand each directory's ``IgnoreStack`` down the walk.
+//
+//  Created by David Sherlock on 9/3/26.
 //
 
 import Foundation
