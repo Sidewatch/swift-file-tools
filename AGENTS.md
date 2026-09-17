@@ -20,3 +20,5 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 ## Rules
 
 Read `CONTRIBUTING.md` before changing anything: it is the layout and PR rulebook for this package.
+
+- **Auditing? Read `AUDIT.md` first** — what the last full audit checked and fixed, and the known non-issues to skip; extend it, do not redo it.
