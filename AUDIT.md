@@ -71,3 +71,5 @@ fallbacks, `DirectoryEventStream`'s weak-box lifetime and re-entrant `cancel()`,
 
 - 17 Sep 2026 — full audit (app + all 20 libraries), Claude with David.
 - 18 Sep 2026 — logic review of every file, with the git-parity test; four fixes (above).
+- 18 Sep 2026 — `FastDirectoryListing.Entry.isSymbolicLink`: a recursive walker in the app (Quick Open) followed
+  symlinked directories, so a link to an ancestor looped it forever and a link to `~` indexed the home folder.

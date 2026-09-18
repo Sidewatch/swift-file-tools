@@ -81,10 +81,17 @@ final class FastDirectoryListingTests: XCTestCase {
                                                    withDestinationURL: root.appendingPathComponent("real"))
         try FileManager.default.createSymbolicLink(at: root.appendingPathComponent("link-to-file"),
                                                    withDestinationURL: root.appendingPathComponent("plain.txt"))
-        let byName = Dictionary(uniqueKeysWithValues:
-            FastDirectoryListing.list(root).map { ($0.url.lastPathComponent, $0.isDirectory) })
+        let entries = FastDirectoryListing.list(root)
+        let byName = Dictionary(uniqueKeysWithValues: entries.map { ($0.url.lastPathComponent, $0.isDirectory) })
         XCTAssertEqual(byName["link-to-dir"], true, "a symlinked folder must expand")
         XCTAssertEqual(byName["link-to-file"], false)
+        // A recursive walker stops at the link: a symlinked directory can be a cycle or a
+        // tree outside the root, so the entry says it is a link as well as what it points at.
+        let links = Dictionary(uniqueKeysWithValues: entries.map { ($0.url.lastPathComponent, $0.isSymbolicLink) })
+        XCTAssertEqual(links["link-to-dir"], true)
+        XCTAssertEqual(links["link-to-file"], true)
+        XCTAssertEqual(links["real"], false)
+        XCTAssertEqual(links["plain.txt"], false)
     }
 
     /// A dangling link can't be stat'd; it must be reported as a file rather than

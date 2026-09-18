@@ -29,13 +29,18 @@ public enum FastDirectoryListing {
     public struct Entry: Sendable, Equatable {
         public let url: URL
         public let isDirectory: Bool
+        /// Whether the entry itself is a symbolic link. `isDirectory` already says what it
+        /// points at; a recursive walker needs this to stop at the link — a symlinked
+        /// directory can point at an ancestor (a cycle) or at a tree outside the root.
+        public let isSymbolicLink: Bool
         /// Lowercased name, precomputed as a sort key — a comparator that lowercases
         /// per comparison does it O(n log n) times instead of O(n).
         public let sortKey: String
 
-        public init(url: URL, isDirectory: Bool, sortKey: String) {
+        public init(url: URL, isDirectory: Bool, isSymbolicLink: Bool = false, sortKey: String) {
             self.url = url
             self.isDirectory = isDirectory
+            self.isSymbolicLink = isSymbolicLink
             self.sortKey = sortKey
         }
     }
@@ -71,16 +76,20 @@ public enum FastDirectoryListing {
 
             let url = directory.appendingPathComponent(name)
             let isDir: Bool
+            var isLink = false
             switch Int32(ent.d_type) {
             case DT_DIR: isDir = true
             case DT_REG: isDir = false
             default:
                 // DT_LNK / DT_UNKNOWN — `stat` follows symlinks, which is what an
-                // outline view wants: a link to a folder should expand.
+                // outline view wants: a link to a folder should expand. `lstat` says
+                // whether the entry is the link itself, for walkers that must not follow.
                 var st = stat()
                 isDir = stat(url.path, &st) == 0 && (st.st_mode & S_IFMT) == S_IFDIR
+                var lst = stat()
+                isLink = lstat(url.path, &lst) == 0 && (lst.st_mode & S_IFMT) == S_IFLNK
             }
-            out.append(Entry(url: url, isDirectory: isDir, sortKey: name.lowercased()))
+            out.append(Entry(url: url, isDirectory: isDir, isSymbolicLink: isLink, sortKey: name.lowercased()))
         }
 
         return out.sorted {
