@@ -82,6 +82,7 @@ SkippedDirs.resetToDefault()   // back to the shipped list
 
 - `ProjectSearch.search` and `FileTree.ascii` are **synchronous** and do blocking file I/O — keep them off the main queue for large projects.
 - Search caps: files over 2 MB are skipped, at most 200 matches per file and 5,000 in total.
+- Two global switches shape the search walk, both meant to be set once at start-up from the host's preferences: `ProjectSearch.respectIgnoreFiles` (default on — `.gitignore` / `.ignore` / `.rgignore` / `.fdignore`, as ripgrep and fd) and `ProjectSearch.includeHiddenFiles` (default off — dot-files and dot-directories, ripgrep's `--hidden`). The name skip list applies on top of both.
 - `SkippedDirs.names` is global mutable state read by both scanners. Set it once during start-up rather than mutating it concurrently with a walk; `FileTree.ascii` snapshots it per render.
 - `DirectoryEventStream` callbacks may arrive on an unpredictable dispatch queue; hop to the main queue before touching UI. Unrecognized or coalesced FSEvents flags are surfaced as `.changeInDirectory` rather than dropped.
 - `RecentItems` persists to `UserDefaults.standard` (caps: 15 files, 5 folders).

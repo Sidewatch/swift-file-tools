@@ -42,8 +42,29 @@ final class IgnoreSearchTests: XCTestCase {
         return out
     }
 
-    override func setUp() { IgnoreRulesCache.invalidateAll(); ProjectSearch.respectIgnoreFiles = true }
-    override func tearDown() { ProjectSearch.respectIgnoreFiles = true }
+    override func setUp() { IgnoreRulesCache.invalidateAll(); ProjectSearch.respectIgnoreFiles = true; ProjectSearch.includeHiddenFiles = false }
+    override func tearDown() { ProjectSearch.respectIgnoreFiles = true; ProjectSearch.includeHiddenFiles = false }
+
+    /// Dot-files are candidates only with `includeHiddenFiles` on — then `.env` and
+    /// `.github/workflows/ci.yml` are searched like any file, while the name skip list still
+    /// keeps `.git` out and the ignore files still apply (`.gitignore` lists `*.txt`).
+    func testHiddenFilesFollowTheFlagWhileTheSkipListAndIgnoreRulesStillApply() throws {
+        let root = try makeRepo(git: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        try FileManager.default.createDirectory(at: root.appendingPathComponent(".github/workflows"), withIntermediateDirectories: true)
+        try "needle in env".write(to: root.appendingPathComponent(".env"), atomically: true, encoding: .utf8)
+        try "needle in ci".write(to: root.appendingPathComponent(".github/workflows/ci.yml"), atomically: true, encoding: .utf8)
+        try "needle in ignored dotfile".write(to: root.appendingPathComponent(".secrets.txt"), atomically: true, encoding: .utf8)
+        try "needle in git dir".write(to: root.appendingPathComponent(".git/needle.md"), atomically: true, encoding: .utf8)
+
+        XCTAssertEqual(hits(in: root), ["src/main.swift", "docs/guide.md"], "off: ripgrep's default, no dot-files")
+        ProjectSearch.includeHiddenFiles = true
+        XCTAssertEqual(hits(in: root), ["src/main.swift", "docs/guide.md", ".env", ".github/workflows/ci.yml"],
+                       "on: dot-files are searched; .git stays skipped by name and .secrets.txt stays .gitignore'd")
+        // The counter walks the same set: the four hits plus `.gitignore` and `src/.ignore`,
+        // which are ordinary dot-files to a hidden-aware walk (ripgrep --hidden searches them too).
+        XCTAssertEqual(ProjectSearch.countCandidateFiles(in: root), 6, "the counter walks the same set")
+    }
 
     func testGitRepoHonoursGitignoreAndDotIgnore() throws {
         let root = try makeRepo(git: true)

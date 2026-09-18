@@ -126,7 +126,7 @@ public enum ProjectSearch {
 
     /// The files a search would consider under `root` — one fast pass, for a
     /// "Searching 1,234 of 20,000 files" counter. Same walk and filters as the
-    /// search itself (skip list, hidden files, symlinks, `include`), so the total
+    /// search itself (skip list, the hidden-files flag, symlinks, `include`), so the total
     /// and the running count agree; the only thing NOT applied is the per-file size
     /// cap, which the scan still counts as it passes over.
     public static func countCandidateFiles(in root: URL, include: ((URL) -> Bool)? = nil,
@@ -143,11 +143,18 @@ public enum ProjectSearch {
     /// `d_type` from the directory listing and one `lstat` per entry for the size
     /// and the regular-file check; symlinks are skipped both ways (a symlinked
     /// file would bypass the size cap through `Data(contentsOf:)`, a symlinked
-    /// directory could loop). Hidden entries and the skip list are dropped as before.
-    /// `body` returns false to stop.
+    /// directory could loop). The skip list is dropped as before; hidden entries follow
+    /// ``includeHiddenFiles``. `body` returns false to stop.
     /// Honour `.gitignore` / `.ignore` / `.rgignore` / `.fdignore` (see ``IgnoreRules``) —
     /// on by default, as in ripgrep and fd. A host exposes this as a preference.
     nonisolated(unsafe) public static var respectIgnoreFiles = true
+
+    /// Walk dot-files and dot-directories too (`.env`, `.github/workflows`, `.claude/`).
+    /// Off by default, as in ripgrep and fd without `--hidden`; a host whose file tree shows
+    /// hidden files sets this from the same preference, so what the tree lists is what search
+    /// covers. The name skip list (`.git`, `.svn`, …) and the ignore files still apply on top,
+    /// exactly as they do to visible files.
+    nonisolated(unsafe) public static var includeHiddenFiles = false
 
     private static func walkRegularFiles(in root: URL, isCancelled: () -> Bool,
                                          include: ((URL) -> Bool)?,
@@ -163,7 +170,7 @@ public enum ProjectSearch {
             if let rules {
                 for file in rules.files(in: dir, relativeDirectory: rel) { ignore.push(file) }
             }
-            let entries = FastDirectoryListing.list(dir, includeHidden: false, skipping: SkippedDirs.names)
+            let entries = FastDirectoryListing.list(dir, includeHidden: includeHiddenFiles, skipping: SkippedDirs.names)
             var subdirs: [(URL, String)] = []
             for entry in entries {
                 if isCancelled() { return }

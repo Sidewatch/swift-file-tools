@@ -55,9 +55,10 @@ fallbacks, `DirectoryEventStream`'s weak-box lifetime and re-entrant `cancel()`,
   volume sets `core.ignorecase`, which folds case in ignore matching too (`README` ignores `readme`).
   The parser follows ripgrep, fd and git on Linux. Inside a checkout git itself answers, so the
   difference reaches only a plain folder's `.gitignore`; the parity test asks git with the option off.
-- **Hidden files are never search candidates** (`walkRegularFiles` lists with `includeHidden:
-  false`) — ripgrep's default, and pinned by `testCountCandidateFilesMatchesWhatTheSearchScans`.
-  Whether the host's Show Hidden Files toggle should reach search is a product call, not a bug.
+- **Hidden files are search candidates only with `ProjectSearch.includeHiddenFiles` on** (default off:
+  ripgrep and fd without `--hidden`). A host whose tree shows dot-files sets it from that toggle. The
+  name skip list and the ignore files apply on top either way, and the ignore files themselves become
+  candidates once the flag is on — pinned by `testHiddenFilesFollowTheFlagWhileTheSkipListAndIgnoreRulesStillApply`.
 - **A nested repository's own `.gitignore` is not applied by the outer walk** when the outer
   folder is a checkout (git's `ls-files` stops at nested repos, and `.gitignore` parsing is off
   while git answers). Its `node_modules` / `build` / `vendor` still fall to the skip list.
@@ -73,3 +74,6 @@ fallbacks, `DirectoryEventStream`'s weak-box lifetime and re-entrant `cancel()`,
 - 18 Sep 2026 — logic review of every file, with the git-parity test; four fixes (above).
 - 18 Sep 2026 — `FastDirectoryListing.Entry.isSymbolicLink`: a recursive walker in the app (Quick Open) followed
   symlinked directories, so a link to an ancestor looped it forever and a link to `~` indexed the home folder.
+- 18 Sep 2026 — `ProjectSearch.includeHiddenFiles` (default off): the host's Show Hidden Files toggle now reaches
+  search, so `.env` and `.github/workflows` are searched when the tree lists them. Test first failed against
+  the old walk (the flag did not exist; with it ignored the "on" set came back without the dot-files).
