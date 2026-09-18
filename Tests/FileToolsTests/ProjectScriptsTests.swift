@@ -59,6 +59,24 @@ final class ProjectScriptsTests: XCTestCase {
         XCTAssertEqual(ProjectScripts.detect(root: tmp).first?.command, "bun run start")
     }
 
+    func testBunTextLockChoosesBunRunner() throws {
+        // Bun 1.2 switched to the text `bun.lock`; only `bun.lockb` was recognised.
+        try write(#"{"scripts": {"start": "bun ."}}"#, to: "package.json")
+        try write("{}", to: "bun.lock")
+        XCTAssertEqual(ProjectScripts.detect(root: tmp).first?.command, "bun run start")
+    }
+
+    func testPackageManagerFieldWinsOverTheLockfile() throws {
+        // Corepack's declaration is the project's own word; a stray lockfile is not.
+        try write(#"{"packageManager": "pnpm@9.1.0", "scripts": {"build": "tsc"}}"#, to: "package.json")
+        try write("# yarn lockfile v1", to: "yarn.lock")
+        XCTAssertEqual(ProjectScripts.detect(root: tmp).first?.command, "pnpm run build")
+        try write(#"{"packageManager": "yarn@4.0.0", "scripts": {"build": "tsc"}}"#, to: "package.json")
+        XCTAssertEqual(ProjectScripts.detect(root: tmp).first?.command, "yarn build")
+        try write(#"{"packageManager": "something-else@1", "scripts": {"build": "tsc"}}"#, to: "package.json")
+        XCTAssertEqual(ProjectScripts.detect(root: tmp).first?.command, "yarn build", "an unknown manager falls back to the lockfile")
+    }
+
     // MARK: - composer.json
 
     func testComposerScriptsSkipReservedHooks() throws {
@@ -107,6 +125,18 @@ final class ProjectScriptsTests: XCTestCase {
         \t$(CC) main.c
         """, to: "Makefile")
         XCTAssertEqual(ProjectScripts.detect(root: tmp).map(\.name), ["build"])
+    }
+
+    func testMakefileMultipleTargetsOnOneLineAreAllListed() throws {
+        try write("install uninstall: build\n\techo x\n$(TARGETS): common\nclean::\n\trm x\n", to: "Makefile")
+        XCTAssertEqual(ProjectScripts.detect(root: tmp).map(\.name), ["install", "uninstall", "clean"])
+    }
+
+    func testGNUmakefileAndLowercaseMakefileAreRead() throws {
+        try write("run:\n\techo go\n", to: "GNUmakefile")
+        let scripts = ProjectScripts.detect(root: tmp)
+        XCTAssertEqual(scripts.map(\.name), ["run"])
+        XCTAssertEqual(scripts.first?.source, "GNUmakefile")
     }
 
     func testMakefileDeduplicatesTargets() throws {

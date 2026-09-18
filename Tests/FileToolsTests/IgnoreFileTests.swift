@@ -141,6 +141,23 @@ final class IgnoreFileTests: XCTestCase {
         Case("negated class rejects inside the range",
              gitignore: "[!a-z]*.txt\n", path: "abc.txt", expected: false),
 
+        // MARK: POSIX classes (wildmatch and ripgrep both accept them)
+
+        Case("[[:alpha:]] matches an ASCII letter",
+             gitignore: "[[:alpha:]]*.log\n", path: "a.log", expected: true),
+        Case("[[:alpha:]] does not match a digit",
+             gitignore: "[[:alpha:]]*.log\n", path: "1.log", expected: false),
+        Case("[[:digit:]] matches a digit",
+             gitignore: "*.py[[:digit:]]\n", path: "x.py3", expected: true),
+        Case("a negated POSIX class",
+             gitignore: "[![:digit:]]bc.txt\n", path: "abc.txt", expected: true),
+        Case("a POSIX class mixed with a range",
+             gitignore: "[[:digit:]a-c].txt\n", path: "b.txt", expected: true),
+        Case("an unknown class name never matches",
+             gitignore: "[[:nope:]].txt\n", path: "a.txt", expected: false),
+        Case("a bracket-colon that is not a class is still a plain class",
+             gitignore: "[[:]x\n", path: ":x", expected: true),
+
         // MARK: Leading `**/`
 
         Case("leading **/ matches at the top",

@@ -26,17 +26,27 @@ public enum ProjectScripts {
         guard let data = try? Data(contentsOf: file),
               let json = JSONObject.parse(data),
               let scripts = json["scripts"] as? [String: Any] else { return [] }
-        let runner = npmRunner(root)   // "npm run" / "pnpm run" / "yarn" / "bun run"
+        let runner = npmRunner(root, packageManager: json["packageManager"] as? String)
         return scripts.keys.sorted().map {
             ProjectScript(name: $0, command: "\(runner) \($0)", source: "package.json")
         }
     }
 
-    /// The package-manager invocation, chosen from the lockfile present.
-    private static func npmRunner(_ root: URL) -> String {
+    /// The package-manager invocation: the manifest's `packageManager` field (Corepack's
+    /// `"pnpm@9.1.0"`) when it names one, else the lockfile present. Bun has written the
+    /// text `bun.lock` since 1.2 and `bun.lockb` before that.
+    static func npmRunner(_ root: URL, packageManager: String?) -> String {
         let fm = FileManager.default
         func has(_ name: String) -> Bool { fm.fileExists(atPath: root.appendingPathComponent(name).path) }
-        if has("bun.lockb") { return "bun run" }
+        let declared = packageManager?.split(separator: "@", maxSplits: 1).first.map(String.init)
+        switch declared {
+        case "bun": return "bun run"
+        case "pnpm": return "pnpm run"
+        case "yarn": return "yarn"
+        case "npm": return "npm run"
+        default: break
+        }
+        if has("bun.lock") || has("bun.lockb") { return "bun run" }
         if has("pnpm-lock.yaml") { return "pnpm run" }
         if has("yarn.lock") { return "yarn" }   // `yarn <script>`, no "run"
         return "npm run"
@@ -59,9 +69,16 @@ public enum ProjectScripts {
 
     // MARK: Makefile
 
+    /// The names GNU make tries, in its order.
+    static let makefileNames = ["GNUmakefile", "makefile", "Makefile"]
+
     private static func make(_ root: URL) -> [ProjectScript] {
-        let file = root.appendingPathComponent("Makefile")
-        guard let text = try? String(contentsOf: file, encoding: .utf8) else { return [] }
+        // Matched against the directory's own names, not `fileExists`: on a
+        // case-insensitive volume every spelling exists, and `source` must read the way
+        // the file is actually named.
+        let present = Set((try? FileManager.default.contentsOfDirectory(atPath: root.path)) ?? [])
+        guard let source = makefileNames.first(where: { present.contains($0) }),
+              let text = try? String(contentsOf: root.appendingPathComponent(source), encoding: .utf8) else { return [] }
         var seen = Set<String>()
         var out: [ProjectScript] = []
         for raw in text.components(separatedBy: .newlines) {
@@ -73,11 +90,15 @@ public enum ProjectScripts {
             // name-side guards below never see it — check the assignment forms here.
             let afterColon = raw[raw.index(after: colon)...].drop(while: { $0 == ":" })
             guard afterColon.first != "=" else { continue }
-            let name = String(raw[..<colon]).trimmingCharacters(in: .whitespaces)
-            guard !name.isEmpty, !name.contains("="), !name.contains(" "), !name.contains("$"),
-                  name.allSatisfy({ $0.isLetter || $0.isNumber || $0 == "_" || $0 == "-" || $0 == "." }),
-                  seen.insert(name).inserted else { continue }
-            out.append(ProjectScript(name: name, command: "make \(name)", source: "Makefile"))
+            let names = String(raw[..<colon]).split(whereSeparator: { $0 == " " || $0 == "\t" }).map(String.init)
+            // `a b: dep` declares both a and b; a name with `=`, `$` or `%` is a variable,
+            // an expansion or a pattern rule, and one such name disqualifies the line.
+            guard !names.isEmpty, names.allSatisfy({ name in
+                name.allSatisfy({ $0.isLetter || $0.isNumber || $0 == "_" || $0 == "-" || $0 == "." })
+            }) else { continue }
+            for name in names where seen.insert(name).inserted {
+                out.append(ProjectScript(name: name, command: "make \(name)", source: source))
+            }
         }
         return out
     }

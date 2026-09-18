@@ -47,6 +47,20 @@ final class TerminalPathParserTests: XCTestCase {
         XCTAssertEqual(TerminalPathParser.parse("src/x.rs:9."), Match(path: "src/x.rs", line: 9))
     }
 
+    func testParenthesisedLineAndColumn() {
+        // tsc: `src/a.ts(12,5): error TS2322`; MSBuild and csc print the same shape.
+        XCTAssertEqual(TerminalPathParser.parse("src/a.ts(12,5):"), Match(path: "src/a.ts", line: 12, column: 5))
+        XCTAssertEqual(TerminalPathParser.parse("Program.cs(7)"), Match(path: "Program.cs", line: 7))
+        XCTAssertNil(TerminalPathParser.parse("foo(1)"), "no slash, no extension: not a path")
+        XCTAssertNil(TerminalPathParser.parse("call(a,b)"))
+        let line = "src/a.ts(12,5): error TS2322: Type 'x'"
+        let onPath = line.distance(from: line.startIndex, to: line.range(of: "a.ts")!.lowerBound)
+        XCTAssertEqual(TerminalPathParser.match(in: line, at: onPath), Match(path: "src/a.ts", line: 12, column: 5))
+        let onDigits = line.distance(from: line.startIndex, to: line.range(of: "12")!.lowerBound)
+        XCTAssertEqual(TerminalPathParser.match(in: line, at: onDigits), Match(path: "src/a.ts", line: 12, column: 5),
+                       "a click inside the parentheses still names the file before them")
+    }
+
     func testRejectsNonPaths() {
         XCTAssertNil(TerminalPathParser.parse("hello"))          // no slash, no extension
         XCTAssertNil(TerminalPathParser.parse("42"))             // just a number

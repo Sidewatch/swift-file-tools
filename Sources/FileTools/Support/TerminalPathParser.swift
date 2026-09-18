@@ -49,17 +49,53 @@ public enum TerminalPathParser {
         var start = col, end = col
         while start > 0, !isBoundary(chars[start - 1]) { start -= 1 }
         while end < chars.count - 1, !isBoundary(chars[end + 1]) { end += 1 }
+        // `src/a.ts(12,5)` — tsc's and MSBuild's shape. The parentheses are token
+        // boundaries, so the click lands on the path or on `12,5`; either way the
+        // reference is the path with the position that follows it.
+        if end + 1 < chars.count, chars[end + 1] == "(", let close = positionSuffixEnd(chars, from: end + 1) {
+            end = close                                       // clicked the path: take the suffix along
+        } else {
+            // Clicked inside the parentheses: walk back over the digits and comma to the
+            // "(" — the reference is the token before it.
+            var open = start - 1
+            while open >= 0, chars[open].isNumber || chars[open] == "," { open -= 1 }
+            if open >= 1, chars[open] == "(", !isBoundary(chars[open - 1]),
+               let close = positionSuffixEnd(chars, from: open), close >= end {
+                end = close
+                start = open - 1
+                while start > 0, !isBoundary(chars[start - 1]) { start -= 1 }
+            }
+        }
         return parse(String(chars[start...end]))
     }
 
-    /// Parses a single token like `src/Foo.swift:42:10`, `./a.ts:5`, or `/abs/x.rb`.
-    /// Strips wrapping quotes/brackets and trailing sentence punctuation, peels a trailing
-    /// `:line` / `:line:col`, and returns nil unless the leading portion looks like a path
-    /// (has a `/` or a short file extension). URLs (`scheme://…`) are rejected — SwiftTerm
-    /// opens those itself.
+    /// The index of the `)` closing a `(line,col)` or `(line)` suffix that starts with the
+    /// `(` at `open`, or nil when what follows is not that shape.
+    private static func positionSuffixEnd(_ chars: [Character], from open: Int) -> Int? {
+        var k = open + 1
+        var sawDigit = false, sawComma = false
+        while k < chars.count {
+            let c = chars[k]
+            if c.isNumber { sawDigit = true }
+            else if c == ",", sawDigit, !sawComma { sawComma = true; sawDigit = false }
+            else if c == ")" { return sawDigit ? k : nil }
+            else { return nil }
+            k += 1
+        }
+        return nil
+    }
+
+    /// Parses a single token like `src/Foo.swift:42:10`, `./a.ts:5`, `src/a.ts(12,5)` or
+    /// `/abs/x.rb`. Strips wrapping quotes/brackets and trailing sentence punctuation,
+    /// peels a trailing `:line` / `:line:col` / `(line,col)`, and returns nil unless the
+    /// leading portion looks like a path (has a `/` or a short file extension). URLs
+    /// (`scheme://…`) are rejected — SwiftTerm opens those itself.
     public static func parse(_ rawToken: String) -> Match? {
         if rawToken.contains("://") { return nil }
-        var token = rawToken.trimmingCharacters(in: CharacterSet(charactersIn: "\"'`()[]{}<>"))
+        var token = rawToken
+        while let last = token.last, ".,;:".contains(last) { token.removeLast() }
+        if let paren = parenthesisedPosition(token) { return paren }
+        token = token.trimmingCharacters(in: CharacterSet(charactersIn: "\"'`()[]{}<>"))
         while let last = token.last, ".,;:".contains(last) { token.removeLast() }
         while let first = token.first, first == ":" { token.removeFirst() }
         guard !token.isEmpty else { return nil }
@@ -81,6 +117,19 @@ public enum TerminalPathParser {
             }
         }
 
+        guard looksLikePath(path) else { return nil }
+        return Match(path: path, line: line, column: column)
+    }
+
+    /// `path(line,col)` / `path(line)`: the position tsc, MSBuild and the C# compiler print.
+    private static func parenthesisedPosition(_ token: String) -> Match? {
+        guard token.hasSuffix(")"), let open = token.lastIndex(of: "(") else { return nil }
+        let inner = token[token.index(after: open)..<token.index(before: token.endIndex)]
+        let parts = inner.split(separator: ",", omittingEmptySubsequences: false)
+        guard (1...2).contains(parts.count), let line = Int(parts[0]) else { return nil }
+        let column = parts.count == 2 ? Int(parts[1]) : nil
+        if parts.count == 2, column == nil { return nil }
+        let path = String(token[..<open]).trimmingCharacters(in: CharacterSet(charactersIn: "\"'`[]{}<>"))
         guard looksLikePath(path) else { return nil }
         return Match(path: path, line: line, column: column)
     }

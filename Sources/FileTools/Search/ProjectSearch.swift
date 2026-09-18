@@ -62,7 +62,8 @@ public enum ProjectSearch {
         let mightMatch = prefilter(query: query, caseSensitive: caseSensitive, regexMode: regex)
         var results: [SearchFileResult] = []
         var total = 0
-        enumerateTextFiles(in: root, isCancelled: isCancelled, include: include, onProgress: onProgress) { url, text, _ in
+        enumerateTextFiles(in: root, isCancelled: isCancelled, include: include, onProgress: onProgress) { url, file in
+            let text = file.text
             guard mightMatch(text) else { return true }
             let fileMatches = matches(in: text, query: query,
                                       caseSensitive: caseSensitive, regex: regexObj)
@@ -101,8 +102,7 @@ public enum ProjectSearch {
         for url in files {
             if isCancelled() || total >= maxTotalMatches { break }
             scanned += 1; onProgress?(scanned)
-            guard let (text, _) = readTextFile(url) else { continue }
-            guard mightMatch(text) else { continue }
+            guard let text = readTextFile(url)?.text, mightMatch(text) else { continue }
             let fileMatches = matches(in: text, query: query,
                                       caseSensitive: caseSensitive, regex: regexObj)
             guard !fileMatches.isEmpty else { continue }
@@ -114,15 +114,14 @@ public enum ProjectSearch {
     }
 
     /// One file through the shared searchability guards: regular, under the size
-    /// cap, non-binary, UTF-8-or-Latin-1. The single-file twin of the walk below.
-    public static func readTextFile(_ url: URL) -> (text: String, encoding: String.Encoding)? {
+    /// cap, non-binary, UTF-8-or-Latin-1 (see ``TextFileContents``). The single-file
+    /// twin of the walk below.
+    public static func readTextFile(_ url: URL) -> TextFileContents? {
         let attrs = try? url.resourceValues(forKeys: [.isRegularFileKey, .fileSizeKey])
         guard attrs?.isRegularFile == true else { return nil }
         if (attrs?.fileSize ?? 0) > maxFileBytes { return nil }
-        guard let data = try? Data(contentsOf: url), !data.prefix(4000).contains(0) else { return nil }
-        if let utf8 = data.utf8String { return (utf8, .utf8) }
-        if let latin1 = String(data: data, encoding: .isoLatin1) { return (latin1, .isoLatin1) }
-        return nil
+        guard let data = try? Data(contentsOf: url) else { return nil }
+        return TextFileContents(data: data)
     }
 
     /// The files a search would consider under `root` — one fast pass, for a
@@ -186,32 +185,25 @@ public enum ProjectSearch {
 
     /// The single walker behind `search` and `replaceAll`: every regular text file
     /// under `root` that passes the skip list, the size cap and the binary sniff,
-    /// decoded as UTF-8 else Latin-1 (tracked so a rewrite round-trips the original
-    /// encoding). `onProgress` receives the running count of files considered —
-    /// including ones the size cap then skips, so it climbs to the candidate total.
+    /// decoded as UTF-8 else Latin-1 (``TextFileContents``, so a rewrite round-trips
+    /// the original encoding and byte-order mark). `onProgress` receives the running
+    /// count of files considered — including ones the size cap then skips, so it
+    /// climbs to the candidate total.
     private static func enumerateTextFiles(
         in root: URL,
         isCancelled: () -> Bool,
         include: ((URL) -> Bool)? = nil,
         onProgress: ((Int) -> Void)? = nil,
-        body: (URL, String, String.Encoding) -> Bool
+        body: (URL, TextFileContents) -> Bool
     ) {
         var scanned = 0
         walkRegularFiles(in: root, isCancelled: isCancelled, include: include) { url, size in
             scanned += 1; onProgress?(scanned)
             if size > maxFileBytes { return true }
             guard let data = try? Data(contentsOf: url),
-                  !data.prefix(4000).contains(0)                  // skip binary
+                  let contents = TextFileContents(data: data)   // binary files are skipped
             else { return true }
-            let text: String, encoding: String.Encoding
-            if let utf8 = data.utf8String {
-                text = utf8; encoding = .utf8
-            } else if let latin1 = String(data: data, encoding: .isoLatin1) {
-                text = latin1; encoding = .isoLatin1
-            } else {
-                return true
-            }
-            return body(url, text, encoding)
+            return body(url, contents)
         }
     }
 
@@ -304,7 +296,8 @@ public enum ProjectSearch {
     /// newline — a replace can therefore never touch or collapse content the search
     /// preview didn't surface. In regex mode `replacement` is an `NSRegularExpression`
     /// template (`$1`, `$2`, … expand); in literal mode it is inserted verbatim. A
-    /// rewritten file keeps its original encoding (UTF-8, else Latin-1).
+    /// rewritten file keeps its original encoding (UTF-8, else Latin-1), its byte-order
+    /// mark and its permission bits (``FileRewrite``).
     ///
     /// - Parameters:
     ///   - query: The literal text or regex pattern (same as search — whole-word is
@@ -340,7 +333,8 @@ public enum ProjectSearch {
 
         let mightMatch = prefilter(query: query, caseSensitive: caseSensitive, regexMode: regex)
         var filesChanged = 0, totalReplacements = 0, filesFailed = 0
-        enumerateTextFiles(in: root, isCancelled: isCancelled, include: include) { url, text, encoding in
+        enumerateTextFiles(in: root, isCancelled: isCancelled, include: include) { url, file in
+            let text = file.text
             guard mightMatch(text) else { return true }
             let (newText, count) = replaced(in: text, query: query, caseSensitive: caseSensitive,
                                             regex: regexObj, replacement: replacement)
@@ -349,14 +343,14 @@ public enum ProjectSearch {
             // character the encoding can't represent is a FAILURE, not a change —
             // checked identically in both the dry run and the commit so the dry-run
             // count the caller confirms against exactly equals what commit writes.
-            guard let data = newText.data(using: encoding) else { filesFailed += 1; return true }
+            guard let data = file.data(for: newText) else { filesFailed += 1; return true }
             if !commit {   // dry run: report what WOULD change, write nothing
                 filesChanged += 1
                 totalReplacements += count
                 return true
             }
             do {
-                try data.write(to: url, options: .atomic)
+                try FileRewrite.write(data, to: url)
                 filesChanged += 1
                 totalReplacements += count
             } catch {

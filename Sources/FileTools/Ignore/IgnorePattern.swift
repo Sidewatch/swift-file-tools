@@ -224,7 +224,11 @@ private enum GlobToken: Sendable, Equatable {
     case literal(Character)
     case anyChar                                     // '?'
     case anyRun                                      // '*' (zero or more, never crosses '/')
-    case charClass(negated: Bool, singles: Set<Character>, ranges: [ClosedRange<Character>])
+    case charClass(negated: Bool, singles: Set<Character>, ranges: [ClosedRange<Character>],
+                   named: [PosixClass])
+    /// A class naming an unknown `[:name:]` — git's wildmatch aborts the whole match, so
+    /// the pattern never matches anything.
+    case never
 
     /// Compiles a single (already slash-free) path segment's text into tokens,
     /// resolving backslash escapes as it goes: `\` followed by ANY character
@@ -269,7 +273,8 @@ private enum GlobToken: Sendable, Equatable {
     /// Parses a `[...]` character class starting at `chars[i]` (which must be
     /// `[`). Returns `nil` (unterminated) if no closing `]` is found, in which
     /// case the caller treats the `[` as a literal character instead — the
-    /// conventional glob fallback.
+    /// conventional glob fallback. A `[:name:]` inside the brackets is a POSIX
+    /// class (`[[:alpha:]]`, `*.py[[:digit:]]`), as in git's wildmatch and ripgrep.
     private static func parseClass(_ chars: [Character], from i: Int) -> (GlobToken, Int)? {
         var j = i + 1
         var negated = false
@@ -279,13 +284,23 @@ private enum GlobToken: Sendable, Equatable {
         }
         var singles: Set<Character> = []
         var ranges: [ClosedRange<Character>] = []
+        var named: [PosixClass] = []
+        var unknownName = false
         var first = true
         while j < chars.count {
             if chars[j] == "]", !first {
                 let consumed = j - i + 1
-                return (.charClass(negated: negated, singles: singles, ranges: ranges), consumed)
+                if unknownName { return (.never, consumed) }
+                return (.charClass(negated: negated, singles: singles, ranges: ranges, named: named), consumed)
             }
             first = false
+            if chars[j] == "[", j + 1 < chars.count, chars[j + 1] == ":",
+               let close = PosixClass.closingIndex(in: chars, from: j + 2) {
+                let name = String(chars[(j + 2)..<close])
+                if let posix = PosixClass(rawValue: name) { named.append(posix) } else { unknownName = true }
+                j = close + 2   // past ":]"
+                continue
+            }
             var ch = chars[j]
             if ch == "\\", j + 1 < chars.count {
                 j += 1
@@ -323,11 +338,14 @@ private enum GlobToken: Sendable, Equatable {
         case .anyChar:
             guard ci < text.count else { return false }
             return matchFrom(tokens, ti + 1, text, ci + 1)
-        case .charClass(let negated, let singles, let ranges):
+        case .charClass(let negated, let singles, let ranges, let named):
             guard ci < text.count else { return false }
             let inClass = singles.contains(text[ci]) || ranges.contains { $0.contains(text[ci]) }
+                || named.contains { $0.contains(text[ci]) }
             guard inClass != negated else { return false }
             return matchFrom(tokens, ti + 1, text, ci + 1)
+        case .never:
+            return false
         case .anyRun:
             var k = 0
             while ci + k <= text.count {
@@ -337,4 +355,43 @@ private enum GlobToken: Sendable, Equatable {
             return false
         }
     }
+}
+
+/// The POSIX bracket classes wildmatch accepts inside `[...]`, with C-locale (ASCII)
+/// membership — git tests bytes with `isalpha` and friends, so `é` is not `[[:alpha:]]`.
+private enum PosixClass: String, Sendable {
+    case alnum, alpha, blank, cntrl, digit, graph, lower, print, punct, space, upper, xdigit
+
+    /// The index of the `:` in the closing `:]` at or after `start`, or nil when the class
+    /// name is not terminated before the end of the segment.
+    static func closingIndex(in chars: [Character], from start: Int) -> Int? {
+        var k = start
+        while k + 1 < chars.count {
+            if chars[k] == ":" && chars[k + 1] == "]" { return k }
+            if !(chars[k].isLetter) { return nil }
+            k += 1
+        }
+        return nil
+    }
+
+    func contains(_ c: Character) -> Bool {
+        guard let b = c.asciiValue else { return false }
+        switch self {
+        case .alnum:  return Self.isAlpha(b) || Self.isDigit(b)
+        case .alpha:  return Self.isAlpha(b)
+        case .blank:  return b == 0x20 || b == 0x09
+        case .cntrl:  return b < 0x20 || b == 0x7F
+        case .digit:  return Self.isDigit(b)
+        case .graph:  return b > 0x20 && b < 0x7F
+        case .lower:  return b >= 0x61 && b <= 0x7A
+        case .print:  return b >= 0x20 && b < 0x7F
+        case .punct:  return b > 0x20 && b < 0x7F && !Self.isAlpha(b) && !Self.isDigit(b)
+        case .space:  return b == 0x20 || (b >= 0x09 && b <= 0x0D)
+        case .upper:  return b >= 0x41 && b <= 0x5A
+        case .xdigit: return Self.isDigit(b) || (b >= 0x41 && b <= 0x46) || (b >= 0x61 && b <= 0x66)
+        }
+    }
+
+    private static func isAlpha(_ b: UInt8) -> Bool { (b >= 0x41 && b <= 0x5A) || (b >= 0x61 && b <= 0x7A) }
+    private static func isDigit(_ b: UInt8) -> Bool { b >= 0x30 && b <= 0x39 }
 }

@@ -8,13 +8,14 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 
 ## Module map
 
-- `Extensions/` — URL.isDirectory
+- `Extensions/` — Data.utf8String, URL.isDirectory
 - `Enums/` — enums with no behaviour beyond their cases and labels: FSEvent
 - `Ignore/` — the engine: ignore: GitIgnoredSet, IgnoreFile, IgnoreFileNames, IgnoreMatcher, IgnorePattern, IgnoreRules, IgnoreRulesCache, IgnoreStack
+- `Library/` — the engine: library: FileLibrary (global + per-project folder of one file kind)
 - `Listing/` — the engine: listing: FastDirectoryListing, FileTree, SkippedDirs
-- `Models/` — value types — the shape of a thing, nothing else: ReplaceSummary, SearchFileResult, SearchMatch
+- `Models/` — value types — the shape of a thing, nothing else: ReplaceSummary, SearchFileResult, SearchMatch, TextFileContents (+ TextFileEncoding)
 - `Search/` — the engine: search: ProjectSearch
-- `Support/` — pure helpers: parsing, escaping, validation: DirectoryChildren, ProjectScripts, RecentItems, TerminalPathParser
+- `Support/` — pure helpers: parsing, escaping, validation: DirectoryChildren, FileRewrite, JSONObject, ProjectScripts, RecentItems, TerminalPathParser
 - `Watching/` — the engine: watching: DirectoryEventStream, DiskStormDetector
 
 ## Rules

@@ -464,6 +464,32 @@ final class FileToolsTests: XCTestCase {
         XCTAssertEqual(after, expected)   // 0xE9 preserved as one byte, not UTF-8 0xC3 0xA9
     }
 
+    func testReplaceAllKeepsTheExecutableBitAndTheByteOrderMark() throws {
+        // `Data.write(.atomic)` renames a fresh file over the original: on macOS 26 the
+        // executable bit went with the old inode (a Replace All turned every matching
+        // script into a plain file), and `String(data:encoding:)` had already dropped the
+        // UTF-8 BOM, so it never came back either.
+        let script = tmp.appendingPathComponent("run.sh")
+        try "#!/bin/sh\necho foo\n".write(to: script, atomically: true, encoding: .utf8)
+        try FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: script.path)
+        let bom = tmp.appendingPathComponent("bom.txt")
+        try Data([0xEF, 0xBB, 0xBF] + Array("foo bar\n".utf8)).write(to: bom)
+
+        let summary = ProjectSearch.replaceAll(
+            query: "foo", in: tmp, caseSensitive: false, regex: false,
+            replacement: "baz", commit: true, isCancelled: { false })
+        XCTAssertEqual(summary.filesChanged, 2)
+
+        let mode = try XCTUnwrap(FileManager.default.attributesOfItem(atPath: script.path)[.posixPermissions] as? Int)
+        XCTAssertEqual(mode & 0o777, 0o755, "the rewritten script must stay executable")
+        XCTAssertEqual(try read("run.sh"), "#!/bin/sh\necho baz\n")
+        XCTAssertEqual(try Data(contentsOf: bom), Data([0xEF, 0xBB, 0xBF] + Array("baz bar\n".utf8)),
+                       "the byte-order mark is part of the file and must survive")
+        let contents = try XCTUnwrap(ProjectSearch.readTextFile(bom))
+        XCTAssertEqual(contents.text, "baz bar\n", "the text itself carries no BOM character")
+        XCTAssertTrue(contents.encoding.hasByteOrderMark)
+    }
+
     // MARK: - SkippedDirs
 
     func testSkippedDirsContainsCommonNoise() {
