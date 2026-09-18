@@ -14,11 +14,13 @@ import Foundation
 /// attributes.
 ///
 /// `Data.write(to:options: .atomic)` writes a temporary file and renames it over the
-/// original, and the temporary carries DEFAULT permissions: measured on macOS 26, a
-/// rewrite of a `755` shell script left a `644` file. A Replace All across a project
-/// stripped the executable bit from every script it touched. `FileManager.replaceItemAt`
-/// is the same rename with the original's metadata carried over, which is what a rewrite
-/// of an existing file wants; a file that does not exist yet is simply written.
+/// original. Measured on macOS 26: it drops every extended attribute (Finder tags and
+/// comments, `com.apple.TextEncoding`), and when the file has more than one hard link the
+/// replacement carries DEFAULT permissions — a `755` script came back `644`. On a plain,
+/// unlinked file the mode survives. `FileManager.replaceItemAt` is the same rename with the
+/// original's metadata carried over in every case, which is what a rewrite of an existing
+/// file wants; a file that does not exist yet is simply written. Either way the write is a
+/// new inode, so another hard link to the old file keeps the old bytes.
 public enum FileRewrite {
 
     /// Writes `data` over `url`, atomically, keeping the existing file's permission bits

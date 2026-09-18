@@ -23,13 +23,15 @@ dead-code and risk-pattern scans, docs drift). **Line-by-line logic review of th
 
 Fixed, each pinned by a test that fails against the old code:
 
-- **`replaceAll` stripped the executable bit and the byte-order mark.** `Data.write(.atomic)` renames a
-  fresh file over the original and, measured on macOS 26, the new inode carries default permissions
-  (`755` → `644`): a Replace All turned every matching shell script into a plain file. And
-  `String(data:encoding:)` strips a UTF-8 BOM, so the rewrite never put it back. `FileRewrite.write`
-  replaces through `FileManager.replaceItemAt` (keeps mode and extended attributes) and
-  `TextFileContents` / `TextFileEncoding` carry the BOM and encoding back out. `readTextFile` now
-  returns `TextFileContents`; the app's targeted replace and `Document.save` go through the same two.
+- **`replaceAll` dropped the byte-order mark, every extended attribute, and a hard-linked file's
+  executable bit.** `String(data:encoding:)` strips a UTF-8 BOM, so the rewrite never put it back.
+  `Data.write(.atomic)` renames a fresh file over the original and, measured on macOS 26, loses the
+  xattrs (Finder tags and comments) every time and the permission bits when the file has a second hard
+  link (`755` → `644`; a plain file keeps its mode — the first measurement had a hard link, which is
+  why the claim was briefly "every script"). `FileRewrite.write` replaces through
+  `FileManager.replaceItemAt` (mode and xattrs kept in every case) and `TextFileContents` /
+  `TextFileEncoding` carry the BOM and encoding back out. `readTextFile` now returns
+  `TextFileContents`; the app's targeted replace and `Document.save` go through the same two.
 - **`IgnorePattern` had no POSIX bracket classes** — `[[:alpha:]]*.log` parsed as an ordinary class
   of `[`, `:`, `a`… followed by a literal `]`. Found by `IgnoreGitParityTests`: ten pattern corpora
   written into real repositories, the parser-driven walk compared with `git ls-files --others
