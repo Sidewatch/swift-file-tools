@@ -41,22 +41,39 @@ final class FastDirectoryListingTests: XCTestCase {
     func testContainsStopsAtTheFirstHitAndSeesTheType() throws {
         try file("a.txt"); try file("b.png"); try dir("pics")
         var seen: [String] = []
-        let hit = FastDirectoryListing.contains(in: root) { name, isDir in
+        let hit = FastDirectoryListing.contains(in: root) { name, isDir, _ in
             seen.append(name)
             return !isDir && name.hasSuffix(".png")
         }
         XCTAssertTrue(hit)
         XCTAssertTrue(seen.contains("b.png"))
-        XCTAssertFalse(FastDirectoryListing.contains(in: root) { _, isDir in isDir && false })
-        XCTAssertTrue(FastDirectoryListing.contains(in: root) { name, isDir in isDir && name == "pics" })
+        XCTAssertFalse(FastDirectoryListing.contains(in: root) { _, isDir, _ in isDir && false })
+        XCTAssertTrue(FastDirectoryListing.contains(in: root) { name, isDir, _ in isDir && name == "pics" })
+    }
+
+    /// A symlink is reported as one, resolved or dangling, so a caller can agree with a listing
+    /// that drops links (the gallery's does); a dangling link is neither a directory nor a file.
+    func testContainsReportsSymbolicLinks() throws {
+        try file("real.png")
+        try FileManager.default.createSymbolicLink(at: root.appendingPathComponent("alias.png"), withDestinationURL: root.appendingPathComponent("real.png"))
+        try FileManager.default.createSymbolicLink(at: root.appendingPathComponent("gone.jpg"), withDestinationURL: root.appendingPathComponent("missing.jpg"))
+        var links: [String] = [], plain: [String] = []
+        _ = FastDirectoryListing.contains(in: root) { name, isDir, isLink in
+            if isLink { links.append(name) } else if !isDir { plain.append(name) }
+            return false
+        }
+        XCTAssertEqual(Set(links), ["alias.png", "gone.jpg"])
+        XCTAssertEqual(plain, ["real.png"])
+        XCTAssertTrue(FastDirectoryListing.contains(in: root) { name, isDir, isLink in !isDir && !isLink && name.hasSuffix(".png") })
+        XCTAssertFalse(FastDirectoryListing.contains(in: root) { name, isDir, isLink in !isDir && !isLink && name.hasSuffix(".jpg") })
     }
 
     func testContainsHonoursHiddenAndSkippedNamesAndAMissingFolder() throws {
         try file(".secret.png"); try file("node_modules")
-        XCTAssertFalse(FastDirectoryListing.contains(in: root) { name, _ in name.hasSuffix(".png") })
-        XCTAssertTrue(FastDirectoryListing.contains(in: root, includeHidden: true) { name, _ in name.hasSuffix(".png") })
-        XCTAssertFalse(FastDirectoryListing.contains(in: root, skipping: ["node_modules"]) { name, _ in name == "node_modules" })
-        XCTAssertFalse(FastDirectoryListing.contains(in: root.appendingPathComponent("nope")) { _, _ in true })
+        XCTAssertFalse(FastDirectoryListing.contains(in: root) { name, _, _ in name.hasSuffix(".png") })
+        XCTAssertTrue(FastDirectoryListing.contains(in: root, includeHidden: true) { name, _, _ in name.hasSuffix(".png") })
+        XCTAssertFalse(FastDirectoryListing.contains(in: root, skipping: ["node_modules"]) { name, _, _ in name == "node_modules" })
+        XCTAssertFalse(FastDirectoryListing.contains(in: root.appendingPathComponent("nope")) { _, _, _ in true })
     }
 
     /// The reason the scan exists: `list` sorts, and on ten thousand entries that is the
@@ -65,7 +82,7 @@ final class FastDirectoryListingTests: XCTestCase {
     func testContainsAnswersTenThousandEntriesInMilliseconds() throws {
         for i in 0..<10_000 { try file("f\(i).txt") }
         let t0 = Date()
-        let any = FastDirectoryListing.contains(in: root) { name, _ in name.hasSuffix(".png") }
+        let any = FastDirectoryListing.contains(in: root) { name, _, _ in name.hasSuffix(".png") }
         let ms = Date().timeIntervalSince(t0) * 1000
         XCTAssertFalse(any)
         XCTAssertLessThan(ms, 50, "a no-hit scan of 10,000 entries took \(ms) ms")

@@ -109,13 +109,15 @@ public enum FastDirectoryListing {
     ///   - directory: the folder to scan.
     ///   - includeHidden: include dot-files.
     ///   - skipping: names to drop entirely.
-    ///   - predicate: `(name, isDirectory)`; return true to stop with a yes.
+    ///   - predicate: `(name, isDirectory, isSymbolicLink)`; return true to stop with a yes. The
+    ///     link flag lets a caller agree with a listing that drops symlinks (a `stat`-resolved
+    ///     dangling link reads as "not a directory", which is not "a regular file").
     /// - Returns: true on the first entry the predicate accepts; false otherwise, or if the
     ///   directory can't be opened.
     public static func contains(in directory: URL,
                                 includeHidden: Bool = false,
                                 skipping: Set<String> = [],
-                                where predicate: (_ name: String, _ isDirectory: Bool) -> Bool) -> Bool {
+                                where predicate: (_ name: String, _ isDirectory: Bool, _ isSymbolicLink: Bool) -> Bool) -> Bool {
         guard let dir = opendir(directory.path) else { return false }
         defer { closedir(dir) }
         while let raw = readdir(dir) {
@@ -127,14 +129,18 @@ public enum FastDirectoryListing {
             if !includeHidden, name.hasPrefix(".") { continue }
             if skipping.contains(name) { continue }
             let isDir: Bool
+            var isLink = false
             switch Int32(ent.d_type) {
             case DT_DIR: isDir = true
             case DT_REG: isDir = false
             default:
+                let path = directory.appendingPathComponent(name).path
                 var st = stat()
-                isDir = stat(directory.appendingPathComponent(name).path, &st) == 0 && (st.st_mode & S_IFMT) == S_IFDIR
+                isDir = stat(path, &st) == 0 && (st.st_mode & S_IFMT) == S_IFDIR
+                var lst = stat()
+                isLink = lstat(path, &lst) == 0 && (lst.st_mode & S_IFMT) == S_IFLNK
             }
-            if predicate(name, isDir) { return true }
+            if predicate(name, isDir, isLink) { return true }
         }
         return false
     }
