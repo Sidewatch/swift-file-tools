@@ -97,4 +97,45 @@ public enum FastDirectoryListing {
             return $0.sortKey.localizedStandardCompare($1.sortKey) == .orderedAscending
         }
     }
+
+    /// Whether any entry of `directory` satisfies `predicate` — a yes/no scan that stops at
+    /// the first hit and never sorts. `list` pays a `localizedStandardCompare` sort, ~100 ms
+    /// on ten thousand entries, which a gate ("does this folder hold a media file?") does not
+    /// need; this answers the same folder in a few milliseconds, and the FIRST hit in a
+    /// folder of photos in microseconds. The predicate sees the entry's name and whether it
+    /// is a directory (symlinks resolved, as `list` does).
+    ///
+    /// - Parameters:
+    ///   - directory: the folder to scan.
+    ///   - includeHidden: include dot-files.
+    ///   - skipping: names to drop entirely.
+    ///   - predicate: `(name, isDirectory)`; return true to stop with a yes.
+    /// - Returns: true on the first entry the predicate accepts; false otherwise, or if the
+    ///   directory can't be opened.
+    public static func contains(in directory: URL,
+                                includeHidden: Bool = false,
+                                skipping: Set<String> = [],
+                                where predicate: (_ name: String, _ isDirectory: Bool) -> Bool) -> Bool {
+        guard let dir = opendir(directory.path) else { return false }
+        defer { closedir(dir) }
+        while let raw = readdir(dir) {
+            var ent = raw.pointee
+            let name = withUnsafePointer(to: &ent.d_name) {
+                String(cString: UnsafeRawPointer($0).assumingMemoryBound(to: CChar.self))
+            }
+            if name == "." || name == ".." { continue }
+            if !includeHidden, name.hasPrefix(".") { continue }
+            if skipping.contains(name) { continue }
+            let isDir: Bool
+            switch Int32(ent.d_type) {
+            case DT_DIR: isDir = true
+            case DT_REG: isDir = false
+            default:
+                var st = stat()
+                isDir = stat(directory.appendingPathComponent(name).path, &st) == 0 && (st.st_mode & S_IFMT) == S_IFDIR
+            }
+            if predicate(name, isDir) { return true }
+        }
+        return false
+    }
 }
