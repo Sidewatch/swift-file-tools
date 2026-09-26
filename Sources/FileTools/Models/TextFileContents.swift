@@ -34,6 +34,13 @@ public struct TextFileContents: Sendable {
     /// Decodes `data` as text, or nil when it is binary: a NUL in the first 8,000 bytes,
     /// or bytes that are neither UTF-8 nor decodable as Latin-1. A UTF-8 BOM is removed
     /// from the text and remembered in ``encoding``.
+    /// Reads and decodes the file at `url` as ``init(data:)`` does; nil when it cannot be read
+    /// or is binary.
+    public init?(contentsOf url: URL) {
+        guard let data = try? Data(contentsOf: url) else { return nil }
+        self.init(data: data)
+    }
+
     public init?(data: Data) {
         if data.prefix(Self.sniffLength).contains(0) { return nil }
         let bom = TextFileEncoding.utf8ByteOrderMark
