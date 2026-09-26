@@ -10,6 +10,7 @@
 //
 
 import Foundation
+import FoundationExtensions
 
 /// An ordered stack of ``IgnoreFile``s, from the scan root down to the
 /// directory currently being visited, that together answer "is this path

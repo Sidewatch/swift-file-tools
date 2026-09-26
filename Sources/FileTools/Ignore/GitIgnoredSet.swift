@@ -12,6 +12,8 @@
 //
 
 import Foundation
+import ProcessRunner
+import FoundationExtensions
 
 /// The exact set of ignored files and directories in a git working tree, as
 /// reported by `git ls-files`.
@@ -94,61 +96,16 @@ public struct GitIgnoredSet: Sendable {
 
     private static let timeout: TimeInterval = 10
 
-    /// Launches `git` via `/usr/bin/env` (so it's found on the caller's PATH
-    /// regardless of where this process itself lives) and returns its stdout,
-    /// or `nil` on any failure — including a `root` that isn't a git work tree,
-    /// which makes `git ls-files` exit non-zero.
+    /// Launches `git` via `/usr/bin/env` (so it's found on the caller's PATH regardless of
+    /// where this process itself lives) and returns its stdout, or `nil` on any failure —
+    /// including a `root` that isn't a git work tree, which makes `git ls-files` exit non-zero,
+    /// and a git that hangs past `timeout`.
     private static func run(root: URL) -> String? {
-        let process = Process()
-        process.executableURL = URL(fileURLWithPath: "/usr/bin/env")
-        process.arguments = ["git", "-C", root.path, "ls-files", "-z",
-                              "--others", "--ignored", "--exclude-standard", "--directory"]
-
-        let stdout = Pipe()
-        let stderr = Pipe()
-        process.standardOutput = stdout
-        process.standardError = stderr
-
-        do {
-            try process.run()
-        } catch {
-            return nil
-        }
-
-        // Drain both pipes on background queues so a full stderr buffer can't
-        // deadlock a git that's still trying to write to it, then bound the
-        // whole read by `timeout` — a hang (rather than a clean exit) is the
-        // one case `waitUntilExit()` alone can't protect against. The box is
-        // only ever written before, and read after, `outDone.wait()` returns,
-        // so the semaphore is the (compiler-invisible) synchronization.
-        let outQueue = DispatchQueue(label: "GitIgnoredSet.stdout")
-        let errQueue = DispatchQueue(label: "GitIgnoredSet.stderr")
-        let box = DataBox()
-        let outDone = DispatchSemaphore(value: 0)
-        outQueue.async {
-            box.data = stdout.fileHandleForReading.readDataToEndOfFile()
-            outDone.signal()
-        }
-        errQueue.async {
-            _ = stderr.fileHandleForReading.readDataToEndOfFile()
-        }
-
-        guard outDone.wait(timeout: .now() + timeout) == .success else {
-            process.terminate()
-            return nil
-        }
-        process.waitUntilExit()
-        guard process.terminationStatus == 0 else { return nil }
-
-        return box.data.utf8String
+        let result = ProcessRunner.run("/usr/bin/env",
+                                       ["git", "-C", root.path, "ls-files", "-z",
+                                        "--others", "--ignored", "--exclude-standard", "--directory"],
+                                       augmentPATH: false, timeout: timeout)
+        guard result.succeeded else { return nil }
+        return result.stdout.utf8String
     }
-}
-
-/// A one-shot mutable box for handing `Data` from the background read queue
-/// back to `run(root:)`. Marked `@unchecked` because the actual safety
-/// guarantee — write happens-before the `DispatchSemaphore` signal, read
-/// happens-after its `wait()` returns — isn't something the compiler's
-/// concurrency checker can see.
-private final class DataBox: @unchecked Sendable {
-    var data = Data()
 }
