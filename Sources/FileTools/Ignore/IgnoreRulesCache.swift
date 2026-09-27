@@ -11,7 +11,7 @@
 
 import Foundation
 
-/// Per-root cache with a short lifetime: a search re-runs on every keystroke and must not
+/// Per-root cache of ``IgnoreRules`` with a short lifetime: a search re-runs on every keystroke and must not
 /// spawn `git` each time, yet a `.gitignore` edit should be noticed within seconds. Hosts
 /// that watch the tree can call ``invalidate(root:)`` the moment an ignore file changes.
 public enum IgnoreRulesCache {
@@ -23,6 +23,7 @@ public enum IgnoreRulesCache {
     /// How long a loaded set stays fresh without an explicit invalidation.
     nonisolated(unsafe) public static var lifetime: TimeInterval = 10
 
+    /// The rules for `root`, loaded (running `git` once) when absent or older than ``lifetime``.
     public static func rules(for root: URL, fileManager: FileManager = .default) -> IgnoreRules {
         let key = root.standardizedFileURL
         lock.lock()
@@ -42,5 +43,6 @@ public enum IgnoreRulesCache {
         lock.unlock()
     }
 
+    /// Drops every cached set.
     public static func invalidateAll() { lock.lock(); entries = [:]; generation &+= 1; lock.unlock() }
 }

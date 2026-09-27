@@ -12,23 +12,17 @@ import Foundation
 
 /// A single directory listing, cheap enough to run on the main thread.
 ///
-/// `FileManager.contentsOfDirectory(at:includingPropertiesForKeys:)` prefetching
-/// `.isDirectoryKey` costs a `getattrlist` per entry: on a real 10,068-file folder
-/// that measured **255 ms**, which is a visible hang when it happens on an outline
-/// view's expand. `readdir` reports the entry type in `d_type` as part of the same
-/// pass it already makes, so the same listing takes **5 ms** — a 50× difference for
-/// identical output. That's the whole reason this exists.
-///
-/// - Note: The fast path is only taken when `d_type` is conclusive. `DT_LNK` and
-///   `DT_UNKNOWN` fall back to a `stat` for that one entry, so symlinked
-///   directories still report as directories (`node_modules/.bin` and pnpm's store
-///   are full of them, and getting it wrong would make them un-expandable) and
-///   filesystems that don't populate `d_type` still work.
+/// `FileManager.contentsOfDirectory` with `.isDirectoryKey` costs a `getattrlist` per entry
+/// (255 ms on a 10,068-file folder); `readdir`'s `d_type` gives the same answer in 5 ms.
+/// `DT_LNK` and `DT_UNKNOWN` fall back to a `stat` for that entry, so symlinked directories
+/// still expand and filesystems without `d_type` still work.
 public enum FastDirectoryListing {
 
     /// One entry: its URL and whether it is a directory (symlinks resolved).
     public struct Entry: Sendable, Equatable {
+        /// The entry's location.
         public let url: URL
+        /// Whether it is, or links to, a directory.
         public let isDirectory: Bool
         /// Whether the entry itself is a symbolic link. `isDirectory` already says what it
         /// points at; a recursive walker needs this to stop at the link — a symlinked
@@ -38,6 +32,7 @@ public enum FastDirectoryListing {
         /// per comparison does it O(n log n) times instead of O(n).
         public let sortKey: String
 
+        /// Creates an entry.
         public init(url: URL, isDirectory: Bool, isSymbolicLink: Bool = false, sortKey: String) {
             self.url = url
             self.isDirectory = isDirectory
@@ -46,17 +41,9 @@ public enum FastDirectoryListing {
         }
     }
 
-    /// Lists `directory`, directories first then names in Finder order.
-    ///
-    /// Finder order means `localizedStandardCompare`: case-insensitive *and*
-    /// natural-numeric, so `file2` sorts before `file10`. A plain `<` would be
-    /// faster still but gets both wrong.
-    ///
-    /// - Parameters:
-    ///   - directory: the folder to list.
-    ///   - includeHidden: include dot-files.
-    ///   - skipping: names to drop entirely (e.g. `node_modules`, `.git`).
-    /// - Returns: the sorted entries, or `[]` if the directory can't be opened.
+    /// Lists `directory`, directories first then names in Finder order (`localizedStandardCompare`:
+    /// case-insensitive and natural-numeric, so `file2` precedes `file10`). Names in `skipping`
+    /// are dropped; empty when the directory can't be opened.
     public static func list(_ directory: URL,
                             includeHidden: Bool = false,
                             skipping: Set<String> = []) -> [Entry] {
@@ -99,22 +86,11 @@ public enum FastDirectoryListing {
         }
     }
 
-    /// Whether any entry of `directory` satisfies `predicate` — a yes/no scan that stops at
-    /// the first hit and never sorts. `list` pays a `localizedStandardCompare` sort, ~100 ms
-    /// on ten thousand entries, which a gate ("does this folder hold a media file?") does not
-    /// need; this answers the same folder in a few milliseconds, and the FIRST hit in a
-    /// folder of photos in microseconds. The predicate sees the entry's name and whether it
-    /// is a directory (symlinks resolved, as `list` does).
+    /// Whether any entry of `directory` satisfies `predicate`: stops at the first hit and never
+    /// sorts, so a gate ("does this folder hold a media file?") skips `list`'s ~100 ms sort.
     ///
-    /// - Parameters:
-    ///   - directory: the folder to scan.
-    ///   - includeHidden: include dot-files.
-    ///   - skipping: names to drop entirely.
-    ///   - predicate: `(name, isDirectory, isSymbolicLink)`; return true to stop with a yes. The
-    ///     link flag lets a caller agree with a listing that drops symlinks (a `stat`-resolved
-    ///     dangling link reads as "not a directory", which is not "a regular file").
-    /// - Returns: true on the first entry the predicate accepts; false otherwise, or if the
-    ///   directory can't be opened.
+    /// - Parameter predicate: `(name, isDirectory, isSymbolicLink)`, symlinks resolved as `list`
+    ///   does; the link flag lets a caller agree with a listing that drops symlinks.
     public static func contains(in directory: URL,
                                 includeHidden: Bool = false,
                                 skipping: Set<String> = [],

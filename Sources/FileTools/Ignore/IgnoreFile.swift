@@ -16,17 +16,9 @@
 
 import Foundation
 
-/// One parsed ignore file (`.gitignore`, `.ignore`, `.rgignore`, `.fdignore`, …),
-/// bound to the directory it lives in.
-///
-/// ```swift
-/// let text = try String(contentsOf: url, encoding: .utf8)
-/// let file = IgnoreFile(text: text, directory: "src/vendor")
-/// ```
-///
-/// An `IgnoreFile` on its own only knows about its own patterns; combining
-/// several files from root to leaf with correct precedence is ``IgnoreStack``'s
-/// job.
+/// One parsed ignore file (`.gitignore`, `.ignore`, `.rgignore`, `.fdignore`, …), bound to the
+/// directory it lives in. It knows only its own patterns; combining files from root to leaf
+/// with the right precedence is ``IgnoreStack``'s job.
 public struct IgnoreFile: Sendable, Equatable {
 
     /// This file's directory, relative to the scan root, `/`-separated with no

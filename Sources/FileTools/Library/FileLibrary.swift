@@ -20,11 +20,13 @@ public struct FileLibrary: Sendable {
     public struct Entry: Equatable, Sendable {
         /// The file name without its extension.
         public let title: String
+        /// The file on disk.
         public let url: URL
         /// Project entries sort first and are labelled: which one you are about to use matters
         /// more than its name when a project overrides a global default.
         public let isProject: Bool
 
+        /// Creates an entry.
         public init(title: String, url: URL, isProject: Bool) {
             self.title = title
             self.url = url
@@ -32,12 +34,14 @@ public struct FileLibrary: Sendable {
         }
     }
 
+    /// The library shared by every project, such as a folder in Application Support.
     public let globalDirectory: URL
     /// The extension every entry has, without the dot (`http`, `md`).
     public let fileExtension: String
     /// Where a project keeps its own entries, relative to its root (`.sidewatch/http`).
     public let projectSubpath: String
 
+    /// A library of `fileExtension` files; the extension is matched case-insensitively.
     public init(globalDirectory: URL, fileExtension: String, projectSubpath: String) {
         self.globalDirectory = globalDirectory
         self.fileExtension = fileExtension.lowercased()

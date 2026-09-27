@@ -14,6 +14,7 @@ import Foundation
 /// The ignore decision for one scan root. Build one with ``load(root:)`` (runs `git`
 /// once), then hand each directory's ``IgnoreStack`` down the walk.
 public struct IgnoreRules: Sendable {
+    /// The scan root every relative path is measured from.
     public let root: URL
     /// Git's own answer for a work tree; nil for a plain folder.
     public let git: GitIgnoredSet?
@@ -21,6 +22,7 @@ public struct IgnoreRules: Sendable {
     /// answering, only the non-git ones when it is (git already applied `.gitignore`).
     public let perDirectoryFileNames: [String]
 
+    /// Rules for `root`; pass nil for `git` when the folder is not a work tree.
     public init(root: URL, git: GitIgnoredSet?) {
         self.root = root
         self.git = git

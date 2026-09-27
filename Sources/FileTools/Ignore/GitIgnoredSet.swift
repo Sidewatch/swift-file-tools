@@ -16,23 +16,11 @@ import Foundation
 import ProcessRunner
 import FoundationExtensions
 
-/// The exact set of ignored files and directories in a git working tree, as
-/// reported by `git ls-files`.
+/// The exact set of ignored files and directories in a git working tree, as reported by
+/// `git ls-files`: the preferred answer inside a checkout, since it IS git's behaviour.
 ///
-/// This is the preferred path inside a git checkout: it can't drift from
-/// git's own behaviour, because it IS git's own behaviour. ``IgnoreFile`` /
-/// ``IgnoreStack`` remain necessary for two other cases: a folder that isn't a
-/// git checkout at all, and `.ignore`/`.rgignore`/`.fdignore` files, which
-/// this git-backed path never sees (git only ever reads `.gitignore` and its
-/// own exclude files).
-///
-/// ```swift
-/// guard let ignored = GitIgnoredSet.load(root: projectRoot) else {
-///     // not a git checkout (or git failed) — fall back to IgnoreStack
-///     return
-/// }
-/// ignored.isIgnored(relativePath: "build/output.log", isDirectory: false)
-/// ```
+/// ``IgnoreStack`` still covers folders that are not checkouts and the `.ignore`/`.rgignore`/
+/// `.fdignore` files git never reads.
 public struct GitIgnoredSet: Sendable {
 
     /// Ignored regular files (and non-directory entries), as relative paths
@@ -44,25 +32,17 @@ public struct GitIgnoredSet: Sendable {
     /// rather than listing its contents.
     private let directories: Set<String>
 
+    /// A set from already-parsed `git ls-files` entries.
     init(files: Set<String>, directories: Set<String>) {
         self.files = files
         self.directories = directories
     }
 
-    /// Runs `git -C <root> ls-files -z --others --ignored --exclude-standard
-    /// --directory` and parses its output.
+    /// Runs `git -C <root> ls-files -z --others --ignored --exclude-standard --directory` and
+    /// parses its output. `fileManager` is unused, accepted for parity with ``IgnoreStack``'s loader.
     ///
-    /// - Parameters:
-    ///   - root: The git working tree's root (or any directory inside it —
-    ///     `-C` makes git find the tree itself).
-    ///   - fileManager: Unused directly (git does its own filesystem access);
-    ///     accepted for parity with ``IgnoreStack/load(directory:relativeDirectory:fileManager:)``
-    ///     and so a caller can swap in a different manager without two call
-    ///     shapes to remember.
-    /// - Returns: `nil` if `git` can't be found, `root` isn't inside a work
-    ///   tree, the process fails or times out (10 seconds), or its output
-    ///   isn't valid UTF-8 — any of which mean "no exact answer available,
-    ///   fall back to ``IgnoreStack``".
+    /// - Returns: nil when git is missing, `root` is not in a work tree, the process fails or
+    ///   times out (10 seconds), or the output is not UTF-8: fall back to ``IgnoreStack``.
     public static func load(root: URL, fileManager: FileManager = .default) -> GitIgnoredSet? {
         guard let output = run(root: root) else { return nil }
         var files: Set<String> = []
@@ -77,15 +57,9 @@ public struct GitIgnoredSet: Sendable {
         return GitIgnoredSet(files: files, directories: directories)
     }
 
-    /// Whether `relativePath` is ignored: it is itself a listed file, itself a
-    /// listed directory, or lies beneath a listed directory.
-    ///
-    /// - Parameters:
-    ///   - relativePath: `/`-separated path from `root`, no leading slash.
-    ///   - isDirectory: Accepted for symmetry with ``IgnoreStack/isIgnored(relativePath:isDirectory:)``;
-    ///     not required for correctness here, since git's own `--directory`
-    ///     output already disambiguates files from directories via the
-    ///     trailing slash.
+    /// Whether `relativePath` (`/`-separated, no leading slash) is a listed file, a listed
+    /// directory, or beneath one. `isDirectory` is unused, accepted for symmetry with
+    /// ``IgnoreStack/isIgnored(relativePath:isDirectory:)``: git's trailing slash already tells.
     public func isIgnored(relativePath: String, isDirectory: Bool) -> Bool {
         if files.contains(relativePath) { return true }
         if directories.contains(relativePath) { return true }

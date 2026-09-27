@@ -11,17 +11,10 @@
 
 import Foundation
 
-/// Fast recursive project-wide text search.
+/// Fast recursive project-wide text search and replace.
 ///
-/// Runs synchronously on whatever queue it's called from — callers should
-/// dispatch it to the background. Noise directories (see ``SkippedDirs``),
-/// oversized files and binary files are skipped automatically.
-///
-/// ```swift
-/// let hits = ProjectSearch.search(query: "TODO", in: root,
-///                                 caseSensitive: false, regex: false,
-///                                 isCancelled: { false })
-/// ```
+/// Runs synchronously on the calling queue, so dispatch it to the background. Noise directories
+/// (``SkippedDirs``), oversized files and binary files are skipped.
 public enum ProjectSearch {
     /// Files bigger than this are skipped (likely generated/minified/lock files).
     private static let maxFileBytes = 2_000_000
@@ -30,19 +23,9 @@ public enum ProjectSearch {
     /// Per-file cap; scanning of a file stops once it is reached.
     private static let maxMatchesPerFile = 200
 
-    /// Recursively searches `root` for `query`.
-    ///
-    /// - Parameters:
-    ///   - query: The text (or regular-expression pattern) to search for. An
-    ///     empty query returns no results.
-    ///   - root: The directory to search.
-    ///   - caseSensitive: Whether matching is case-sensitive.
-    ///   - regex: When `true`, `query` is treated as a regular expression; an
-    ///     invalid pattern yields no results.
-    ///   - isCancelled: Polled between files; return `true` to stop early.
-    /// - Returns: One ``SearchFileResult`` per matching file, sorted by path.
-    /// - Note: Performs blocking file I/O for the whole walk — dispatch to a
-    ///   background queue when searching a large project.
+    /// Recursively searches `root` for `query`: one ``SearchFileResult`` per matching file,
+    /// sorted by path. An empty query or an invalid regex yields nothing; `isCancelled` is
+    /// polled between files, `include` filters files and `onProgress` gets the running count.
     public static func search(
         query: String,
         in root: URL,
@@ -137,26 +120,19 @@ public enum ProjectSearch {
         return n
     }
 
-    /// Walks `root` for regular files, cheaply. `FileManager.enumerator` costs a
-    /// `getattrlist` per entry and this used to add two `resourceValues` calls on
-    /// top — 255 ms of walking a 10k-file folder before a byte was read (the same
-    /// measurement that put `FastDirectoryListing` under the sidebar). This reads
-    /// `d_type` from the directory listing and one `lstat` per entry for the size
-    /// and the regular-file check; symlinks are skipped both ways (a symlinked
-    /// file would bypass the size cap through `Data(contentsOf:)`, a symlinked
-    /// directory could loop). The skip list is dropped as before; hidden entries follow
-    /// ``includeHiddenFiles``. `body` returns false to stop.
     /// Honour `.gitignore` / `.ignore` / `.rgignore` / `.fdignore` (see ``IgnoreRules``) —
     /// on by default, as in ripgrep and fd. A host exposes this as a preference.
     nonisolated(unsafe) public static var respectIgnoreFiles = true
 
-    /// Walk dot-files and dot-directories too (`.env`, `.github/workflows`, `.claude/`).
-    /// Off by default, as in ripgrep and fd without `--hidden`; a host whose file tree shows
-    /// hidden files sets this from the same preference, so what the tree lists is what search
-    /// covers. The name skip list (`.git`, `.svn`, …) and the ignore files still apply on top,
-    /// exactly as they do to visible files.
+    /// Walk dot-files and dot-directories too (`.env`, `.github/workflows`). Off by default, as
+    /// in ripgrep and fd without `--hidden`; a host sets it from the same preference as its file
+    /// tree. The name skip list and the ignore files still apply on top.
     nonisolated(unsafe) public static var includeHiddenFiles = false
 
+    /// Walks `root` for regular files, cheaply: `d_type` from the listing plus one `lstat` per
+    /// entry, not `FileManager.enumerator`'s `getattrlist` per entry. Symlinks are skipped both
+    /// ways (a linked file would bypass the size cap, a linked directory could loop). `body`
+    /// returns false to stop.
     private static func walkRegularFiles(in root: URL, isCancelled: () -> Bool,
                                          include: ((URL) -> Bool)?,
                                          body: (URL, Int) -> Bool) {
@@ -191,12 +167,9 @@ public enum ProjectSearch {
         }
     }
 
-    /// The single walker behind `search` and `replaceAll`: every regular text file
-    /// under `root` that passes the skip list, the size cap and the binary sniff,
-    /// decoded as UTF-8 else Latin-1 (``TextFileContents``, so a rewrite round-trips
-    /// the original encoding and byte-order mark). `onProgress` receives the running
-    /// count of files considered — including ones the size cap then skips, so it
-    /// climbs to the candidate total.
+    /// The single walker behind `search` and `replaceAll`: every regular text file under `root`
+    /// that passes the skip list, the size cap and the binary sniff, as ``TextFileContents``.
+    /// `onProgress` counts files the size cap skips too, so it climbs to the candidate total.
     private static func enumerateTextFiles(
         in root: URL,
         isCancelled: () -> Bool,
@@ -215,17 +188,10 @@ public enum ProjectSearch {
         }
     }
 
-    /// Whole-file pre-check: returns a predicate that is `true` when a file's
-    /// text MIGHT contain a match and `false` only when it certainly contains
-    /// none — so the (typical) all-miss files skip the per-line walk and its
-    /// per-line String/NSString allocations entirely. Literal mode is a single
-    /// contiguous whole-text search, which can only over-admit (e.g. a query
-    /// containing `\n` passes here but the line walk still finds nothing). Regex
-    /// mode recompiles the pattern with `.anchorsMatchLines` so `^`/`$` keep
-    /// their per-line meaning; that variant over-admits but never under-admits —
-    /// EXCEPT for `\A`/`\z`/`\Z` and negative lookaround, whose meaning genuinely
-    /// differs between a line substring and the whole text, so patterns
-    /// containing them skip the pre-check and keep the plain per-line walk.
+    /// Whole-file pre-check: a predicate that is false only when a file's text certainly holds
+    /// no match, so the typical all-miss file skips the per-line walk. It may over-admit, never
+    /// under-admit: regex mode recompiles with `.anchorsMatchLines`, and patterns using
+    /// `\A`/`\z`/`\Z` or negative lookaround (whose meaning differs on the whole text) skip it.
     private static func prefilter(
         query: String,
         caseSensitive: Bool,
@@ -293,31 +259,12 @@ public enum ProjectSearch {
 
     // MARK: - Replace
 
-    /// Replaces every match of `query` with `replacement` across every searchable
-    /// file under `root`. **Destructive** — the caller is expected to confirm first,
-    /// ideally by first calling with `commit: false` (a dry run) to get the exact
-    /// count it then confirms against.
-    ///
-    /// Matching mirrors ``search(query:in:caseSensitive:regex:isCancelled:)`` exactly:
-    /// the same file set, and the regex is applied **per line** (each line without its
-    /// terminator), so `^`/`$` anchor to line boundaries and no pattern can consume a
-    /// newline — a replace can therefore never touch or collapse content the search
-    /// preview didn't surface. In regex mode `replacement` is an `NSRegularExpression`
-    /// template (`$1`, `$2`, … expand); in literal mode it is inserted verbatim. A
-    /// rewritten file keeps its original encoding (UTF-8, else Latin-1), its byte-order
-    /// mark and its permission bits (``FileRewrite``).
-    ///
-    /// - Parameters:
-    ///   - query: The literal text or regex pattern (same as search — whole-word is
-    ///     the caller's `\b(?:…)\b` regex wrap).
-    ///   - replacement: The replacement text (regex template when `regex` is true).
-    ///   - commit: When `false`, nothing is written — the returned summary is a dry
-    ///     run reporting exactly what a `commit: true` call would change.
-    ///   - isCancelled: Polled between files; return `true` to stop early. Files
-    ///     already written stay written.
-    /// - Returns: A ``ReplaceSummary`` of files changed (or that would change), total
-    ///   replacements, and files that matched but could not be written.
-    /// - Note: Blocking file I/O for the whole walk — dispatch to the background.
+    /// Replaces every match of `query` across every searchable file under `root`.
+    /// **Destructive**: call with `commit: false` first for a dry run whose counts equal what
+    /// the commit writes. Matching is exactly `search`'s, per line, so no pattern can consume a
+    /// newline the preview didn't show; in regex mode `replacement` is a template (`$1`).
+    /// A rewritten file keeps its encoding, byte-order mark and permissions (``FileRewrite``);
+    /// files written before a cancellation stay written.
     public static func replaceAll(
         query: String,
         in root: URL,

@@ -11,25 +11,13 @@
 
 import Foundation
 
-/// Detects a SUSTAINED flood of file-system change events and names the folder
-/// it comes from, so a host can show the fact — "248 changes/s under
-/// wp-content/cache/object" — and hand the user the lever (the skip list),
-/// instead of silently spending CPU, memory and git spawns keeping up with a
-/// cache directory.
+/// Detects a SUSTAINED flood of file-system change events and names the folder it comes from
+/// ("248 changes/s under wp-content/cache/object"), so a host can offer the skip list instead of
+/// silently keeping up with a cache directory. Feed it batches after the skip-list filter.
 ///
-/// Feed it every batch the watcher delivers (after the skip-list filter — a
-/// folder already skipped is not a problem worth reporting) and ask for the
-/// current ``Storm`` whenever you would show one. Pure and clock-injected, so
-/// the thresholds are testable without a file system.
-///
-/// **The rule, with the judgement written down.** Events are bucketed per
-/// second. A storm is ``hotSeconds`` (3) of the last ``window`` (5) seconds
-/// each holding at least ``perSecond`` (60) events. *Sustained* is the point:
-/// a `git checkout` that touches two thousand files lands in one or two seconds
-/// and is not a storm, while a cache writer at a hundred files a second is one
-/// after three. A storm's ``Storm/folder`` is the DEEPEST directory holding at
-/// least ``share`` (80%) of the window's events — `wp-content/cache/object`,
-/// not `wp-content` — and nil when the events are spread across the root.
+/// A storm is ``hotSeconds`` of the last ``window`` seconds each holding ``perSecond`` events, so a
+/// one-second `git checkout` is not one. ``Storm/folder`` is the DEEPEST directory holding
+/// ``share`` of the window's events. Pure and clock-injected.
 public struct DiskStormDetector: Sendable {
 
     /// A sustained flood in progress.
@@ -54,10 +42,9 @@ public struct DiskStormDetector: Sendable {
             return folder.path.hasPrefix(r) ? String(folder.path.dropFirst(r.count)) : folder.lastPathComponent
         }
 
-        /// The folder's own name and each ancestor's, up to but not including
-        /// the root, deepest first — the candidates for "skip folders named …".
-        /// The USER picks the level; the detector does not guess which name is
-        /// safe to skip everywhere. Empty when there is no folder.
+        /// The folder's own name and each ancestor's below the root, deepest first: the
+        /// candidates for "skip folders named …". The user picks the level; the detector does
+        /// not guess which name is safe to skip everywhere.
         public var ancestorNames: [String] {
             relativeFolder.split(separator: "/").map(String.init).reversed()
         }
@@ -83,6 +70,7 @@ public struct DiskStormDetector: Sendable {
     /// Live buckets keyed by whole seconds since the reference date.
     private var buckets: [Int: Bucket] = [:]
 
+    /// A detector with the default thresholds and an empty window.
     public init() {}
 
     /// Records one watcher batch. `roots` are the watched folders (primary and

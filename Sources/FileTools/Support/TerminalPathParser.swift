@@ -20,9 +20,13 @@ public enum TerminalPathParser {
     /// A parsed file reference: a path plus the optional 1-based line and column that
     /// trailed it (`file:line:col`).
     public struct Match: Equatable {
+        /// The path as printed, not yet resolved against a project.
         public let path: String
+        /// The 1-based line, when one trailed the path.
         public let line: Int?
+        /// The 1-based column, when one trailed the line.
         public let column: Int?
+        /// Creates a match.
         public init(path: String, line: Int? = nil, column: Int? = nil) {
             self.path = path; self.line = line; self.column = column
         }

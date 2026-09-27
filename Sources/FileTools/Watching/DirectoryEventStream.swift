@@ -11,21 +11,12 @@
 
 import Foundation
 
-/// Creates a stream of events using the File System Events API.
+/// A File System Events watcher over one directory tree.
 ///
-/// The stream of events is started immediately upon initialization, and will only be stopped when either `cancel`
-/// is called, or the object is deallocated. The stream is also configured to debounce notifications to happen
-/// according to the `debounceDuration` parameter. This directly corresponds with the `latency` parameter in
-/// `FSEventStreamCreate`, which will delay notifications until `latency` has passed at which point it will send all
-/// the notifications built up during that period of time.
-///
-/// Use the `callback` parameter to listen for notifications.
-/// Notifications are automatically filtered to include certain events, but the FS event API doesn't always correctly
-/// flag events so use caution when handling events as they can come frequently.
-///
-/// The `callback` function will be called with all events that happened since the last event notification,
-/// effectively batching all notifications every `debounceDuration`. This callback may not be called on a
-/// predictable dispatch queue.
+/// Starts on initialisation and stops on `cancel()` or deallocation. `debounceDuration` is
+/// `FSEventStreamCreate`'s `latency`: the callback receives every event since the last batch, on
+/// no predictable dispatch queue. FSEvents does not always flag events correctly, so treat the
+/// kinds as hints.
 public final class DirectoryEventStream {
 
     /// A callback invoked with every batch of events since the last notification.
@@ -33,11 +24,9 @@ public final class DirectoryEventStream {
 
     /// Bridges the C callback to the stream without extending its lifetime.
     ///
-    /// The FSEvents context holds an unretained pointer, so the callback must
-    /// never dereference `DirectoryEventStream` directly — a callback already
-    /// in flight when the last strong reference drops would touch freed
-    /// memory. The box is kept alive by the stream instance, and the `weak`
-    /// load safely yields `nil` once deinit has begun.
+    /// The FSEvents context holds an unretained pointer, so the callback must never dereference
+    /// the stream directly: one in flight during deinit would touch freed memory. The `weak`
+    /// load yields `nil` once deinit has begun.
     private final class CallbackBox {
         weak var owner: DirectoryEventStream?
         init(owner: DirectoryEventStream) { self.owner = owner }

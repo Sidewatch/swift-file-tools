@@ -16,12 +16,14 @@ import Foundation
 /// ``IgnoreStack`` for each directory on first use (root's files, then each level down)
 /// and caches it; rebuilds when ``IgnoreRulesCache/generation`` moves. Thread-safe.
 public final class IgnoreMatcher: @unchecked Sendable {
+    /// The standardised scan root.
     public let root: URL
     private let fileManager: FileManager
     private let lock = NSLock()
     private var stacks: [String: IgnoreStack] = [:]   // relative directory → stack in force there
     private var builtFor = -1
 
+    /// A matcher for the tree under `root`; nothing is read until the first question.
     public init(root: URL, fileManager: FileManager = .default) {
         self.root = root.standardizedFileURL
         self.fileManager = fileManager
@@ -36,6 +38,8 @@ public final class IgnoreMatcher: @unchecked Sendable {
         return String(path.dropFirst(base.count + 1))
     }
 
+    /// Whether `url` is ignored, itself or through an ignored ancestor directory; false outside
+    /// the root and for the root itself.
     public func isIgnored(url: URL, isDirectory: Bool) -> Bool {
         guard let rel = relativePath(of: url), !rel.isEmpty else { return false }
         let rules = IgnoreRulesCache.rules(for: root, fileManager: fileManager)

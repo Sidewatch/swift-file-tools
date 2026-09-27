@@ -13,34 +13,13 @@
 import Foundation
 import FoundationExtensions
 
-/// An ordered stack of ``IgnoreFile``s, from the scan root down to the
-/// directory currently being visited, that together answer "is this path
-/// ignored?" the way git does.
+/// An ordered stack of ``IgnoreFile``s, from the scan root down to the directory being
+/// visited, that answers "is this path ignored?" the way git does: within one file the LAST
+/// matching pattern decides, and a deeper file's verdict overrides a shallower one's (two files
+/// in one directory resolve by ``IgnoreFileNames/orderedNames``).
 ///
-/// Precedence follows the gitignore documentation directly: within one file
-/// the LAST matching pattern decides that file's own verdict; across the
-/// stack, a deeper file's verdict (if it has one at all) overrides a shallower
-/// file's, regardless of pattern order between the two files. Two files at the
-/// same directory level (e.g. `.gitignore` and `.ignore`, both pushed via
-/// ``load(directory:relativeDirectory:fileManager:)``) resolve the same way —
-/// the later one in ``IgnoreFileNames/orderedNames`` wins — because it simply
-/// sits deeper in the stack.
-///
-/// ```swift
-/// var stack = IgnoreStack()
-/// stack.push(rootIgnoreFile)
-/// stack.push(subdirIgnoreFile)
-/// stack.isIgnored(relativePath: "sub/build/output.log", isDirectory: false)
-/// ```
-///
-/// - Important: A `!`-negated pattern cannot re-include a file whose PARENT
-///   directory was itself excluded — git never even lists an excluded
-///   directory's contents, so patterns inside it are moot. `isIgnored` does
-///   not reconstruct that from the stack's patterns alone; it answers only for
-///   the exact path given. A caller walking a tree must itself stop descending
-///   into a directory once `isIgnored` reports it excluded, exactly mirroring
-///   what git does — this file never needs to be told which directories were
-///   already pruned.
+/// - Important: It answers only for the exact path given. A walker must stop descending into
+///   a directory reported ignored, since `!` cannot re-include a file under an excluded parent.
 public struct IgnoreStack: Sendable {
 
     private var files: [IgnoreFile]
@@ -74,7 +53,7 @@ public struct IgnoreStack: Sendable {
     }
 
     /// A copy of this stack with every file in `files` pushed, in order — for
-    /// pushing everything ``load(directory:relativeDirectory:fileManager:)``
+    /// pushing everything ``load(directory:relativeDirectory:names:fileManager:)``
     /// found in one directory at once.
     public func appending(contentsOf files: [IgnoreFile]) -> IgnoreStack {
         var copy = self
@@ -82,18 +61,9 @@ public struct IgnoreStack: Sendable {
         return copy
     }
 
-    /// Whether `relativePath` is ignored by this stack, applying git's
-    /// last-matching-pattern-wins rule across every file in the stack, root to
-    /// leaf.
-    ///
-    /// - Parameters:
-    ///   - relativePath: `/`-separated path from the scan root, no leading
-    ///     slash (e.g. `"src/build/output.log"`).
-    ///   - isDirectory: Whether the path names a directory. Required because
-    ///     directory-only patterns (a trailing `/`) never match a file.
-    /// - Returns: `true` if the last pattern (in the whole stack) that matched
-    ///   this exact path was a non-negated exclusion; `false` if it was a
-    ///   negation, or if nothing in the stack matched at all.
+    /// Whether `relativePath` (`/`-separated from the scan root, no leading slash) is ignored:
+    /// true when the last pattern in the whole stack to match it is an exclusion. `isDirectory`
+    /// matters because directory-only patterns never match a file.
     public func isIgnored(relativePath: String, isDirectory: Bool) -> Bool {
         var verdict = false
         for file in files {
@@ -104,21 +74,11 @@ public struct IgnoreStack: Sendable {
         return verdict
     }
 
-    /// Reads whichever of ``IgnoreFileNames/orderedNames`` exist directly
-    /// inside `directory`, parses each as an ``IgnoreFile`` bound to
-    /// `relativeDirectory`, and returns them in that same precedence order —
-    /// ready to hand to ``appending(contentsOf:)`` or push one at a time.
+    /// Reads whichever of `names` exist directly inside `directory`, each parsed as an
+    /// ``IgnoreFile`` bound to `relativeDirectory` (its path from the scan root), in `names` order.
     ///
-    /// A name that doesn't exist, isn't readable, or isn't valid UTF-8 is
-    /// silently skipped (an ignore file that can't be read contributes no
-    /// rules, rather than failing the whole walk).
-    ///
-    /// - Parameters:
-    ///   - directory: The directory to look in, as a filesystem `URL`.
-    ///   - relativeDirectory: That same directory's path relative to the scan
-    ///     root (what each loaded ``IgnoreFile/directory`` will be set to).
-    ///   - fileManager: The file manager to read with.
-    /// - Returns: Zero or more ``IgnoreFile``s, in ``IgnoreFileNames`` order.
+    /// A file that is missing, unreadable or not UTF-8 is skipped: it contributes no rules
+    /// rather than failing the walk.
     public static func load(directory: URL, relativeDirectory: String,
                             names: [String] = IgnoreFileNames.orderedNames,
                             fileManager: FileManager = .default) -> [IgnoreFile] {

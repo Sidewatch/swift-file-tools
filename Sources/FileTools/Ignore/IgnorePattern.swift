@@ -14,18 +14,9 @@ import Foundation
 
 /// One compiled rule from a `.gitignore`-syntax ignore file.
 ///
-/// A pattern is parsed once (`init?(line:)`) into a small set of path-segment
-/// matchers, then reused across a whole tree walk. Matching is always against a
-/// path that has already been made relative to the *pattern's own directory* —
-/// see ``IgnoreFile`` for that bookkeeping.
-///
-/// ```swift
-/// let p = IgnorePattern(line: "*.log")!
-/// p.matches(path: "build/output.log", isDirectory: false)   // true — unanchored
-/// ```
-///
-/// Matching is always case-sensitive, matching git's own behaviour on
-/// case-sensitive filesystems.
+/// Parsed once into path-segment matchers and reused across a whole tree walk. Paths are
+/// relative to the *pattern's own directory* (see ``IgnoreFile``), and matching is always
+/// case-sensitive, as git's is on case-sensitive filesystems.
 public struct IgnorePattern: Sendable, Equatable {
 
     /// The pattern's source line, exactly as read from the file (used for

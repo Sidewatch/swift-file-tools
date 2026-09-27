@@ -12,31 +12,14 @@
 
 import Foundation
 
-/// Renders a folder as an ASCII `tree` — for pasting your project structure to
-/// an agent. Skips noise directories and is bounded so a huge tree can't run away.
-///
-/// ```swift
-/// let text = FileTree.ascii(of: projectURL)
-/// // MyApp/
-/// // ├── Sources/
-/// // │   └── main.swift
-/// // └── README.md
-/// ```
+/// Renders a folder as an ASCII `tree`, for pasting a project's structure to an agent. Skips
+/// noise directories and is bounded so a huge tree can't run away.
 public enum FileTree {
 
-    /// Renders `root` and its descendants as an ASCII tree.
+    /// Renders `root` (its name the first line) and its descendants as an ASCII tree.
     ///
-    /// Directories are listed before files and sorted case-insensitively. Noise
-    /// directories (``SkippedDirs/names``, read live so a user override applies)
-    /// are omitted. Traversal stops descending past `maxDepth`, and once
-    /// `maxEntries` rows have been emitted the output is truncated with an
-    /// ellipsis row.
-    ///
-    /// - Parameters:
-    ///   - root: The directory to render. Its own name forms the first line.
-    ///   - maxDepth: The deepest level to descend into (default `8`).
-    ///   - maxEntries: The maximum number of entries to emit (default `800`).
-    /// - Returns: A newline-joined ASCII tree.
+    /// Directories come before files, sorted case-insensitively, minus ``SkippedDirs/names``.
+    /// Traversal stops past `maxDepth`, and after `maxEntries` rows an ellipsis row ends it.
     public static func ascii(of root: URL, maxDepth: Int = 8, maxEntries: Int = 800) -> String {
         var lines = [root.lastPathComponent + "/"]
         var count = 0

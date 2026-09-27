@@ -13,9 +13,8 @@ import Foundation
 /// A text file as this package decodes it: the text, and the encoding it round-trips in.
 ///
 /// The point of the type is ``TextFileEncoding/data(for:)``: a rewrite that goes back
-/// through it reproduces the file's own bytes everywhere it did not change. Decoding the
-/// plain string and re-encoding it as UTF-8 dropped the byte-order mark a Windows tool or
-/// Excel put there and rewrote every Latin-1 byte — a spurious diff on every save.
+/// through it reproduces the file's own bytes everywhere it did not change. Re-encoding as
+/// plain UTF-8 would drop a byte-order mark and rewrite every Latin-1 byte, a spurious diff.
 public struct TextFileContents: Sendable {
 
     /// The decoded text, without the byte-order mark.
@@ -27,14 +26,12 @@ public struct TextFileContents: Sendable {
     /// How far into the bytes the binary sniff looks for a NUL.
     static let sniffLength = 8000
 
+    /// Contents already decoded as `encoding`.
     public init(text: String, encoding: TextFileEncoding) {
         self.text = text
         self.encoding = encoding
     }
 
-    /// Decodes `data` as text, or nil when it is binary: a NUL in the first 8,000 bytes,
-    /// or bytes that are neither UTF-8 nor decodable as Latin-1. A UTF-8 BOM is removed
-    /// from the text and remembered in ``encoding``.
     /// Reads and decodes the file at `url` as ``init(data:)`` does; nil when it cannot be read
     /// or is binary.
     public init?(contentsOf url: URL) {
@@ -42,6 +39,9 @@ public struct TextFileContents: Sendable {
         self.init(data: data)
     }
 
+    /// Decodes `data` as text, or nil when it is binary: a NUL in the first 8,000 bytes,
+    /// or bytes that are neither UTF-8 nor decodable as Latin-1. A UTF-8 BOM is removed
+    /// from the text and remembered in ``encoding``.
     public init?(data: Data) {
         if data.prefix(Self.sniffLength).contains(0) { return nil }
         let bom = TextFileEncoding.utf8ByteOrderMark
@@ -69,11 +69,13 @@ public struct TextFileEncoding: Sendable, Equatable {
     /// Whether the file began with the UTF-8 byte-order mark `EF BB BF`.
     public let hasByteOrderMark: Bool
 
+    /// The UTF-8 byte-order mark.
     static let utf8ByteOrderMark: [UInt8] = [0xEF, 0xBB, 0xBF]
 
     /// Plain UTF-8 with no byte-order mark — what a new file is written as.
     public static let utf8 = TextFileEncoding(encoding: .utf8, hasByteOrderMark: false)
 
+    /// Creates an encoding description.
     public init(encoding: String.Encoding, hasByteOrderMark: Bool) {
         self.encoding = encoding
         self.hasByteOrderMark = hasByteOrderMark

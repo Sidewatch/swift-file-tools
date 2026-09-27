@@ -14,14 +14,8 @@ import Foundation
 
 /// A persistent list of recently-opened files and folders.
 ///
-/// Backed by `UserDefaults.standard`, capped at a fixed number of entries, and
-/// most-recent-first. Reads automatically drop paths that no longer exist on
-/// disk.
-///
-/// ```swift
-/// RecentItems.addFile(url)
-/// let recent = RecentItems.files   // [URL], newest first
-/// ```
+/// Backed by `UserDefaults.standard`, capped (15 files, 5 folders) and most-recent-first.
+/// Reads drop paths that no longer exist on disk.
 public enum RecentItems {
     private static let filesKey = "RecentFiles"
     private static let foldersKey = "RecentFolders"

@@ -11,28 +11,25 @@
 import CryptoKit
 import Foundation
 
-/// Versions of files kept on save, outside git — what a file looked like before the agent, or
-/// you, touched it, even when nothing was committed. VS Code's local history
-/// (`workingCopyHistoryService.ts`), the rules ported:
-///
-/// - each file has a folder under `root`, named by a hash of its path, holding the blobs and an
-///   `entries.json` index;
-/// - a save within `mergeWindow` of the last entry from the same source REPLACES that entry
-///   (ten quick ⌘S presses are one version), otherwise it adds one;
-/// - only the newest `maxEntries` are kept, older blobs deleted;
-/// - a file over `maxFileSize` is not kept at all;
-/// - and, ours: a save whose bytes equal the last kept version records nothing — no fact changed.
-///
-/// Pure file-system logic with no clock of its own: every write takes `at:`, so the tests can
-/// place saves in time.
+/// Versions of files kept on save, outside git, ported from VS Code's local history
+/// (`workingCopyHistoryService.ts`). Each file gets a folder under `root` (blobs plus an
+/// `entries.json` index); a save within `mergeWindow` of the last same-source entry REPLACES it;
+/// only the newest `maxEntries` are kept; files over `maxFileSize` and saves identical to the
+/// last version are not recorded. No clock of its own: every write takes `at:`.
 public struct LocalHistory: Sendable {
+    /// The folder that holds every file's history folder.
     public let root: URL
+    /// How many versions of one file are kept; older blobs are deleted.
     public var maxEntries: Int
+    /// Seconds within which a save from the same source replaces the last entry.
     public var mergeWindow: TimeInterval
+    /// The largest file, in bytes, that is kept at all.
     public var maxFileSize: Int
 
+    /// The source recorded for an ordinary save.
     public static let fileSavedSource = "File Saved"
 
+    /// A history stored under `root`; the defaults are VS Code's.
     public init(root: URL, maxEntries: Int = 50, mergeWindow: TimeInterval = 10, maxFileSize: Int = 256 * 1024) {
         self.root = root
         self.maxEntries = maxEntries
@@ -52,6 +49,7 @@ public struct LocalHistory: Sendable {
 
     private func indexURL(for file: URL) -> URL { folder(for: file).appendingPathComponent("entries.json") }
 
+    /// The `entries.json` index of one file's history folder.
     private struct Index: Codable {
         var path: String
         var entries: [LocalHistoryEntry]

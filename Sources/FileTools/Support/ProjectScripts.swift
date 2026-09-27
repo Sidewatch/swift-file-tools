@@ -16,6 +16,7 @@ import Foundation
 /// Scripts view reflects the project, it doesn't manage it.
 public enum ProjectScripts {
 
+    /// Every script in `root`'s manifests: npm-family first, then composer, then make targets.
     public static func detect(root: URL) -> [ProjectScript] {
         npm(root) + composer(root) + make(root)
     }
