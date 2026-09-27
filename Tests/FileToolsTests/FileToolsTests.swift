@@ -106,13 +106,14 @@ final class FileToolsTests: XCTestCase {
         try write("needle\n", to: "a.php")
         try write("hay\n", to: "b.js")
         try FileManager.default.createDirectory(at: tmp.appendingPathComponent("node_modules"), withIntermediateDirectories: true)
-        try write("needle\n", to: "node_modules/skipped.js")   // on the skip list
-        try write("hidden\n", to: ".secret")                    // hidden
+        try write("needle\n", to: "node_modules/skipped.js")  // on the skip list
+        try write("hidden\n", to: ".secret")  // hidden
         XCTAssertEqual(ProjectSearch.countCandidateFiles(in: tmp), 2)
         XCTAssertEqual(ProjectSearch.countCandidateFiles(in: tmp, include: { $0.pathExtension == "php" }), 1)
         var reported: [Int] = []
-        let results = ProjectSearch.search(query: "needle", in: tmp, caseSensitive: false, regex: false,
-                                           isCancelled: { false }, onProgress: { reported.append($0) })
+        let results = ProjectSearch.search(
+            query: "needle", in: tmp, caseSensitive: false, regex: false,
+            isCancelled: { false }, onProgress: { reported.append($0) })
         XCTAssertEqual(results.count, 1)
         XCTAssertEqual(reported, [1, 2], "progress climbs once per file considered, to the candidate total")
     }
@@ -121,11 +122,13 @@ final class FileToolsTests: XCTestCase {
         try write("needle\n", to: "real.txt")
         try FileManager.default.createDirectory(at: tmp.appendingPathComponent("sub"), withIntermediateDirectories: true)
         try FileManager.default.createSymbolicLink(at: tmp.appendingPathComponent("sub/loop"), withDestinationURL: tmp)
-        try FileManager.default.createSymbolicLink(at: tmp.appendingPathComponent("alias.txt"),
-                                                   withDestinationURL: tmp.appendingPathComponent("real.txt"))
+        try FileManager.default.createSymbolicLink(
+            at: tmp.appendingPathComponent("alias.txt"),
+            withDestinationURL: tmp.appendingPathComponent("real.txt"))
         let results = ProjectSearch.search(query: "needle", in: tmp, caseSensitive: false, regex: false, isCancelled: { false })
-        XCTAssertEqual(results.map(\.url.lastPathComponent), ["real.txt"],
-                       "a symlinked file is not a second hit; a symlinked directory is not entered")
+        XCTAssertEqual(
+            results.map(\.url.lastPathComponent), ["real.txt"],
+            "a symlinked file is not a second hit; a symlinked directory is not entered")
         XCTAssertEqual(ProjectSearch.countCandidateFiles(in: tmp), 1)
     }
 
@@ -148,8 +151,9 @@ final class FileToolsTests: XCTestCase {
             include: { $0.pathExtension == "php" })
         XCTAssertEqual(summary.filesChanged, 1)
         XCTAssertEqual(try String(contentsOf: tmp.appendingPathComponent("a.php"), encoding: .utf8), "thread\n")
-        XCTAssertEqual(try String(contentsOf: tmp.appendingPathComponent("b.js"), encoding: .utf8), "needle\n",
-                       "a file outside the include filter must never be rewritten")
+        XCTAssertEqual(
+            try String(contentsOf: tmp.appendingPathComponent("b.js"), encoding: .utf8), "needle\n",
+            "a file outside the include filter must never be rewritten")
     }
 
     func testProjectSearchFindsMatch() throws {
@@ -228,8 +232,9 @@ final class FileToolsTests: XCTestCase {
 
         let root = tmp.appendingPathComponent("repo", isDirectory: true)
         try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
-        try "no match\n".write(to: root.appendingPathComponent("plain.txt"),
-                               atomically: true, encoding: .utf8)
+        try "no match\n".write(
+            to: root.appendingPathComponent("plain.txt"),
+            atomically: true, encoding: .utf8)
         try FileManager.default.createSymbolicLink(
             at: root.appendingPathComponent("link.txt"), withDestinationURL: target)
 
@@ -307,10 +312,10 @@ final class FileToolsTests: XCTestCase {
             replacement: "baz", commit: true, isCancelled: { false })
 
         XCTAssertEqual(summary.filesChanged, 2)
-        XCTAssertEqual(summary.replacements, 3)   // two in a.txt, one in c.txt
+        XCTAssertEqual(summary.replacements, 3)  // two in a.txt, one in c.txt
         XCTAssertEqual(summary.filesFailed, 0)
         XCTAssertEqual(try read("a.txt"), "baz bar baz\n")
-        XCTAssertEqual(try read("b.txt"), "no match here\n")   // untouched, not rewritten
+        XCTAssertEqual(try read("b.txt"), "no match here\n")  // untouched, not rewritten
         XCTAssertEqual(try read("sub/c.txt"), "a baz line\n")
     }
 
@@ -373,7 +378,7 @@ final class FileToolsTests: XCTestCase {
             replacement: "bar", commit: true, isCancelled: { false })
 
         XCTAssertEqual(summary.filesChanged, 1)
-        XCTAssertEqual(try read("node_modules/pkg/index.js"), "foo\n")   // untouched
+        XCTAssertEqual(try read("node_modules/pkg/index.js"), "foo\n")  // untouched
         XCTAssertEqual(try read("src/main.swift"), "bar\n")
     }
 
@@ -385,9 +390,9 @@ final class FileToolsTests: XCTestCase {
             query: "foo", in: tmp, caseSensitive: false, regex: false,
             replacement: "bar", commit: false, isCancelled: { false })
 
-        XCTAssertEqual(dry.filesChanged, 2)   // files that WOULD change
+        XCTAssertEqual(dry.filesChanged, 2)  // files that WOULD change
         XCTAssertEqual(dry.replacements, 3)
-        XCTAssertEqual(try read("a.txt"), "foo foo\n")   // nothing written
+        XCTAssertEqual(try read("a.txt"), "foo foo\n")  // nothing written
         XCTAssertEqual(try read("b.txt"), "foo\n")
     }
 
@@ -399,7 +404,7 @@ final class FileToolsTests: XCTestCase {
             query: #"\s+"#, in: tmp, caseSensitive: false, regex: true,
             replacement: "_", commit: true, isCancelled: { false })
 
-        XCTAssertEqual(summary.replacements, 2)          // the two intra-line "  " runs
+        XCTAssertEqual(summary.replacements, 2)  // the two intra-line "  " runs
         XCTAssertEqual(try read("a.txt"), "a_b\nc_d\ne")  // newlines intact, no line join
     }
 
@@ -422,7 +427,7 @@ final class FileToolsTests: XCTestCase {
         let done = ProjectSearch.replaceAll(
             query: "x", in: tmp, caseSensitive: false, regex: false,
             replacement: "yy", commit: true, isCancelled: { false })
-        XCTAssertEqual(dry.replacements, done.replacements)   // confirm count == real count
+        XCTAssertEqual(dry.replacements, done.replacements)  // confirm count == real count
         XCTAssertEqual(dry.filesChanged, done.filesChanged)
     }
 
@@ -444,8 +449,8 @@ final class FileToolsTests: XCTestCase {
         XCTAssertEqual(dry.filesChanged, 0)
         XCTAssertEqual(dry.replacements, 0)
         XCTAssertEqual(dry.filesFailed, 1)
-        XCTAssertEqual(dry, done)                       // dry run agrees with commit
-        XCTAssertEqual(try Data(contentsOf: url), bytes) // file left untouched
+        XCTAssertEqual(dry, done)  // dry run agrees with commit
+        XCTAssertEqual(try Data(contentsOf: url), bytes)  // file left untouched
     }
 
     func testReplaceAllPreservesLatin1Encoding() throws {
@@ -462,7 +467,7 @@ final class FileToolsTests: XCTestCase {
 
         let after = try Data(contentsOf: url)
         var expected = Data("caf".utf8); expected.append(0xE9); expected.append(contentsOf: " bar\n".utf8)
-        XCTAssertEqual(after, expected)   // 0xE9 preserved as one byte, not UTF-8 0xC3 0xA9
+        XCTAssertEqual(after, expected)  // 0xE9 preserved as one byte, not UTF-8 0xC3 0xA9
     }
 
     func testReplaceAllKeepsTheExecutableBitXattrsAndTheByteOrderMark() throws {
@@ -488,8 +493,9 @@ final class FileToolsTests: XCTestCase {
         XCTAssertEqual(mode & 0o777, 0o755, "the rewritten script must stay executable")
         XCTAssertEqual(getxattr(script.path, "user.note", nil, 0, 0, 0), 5, "the extended attribute must survive")
         XCTAssertEqual(try read("run.sh"), "#!/bin/sh\necho baz\n")
-        XCTAssertEqual(try Data(contentsOf: bom), Data([0xEF, 0xBB, 0xBF] + Array("baz bar\n".utf8)),
-                       "the byte-order mark is part of the file and must survive")
+        XCTAssertEqual(
+            try Data(contentsOf: bom), Data([0xEF, 0xBB, 0xBF] + Array("baz bar\n".utf8)),
+            "the byte-order mark is part of the file and must survive")
         let contents = try XCTUnwrap(ProjectSearch.readTextFile(bom))
         XCTAssertEqual(contents.text, "baz bar\n", "the text itself carries no BOM character")
         XCTAssertTrue(contents.encoding.hasByteOrderMark)
@@ -525,9 +531,11 @@ final class FileToolsTests: XCTestCase {
 
         // Default list: dist is noise — invisible to both scanners.
         XCTAssertFalse(FileTree.ascii(of: tmp).contains("dist"))
-        XCTAssertTrue(ProjectSearch.search(
-            query: "hello", in: tmp, caseSensitive: false, regex: false,
-            isCancelled: { false }).isEmpty)
+        XCTAssertTrue(
+            ProjectSearch.search(
+                query: "hello", in: tmp, caseSensitive: false, regex: false,
+                isCancelled: { false }
+            ).isEmpty)
 
         // Override: dist is real source — both scanners must see it.
         SkippedDirs.names = SkippedDirs.defaultNames.subtracting(["dist"])
@@ -536,8 +544,9 @@ final class FileToolsTests: XCTestCase {
         XCTAssertTrue(tree.contains("app.js"))
         let hits = ProjectSearch.search(
             query: "hello", in: tmp, caseSensitive: false, regex: false, isCancelled: { false })
-        XCTAssertEqual(hits.first?.url.lastPathComponent, "app.js",
-                       "project search must descend into dist once it's off the list")
+        XCTAssertEqual(
+            hits.first?.url.lastPathComponent, "app.js",
+            "project search must descend into dist once it's off the list")
     }
 
     // MARK: - RecentItems
@@ -619,8 +628,9 @@ final class FileToolsTests: XCTestCase {
         defer { stream.cancel() }
 
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.2) { [tmp] in
-            try? "changed".write(to: tmp!.appendingPathComponent("touched.txt"),
-                                 atomically: true, encoding: .utf8)
+            try? "changed".write(
+                to: tmp!.appendingPathComponent("touched.txt"),
+                atomically: true, encoding: .utf8)
         }
         wait(for: [delivered], timeout: 10)
     }

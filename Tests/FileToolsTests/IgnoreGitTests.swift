@@ -30,8 +30,9 @@ final class IgnoreGitTests: XCTestCase {
 
     private func write(_ contents: String, to relativePath: String) throws {
         let url = tmp.appendingPathComponent(relativePath)
-        try FileManager.default.createDirectory(at: url.deletingLastPathComponent(),
-                                                 withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(
+            at: url.deletingLastPathComponent(),
+            withIntermediateDirectories: true)
         try contents.write(to: url, atomically: true, encoding: .utf8)
     }
 

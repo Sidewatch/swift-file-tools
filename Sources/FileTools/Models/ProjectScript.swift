@@ -15,11 +15,11 @@ import Foundation
 /// terminal, plus where it came from.
 public struct ProjectScript: Equatable {
     /// The script's name as the manifest declares it.
-    public let name: String       // e.g. "build"
+    public let name: String  // e.g. "build"
     /// The command line that runs it.
-    public let command: String    // e.g. "npm run build"
+    public let command: String  // e.g. "npm run build"
     /// The manifest file it came from.
-    public let source: String     // e.g. "package.json"
+    public let source: String  // e.g. "package.json"
 
     /// Creates a script.
     public init(name: String, command: String, source: String) {

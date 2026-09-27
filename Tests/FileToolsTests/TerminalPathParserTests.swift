@@ -20,19 +20,22 @@ final class TerminalPathParserTests: XCTestCase {
     // MARK: - parse(_:)
 
     func testParsePathLineColumn() {
-        XCTAssertEqual(TerminalPathParser.parse("src/Foo.swift:42:10"),
-                       Match(path: "src/Foo.swift", line: 42, column: 10))
+        XCTAssertEqual(
+            TerminalPathParser.parse("src/Foo.swift:42:10"),
+            Match(path: "src/Foo.swift", line: 42, column: 10))
     }
 
     func testParsePathLine() {
-        XCTAssertEqual(TerminalPathParser.parse("./a.ts:5"),
-                       Match(path: "./a.ts", line: 5, column: nil))
+        XCTAssertEqual(
+            TerminalPathParser.parse("./a.ts:5"),
+            Match(path: "./a.ts", line: 5, column: nil))
     }
 
     func testParseRelativeAndAbsolute() {
         XCTAssertEqual(TerminalPathParser.parse("../lib/bar.rb"), Match(path: "../lib/bar.rb"))
-        XCTAssertEqual(TerminalPathParser.parse("/Users/x/y/z.py:88"),
-                       Match(path: "/Users/x/y/z.py", line: 88))
+        XCTAssertEqual(
+            TerminalPathParser.parse("/Users/x/y/z.py:88"),
+            Match(path: "/Users/x/y/z.py", line: 88))
     }
 
     func testParseBareFilenameWithExtension() {
@@ -41,10 +44,12 @@ final class TerminalPathParserTests: XCTestCase {
     }
 
     func testStripsWrappingPunctuationAndTrailing() {
-        XCTAssertEqual(TerminalPathParser.parse("\"src/App.swift:12\""),
-                       Match(path: "src/App.swift", line: 12))
-        XCTAssertEqual(TerminalPathParser.parse("(main.go:7:2)"),
-                       Match(path: "main.go", line: 7, column: 2))
+        XCTAssertEqual(
+            TerminalPathParser.parse("\"src/App.swift:12\""),
+            Match(path: "src/App.swift", line: 12))
+        XCTAssertEqual(
+            TerminalPathParser.parse("(main.go:7:2)"),
+            Match(path: "main.go", line: 7, column: 2))
         XCTAssertEqual(TerminalPathParser.parse("src/x.rs:9."), Match(path: "src/x.rs", line: 9))
     }
 
@@ -58,13 +63,14 @@ final class TerminalPathParserTests: XCTestCase {
         let onPath = line.distance(from: line.startIndex, to: line.range(of: "a.ts")!.lowerBound)
         XCTAssertEqual(TerminalPathParser.match(in: line, at: onPath), Match(path: "src/a.ts", line: 12, column: 5))
         let onDigits = line.distance(from: line.startIndex, to: line.range(of: "12")!.lowerBound)
-        XCTAssertEqual(TerminalPathParser.match(in: line, at: onDigits), Match(path: "src/a.ts", line: 12, column: 5),
-                       "a click inside the parentheses still names the file before them")
+        XCTAssertEqual(
+            TerminalPathParser.match(in: line, at: onDigits), Match(path: "src/a.ts", line: 12, column: 5),
+            "a click inside the parentheses still names the file before them")
     }
 
     func testRejectsNonPaths() {
-        XCTAssertNil(TerminalPathParser.parse("hello"))          // no slash, no extension
-        XCTAssertNil(TerminalPathParser.parse("42"))             // just a number
+        XCTAssertNil(TerminalPathParser.parse("hello"))  // no slash, no extension
+        XCTAssertNil(TerminalPathParser.parse("42"))  // just a number
         XCTAssertNil(TerminalPathParser.parse(""))
         XCTAssertNil(TerminalPathParser.parse("::"))
     }
@@ -76,8 +82,9 @@ final class TerminalPathParserTests: XCTestCase {
 
     func testPathWithNoLineButColonInName() {
         // A trailing non-numeric segment isn't a line number.
-        XCTAssertEqual(TerminalPathParser.parse("weird:name/file.txt"),
-                       Match(path: "weird:name/file.txt"))
+        XCTAssertEqual(
+            TerminalPathParser.parse("weird:name/file.txt"),
+            Match(path: "weird:name/file.txt"))
     }
 
     // MARK: - match(in:at:)
@@ -86,8 +93,9 @@ final class TerminalPathParserTests: XCTestCase {
         let line = "  Modified src/Editor/View.swift:120:4 — done"
         // Click somewhere inside "src/Editor/View.swift:120:4"
         let col = line.distance(from: line.startIndex, to: line.range(of: "Editor")!.lowerBound)
-        XCTAssertEqual(TerminalPathParser.match(in: line, at: col),
-                       Match(path: "src/Editor/View.swift", line: 120, column: 4))
+        XCTAssertEqual(
+            TerminalPathParser.match(in: line, at: col),
+            Match(path: "src/Editor/View.swift", line: 120, column: 4))
     }
 
     func testMatchOnWhitespaceReturnsNil() {

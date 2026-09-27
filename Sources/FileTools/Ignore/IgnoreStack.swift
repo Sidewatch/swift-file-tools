@@ -79,15 +79,18 @@ public struct IgnoreStack: Sendable {
     ///
     /// A file that is missing, unreadable or not UTF-8 is skipped: it contributes no rules
     /// rather than failing the walk.
-    public static func load(directory: URL, relativeDirectory: String,
-                            names: [String] = IgnoreFileNames.orderedNames,
-                            fileManager: FileManager = .default) -> [IgnoreFile] {
+    public static func load(
+        directory: URL, relativeDirectory: String,
+        names: [String] = IgnoreFileNames.orderedNames,
+        fileManager: FileManager = .default
+    ) -> [IgnoreFile] {
         var result: [IgnoreFile] = []
         for name in names {
             let fileURL = directory.appendingPathComponent(name)
             guard fileManager.fileExists(atPath: fileURL.path),
-                  let data = try? Data(contentsOf: fileURL),
-                  let text = data.utf8String else { continue }
+                let data = try? Data(contentsOf: fileURL),
+                let text = data.utf8String
+            else { continue }
             result.append(IgnoreFile(text: text, directory: relativeDirectory))
         }
         return result

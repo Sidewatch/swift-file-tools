@@ -114,10 +114,10 @@ public final class DirectoryEventStream {
                 // leaves the stream silently watching the old, nonexistent path.
                 FSEventStreamCreateFlags(
                     kFSEventStreamCreateFlagUseCFTypes
-                    | kFSEventStreamCreateFlagFileEvents
-                    | kFSEventStreamCreateFlagUseExtendedData
-                    | kFSEventStreamCreateFlagNoDefer
-                    | kFSEventStreamCreateFlagWatchRoot
+                        | kFSEventStreamCreateFlagFileEvents
+                        | kFSEventStreamCreateFlagUseExtendedData
+                        | kFSEventStreamCreateFlagNoDefer
+                        | kFSEventStreamCreateFlagWatchRoot
                 )
             )
         }

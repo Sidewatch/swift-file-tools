@@ -44,9 +44,11 @@ public enum FastDirectoryListing {
     /// Lists `directory`, directories first then names in Finder order (`localizedStandardCompare`:
     /// case-insensitive and natural-numeric, so `file2` precedes `file10`). Names in `skipping`
     /// are dropped; empty when the directory can't be opened.
-    public static func list(_ directory: URL,
-                            includeHidden: Bool = false,
-                            skipping: Set<String> = []) -> [Entry] {
+    public static func list(
+        _ directory: URL,
+        includeHidden: Bool = false,
+        skipping: Set<String> = []
+    ) -> [Entry] {
         guard let dir = opendir(directory.path) else { return [] }
         defer { closedir(dir) }
 
@@ -91,10 +93,12 @@ public enum FastDirectoryListing {
     ///
     /// - Parameter predicate: `(name, isDirectory, isSymbolicLink)`, symlinks resolved as `list`
     ///   does; the link flag lets a caller agree with a listing that drops symlinks.
-    public static func contains(in directory: URL,
-                                includeHidden: Bool = false,
-                                skipping: Set<String> = [],
-                                where predicate: (_ name: String, _ isDirectory: Bool, _ isSymbolicLink: Bool) -> Bool) -> Bool {
+    public static func contains(
+        in directory: URL,
+        includeHidden: Bool = false,
+        skipping: Set<String> = [],
+        where predicate: (_ name: String, _ isDirectory: Bool, _ isSymbolicLink: Bool) -> Bool
+    ) -> Bool {
         guard let dir = opendir(directory.path) else { return false }
         defer { closedir(dir) }
         while let raw = readdir(dir) {

@@ -30,8 +30,9 @@ final class FastDirectoryListingTests: XCTestCase {
         try Data("x".utf8).write(to: root.appendingPathComponent(name))
     }
     private func dir(_ name: String) throws {
-        try FileManager.default.createDirectory(at: root.appendingPathComponent(name),
-                                                withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(
+            at: root.appendingPathComponent(name),
+            withIntermediateDirectories: true)
     }
     private func names(_ entries: [FastDirectoryListing.Entry]) -> [String] {
         entries.map { $0.url.lastPathComponent }
@@ -56,8 +57,10 @@ final class FastDirectoryListingTests: XCTestCase {
     /// that drops links (the gallery's does); a dangling link is neither a directory nor a file.
     func testContainsReportsSymbolicLinks() throws {
         try file("real.png")
-        try FileManager.default.createSymbolicLink(at: root.appendingPathComponent("alias.png"), withDestinationURL: root.appendingPathComponent("real.png"))
-        try FileManager.default.createSymbolicLink(at: root.appendingPathComponent("gone.jpg"), withDestinationURL: root.appendingPathComponent("missing.jpg"))
+        try FileManager.default.createSymbolicLink(
+            at: root.appendingPathComponent("alias.png"), withDestinationURL: root.appendingPathComponent("real.png"))
+        try FileManager.default.createSymbolicLink(
+            at: root.appendingPathComponent("gone.jpg"), withDestinationURL: root.appendingPathComponent("missing.jpg"))
         var links: [String] = [], plain: [String] = []
         _ = FastDirectoryListing.contains(in: root) { name, isDir, isLink in
             if isLink { links.append(name) } else if !isDir { plain.append(name) }
@@ -108,14 +111,16 @@ final class FastDirectoryListingTests: XCTestCase {
     func testHiddenFilesExcludedByDefaultAndIncludedOnRequest() throws {
         try file("visible.txt"); try file(".hidden")
         XCTAssertEqual(names(FastDirectoryListing.list(root)), ["visible.txt"])
-        XCTAssertEqual(names(FastDirectoryListing.list(root, includeHidden: true)).sorted(),
-                       [".hidden", "visible.txt"])
+        XCTAssertEqual(
+            names(FastDirectoryListing.list(root, includeHidden: true)).sorted(),
+            [".hidden", "visible.txt"])
     }
 
     func testSkippedNamesDropped() throws {
         try dir("node_modules"); try dir("src"); try file("index.js")
-        XCTAssertEqual(names(FastDirectoryListing.list(root, skipping: ["node_modules"])),
-                       ["src", "index.js"])
+        XCTAssertEqual(
+            names(FastDirectoryListing.list(root, skipping: ["node_modules"])),
+            ["src", "index.js"])
     }
 
     /// `.` and `..` are real readdir entries and must never surface.
@@ -130,10 +135,12 @@ final class FastDirectoryListingTests: XCTestCase {
     /// it becomes un-expandable in the tree — and `node_modules/.bin` is all links.
     func testSymlinkToDirectoryReportsAsDirectory() throws {
         try dir("real"); try file("plain.txt")
-        try FileManager.default.createSymbolicLink(at: root.appendingPathComponent("link-to-dir"),
-                                                   withDestinationURL: root.appendingPathComponent("real"))
-        try FileManager.default.createSymbolicLink(at: root.appendingPathComponent("link-to-file"),
-                                                   withDestinationURL: root.appendingPathComponent("plain.txt"))
+        try FileManager.default.createSymbolicLink(
+            at: root.appendingPathComponent("link-to-dir"),
+            withDestinationURL: root.appendingPathComponent("real"))
+        try FileManager.default.createSymbolicLink(
+            at: root.appendingPathComponent("link-to-file"),
+            withDestinationURL: root.appendingPathComponent("plain.txt"))
         let entries = FastDirectoryListing.list(root)
         let byName = Dictionary(uniqueKeysWithValues: entries.map { ($0.url.lastPathComponent, $0.isDirectory) })
         XCTAssertEqual(byName["link-to-dir"], true, "a symlinked folder must expand")
@@ -150,8 +157,9 @@ final class FastDirectoryListingTests: XCTestCase {
     /// A dangling link can't be stat'd; it must be reported as a file rather than
     /// throwing the whole listing away.
     func testBrokenSymlinkIsListedAsFile() throws {
-        try FileManager.default.createSymbolicLink(at: root.appendingPathComponent("dangling"),
-                                                   withDestinationURL: root.appendingPathComponent("nope"))
+        try FileManager.default.createSymbolicLink(
+            at: root.appendingPathComponent("dangling"),
+            withDestinationURL: root.appendingPathComponent("nope"))
         let entries = FastDirectoryListing.list(root)
         XCTAssertEqual(names(entries), ["dangling"])
         XCTAssertEqual(entries.first?.isDirectory, false)
@@ -169,8 +177,10 @@ final class FastDirectoryListingTests: XCTestCase {
         try dir("zdir"); try dir("Adir")
         let fast = names(FastDirectoryListing.list(root))
         let foundation = try FileManager.default
-            .contentsOfDirectory(at: root, includingPropertiesForKeys: [.isDirectoryKey],
-                                 options: [.skipsHiddenFiles])
+            .contentsOfDirectory(
+                at: root, includingPropertiesForKeys: [.isDirectoryKey],
+                options: [.skipsHiddenFiles]
+            )
             .map { (url: $0, isDir: (try? $0.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) ?? false) }
             .sorted {
                 if $0.isDir != $1.isDir { return $0.isDir }

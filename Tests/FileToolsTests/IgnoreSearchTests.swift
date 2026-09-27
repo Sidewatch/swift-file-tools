@@ -28,7 +28,7 @@ final class IgnoreSearchTests: XCTestCase {
         try "needle in docs".write(to: root.appendingPathComponent("docs/guide.md"), atomically: true, encoding: .utf8)
         try "needle in secret".write(to: root.appendingPathComponent("secret.txt"), atomically: true, encoding: .utf8)
         try "logs/\n*.txt\n".write(to: root.appendingPathComponent(".gitignore"), atomically: true, encoding: .utf8)
-        try "gen/\n".write(to: root.appendingPathComponent("src/.ignore"), atomically: true, encoding: .utf8)   // ripgrep-only file
+        try "gen/\n".write(to: root.appendingPathComponent("src/.ignore"), atomically: true, encoding: .utf8)  // ripgrep-only file
         if git {
             let p = Process(); p.executableURL = URL(fileURLWithPath: "/usr/bin/env")
             p.arguments = ["git", "-C", root.path, "init", "-q"]; try p.run(); p.waitUntilExit()
@@ -43,7 +43,9 @@ final class IgnoreSearchTests: XCTestCase {
         return out
     }
 
-    override func setUp() { IgnoreRulesCache.invalidateAll(); ProjectSearch.respectIgnoreFiles = true; ProjectSearch.includeHiddenFiles = false }
+    override func setUp() {
+        IgnoreRulesCache.invalidateAll(); ProjectSearch.respectIgnoreFiles = true; ProjectSearch.includeHiddenFiles = false
+    }
     override func tearDown() { ProjectSearch.respectIgnoreFiles = true; ProjectSearch.includeHiddenFiles = false }
 
     /// Dot-files are candidates only with `includeHiddenFiles` on — then `.env` and
@@ -60,8 +62,9 @@ final class IgnoreSearchTests: XCTestCase {
 
         XCTAssertEqual(hits(in: root), ["src/main.swift", "docs/guide.md"], "off: ripgrep's default, no dot-files")
         ProjectSearch.includeHiddenFiles = true
-        XCTAssertEqual(hits(in: root), ["src/main.swift", "docs/guide.md", ".env", ".github/workflows/ci.yml"],
-                       "on: dot-files are searched; .git stays skipped by name and .secrets.txt stays .gitignore'd")
+        XCTAssertEqual(
+            hits(in: root), ["src/main.swift", "docs/guide.md", ".env", ".github/workflows/ci.yml"],
+            "on: dot-files are searched; .git stays skipped by name and .secrets.txt stays .gitignore'd")
         // The counter walks the same set: the four hits plus `.gitignore` and `src/.ignore`,
         // which are ordinary dot-files to a hidden-aware walk (ripgrep --hidden searches them too).
         XCTAssertEqual(ProjectSearch.countCandidateFiles(in: root), 6, "the counter walks the same set")
@@ -71,7 +74,7 @@ final class IgnoreSearchTests: XCTestCase {
         let root = try makeRepo(git: true)
         defer { try? FileManager.default.removeItem(at: root) }
         XCTAssertEqual(hits(in: root), ["src/main.swift", "docs/guide.md"])
-        XCTAssertEqual(ProjectSearch.countCandidateFiles(in: root), 2)   // main + guide; hidden ignore files are never candidates
+        XCTAssertEqual(ProjectSearch.countCandidateFiles(in: root), 2)  // main + guide; hidden ignore files are never candidates
     }
 
     func testPlainFolderParsesGitignoreItself() throws {

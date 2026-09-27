@@ -38,36 +38,46 @@ final class IgnoreGitParityTests: XCTestCase {
     ]
 
     private static let corpora: [Corpus] = [
-        Corpus(name: "comments, blanks, trailing spaces, escapes",
-               ignoreFiles: ["": "#foo\n\n   \n\\#name\nfoo   \ntrail\\ \n\\!bang.txt\nabc\\\n"],
-               files: files),
-        Corpus(name: "negation and anchoring",
-               ignoreFiles: ["": "*.log\n!important.log\n/foo\nsub/foo\n"],
-               files: files),
-        Corpus(name: "directory-only patterns",
-               ignoreFiles: ["": "doc/frotz/\nfrotz/\nbuild/\n!build/keep.txt\n"],
-               files: files),
-        Corpus(name: "wildcards and classes",
-               ignoreFiles: ["": "/a*z\n?ile.txt\n[a-z]*.txt\n[!a-z]bc.txt\n*.py[cod]\n[Bb]uild/\na]b.txt\n"],
-               files: files),
-        Corpus(name: "posix classes",
-               ignoreFiles: ["": "[[:alpha:]]*.log\n[[:digit:]]bc.txt\n*[[:space:]]*\n[[:upper:]]*.LOG\n"],
-               files: files),
-        Corpus(name: "double star forms",
-               ignoreFiles: ["": "**/foo\nabc/**\na/**/b\na**b\n**/node_modules/\n"],
-               files: files),
-        Corpus(name: "everything except src",
-               ignoreFiles: ["": "/*\n!/src\n!/src/**\n!.gitignore\n"],
-               files: files),
-        Corpus(name: "nested ignore files override",
-               ignoreFiles: ["": "*.log\n*.txt\n", "sub": "!keep.log\n", "sub/deep": "!x.txt\nfoo\n", "src": "gen/\n"],
-               files: files),
-        Corpus(name: "nested file re-excludes and dir negation cannot reach inside",
-               ignoreFiles: ["": "!important.log\nbuild/\n!build/keep.txt\n", "sub": "*.log\n"],
-               files: files),
-        Corpus(name: "bare double star and slash-only oddities",
-               ignoreFiles: ["": "**\n!*/\n!README\n/\n"],
-               files: files),
+        Corpus(
+            name: "comments, blanks, trailing spaces, escapes",
+            ignoreFiles: ["": "#foo\n\n   \n\\#name\nfoo   \ntrail\\ \n\\!bang.txt\nabc\\\n"],
+            files: files),
+        Corpus(
+            name: "negation and anchoring",
+            ignoreFiles: ["": "*.log\n!important.log\n/foo\nsub/foo\n"],
+            files: files),
+        Corpus(
+            name: "directory-only patterns",
+            ignoreFiles: ["": "doc/frotz/\nfrotz/\nbuild/\n!build/keep.txt\n"],
+            files: files),
+        Corpus(
+            name: "wildcards and classes",
+            ignoreFiles: ["": "/a*z\n?ile.txt\n[a-z]*.txt\n[!a-z]bc.txt\n*.py[cod]\n[Bb]uild/\na]b.txt\n"],
+            files: files),
+        Corpus(
+            name: "posix classes",
+            ignoreFiles: ["": "[[:alpha:]]*.log\n[[:digit:]]bc.txt\n*[[:space:]]*\n[[:upper:]]*.LOG\n"],
+            files: files),
+        Corpus(
+            name: "double star forms",
+            ignoreFiles: ["": "**/foo\nabc/**\na/**/b\na**b\n**/node_modules/\n"],
+            files: files),
+        Corpus(
+            name: "everything except src",
+            ignoreFiles: ["": "/*\n!/src\n!/src/**\n!.gitignore\n"],
+            files: files),
+        Corpus(
+            name: "nested ignore files override",
+            ignoreFiles: ["": "*.log\n*.txt\n", "sub": "!keep.log\n", "sub/deep": "!x.txt\nfoo\n", "src": "gen/\n"],
+            files: files),
+        Corpus(
+            name: "nested file re-excludes and dir negation cannot reach inside",
+            ignoreFiles: ["": "!important.log\nbuild/\n!build/keep.txt\n", "sub": "*.log\n"],
+            files: files),
+        Corpus(
+            name: "bare double star and slash-only oddities",
+            ignoreFiles: ["": "**\n!*/\n!README\n/\n"],
+            files: files),
     ]
 
     private func run(_ arguments: [String], in directory: URL) throws -> String {
@@ -96,8 +106,10 @@ final class IgnoreGitParityTests: XCTestCase {
     private func parserKept(in root: URL) -> Set<String> {
         var kept: Set<String> = []
         func walk(_ dir: URL, rel: String, stack: IgnoreStack) {
-            let stack = stack.appending(contentsOf: IgnoreStack.load(directory: dir, relativeDirectory: rel,
-                                                                     names: [".gitignore"]))
+            let stack = stack.appending(
+                contentsOf: IgnoreStack.load(
+                    directory: dir, relativeDirectory: rel,
+                    names: [".gitignore"]))
             let entries = (try? FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: [.isDirectoryKey])) ?? []
             for entry in entries {
                 let name = entry.lastPathComponent
@@ -131,7 +143,8 @@ final class IgnoreGitParityTests: XCTestCase {
             _ = try run(["init", "-q"], in: root)
             let git = try gitKept(in: root)
             let ours = parserKept(in: root)
-            XCTAssertEqual(ours, git, "\(corpus.name): parser-only \(ours.subtracting(git).sorted()) git-only \(git.subtracting(ours).sorted())")
+            XCTAssertEqual(
+                ours, git, "\(corpus.name): parser-only \(ours.subtracting(git).sorted()) git-only \(git.subtracting(ours).sorted())")
         }
     }
 }

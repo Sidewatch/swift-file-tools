@@ -48,7 +48,7 @@ public enum TerminalPathParser {
         let chars = Array(line)
         guard !chars.isEmpty else { return nil }
         var col = column
-        if col == chars.count { col -= 1 }                    // clicked one past the end
+        if col == chars.count { col -= 1 }  // clicked one past the end
         guard col >= 0, col < chars.count, !isBoundary(chars[col]) else { return nil }
 
         var start = col, end = col
@@ -58,14 +58,15 @@ public enum TerminalPathParser {
         // boundaries, so the click lands on the path or on `12,5`; either way the
         // reference is the path with the position that follows it.
         if end + 1 < chars.count, chars[end + 1] == "(", let close = positionSuffixEnd(chars, from: end + 1) {
-            end = close                                       // clicked the path: take the suffix along
+            end = close  // clicked the path: take the suffix along
         } else {
             // Clicked inside the parentheses: walk back over the digits and comma to the
             // "(" — the reference is the token before it.
             var open = start - 1
             while open >= 0, chars[open].isNumber || chars[open] == "," { open -= 1 }
             if open >= 1, chars[open] == "(", !isBoundary(chars[open - 1]),
-               let close = positionSuffixEnd(chars, from: open), close >= end {
+                let close = positionSuffixEnd(chars, from: open), close >= end
+            {
                 end = close
                 start = open - 1
                 while start > 0, !isBoundary(chars[start - 1]) { start -= 1 }
@@ -81,10 +82,15 @@ public enum TerminalPathParser {
         var sawDigit = false, sawComma = false
         while k < chars.count {
             let c = chars[k]
-            if c.isNumber { sawDigit = true }
-            else if c == ",", sawDigit, !sawComma { sawComma = true; sawDigit = false }
-            else if c == ")" { return sawDigit ? k : nil }
-            else { return nil }
+            if c.isNumber {
+                sawDigit = true
+            } else if c == ",", sawDigit, !sawComma {
+                sawComma = true; sawDigit = false
+            } else if c == ")" {
+                return sawDigit ? k : nil
+            } else {
+                return nil
+            }
             k += 1
         }
         return nil
@@ -111,14 +117,13 @@ public enum TerminalPathParser {
         let parts = token.split(separator: ":", omittingEmptySubsequences: false).map(String.init)
         if parts.count >= 2 {
             var idx = parts.count - 1
-            var trailing: [Int] = []                          // collected end-first: [col?, line]
+            var trailing: [Int] = []  // collected end-first: [col?, line]
             while idx >= 1, trailing.count < 2, let n = Int(parts[idx]) {
                 trailing.append(n); idx -= 1
             }
             if !trailing.isEmpty {
                 path = parts[0...idx].joined(separator: ":")
-                if trailing.count == 2 { column = trailing[0]; line = trailing[1] }
-                else { line = trailing[0] }
+                if trailing.count == 2 { column = trailing[0]; line = trailing[1] } else { line = trailing[0] }
             }
         }
 

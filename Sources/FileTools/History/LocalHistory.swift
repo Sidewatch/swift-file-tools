@@ -60,7 +60,8 @@ public struct LocalHistory: Sendable {
     /// The kept versions, oldest first.
     public func entries(for file: URL) -> [LocalHistoryEntry] {
         guard let data = try? Data(contentsOf: indexURL(for: file)),
-              let index = try? JSONDecoder().decode(Index.self, from: data) else { return [] }
+            let index = try? JSONDecoder().decode(Index.self, from: data)
+        else { return [] }
         return index.entries
     }
 
@@ -74,19 +75,26 @@ public struct LocalHistory: Sendable {
     /// Keeps `data` as a version of `file`. Returns the entry, or nil when nothing was kept:
     /// the file is over `maxFileSize`, or the bytes equal the last kept version.
     @discardableResult
-    public func record(_ data: Data, for file: URL, source: String = LocalHistory.fileSavedSource, at time: Date = Date()) throws -> LocalHistoryEntry? {
+    public func record(_ data: Data, for file: URL, source: String = LocalHistory.fileSavedSource, at time: Date = Date()) throws
+        -> LocalHistoryEntry?
+    {
         guard data.count <= maxFileSize else { return nil }
         let dir = folder(for: file)
         try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
-        var index = (try? JSONDecoder().decode(Index.self, from: Data(contentsOf: indexURL(for: file))))
+        var index =
+            (try? JSONDecoder().decode(Index.self, from: Data(contentsOf: indexURL(for: file))))
             ?? Index(path: file.standardizedFileURL.path, entries: [])
         if let last = index.entries.last, last.byteCount == data.count, self.data(of: last, for: file) == data {
-            return nil   // an unchanged save is not a new version
+            return nil  // an unchanged save is not a new version
         }
-        let id = "\(Int(time.timeIntervalSince1970 * 1000))-\(String(UInt32.random(in: 0...0xffff), radix: 16))" + (file.pathExtension.isEmpty ? "" : "." + file.pathExtension)
+        let id =
+            "\(Int(time.timeIntervalSince1970 * 1000))-\(String(UInt32.random(in: 0...0xffff), radix: 16))"
+            + (file.pathExtension.isEmpty ? "" : "." + file.pathExtension)
         try data.write(to: dir.appendingPathComponent(id), options: .atomic)
         let entry = LocalHistoryEntry(id: id, timestamp: time, source: source, byteCount: data.count)
-        if let last = index.entries.last, last.source == source, time.timeIntervalSince(last.timestamp) <= mergeWindow, time >= last.timestamp {
+        if let last = index.entries.last, last.source == source, time.timeIntervalSince(last.timestamp) <= mergeWindow,
+            time >= last.timestamp
+        {
             try? FileManager.default.removeItem(at: dir.appendingPathComponent(last.id))
             index.entries[index.entries.count - 1] = entry
         } else {

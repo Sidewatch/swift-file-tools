@@ -26,8 +26,9 @@ public enum ProjectScripts {
     private static func npm(_ root: URL) -> [ProjectScript] {
         let file = root.appendingPathComponent("package.json")
         guard let data = try? Data(contentsOf: file),
-              let json = JSONObject.parse(data),
-              let scripts = json["scripts"] as? [String: Any] else { return [] }
+            let json = JSONObject.parse(data),
+            let scripts = json["scripts"] as? [String: Any]
+        else { return [] }
         let runner = npmRunner(root, packageManager: json["packageManager"] as? String)
         return scripts.keys.sorted().map {
             ProjectScript(name: $0, command: "\(runner) \($0)", source: "package.json")
@@ -50,7 +51,7 @@ public enum ProjectScripts {
         }
         if has("bun.lock") || has("bun.lockb") { return "bun run" }
         if has("pnpm-lock.yaml") { return "pnpm run" }
-        if has("yarn.lock") { return "yarn" }   // `yarn <script>`, no "run"
+        if has("yarn.lock") { return "yarn" }  // `yarn <script>`, no "run"
         return "npm run"
     }
 
@@ -59,11 +60,14 @@ public enum ProjectScripts {
     private static func composer(_ root: URL) -> [ProjectScript] {
         let file = root.appendingPathComponent("composer.json")
         guard let data = try? Data(contentsOf: file),
-              let json = JSONObject.parse(data),
-              let scripts = json["scripts"] as? [String: Any] else { return [] }
+            let json = JSONObject.parse(data),
+            let scripts = json["scripts"] as? [String: Any]
+        else { return [] }
         // composer's own reserved lifecycle hooks aren't things you "run" directly.
-        let reserved: Set<String> = ["pre-install-cmd", "post-install-cmd", "pre-update-cmd",
-                                     "post-update-cmd", "post-autoload-dump", "pre-autoload-dump"]
+        let reserved: Set<String> = [
+            "pre-install-cmd", "post-install-cmd", "pre-update-cmd",
+            "post-update-cmd", "post-autoload-dump", "pre-autoload-dump",
+        ]
         return scripts.keys.sorted().filter { !reserved.contains($0) }.map {
             ProjectScript(name: $0, command: "composer run \($0)", source: "composer.json")
         }
@@ -80,14 +84,16 @@ public enum ProjectScripts {
         // the file is actually named.
         let present = Set((try? FileManager.default.contentsOfDirectory(atPath: root.path)) ?? [])
         guard let source = makefileNames.first(where: { present.contains($0) }),
-              let text = try? String(contentsOf: root.appendingPathComponent(source), encoding: .utf8) else { return [] }
+            let text = try? String(contentsOf: root.appendingPathComponent(source), encoding: .utf8)
+        else { return [] }
         var seen = Set<String>()
         var out: [ProjectScript] = []
         for raw in text.components(separatedBy: .newlines) {
             // A target line: "name:" at column 0, not a variable assignment or a
             // special/.PHONY target, and not a comment.
             guard let colon = raw.firstIndex(of: ":"), !raw.hasPrefix("\t"), !raw.hasPrefix(" "),
-                  !raw.hasPrefix(".") , !raw.hasPrefix("#") else { continue }
+                !raw.hasPrefix("."), !raw.hasPrefix("#")
+            else { continue }
             // `VAR := value` (and `::=`/`:::=`) puts the '=' AFTER the colon, so the
             // name-side guards below never see it — check the assignment forms here.
             let afterColon = raw[raw.index(after: colon)...].drop(while: { $0 == ":" })
@@ -95,9 +101,11 @@ public enum ProjectScripts {
             let names = String(raw[..<colon]).split(whereSeparator: { $0 == " " || $0 == "\t" }).map(String.init)
             // `a b: dep` declares both a and b; a name with `=`, `$` or `%` is a variable,
             // an expansion or a pattern rule, and one such name disqualifies the line.
-            guard !names.isEmpty, names.allSatisfy({ name in
-                name.allSatisfy({ $0.isLetter || $0.isNumber || $0 == "_" || $0 == "-" || $0 == "." })
-            }) else { continue }
+            guard !names.isEmpty,
+                names.allSatisfy({ name in
+                    name.allSatisfy({ $0.isLetter || $0.isNumber || $0 == "_" || $0 == "-" || $0 == "." })
+                })
+            else { continue }
             for name in names where seen.insert(name).inserted {
                 out.append(ProjectScript(name: name, command: "make \(name)", source: source))
             }

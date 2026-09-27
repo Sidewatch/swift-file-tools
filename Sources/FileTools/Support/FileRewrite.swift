@@ -28,8 +28,9 @@ public enum FileRewrite {
             try data.write(to: url, options: .atomic)
             return
         }
-        let staging = try fm.url(for: .itemReplacementDirectory, in: .userDomainMask,
-                                 appropriateFor: url, create: true)
+        let staging = try fm.url(
+            for: .itemReplacementDirectory, in: .userDomainMask,
+            appropriateFor: url, create: true)
         let temporary = staging.appendingPathComponent(url.lastPathComponent)
         defer { try? fm.removeItem(at: staging) }
         try data.write(to: temporary)

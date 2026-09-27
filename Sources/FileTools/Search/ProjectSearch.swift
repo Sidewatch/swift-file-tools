@@ -37,11 +37,13 @@ public enum ProjectSearch {
     ) -> [SearchFileResult] {
         guard !query.isEmpty else { return [] }
 
-        let regexObj: NSRegularExpression? = regex
-            ? try? NSRegularExpression(pattern: query,
-                                       options: caseSensitive ? [] : [.caseInsensitive])
+        let regexObj: NSRegularExpression? =
+            regex
+            ? try? NSRegularExpression(
+                pattern: query,
+                options: caseSensitive ? [] : [.caseInsensitive])
             : nil
-        if regex && regexObj == nil { return [] }   // invalid pattern
+        if regex && regexObj == nil { return [] }  // invalid pattern
 
         let mightMatch = prefilter(query: query, caseSensitive: caseSensitive, regexMode: regex)
         var results: [SearchFileResult] = []
@@ -49,12 +51,13 @@ public enum ProjectSearch {
         enumerateTextFiles(in: root, isCancelled: isCancelled, include: include, onProgress: onProgress) { url, file in
             let text = file.text
             guard mightMatch(text) else { return true }
-            let fileMatches = matches(in: text, query: query,
-                                      caseSensitive: caseSensitive, regex: regexObj)
+            let fileMatches = matches(
+                in: text, query: query,
+                caseSensitive: caseSensitive, regex: regexObj)
             guard !fileMatches.isEmpty else { return true }
             results.append(SearchFileResult(url: url, matches: fileMatches))
             total += fileMatches.count
-            return total < maxTotalMatches   // stop the walk once the global cap is hit
+            return total < maxTotalMatches  // stop the walk once the global cap is hit
         }
 
         results.sort { $0.url.path.localizedCaseInsensitiveCompare($1.url.path) == .orderedAscending }
@@ -74,9 +77,11 @@ public enum ProjectSearch {
         onProgress: ((Int) -> Void)? = nil
     ) -> [SearchFileResult] {
         guard !query.isEmpty else { return [] }
-        let regexObj: NSRegularExpression? = regex
-            ? try? NSRegularExpression(pattern: query,
-                                       options: caseSensitive ? [] : [.caseInsensitive])
+        let regexObj: NSRegularExpression? =
+            regex
+            ? try? NSRegularExpression(
+                pattern: query,
+                options: caseSensitive ? [] : [.caseInsensitive])
             : nil
         if regex && regexObj == nil { return [] }
         let mightMatch = prefilter(query: query, caseSensitive: caseSensitive, regexMode: regex)
@@ -87,8 +92,9 @@ public enum ProjectSearch {
             if isCancelled() || total >= maxTotalMatches { break }
             scanned += 1; onProgress?(scanned)
             guard let text = readTextFile(url)?.text, mightMatch(text) else { continue }
-            let fileMatches = matches(in: text, query: query,
-                                      caseSensitive: caseSensitive, regex: regexObj)
+            let fileMatches = matches(
+                in: text, query: query,
+                caseSensitive: caseSensitive, regex: regexObj)
             guard !fileMatches.isEmpty else { continue }
             results.append(SearchFileResult(url: url, matches: fileMatches))
             total += fileMatches.count
@@ -113,10 +119,14 @@ public enum ProjectSearch {
     /// search itself (skip list, the hidden-files flag, symlinks, `include`), so the total
     /// and the running count agree; the only thing NOT applied is the per-file size
     /// cap, which the scan still counts as it passes over.
-    public static func countCandidateFiles(in root: URL, include: ((URL) -> Bool)? = nil,
-                                           isCancelled: () -> Bool = { false }) -> Int {
+    public static func countCandidateFiles(
+        in root: URL, include: ((URL) -> Bool)? = nil,
+        isCancelled: () -> Bool = { false }
+    ) -> Int {
         var n = 0
-        walkRegularFiles(in: root, isCancelled: isCancelled, include: include) { _, _ in n += 1; return true }
+        walkRegularFiles(in: root, isCancelled: isCancelled, include: include) { _, _ in
+            n += 1; return true
+        }
         return n
     }
 
@@ -133,9 +143,11 @@ public enum ProjectSearch {
     /// entry, not `FileManager.enumerator`'s `getattrlist` per entry. Symlinks are skipped both
     /// ways (a linked file would bypass the size cap, a linked directory could loop). `body`
     /// returns false to stop.
-    private static func walkRegularFiles(in root: URL, isCancelled: () -> Bool,
-                                         include: ((URL) -> Bool)?,
-                                         body: (URL, Int) -> Bool) {
+    private static func walkRegularFiles(
+        in root: URL, isCancelled: () -> Bool,
+        include: ((URL) -> Bool)?,
+        body: (URL, Int) -> Bool
+    ) {
         let rules: IgnoreRules? = respectIgnoreFiles ? IgnoreRulesCache.rules(for: root) : nil
         // Each frame carries the directory, its path relative to the root, and the ignore
         // files in force there (root's first, deeper ones override).
@@ -155,7 +167,7 @@ public enum ProjectSearch {
                 guard lstat(entry.url.path, &st) == 0 else { continue }
                 let mode = st.st_mode & S_IFMT
                 let isDir = mode == S_IFDIR
-                if !isDir, mode != S_IFREG { continue }   // symlinks, FIFOs, sockets, devices
+                if !isDir, mode != S_IFREG { continue }  // symlinks, FIFOs, sockets, devices
                 let relPath = rel.isEmpty ? entry.url.lastPathComponent : rel + "/" + entry.url.lastPathComponent
                 if let rules, rules.isIgnored(relativePath: relPath, isDirectory: isDir, stack: ignore) { continue }
                 if isDir { subdirs.append((entry.url, relPath)); continue }
@@ -182,7 +194,7 @@ public enum ProjectSearch {
             scanned += 1; onProgress?(scanned)
             if size > maxFileBytes { return true }
             guard let data = try? Data(contentsOf: url),
-                  let contents = TextFileContents(data: data)   // binary files are skipped
+                let contents = TextFileContents(data: data)  // binary files are skipped
             else { return true }
             return body(url, contents)
         }
@@ -204,7 +216,8 @@ public enum ProjectSearch {
             }
         }
         guard !query.contains("\\A"), !query.contains("\\z"), !query.contains("\\Z"),
-              !query.contains("(?!"), !query.contains("(?<!") else { return { _ in true } }
+            !query.contains("(?!"), !query.contains("(?<!")
+        else { return { _ in true } }
         var opts: NSRegularExpression.Options = [.anchorsMatchLines]
         if !caseSensitive { opts.insert(.caseInsensitive) }
         guard let re = try? NSRegularExpression(pattern: query, options: opts) else {
@@ -229,7 +242,7 @@ public enum ProjectSearch {
 
         text.enumerateLines { line, stop in
             lineNo += 1
-            if out.count >= maxMatchesPerFile {   // per-file cap
+            if out.count >= maxMatchesPerFile {  // per-file cap
                 stop = true
                 return
             }
@@ -245,8 +258,9 @@ public enum ProjectSearch {
                 var searchStart = 0
                 let opts: NSString.CompareOptions = caseSensitive ? [] : [.caseInsensitive]
                 while searchStart < ns.length {
-                    let r = ns.range(of: query, options: opts,
-                                     range: NSRange(location: searchStart, length: ns.length - searchStart))
+                    let r = ns.range(
+                        of: query, options: opts,
+                        range: NSRange(location: searchStart, length: ns.length - searchStart))
                     if r.location == NSNotFound { break }
                     if out.count >= maxMatchesPerFile { break }
                     out.append(SearchMatch(line: lineNo, lineText: line, range: r))
@@ -291,15 +305,16 @@ public enum ProjectSearch {
         enumerateTextFiles(in: root, isCancelled: isCancelled, include: include) { url, file in
             let text = file.text
             guard mightMatch(text) else { return true }
-            let (newText, count) = replaced(in: text, query: query, caseSensitive: caseSensitive,
-                                            regex: regexObj, replacement: replacement)
+            let (newText, count) = replaced(
+                in: text, query: query, caseSensitive: caseSensitive,
+                regex: regexObj, replacement: replacement)
             guard count > 0, newText != text else { return true }
             // Round-trip in the file's original encoding. A replacement that adds a
             // character the encoding can't represent is a FAILURE, not a change —
             // checked identically in both the dry run and the commit so the dry-run
             // count the caller confirms against exactly equals what commit writes.
             guard let data = file.data(for: newText) else { filesFailed += 1; return true }
-            if !commit {   // dry run: report what WOULD change, write nothing
+            if !commit {  // dry run: report what WOULD change, write nothing
                 filesChanged += 1
                 totalReplacements += count
                 return true
@@ -335,8 +350,9 @@ public enum ProjectSearch {
         text.enumerateSubstrings(in: text.startIndex..<text.endIndex, options: .byLines) { _, sub, encl, _ in
             let line = String(text[sub])
             let terminator = String(text[sub.upperBound..<encl.upperBound])
-            let (replacedLine, n) = replacedInLine(line, query: query, caseSensitive: caseSensitive,
-                                                   regex: regex, replacement: replacement)
+            let (replacedLine, n) = replacedInLine(
+                line, query: query, caseSensitive: caseSensitive,
+                regex: regex, replacement: replacement)
             out += replacedLine + terminator
             count += n
         }

@@ -38,8 +38,9 @@ final class DiskStormDetectorTests: XCTestCase {
     func testSustainedFloodNamesTheDeepestSharedFolder() throws {
         var d = DiskStormDetector()
         for s in 0..<3 {
-            d.ingest(paths: paths(70, under: "wp-content/cache/object/a") + paths(30, under: "wp-content/cache/object/b"),
-                     roots: [root], at: at(Double(s)))
+            d.ingest(
+                paths: paths(70, under: "wp-content/cache/object/a") + paths(30, under: "wp-content/cache/object/b"),
+                roots: [root], at: at(Double(s)))
         }
         let storm = try XCTUnwrap(d.storm(at: at(2.5)))
         XCTAssertEqual(storm.events, 300)

@@ -20,7 +20,7 @@ public final class IgnoreMatcher: @unchecked Sendable {
     public let root: URL
     private let fileManager: FileManager
     private let lock = NSLock()
-    private var stacks: [String: IgnoreStack] = [:]   // relative directory → stack in force there
+    private var stacks: [String: IgnoreStack] = [:]  // relative directory → stack in force there
     private var builtFor = -1
 
     /// A matcher for the tree under `root`; nothing is read until the first question.
@@ -59,8 +59,9 @@ public final class IgnoreMatcher: @unchecked Sendable {
         if builtFor != IgnoreRulesCache.generation { stacks = [:]; builtFor = IgnoreRulesCache.generation }
         if let hit = stacks[relativeDirectory] { return hit }
         let parentStack: IgnoreStack
-        if relativeDirectory.isEmpty { parentStack = IgnoreStack() }
-        else {
+        if relativeDirectory.isEmpty {
+            parentStack = IgnoreStack()
+        } else {
             let above = relativeDirectory.contains("/") ? String(relativeDirectory[..<relativeDirectory.lastIndex(of: "/")!]) : ""
             lock.unlock(); let p = stack(for: above, rules: rules); lock.lock()
             parentStack = p

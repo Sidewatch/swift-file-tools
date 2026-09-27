@@ -117,11 +117,13 @@ public struct DiskStormDetector: Sendable {
         let need = Int((Double(total) * share).rounded(.up))
         // Ancestors are prefixes of one another, so among the qualifying
         // directories the longest path is the deepest.
-        let folder = dirs
+        let folder =
+            dirs
             .filter { $0.key.hasPrefix(rootPath) && $0.value >= need }
             .max { $0.key.count < $1.key.count }?.key
-        return Storm(events: total, window: window,
-                     root: Self.url(rootPath), folder: folder.map(Self.url))
+        return Storm(
+            events: total, window: window,
+            root: Self.url(rootPath), folder: folder.map(Self.url))
     }
 
     /// Forgets the window — after the user acts on a storm, so the notice clears

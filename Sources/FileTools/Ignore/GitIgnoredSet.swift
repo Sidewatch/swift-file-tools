@@ -76,10 +76,13 @@ public struct GitIgnoredSet: Sendable {
     /// including a `root` that isn't a git work tree, which makes `git ls-files` exit non-zero,
     /// and a git that hangs past `timeout`.
     private static func run(root: URL) -> String? {
-        let result = ProcessRunner.run("/usr/bin/env",
-                                       ["git", "-C", root.path, "ls-files", "-z",
-                                        "--others", "--ignored", "--exclude-standard", "--directory"],
-                                       augmentPATH: false, timeout: timeout)
+        let result = ProcessRunner.run(
+            "/usr/bin/env",
+            [
+                "git", "-C", root.path, "ls-files", "-z",
+                "--others", "--ignored", "--exclude-standard", "--directory",
+            ],
+            augmentPATH: false, timeout: timeout)
         guard result.succeeded else { return nil }
         return result.stdout.utf8String
     }

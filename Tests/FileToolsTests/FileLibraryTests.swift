@@ -58,7 +58,8 @@ final class FileLibraryTests: XCTestCase {
         library.save("mine", name: "Example", in: dir)
         let written = library.seed([("Example", "seed"), ("Other", "seed")], into: dir)
         XCTAssertEqual(written, 1)
-        XCTAssertEqual(try String(contentsOf: dir.appendingPathComponent("Example.http"), encoding: .utf8), "mine", "an existing file is left alone")
+        XCTAssertEqual(
+            try String(contentsOf: dir.appendingPathComponent("Example.http"), encoding: .utf8), "mine", "an existing file is left alone")
         XCTAssertEqual(library.seed([("Other", "seed")], into: dir), 0, "a second pass writes nothing")
     }
 }

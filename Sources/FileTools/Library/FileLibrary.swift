@@ -70,7 +70,8 @@ public struct FileLibrary: Sendable {
     /// The entries in one folder, sorted the way Finder sorts.
     public func entries(in directory: URL, isProject: Bool) -> [Entry] {
         let files = (try? FileManager.default.contentsOfDirectory(at: directory, includingPropertiesForKeys: nil)) ?? []
-        return files
+        return
+            files
             .filter { $0.pathExtension.lowercased() == fileExtension }
             .sorted { $0.lastPathComponent.localizedStandardCompare($1.lastPathComponent) == .orderedAscending }
             .map { Entry(title: $0.deletingPathExtension().lastPathComponent, url: $0, isProject: isProject) }
@@ -101,7 +102,8 @@ public struct FileLibrary: Sendable {
     /// break on other filesystems, so they are replaced rather than rejected — a save should
     /// not fail because the user typed a slash. Blank becomes `Untitled`.
     public static func sanitize(_ name: String) -> String {
-        let cleaned = name
+        let cleaned =
+            name
             .replacingOccurrences(of: "/", with: "-")
             .replacingOccurrences(of: ":", with: "-")
             .trimmingCharacters(in: .whitespacesAndNewlines)

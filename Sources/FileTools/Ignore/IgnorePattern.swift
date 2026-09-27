@@ -58,7 +58,7 @@ public struct IgnorePattern: Sendable, Equatable {
 
         // Trailing spaces are ignored unless escaped with a backslash.
         let trimmed = IgnorePattern.trimTrailingUnescapedSpaces(line)
-        guard !trimmed.isEmpty else { return nil }   // blank after trimming
+        guard !trimmed.isEmpty else { return nil }  // blank after trimming
 
         var body = trimmed
 
@@ -136,7 +136,7 @@ public struct IgnorePattern: Sendable, Equatable {
             var backslashes = 0
             var i = chars.count - 2
             while i >= 0, chars[i] == "\\" { backslashes += 1; i -= 1 }
-            if backslashes % 2 == 1 { break }   // escaped — stop trimming
+            if backslashes % 2 == 1 { break }  // escaped — stop trimming
             chars.removeLast()
         }
         return String(chars)
@@ -214,10 +214,11 @@ private enum Segment: Sendable, Equatable {
 /// One atom within a single path segment's glob.
 private enum GlobToken: Sendable, Equatable {
     case literal(Character)
-    case anyChar                                     // '?'
-    case anyRun                                      // '*' (zero or more, never crosses '/')
-    case charClass(negated: Bool, singles: Set<Character>, ranges: [ClosedRange<Character>],
-                   named: [PosixClass])
+    case anyChar  // '?'
+    case anyRun  // '*' (zero or more, never crosses '/')
+    case charClass(
+        negated: Bool, singles: Set<Character>, ranges: [ClosedRange<Character>],
+        named: [PosixClass])
     /// A class naming an unknown `[:name:]` — git's wildmatch aborts the whole match, so
     /// the pattern never matches anything.
     case never
@@ -238,7 +239,7 @@ private enum GlobToken: Sendable, Equatable {
                     tokens.append(.literal(chars[i + 1]))
                     i += 2
                 } else {
-                    i += 1   // trailing lone backslash inside a segment: drop it
+                    i += 1  // trailing lone backslash inside a segment: drop it
                 }
             case "*":
                 tokens.append(.anyRun)
@@ -251,7 +252,7 @@ private enum GlobToken: Sendable, Equatable {
                     tokens.append(token)
                     i += consumed
                 } else {
-                    tokens.append(.literal("["))   // unterminated class: literal '['
+                    tokens.append(.literal("["))  // unterminated class: literal '['
                     i += 1
                 }
             default:
@@ -287,10 +288,11 @@ private enum GlobToken: Sendable, Equatable {
             }
             first = false
             if chars[j] == "[", j + 1 < chars.count, chars[j + 1] == ":",
-               let close = PosixClass.closingIndex(in: chars, from: j + 2) {
+                let close = PosixClass.closingIndex(in: chars, from: j + 2)
+            {
                 let name = String(chars[(j + 2)..<close])
                 if let posix = PosixClass(rawValue: name) { named.append(posix) } else { unknownName = true }
-                j = close + 2   // past ":]"
+                j = close + 2  // past ":]"
                 continue
             }
             var ch = chars[j]
@@ -313,7 +315,7 @@ private enum GlobToken: Sendable, Equatable {
                 j += 1
             }
         }
-        return nil   // no closing ']'
+        return nil  // no closing ']'
     }
 
     /// Matches compiled `tokens` against one full path segment's text.
@@ -332,7 +334,8 @@ private enum GlobToken: Sendable, Equatable {
             return matchFrom(tokens, ti + 1, text, ci + 1)
         case .charClass(let negated, let singles, let ranges, let named):
             guard ci < text.count else { return false }
-            let inClass = singles.contains(text[ci]) || ranges.contains { $0.contains(text[ci]) }
+            let inClass =
+                singles.contains(text[ci]) || ranges.contains { $0.contains(text[ci]) }
                 || named.contains { $0.contains(text[ci]) }
             guard inClass != negated else { return false }
             return matchFrom(tokens, ti + 1, text, ci + 1)
@@ -369,17 +372,17 @@ private enum PosixClass: String, Sendable {
     func contains(_ c: Character) -> Bool {
         guard let b = c.asciiValue else { return false }
         switch self {
-        case .alnum:  return Self.isAlpha(b) || Self.isDigit(b)
-        case .alpha:  return Self.isAlpha(b)
-        case .blank:  return b == 0x20 || b == 0x09
-        case .cntrl:  return b < 0x20 || b == 0x7F
-        case .digit:  return Self.isDigit(b)
-        case .graph:  return b > 0x20 && b < 0x7F
-        case .lower:  return b >= 0x61 && b <= 0x7A
-        case .print:  return b >= 0x20 && b < 0x7F
-        case .punct:  return b > 0x20 && b < 0x7F && !Self.isAlpha(b) && !Self.isDigit(b)
-        case .space:  return b == 0x20 || (b >= 0x09 && b <= 0x0D)
-        case .upper:  return b >= 0x41 && b <= 0x5A
+        case .alnum: return Self.isAlpha(b) || Self.isDigit(b)
+        case .alpha: return Self.isAlpha(b)
+        case .blank: return b == 0x20 || b == 0x09
+        case .cntrl: return b < 0x20 || b == 0x7F
+        case .digit: return Self.isDigit(b)
+        case .graph: return b > 0x20 && b < 0x7F
+        case .lower: return b >= 0x61 && b <= 0x7A
+        case .print: return b >= 0x20 && b < 0x7F
+        case .punct: return b > 0x20 && b < 0x7F && !Self.isAlpha(b) && !Self.isDigit(b)
+        case .space: return b == 0x20 || (b >= 0x09 && b <= 0x0D)
+        case .upper: return b >= 0x41 && b <= 0x5A
         case .xdigit: return Self.isDigit(b) || (b >= 0x41 && b <= 0x46) || (b >= 0x61 && b <= 0x66)
         }
     }

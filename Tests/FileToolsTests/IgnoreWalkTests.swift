@@ -30,8 +30,9 @@ final class IgnoreWalkTests: XCTestCase {
 
     private func write(_ contents: String, to relativePath: String) throws {
         let url = tmp.appendingPathComponent(relativePath)
-        try FileManager.default.createDirectory(at: url.deletingLastPathComponent(),
-                                                 withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(
+            at: url.deletingLastPathComponent(),
+            withIntermediateDirectories: true)
         try contents.write(to: url, atomically: true, encoding: .utf8)
     }
 
@@ -43,8 +44,9 @@ final class IgnoreWalkTests: XCTestCase {
         let loaded = IgnoreStack.load(directory: directory, relativeDirectory: relativeDirectory)
         let stack = stack.appending(contentsOf: loaded)
 
-        let entries = (try? FileManager.default.contentsOfDirectory(
-            at: directory, includingPropertiesForKeys: [.isDirectoryKey])) ?? []
+        let entries =
+            (try? FileManager.default.contentsOfDirectory(
+                at: directory, includingPropertiesForKeys: [.isDirectoryKey])) ?? []
 
         for entry in entries.sorted(by: { $0.lastPathComponent < $1.lastPathComponent }) {
             let name = entry.lastPathComponent
@@ -52,7 +54,7 @@ final class IgnoreWalkTests: XCTestCase {
             let isDirectory = (try? entry.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) ?? false
 
             if stack.isIgnored(relativePath: relativePath, isDirectory: isDirectory) {
-                continue   // pruned — no visit, no descent, no chance for a deeper "!" to reach it
+                continue  // pruned — no visit, no descent, no chance for a deeper "!" to reach it
             }
             kept.append(relativePath)
             if isDirectory {
@@ -104,7 +106,7 @@ final class IgnoreWalkTests: XCTestCase {
         // .ignore is later in IgnoreFileNames.orderedNames, so it wins.
         XCTAssertFalse(stack.isIgnored(relativePath: "kept.log", isDirectory: false))
         XCTAssertTrue(stack.isIgnored(relativePath: "other.log", isDirectory: false))
-        stack.pop()   // dropping .ignore leaves only .gitignore's verdict
+        stack.pop()  // dropping .ignore leaves only .gitignore's verdict
         XCTAssertTrue(stack.isIgnored(relativePath: "kept.log", isDirectory: false))
     }
 

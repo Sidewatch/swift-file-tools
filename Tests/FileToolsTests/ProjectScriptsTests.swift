@@ -37,7 +37,7 @@ final class ProjectScriptsTests: XCTestCase {
     func testNpmScriptsSortedWithNpmRunner() throws {
         try write(#"{"scripts": {"build": "tsc", "test": "vitest", "dev": "vite"}}"#, to: "package.json")
         let scripts = ProjectScripts.detect(root: tmp)
-        XCTAssertEqual(scripts.map(\.name), ["build", "dev", "test"])       // sorted
+        XCTAssertEqual(scripts.map(\.name), ["build", "dev", "test"])  // sorted
         XCTAssertEqual(scripts.map(\.command), ["npm run build", "npm run dev", "npm run test"])
         XCTAssertTrue(scripts.allSatisfy { $0.source == "package.json" })
     }
@@ -81,13 +81,14 @@ final class ProjectScriptsTests: XCTestCase {
     // MARK: - composer.json
 
     func testComposerScriptsSkipReservedHooks() throws {
-        try write(#"""
-        {"scripts": {
-            "test": "phpunit",
-            "post-install-cmd": "echo hi",
-            "lint": "phpcs"
-        }}
-        """#, to: "composer.json")
+        try write(
+            #"""
+            {"scripts": {
+                "test": "phpunit",
+                "post-install-cmd": "echo hi",
+                "lint": "phpcs"
+            }}
+            """#, to: "composer.json")
         let scripts = ProjectScripts.detect(root: tmp)
         XCTAssertEqual(scripts.map(\.name), ["lint", "test"])
         XCTAssertEqual(scripts.first?.command, "composer run lint")
@@ -96,35 +97,37 @@ final class ProjectScriptsTests: XCTestCase {
     // MARK: - Makefile
 
     func testMakefileTargetsDetectedTargetsOnly() throws {
-        try write("""
-        CC = clang
-        build:
-        \t$(CC) main.c
-        test: build
-        \t./a.out
-        .PHONY: clean
-        clean:
-        \trm -f a.out
-        # a comment: not a target
-        """, to: "Makefile")
+        try write(
+            """
+            CC = clang
+            build:
+            \t$(CC) main.c
+            test: build
+            \t./a.out
+            .PHONY: clean
+            clean:
+            \trm -f a.out
+            # a comment: not a target
+            """, to: "Makefile")
         let names = ProjectScripts.detect(root: tmp).map(\.name)
         XCTAssertEqual(names, ["build", "test", "clean"])
-        XCTAssertFalse(names.contains("CC"))          // variable assignment excluded
-        XCTAssertFalse(names.contains(".PHONY"))      // dot-target excluded
+        XCTAssertFalse(names.contains("CC"))  // variable assignment excluded
+        XCTAssertFalse(names.contains(".PHONY"))  // dot-target excluded
     }
 
     func testMakefileColonAssignmentsAreNotTargets() throws {
         // `VAR := value` (and `::=`/`:::=`) puts the '=' AFTER the colon, so the
         // name-side guards never saw it — these leaked into the task list as
         // bogus "make CC" entries.
-        try write("""
-        CC := gcc
-        CFLAGS:=-Wall
-        IMMEDIATE ::= now
-        POSIX :::= later
-        build:
-        \t$(CC) main.c
-        """, to: "Makefile")
+        try write(
+            """
+            CC := gcc
+            CFLAGS:=-Wall
+            IMMEDIATE ::= now
+            POSIX :::= later
+            build:
+            \t$(CC) main.c
+            """, to: "Makefile")
         XCTAssertEqual(ProjectScripts.detect(root: tmp).map(\.name), ["build"])
     }
 

@@ -26,7 +26,8 @@ public struct IgnoreRules: Sendable {
     public init(root: URL, git: GitIgnoredSet?) {
         self.root = root
         self.git = git
-        self.perDirectoryFileNames = git == nil
+        self.perDirectoryFileNames =
+            git == nil
             ? IgnoreFileNames.orderedNames
             : IgnoreFileNames.orderedNames.filter { $0 != ".gitignore" }
     }
@@ -45,7 +46,8 @@ public struct IgnoreRules: Sendable {
 
     /// The ignore files in `directory`, ready to push onto a walker's stack.
     public func files(in directory: URL, relativeDirectory: String, fileManager: FileManager = .default) -> [IgnoreFile] {
-        IgnoreStack.load(directory: directory, relativeDirectory: relativeDirectory,
-                         names: perDirectoryFileNames, fileManager: fileManager)
+        IgnoreStack.load(
+            directory: directory, relativeDirectory: relativeDirectory,
+            names: perDirectoryFileNames, fileManager: fileManager)
     }
 }
