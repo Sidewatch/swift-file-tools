@@ -9,11 +9,10 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../swift-foundation-extensions"),
-        .package(path: "../swift-process-runner"),
     ],
     targets: [
         // macOS-only: DirectoryEventStream wraps FSEvents/CoreServices.
-        .target(name: "FileTools", dependencies: [.product(name: "FoundationExtensions", package: "swift-foundation-extensions"), .product(name: "ProcessRunner", package: "swift-process-runner")], path: "Sources",
+        .target(name: "FileTools", dependencies: [.product(name: "FoundationExtensions", package: "swift-foundation-extensions"), .product(name: "ProcessRunner", package: "swift-foundation-extensions")], path: "Sources",
                 swiftSettings: [.swiftLanguageMode(.v6)]),
         .testTarget(name: "FileToolsTests", dependencies: ["FileTools"], path: "Tests"),
     ]
