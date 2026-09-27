@@ -23,4 +23,10 @@ public enum IgnoreFileNames {
     /// `.gitignore`, `.ignore`, `.rgignore`, `.fdignore`, in that precedence
     /// order (later wins).
     public static let orderedNames: [String] = [".gitignore", ".ignore", ".rgignore", ".fdignore"]
+
+    /// Whether `path` names one of the ignore files, by its last component — so a watcher can
+    /// tell which changes should reload the rules.
+    public static func names(_ path: String) -> Bool {
+        orderedNames.contains((path as NSString).lastPathComponent)
+    }
 }
