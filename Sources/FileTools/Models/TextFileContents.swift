@@ -5,6 +5,7 @@
 //  A text file as this package decodes it: the text, and the encoding it round-trips in.
 //
 //  Created by David Sherlock on 9/18/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

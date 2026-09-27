@@ -1,11 +1,12 @@
 //
 //  ProjectSearch.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  Fast, recursive, project-wide text search over a directory. Runs
 //  synchronously; callers should dispatch it to a background queue.
 //
 //  Created by David Sherlock on 7/9/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

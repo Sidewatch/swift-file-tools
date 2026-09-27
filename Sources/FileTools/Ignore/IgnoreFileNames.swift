@@ -6,6 +6,7 @@
 //  name later in this list wins over an earlier one when both exist in the SAME directory (e.g.
 //
 //  Created by David Sherlock on 9/5/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

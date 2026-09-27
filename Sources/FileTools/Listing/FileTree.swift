@@ -1,12 +1,13 @@
 //
 //  FileTree.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  Renders a directory as an ASCII `tree`, for pasting a project's structure to
 //  an AI agent. Skips noise directories and is bounded so a huge tree can't run
 //  away.
 //
 //  Created by David Sherlock on 7/9/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

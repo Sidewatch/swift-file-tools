@@ -1,10 +1,11 @@
 //
 //  SearchFileResult.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  All matches found within a single file, produced by ``ProjectSearch``.
 //
 //  Created by David Sherlock on 7/9/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

@@ -5,6 +5,7 @@
 //  A single directory listing, cheap enough to run on the main thread.
 //
 //  Created by David Sherlock on 8/1/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

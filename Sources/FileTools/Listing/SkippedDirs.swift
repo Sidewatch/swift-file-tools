@@ -1,6 +1,6 @@
 //
 //  SkippedDirs.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  The set of "noise" directory names (version-control metadata, build output,
 //  dependency caches) that scanners should skip when walking a project tree.
@@ -8,6 +8,7 @@
 //  `dist/` or `build/` source directory must be able to get it back.
 //
 //  Created by David Sherlock on 7/9/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

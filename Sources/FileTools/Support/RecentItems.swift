@@ -1,12 +1,13 @@
 //
 //  RecentItems.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  A small "recent files" / "recent folders" list backed by
 //  `UserDefaults.standard`. Paths that no longer exist on disk are filtered out
 //  on read.
 //
 //  Created by David Sherlock on 7/9/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

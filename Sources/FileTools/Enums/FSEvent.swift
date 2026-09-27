@@ -1,10 +1,11 @@
 //
 //  FSEvent.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  The kinds of file-system change reported by ``DirectoryEventStream``.
 //
 //  Created by David Sherlock on 7/9/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

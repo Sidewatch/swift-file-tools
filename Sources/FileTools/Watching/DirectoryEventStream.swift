@@ -1,11 +1,12 @@
 //
 //  DirectoryEventStream.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  A self-contained FSEvents wrapper that streams file-system change events for
 //  a directory. Lifted from CodeEdit (MIT). Original author: Khan Winter.
 //
 //  Created by David Sherlock on 7/9/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

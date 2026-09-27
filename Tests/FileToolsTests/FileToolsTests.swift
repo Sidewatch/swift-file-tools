@@ -1,10 +1,11 @@
 //
 //  FileToolsTests.swift
-//  Tests for SwiftFileTools
+//  FileToolsTests
 //
 //  Tests for the FileTools helpers over a temporary directory fixture.
 //
 //  Created by David Sherlock on 7/9/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import XCTest

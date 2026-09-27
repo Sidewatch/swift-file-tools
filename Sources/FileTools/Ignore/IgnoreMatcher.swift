@@ -6,6 +6,7 @@
 //  tree dimming rows, a symbol index driven by `FileManager.enumerator`.
 //
 //  Created by David Sherlock on 9/5/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

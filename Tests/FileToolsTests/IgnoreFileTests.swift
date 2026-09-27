@@ -6,6 +6,7 @@
 //  of ignore files, a path, and the expected verdict.
 //
 //  Created by David Sherlock on 9/3/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import XCTest

@@ -6,6 +6,7 @@
 //  `path/to/File.swift:42:10` style an agent prints when it edits a file or reports an error.
 //
 //  Created by David Sherlock on 7/21/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

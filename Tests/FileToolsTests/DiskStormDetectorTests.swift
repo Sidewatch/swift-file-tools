@@ -6,6 +6,7 @@
 //  and the per-second and per-directory thresholds hold.
 //
 //  Created by David Sherlock on 9/2/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import XCTest

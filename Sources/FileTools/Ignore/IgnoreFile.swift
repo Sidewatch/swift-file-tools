@@ -1,6 +1,6 @@
 //
 //  IgnoreFile.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  A pure-Swift implementation of `.gitignore` pattern syntax, as documented at
 //  https://git-scm.com/docs/gitignore — blank lines and `#` comments, trailing
@@ -11,6 +11,7 @@
 //  git-backed answer inside a checkout.
 //
 //  Created by David Sherlock on 9/2/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

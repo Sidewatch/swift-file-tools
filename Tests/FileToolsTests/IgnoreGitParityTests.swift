@@ -6,6 +6,7 @@
 //  and the files a parser-driven walk keeps must be exactly the untracked files git lists.
 //
 //  Created by David Sherlock on 9/18/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import XCTest

@@ -1,6 +1,6 @@
 //
 //  GitIgnoredSet.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  For a git checkout, the exact ignored set — asked of git itself, rather
 //  than re-derived by re-implementing gitignore semantics. Fast (one process
@@ -9,6 +9,7 @@
 //  detail this package's own parser might still get wrong).
 //
 //  Created by David Sherlock on 9/2/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

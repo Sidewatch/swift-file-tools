@@ -5,6 +5,7 @@
 //  Kept versions of files on save — VS Code's local history, the rules ported.
 //
 //  Created by David Sherlock on 9/20/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import CryptoKit

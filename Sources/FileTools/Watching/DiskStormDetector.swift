@@ -1,11 +1,12 @@
 //
 //  DiskStormDetector.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  Notices when the file system is changing faster than an editor can be
 //  expected to keep up with, and names the folder responsible.
 //
 //  Created by David Sherlock on 9/2/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation

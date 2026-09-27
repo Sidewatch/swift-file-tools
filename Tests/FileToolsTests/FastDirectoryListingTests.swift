@@ -6,6 +6,7 @@
 //  that has to survive the swap — especially the `d_type` edge cases the fast path skips over.
 //
 //  Created by David Sherlock on 8/1/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import XCTest

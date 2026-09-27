@@ -1,12 +1,13 @@
 //
 //  IgnoreStack.swift
-//  SwiftFileTools
+//  FileTools
 //
 //  An ordered stack of `IgnoreFile`s — root down to the directory currently
 //  being visited — that together decide whether one path is ignored, per
 //  git's own precedence rules.
 //
 //  Created by David Sherlock on 9/2/26.
+//  Copyright © 2026 ArrayPress Limited. MIT licence.
 //
 
 import Foundation
