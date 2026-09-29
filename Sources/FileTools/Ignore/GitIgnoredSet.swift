@@ -39,11 +39,11 @@ public struct GitIgnoredSet: Sendable {
     }
 
     /// Runs `git -C <root> ls-files -z --others --ignored --exclude-standard --directory` and
-    /// parses its output. `fileManager` is unused, accepted for parity with ``IgnoreStack``'s loader.
+    /// parses its output.
     ///
     /// - Returns: nil when git is missing, `root` is not in a work tree, the process fails or
     ///   times out (10 seconds), or the output is not UTF-8: fall back to ``IgnoreStack``.
-    public static func load(root: URL, fileManager: FileManager = .default) -> GitIgnoredSet? {
+    public static func load(root: URL) -> GitIgnoredSet? {
         guard let output = run(root: root) else { return nil }
         var files: Set<String> = []
         var directories: Set<String> = []

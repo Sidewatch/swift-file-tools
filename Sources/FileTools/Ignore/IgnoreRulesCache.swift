@@ -24,12 +24,12 @@ public enum IgnoreRulesCache {
     nonisolated(unsafe) public static var lifetime: TimeInterval = 10
 
     /// The rules for `root`, loaded (running `git` once) when absent or older than ``lifetime``.
-    public static func rules(for root: URL, fileManager: FileManager = .default) -> IgnoreRules {
+    public static func rules(for root: URL) -> IgnoreRules {
         let key = root.standardizedFileURL
         lock.lock()
         if let hit = entries[key], Date().timeIntervalSince(hit.at) < lifetime { lock.unlock(); return hit.rules }
         lock.unlock()
-        let fresh = IgnoreRules.load(root: key, fileManager: fileManager)
+        let fresh = IgnoreRules.load(root: key)
         lock.lock(); entries[key] = (fresh, Date()); generation &+= 1; lock.unlock()
         return fresh
     }

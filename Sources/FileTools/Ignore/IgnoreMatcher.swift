@@ -42,7 +42,7 @@ public final class IgnoreMatcher: @unchecked Sendable {
     /// the root and for the root itself.
     public func isIgnored(url: URL, isDirectory: Bool) -> Bool {
         guard let rel = relativePath(of: url), !rel.isEmpty else { return false }
-        let rules = IgnoreRulesCache.rules(for: root, fileManager: fileManager)
+        let rules = IgnoreRulesCache.rules(for: root)
         let parent = rel.contains("/") ? String(rel[..<rel.lastIndex(of: "/")!]) : ""
         // A file inside an ignored directory is ignored: check every ancestor as a directory.
         var ancestor = ""

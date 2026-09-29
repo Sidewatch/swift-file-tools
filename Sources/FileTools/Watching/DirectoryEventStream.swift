@@ -38,7 +38,6 @@ public final class DirectoryEventStream {
 
     private var streamRef: FSEventStreamRef?
     private var callback: EventCallback
-    private let debounceDuration: TimeInterval
     /// Serial queue events are delivered on; `cancel()` synchronizes on it so
     /// teardown waits for any in-flight callback and is safe to call from
     /// multiple threads.
@@ -72,7 +71,6 @@ public final class DirectoryEventStream {
     ///   - debounceDuration: The duration to delay notifications for to let the FS events API accumulate events.
     ///   - callback: A callback the stream will send events to.
     public init(directory: String, debounceDuration: TimeInterval = 0.1, callback: @escaping EventCallback) {
-        self.debounceDuration = debounceDuration
         self.callback = callback
         self.eventQueue = DispatchQueue(label: "FileTools.DirectoryEventStream")
         eventQueue.setSpecific(key: Self.queueKey, value: ())

@@ -33,8 +33,8 @@ public struct IgnoreRules: Sendable {
     }
 
     /// Rules for `root`: git-derived when it is a work tree, parser-only otherwise.
-    public static func load(root: URL, fileManager: FileManager = .default) -> IgnoreRules {
-        IgnoreRules(root: root, git: GitIgnoredSet.load(root: root, fileManager: fileManager))
+    public static func load(root: URL) -> IgnoreRules {
+        IgnoreRules(root: root, git: GitIgnoredSet.load(root: root))
     }
 
     /// Whether an entry is ignored, given the stack of ignore files from the root down to
