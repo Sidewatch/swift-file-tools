@@ -108,4 +108,32 @@ final class SearchStreamingAndTargetedTests: XCTestCase {
             .map { $0.url.lastPathComponent }
         XCTAssertEqual(names, ["keep.txt"])
     }
+
+    func testTheParallelSearchFindsWhatTheSerialOneDoes() throws {
+        for i in 0..<600 { _ = try write(i % 7 == 0 ? "a needle \(i)\nNEEDLE\n" : "hay \(i)\n", "d\(i % 9)/f\(i).txt") }
+        _ = try write("*.skip\n", ".gitignore")
+        _ = try write("needle\n", "x.skip")
+        IgnoreRulesCache.invalidate(root: tmp)
+        let serial = ProjectSearch.search(query: "needle", in: tmp, caseSensitive: false, regex: false, isCancelled: { false })
+        let streamed = StreamedNames()
+        let parallel = ProjectSearch.searchInParallel(
+            query: "needle", in: tmp, caseSensitive: false, regex: false, isCancelled: { false },
+            onFile: { streamed.add($0.url.lastPathComponent) })
+        XCTAssertEqual(parallel.map(\.url.path), serial.map(\.url.path), "same files, same path order")
+        XCTAssertEqual(parallel.map(\.matches.count), serial.map(\.matches.count))
+        XCTAssertEqual(streamed.names.sorted(), serial.map(\.url.lastPathComponent).sorted(), "every file streamed exactly once")
+        XCTAssertFalse(streamed.names.contains("x.skip"), "the ignore rules apply")
+        let regexHits = ProjectSearch.searchInParallel(query: "need(le)", in: tmp, caseSensitive: true, regex: true, isCancelled: { false })
+        XCTAssertEqual(regexHits.count, serial.count)
+        XCTAssertTrue(
+            ProjectSearch.searchInParallel(query: "needle", in: tmp, caseSensitive: false, regex: false, isCancelled: { true }).isEmpty)
+    }
+}
+
+/// Names reported from the parallel search's threads.
+private final class StreamedNames: @unchecked Sendable {
+    private let lock = NSLock()
+    private var list: [String] = []
+    var names: [String] { lock.lock(); defer { lock.unlock() }; return list }
+    func add(_ name: String) { lock.lock(); list.append(name); lock.unlock() }
 }

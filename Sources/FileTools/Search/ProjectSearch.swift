@@ -17,9 +17,9 @@ import Foundation
 /// (``SkippedDirs``), oversized files and binary files are skipped.
 public enum ProjectSearch {
     /// Files bigger than this are skipped (likely generated/minified/lock files).
-    private static let maxFileBytes = 2_000_000
+    static let maxFileBytes = 2_000_000
     /// The search stops after this many matches across the whole project.
-    private static let maxTotalMatches = 5_000
+    static let maxTotalMatches = 5_000
     /// Per-file cap; scanning of a file stops once it is reached.
     private static let maxMatchesPerFile = 200
 
@@ -132,7 +132,7 @@ public enum ProjectSearch {
         isCancelled: () -> Bool = { false }
     ) -> Int {
         var n = 0
-        walkRegularFiles(in: root, isCancelled: isCancelled, include: include) { _, _ in
+        walkCandidates(in: root, isCancelled: isCancelled, include: include) { _, _ in
             n += 1; return true
         }
         return n
@@ -151,7 +151,7 @@ public enum ProjectSearch {
     /// entry, not `FileManager.enumerator`'s `getattrlist` per entry. Symlinks are skipped both
     /// ways (a linked file would bypass the size cap, a linked directory could loop). `body`
     /// returns false to stop.
-    private static func walkRegularFiles(
+    static func walkCandidates(
         in root: URL, isCancelled: () -> Bool,
         include: ((URL) -> Bool)?,
         body: (URL, Int) -> Bool
@@ -198,7 +198,7 @@ public enum ProjectSearch {
         body: (URL, TextFileContents) -> Bool
     ) {
         var scanned = 0
-        walkRegularFiles(in: root, isCancelled: isCancelled, include: include) { url, size in
+        walkCandidates(in: root, isCancelled: isCancelled, include: include) { url, size in
             scanned += 1; onProgress?(scanned)
             if size > maxFileBytes { return true }
             guard let data = try? Data(contentsOf: url),
@@ -212,7 +212,7 @@ public enum ProjectSearch {
     /// no match, so the typical all-miss file skips the per-line walk. It may over-admit, never
     /// under-admit: regex mode recompiles with `.anchorsMatchLines`, and patterns using
     /// `\A`/`\z`/`\Z` or negative lookaround (whose meaning differs on the whole text) skip it.
-    private static func prefilter(
+    static func prefilter(
         query: String,
         caseSensitive: Bool,
         regexMode: Bool
@@ -239,7 +239,7 @@ public enum ProjectSearch {
 
     /// Finds every match of `query` (or the precompiled `regex`) in `text`,
     /// line by line, capped at `maxMatchesPerFile`.
-    private static func matches(
+    static func matches(
         in text: String,
         query: String,
         caseSensitive: Bool,
