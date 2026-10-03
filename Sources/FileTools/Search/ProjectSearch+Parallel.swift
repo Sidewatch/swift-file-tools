@@ -40,7 +40,9 @@ extension ProjectSearch {
         // At most two batches per core in flight: reads block, and an unbounded fan-out would make
         // GCD spawn a thread per waiting read.
         let slots = DispatchSemaphore(value: max(2, ProcessInfo.processInfo.activeProcessorCount * 2))
-        let batchSize = 16
+        // Batches start at one file and double to sixteen: the first files go to a core the moment
+        // the walk sees them (a hit near the top shows at once), later ones in cheaper bundles.
+        var batchSize = 1
         func dispatch(_ batch: [URL]) {
             slots.wait()
             group.enter()
@@ -57,13 +59,14 @@ extension ProjectSearch {
             }
         }
         var batch: [URL] = []
-        batch.reserveCapacity(batchSize)
+        batch.reserveCapacity(16)
         walkCandidates(in: root, isCancelled: isCancelled, include: include) { url, size in
             guard size <= maxFileBytes else { return true }
             batch.append(url)
-            if batch.count == batchSize {
+            if batch.count >= batchSize {
                 dispatch(batch)
                 batch.removeAll(keepingCapacity: true)
+                batchSize = min(16, batchSize * 2)
             }
             return !state.isFull(cap: maxTotalMatches)
         }
