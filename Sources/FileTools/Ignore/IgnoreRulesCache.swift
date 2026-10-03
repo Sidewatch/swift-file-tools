@@ -23,15 +23,41 @@ public enum IgnoreRulesCache {
     /// How long a loaded set stays fresh without an explicit invalidation.
     nonisolated(unsafe) public static var lifetime: TimeInterval = 10
 
-    /// The rules for `root`, loaded (running `git` once) when absent or older than ``lifetime``.
+    /// Roots whose rules are being reloaded in the background, so a burst of callers starts one load.
+    nonisolated(unsafe) private static var refreshing: Set<URL> = []
+
+    /// The rules for `root`. Absent, they are loaded now (running `git` once, tens of
+    /// milliseconds). Older than ``lifetime``, the cached set is returned AT ONCE and a fresh one
+    /// loads in the background — a search or a tree walk never waits on `git` for a set that is
+    /// merely old. An explicit ``invalidate(root:)`` (an ignore file changed) still drops the entry,
+    /// so the next caller loads the new rules before walking.
     public static func rules(for root: URL) -> IgnoreRules {
         let key = root.standardizedFileURL
         lock.lock()
-        if let hit = entries[key], Date().timeIntervalSince(hit.at) < lifetime { lock.unlock(); return hit.rules }
+        if let hit = entries[key] {
+            let stale = Date().timeIntervalSince(hit.at) >= lifetime
+            let startRefresh = stale && refreshing.insert(key).inserted
+            lock.unlock()
+            if startRefresh {
+                DispatchQueue.global(qos: .utility).async {
+                    let fresh = IgnoreRules.load(root: key)
+                    lock.lock(); entries[key] = (fresh, Date()); refreshing.remove(key); generation &+= 1; lock.unlock()
+                }
+            }
+            return hit.rules
+        }
         lock.unlock()
         let fresh = IgnoreRules.load(root: key)
         lock.lock(); entries[key] = (fresh, Date()); generation &+= 1; lock.unlock()
         return fresh
+    }
+
+    /// Loads (or refreshes) the rules for `roots` in the background, so a walk about to start —
+    /// a search box just opened — finds them ready.
+    public static func warm(_ roots: [URL]) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            for root in roots { _ = rules(for: root) }
+        }
     }
 
     /// Drops the cached set for `root` (and any root above it, whose rules may include it).

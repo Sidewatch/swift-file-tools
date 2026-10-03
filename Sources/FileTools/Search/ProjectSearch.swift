@@ -26,6 +26,8 @@ public enum ProjectSearch {
     /// Recursively searches `root` for `query`: one ``SearchFileResult`` per matching file,
     /// sorted by path. An empty query or an invalid regex yields nothing; `isCancelled` is
     /// polled between files, `include` filters files and `onProgress` gets the running count.
+    /// `onFile` receives each matching file the moment it is found (walk order, on the calling
+    /// queue), so a caller can show results before the walk ends.
     public static func search(
         query: String,
         in root: URL,
@@ -33,7 +35,8 @@ public enum ProjectSearch {
         regex: Bool,
         isCancelled: () -> Bool,
         include: ((URL) -> Bool)? = nil,
-        onProgress: ((Int) -> Void)? = nil
+        onProgress: ((Int) -> Void)? = nil,
+        onFile: ((SearchFileResult) -> Void)? = nil
     ) -> [SearchFileResult] {
         guard !query.isEmpty else { return [] }
 
@@ -55,7 +58,9 @@ public enum ProjectSearch {
                 in: text, query: query,
                 caseSensitive: caseSensitive, regex: regexObj)
             guard !fileMatches.isEmpty else { return true }
-            results.append(SearchFileResult(url: url, matches: fileMatches))
+            let found = SearchFileResult(url: url, matches: fileMatches)
+            results.append(found)
+            onFile?(found)
             total += fileMatches.count
             return total < maxTotalMatches  // stop the walk once the global cap is hit
         }
@@ -74,7 +79,8 @@ public enum ProjectSearch {
         caseSensitive: Bool,
         regex: Bool,
         isCancelled: () -> Bool,
-        onProgress: ((Int) -> Void)? = nil
+        onProgress: ((Int) -> Void)? = nil,
+        onFile: ((SearchFileResult) -> Void)? = nil
     ) -> [SearchFileResult] {
         guard !query.isEmpty else { return [] }
         let regexObj: NSRegularExpression? =
@@ -96,7 +102,9 @@ public enum ProjectSearch {
                 in: text, query: query,
                 caseSensitive: caseSensitive, regex: regexObj)
             guard !fileMatches.isEmpty else { continue }
-            results.append(SearchFileResult(url: url, matches: fileMatches))
+            let found = SearchFileResult(url: url, matches: fileMatches)
+            results.append(found)
+            onFile?(found)
             total += fileMatches.count
         }
         results.sort { $0.url.path.localizedCaseInsensitiveCompare($1.url.path) == .orderedAscending }
