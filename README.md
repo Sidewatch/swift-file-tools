@@ -9,7 +9,7 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 - 🕒 **Recent items** — `RecentItems.addFile` / `addFolder` / `files` / `folders`: a persistent, capped, most-recent-first list that drops paths no longer on disk
 - 👀 **Directory watching** — `DirectoryEventStream` streams debounced FSEvents batches as `[Event]` of typed `FSEvent` kinds; `cancel()` is thread-safe and idempotent
 - ✍️ **Replace All** — `ProjectSearch.replaceAll(query:in:caseSensitive:regex:replacement:commit:isCancelled:)` rewrites every match per line (the same matching as search), dry-run or commit, and a rewritten file keeps its own bytes: encoding (UTF-8 or Latin-1), UTF-8 byte-order mark and permission bits (`TextFileContents` + `FileRewrite`)
-- 🏃 **Project scripts** — `ProjectScripts.detect(root:)` lists the runnable tasks in a project's manifests — `package.json` scripts (with the runner from the `packageManager` field, else the lockfile: npm/pnpm/yarn/bun), `composer.json` scripts (reserved lifecycle hooks filtered out), and `GNUmakefile`/`makefile`/`Makefile` targets — each as a `ProjectScript { name, command, source }`. Read-only: it reflects the project, it doesn't run anything
+- 🏃 **Project scripts** — `ProjectScripts.detect(root:)` lists the runnable tasks in a project's manifests — `package.json` scripts (with the runner from the `packageManager` field, else the lockfile: npm/pnpm/yarn/bun), `composer.json` scripts (reserved lifecycle hooks filtered out), and `GNUmakefile`/`makefile`/`Makefile` targets — each as a `ProjectScript { name, command, source }`; a script name that is not plain (letters, digits, `_-.:@/+`) is single-quoted in `command`, so a manifest key holding `;` names a script and never runs a second command. Read-only: it reflects the project, it doesn't run anything
 - 🖱️ **Terminal path references** — `TerminalPathParser.match(in:at:)` pulls `path:line:col` or `path(line,col)` out of a line of terminal output at a clicked column
 - 🚫 **Noise-aware, and configurable** — both scanners honor the one `SkippedDirs.names` set (`.git`, `node_modules`, `.build`, `DerivedData`, …). Matching is by *name*, so the list is settable: a project with real sources in `dist/` can take it off the list, and `SkippedDirs.resetToDefault()` restores `SkippedDirs.defaultNames`
 - 🪶 **Small** — Foundation plus swift-foundation-extensions (FoundationExtensions, ProcessRunner)
@@ -70,6 +70,21 @@ let watcher = DirectoryEventStream(directory: projectURL.path) { events in
     }
 }
 watcher.cancel()   // thread-safe, idempotent; also runs on deinit
+
+// Rewrite a user's file in its own bytes: the encoding it was read in (UTF-8, Latin-1, UTF-16
+// behind its mark), its permission bits, group and extended attributes; a symbolic link is
+// followed to its target. A text the encoding cannot hold is nil — ask, never switch silently.
+if let file = TextFileContents(contentsOf: url), let bytes = file.data(for: newText) {
+    try FileRewrite.write(bytes, to: url)        // FileRewriteError: a dangling link, a read-only file
+    if file.decodedByFallback { /* "Latin-1 (assumed)": the bytes were not UTF-8 */ }
+}
+
+// Keep versions on save (VS Code's rules), and bound the whole store now and then.
+let history = LocalHistory(root: appSupport.appendingPathComponent("History"))
+try history.record(bytes, for: url)                      // "File Saved"; a source names other causes
+try history.record(diskBytes, for: url, source: "Overwritten on disk")
+try history.move(from: oldURL, to: newURL)               // a rename keeps its versions
+history.trimToTotalSize()                                 // oldest first, across files (256 MB)
 
 // Reuse the shared noise-directory set in your own scanners.
 if SkippedDirs.names.contains(url.lastPathComponent) { /* skip it */ }

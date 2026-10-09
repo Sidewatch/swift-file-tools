@@ -80,6 +80,18 @@ final class ProjectScriptsTests: XCTestCase {
 
     // MARK: - composer.json
 
+    func testAScriptNameIsOneShellArgument() throws {
+        try write(
+            #"{"scripts": {"build; touch /tmp/pwned": "tsc", "lint": "eslint", "test:unit": "vitest", "a b": "x"}}"#, to: "package.json")
+        let npm = ProjectScripts.detect(root: tmp)
+        XCTAssertEqual(
+            npm.map(\.command), ["npm run 'a b'", "npm run 'build; touch /tmp/pwned'", "npm run lint", "npm run test:unit"],
+            "a key with a `;` or a space is quoted; a plain one stays readable")
+        try write(#"{"scripts": {"deploy && rm -rf /": "echo"}}"#, to: "composer.json")
+        XCTAssertEqual(ProjectScripts.detect(root: tmp).last?.command, "composer run 'deploy && rm -rf /'")
+        XCTAssertEqual(ProjectScripts.argument("it's"), #"'it'\''s'"#, "an apostrophe is escaped the sh way")
+    }
+
     func testComposerScriptsSkipReservedHooks() throws {
         try write(
             #"""

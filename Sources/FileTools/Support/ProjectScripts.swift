@@ -10,15 +10,26 @@
 //
 
 import Foundation
+import FoundationExtensions
 
 /// Reads the popular project manifests at a folder root and lists what can be run —
 /// npm/pnpm/yarn/bun scripts, Makefile targets, composer scripts. Read-only: a
-/// Scripts view reflects the project, it doesn't manage it.
+/// Scripts view reflects the project, it doesn't manage it. A script's name is a key someone
+/// else wrote into the manifest, so a command line quotes it as one argument: a key holding
+/// `;` or `$(…)` names a script, it does not run a second command.
 public enum ProjectScripts {
 
     /// Every script in `root`'s manifests: npm-family first, then composer, then make targets.
     public static func detect(root: URL) -> [ProjectScript] {
         npm(root) + composer(root) + make(root)
+    }
+
+    /// `name` as one shell argument: as written when it is plain (letters, digits, `_-.:@/+`),
+    /// else single-quoted. A plain name stays readable in a menu; anything else — a `;`, a
+    /// space, a `$(…)` — is quoted so the manifest's key cannot become a second command.
+    static func argument(_ name: String) -> String {
+        let plain = name.allSatisfy { $0.isASCII && ($0.isLetter || $0.isNumber || "_-.:@/+".contains($0)) }
+        return plain && !name.isEmpty ? name : name.shellQuoted
     }
 
     // MARK: package.json
@@ -31,7 +42,7 @@ public enum ProjectScripts {
         else { return [] }
         let runner = npmRunner(root, packageManager: json["packageManager"] as? String)
         return scripts.keys.sorted().map {
-            ProjectScript(name: $0, command: "\(runner) \($0)", source: "package.json")
+            ProjectScript(name: $0, command: "\(runner) \(argument($0))", source: "package.json")
         }
     }
 
@@ -69,7 +80,7 @@ public enum ProjectScripts {
             "post-update-cmd", "post-autoload-dump", "pre-autoload-dump",
         ]
         return scripts.keys.sorted().filter { !reserved.contains($0) }.map {
-            ProjectScript(name: $0, command: "composer run \($0)", source: "composer.json")
+            ProjectScript(name: $0, command: "composer run \(argument($0))", source: "composer.json")
         }
     }
 

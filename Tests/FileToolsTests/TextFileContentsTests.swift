@@ -25,6 +25,27 @@ final class TextFileContentsTests: XCTestCase {
         XCTAssertEqual(contents.encoding.encoding, .isoLatin1)
     }
 
+    func testUTF16WithAMarkOpensAsTextAndRoundTripsByteExact() throws {
+        let little = Data([0xFF, 0xFE]) + "hi\n".data(using: .utf16LittleEndian)!
+        let le = try XCTUnwrap(TextFileContents(data: little), "the mark is read before the NUL sniff")
+        XCTAssertEqual(le.text, "hi\n")
+        XCTAssertEqual(le.encoding, .utf16LittleEndian)
+        XCTAssertEqual(le.data(for: le.text), little, "a no-op save writes the same bytes")
+        let big = Data([0xFE, 0xFF]) + "hi\n".data(using: .utf16BigEndian)!
+        let be = try XCTUnwrap(TextFileContents(data: big))
+        XCTAssertEqual(be.encoding, .utf16BigEndian)
+        XCTAssertEqual(be.data(for: be.text), big)
+        XCTAssertNil(TextFileContents(data: "hi\n".data(using: .utf16LittleEndian)!), "an unmarked UTF-16 file still reads as binary")
+    }
+
+    func testLatin1IsReportedAsTheFallbackItIs() throws {
+        XCTAssertTrue(try XCTUnwrap(TextFileContents(data: Data([0x63, 0x61, 0x66, 0xE9]))).decodedByFallback)
+        XCTAssertFalse(try XCTUnwrap(TextFileContents(data: Data("café".utf8))).decodedByFallback)
+        XCTAssertEqual(TextFileEncoding(encoding: .isoLatin1, hasByteOrderMark: false).displayName, "Latin-1")
+        XCTAssertEqual(TextFileEncoding.utf16LittleEndian.displayName, "UTF-16 LE")
+        XCTAssertNil(TextFileEncoding(encoding: .isoLatin1, hasByteOrderMark: false).data(for: "→"), "never re-encoded on its own")
+    }
+
     func testABinaryFileIsNotText() {
         XCTAssertNil(TextFileContents(data: Data([0x50, 0x4B, 0x00, 0x03])))
     }

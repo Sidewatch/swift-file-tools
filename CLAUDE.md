@@ -10,12 +10,13 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 
 - `Extensions/` — Data.utf8String, URL.isDirectory
 - `Enums/` — enums with no behaviour beyond their cases and labels: FSEvent
+- `Errors/` — every Error type, one per file: FileRewriteError
 - `Ignore/` — the engine: ignore: GitIgnoredSet, IgnoreFile, IgnoreFileNames, IgnoreMatcher, IgnorePattern, IgnoreRules, IgnoreRulesCache, IgnoreStack
 - `Library/` — the engine: library: FileLibrary (global + per-project folder of one file kind)
 - `Listing/` — the engine: listing: FastDirectoryListing, FileTree, SkippedDirs
-- `Models/` — value types — the shape of a thing, nothing else: ReplaceSummary, SearchFileResult, SearchMatch, TextFileContents (+ TextFileEncoding)
+- `Models/` — value types — the shape of a thing, nothing else: ReplaceSummary, SearchFileResult, SearchMatch, TextFileContents (+ TextFileEncoding: UTF-8, Latin-1, UTF-16 LE/BE)
 - `Search/` — the engine: search: ProjectSearch
-- `Support/` — pure helpers: parsing, escaping, validation: DirectoryChildren, FileRewrite, JSONObject, ProjectScripts, RecentItems, TerminalPathParser
+- `Support/` — pure helpers: parsing, escaping, validation: DirectoryChildren, FileRewrite (through links; mode, group, xattrs kept), JSONObject, ProjectScripts (a script's name is quoted as one shell argument unless it is plain), RecentItems, TerminalPathParser
 - `Watching/` — the engine: watching: DirectoryEventStream, DiskStormDetector
 
 ## Rules

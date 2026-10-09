@@ -104,6 +104,41 @@ Fixed, each pinned by a test that fails against the old code:
 Checked and unchanged: `IgnoreRules.isIgnored` for the walkers, `IgnoreStack`, the parity
 corpora (`IgnoreGitParityTests` still agrees with git on all ten).
 
+## Write paths — 9 Oct 2026
+
+Fixed, each pinned by a test that fails against the old code (`FileRewriteTests`,
+`TextFileContentsTests`, `LocalHistoryTests`):
+
+- **A write through a symbolic link failed, or replaced the link.** `replaceItemAt` on the LINK fails
+  with ENOENT (Foundation reports "doesn't exist"), and a dangling link took the `.atomic` branch
+  and became a regular file. `FileRewrite` now resolves the path with `URL.realPath`
+  (FoundationExtensions, `realpath(3)`) and writes the target; a link to nothing throws
+  `FileRewriteError.danglingSymbolicLink`. Mutant (the old body): three tests fail.
+- **`com.apple.TextEncoding` was lost on every rewrite.** Measured: `replaceItemAt` carries
+  `user.*` attributes over but not `com.apple.TextEncoding`. Every attribute of the old file is
+  read first and set on the new one, `com.apple.quarantine` excepted (it described the old bytes).
+  `testExtendedAttributesSurviveExceptTheQuarantineFlag`.
+- **Group.** Measured: `replaceItemAt` puts back a group the user belongs to (a file chowned to
+  `admin` comes back `admin`); a file in a folder of a group the user is NOT in (`wheel` under
+  `/tmp`) comes back in the user's primary group and `chown` back fails with EPERM, so no
+  user-space write can keep it. The `chown` in `FileRewrite` is a safety net for the first case;
+  `testTheGroupSurvivesTheRewrite` pins the outcome (it passes against the old body too, so it is
+  a pin of Foundation's behaviour, not a mutant-verified check).
+- **A read-only file failed with Foundation's folder-permission text.** `FileRewrite` checks
+  `isWritableFile` first and throws `FileRewriteError.fileNotWritable` ("“x” is read-only.").
+- **UTF-16 files opened as binary.** The NUL sniff ran before any mark; `FF FE` / `FE FF` are read
+  first and round-trip through `TextFileEncoding.utf16LittleEndian` / `.utf16BigEndian` (the
+  mark re-written). An unmarked UTF-16 file still reads as binary. Mutant (sniff first): the
+  round-trip test fails.
+- **Latin-1 was presented as a fact.** `TextFileContents.decodedByFallback` says when the bytes
+  were not UTF-8 and Latin-1 was assumed; `TextFileEncoding.displayName` names the encoding for
+  a badge. `data(for:)` still answers nil for a text the encoding cannot hold; its doc now says
+  the host must ask rather than switch encodings on its own.
+- **`LocalHistory` had no total cap and lost a renamed file's versions.** `maxTotalSize`
+  (256 MB) with `trimToTotalSize()` (oldest first across every file; a host calls it at launch,
+  not per save) and `move(from:to:)` (the old folder's versions join the new path's, in time
+  order). Mutant (both no-ops): both tests fail.
+
 ## History
 
 - 17 Sep 2026 — full audit (app + all 20 libraries), Claude with David.
@@ -117,3 +152,5 @@ corpora (`IgnoreGitParityTests` still agrees with git on all ten).
   roots; `GitIgnoredSet.isIgnored` probes ancestors instead of scanning the listing (measured above). Two
   `nonisolated(unsafe)` annotations on `NSRegularExpression` constants (`ProjectSearch+Parallel`, `IncludeGlobs`)
   dropped: the type is `Sendable` and the compiler warned; the one on the `(String) -> Bool` capture stays, it is needed.
+- 9 Oct 2026 — write paths: `FileRewrite` through links with attributes and group kept, its own errors; UTF-16 and the Latin-1 fallback in `TextFileContents`; `LocalHistory` bounded and moved with its file (section above).
+- 9 Oct 2026 — security review: `ProjectScripts` interpolated a manifest's script key into `npm run \(name)` / `composer run \(name)` unquoted, so a key `build; touch /tmp/x` ran two commands when the task was chosen. `ProjectScripts.argument(_:)` quotes any name that is not plain (`String.shellQuoted` from FoundationExtensions); plain names stay readable in a menu. `testAScriptNameIsOneShellArgument` (a `;`, a space, an `&&`, an apostrophe). Mutant: the name returned as written — 3 failures.

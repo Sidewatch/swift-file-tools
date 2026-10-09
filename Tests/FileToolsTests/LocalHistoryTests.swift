@@ -71,6 +71,32 @@ final class LocalHistoryTests: XCTestCase {
         XCTAssertNotNil(try history.record(Data(repeating: 65, count: 64), for: file, at: t0))
     }
 
+    func testTheStoreIsBoundedAcrossFilesOldestFirst() throws {
+        let other = URL(fileURLWithPath: "/tmp/project/src/other.swift")
+        history.maxTotalSize = 10
+        try history.record(Data("aaaa".utf8), for: file, at: t0)
+        try history.record(Data("bbbb".utf8), for: other, at: t0 + 60)
+        try history.record(Data("cccc".utf8), for: file, at: t0 + 120)
+        XCTAssertEqual(history.trimToTotalSize(), 1, "twelve bytes over a ten-byte ceiling: the oldest version goes")
+        XCTAssertEqual(history.entries(for: file).map { String(decoding: history.data(of: $0, for: file)!, as: UTF8.self) }, ["cccc"])
+        XCTAssertEqual(history.entries(for: other).count, 1, "the newer file's version stays")
+        let blobs = try FileManager.default.contentsOfDirectory(atPath: history.folder(for: file).path).filter { $0 != "entries.json" }
+        XCTAssertEqual(blobs.count, 1, "the dropped blob is gone")
+        XCTAssertEqual(history.trimToTotalSize(), 0, "within the ceiling nothing moves")
+    }
+
+    func testAMoveCarriesTheVersionsToTheNewPath() throws {
+        let renamed = URL(fileURLWithPath: "/tmp/project/src/renamed.swift")
+        try history.record(Data("one".utf8), for: file, at: t0)
+        try history.record(Data("two".utf8), for: file, at: t0 + 60)
+        try history.record(Data("theirs".utf8), for: renamed, at: t0 + 30)
+        try history.move(from: file, to: renamed)
+        let entries = history.entries(for: renamed)
+        XCTAssertEqual(entries.map { String(decoding: history.data(of: $0, for: renamed)!, as: UTF8.self) }, ["one", "theirs", "two"])
+        XCTAssertEqual(history.entries(for: file), [], "nothing is left under the old path")
+        XCTAssertFalse(FileManager.default.fileExists(atPath: history.folder(for: file).path))
+    }
+
     func testFilesDoNotMixAndFoldersAreStable() throws {
         let other = URL(fileURLWithPath: "/tmp/project/src/other.swift")
         try history.record(Data("a".utf8), for: file, at: t0)

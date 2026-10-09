@@ -15,7 +15,7 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 - `Listing/` — the engine: listing: FastDirectoryListing, FileTree, SkippedDirs
 - `Models/` — value types — the shape of a thing, nothing else: ReplaceSummary, SearchFileResult, SearchMatch, TextFileContents (+ TextFileEncoding)
 - `Search/` — the engine: search: ProjectSearch
-- `Support/` — pure helpers: parsing, escaping, validation: DirectoryChildren, FileRewrite, JSONObject, ProjectScripts, RecentItems, TerminalPathParser
+- `Support/` — pure helpers: parsing, escaping, validation: DirectoryChildren, FileRewrite, JSONObject, ProjectScripts (a script's name is quoted as one shell argument unless it is plain), RecentItems, TerminalPathParser
 - `Watching/` — the engine: watching: DirectoryEventStream, DiskStormDetector
 
 ## Rules
