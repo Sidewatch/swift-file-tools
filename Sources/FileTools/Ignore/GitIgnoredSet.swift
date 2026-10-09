@@ -21,6 +21,10 @@ import FoundationExtensions
 ///
 /// ``IgnoreStack`` still covers folders that are not checkouts and the `.ignore`/`.rgignore`/
 /// `.fdignore` files git never reads.
+///
+/// - Note: `git ls-files` never descends into a nested repository: a checkout inside the work
+///   tree comes back as one untracked directory entry, so nothing beneath it is in this set.
+///   ``IgnoreMatcher`` answers such paths from the nested checkout's own set.
 public struct GitIgnoredSet: Sendable {
 
     /// Ignored regular files (and non-directory entries), as relative paths
@@ -60,10 +64,17 @@ public struct GitIgnoredSet: Sendable {
     /// Whether `relativePath` (`/`-separated, no leading slash) is a listed file, a listed
     /// directory, or beneath one. `isDirectory` is unused, accepted for symmetry with
     /// ``IgnoreStack/isIgnored(relativePath:isDirectory:)``: git's trailing slash already tells.
+    ///
+    /// Costs one set lookup per path component: the path's own ancestors are looked up, the
+    /// listing is never scanned, so a tree with thousands of ignored directories answers a row
+    /// as fast as a tree with one.
     public func isIgnored(relativePath: String, isDirectory: Bool) -> Bool {
-        if files.contains(relativePath) { return true }
-        if directories.contains(relativePath) { return true }
-        for directory in directories where relativePath.hasPrefix(directory + "/") { return true }
+        if files.contains(relativePath) || directories.contains(relativePath) { return true }
+        var from = relativePath.startIndex
+        while let slash = relativePath[from...].firstIndex(of: "/") {
+            if directories.contains(String(relativePath[..<slash])) { return true }
+            from = relativePath.index(after: slash)
+        }
         return false
     }
 

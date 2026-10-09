@@ -31,7 +31,7 @@ extension ProjectSearch {
         let regexObj: NSRegularExpression? =
             regex ? try? NSRegularExpression(pattern: query, options: caseSensitive ? [] : [.caseInsensitive]) : nil
         if regex && regexObj == nil { return [] }
-        nonisolated(unsafe) let pattern = regexObj
+        let pattern = regexObj
         let mightMatch = prefilter(query: query, caseSensitive: caseSensitive, regexMode: regex)
         nonisolated(unsafe) let mayMatch = mightMatch
         let state = ParallelSearchState()

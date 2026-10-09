@@ -13,6 +13,7 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 - 🖱️ **Terminal path references** — `TerminalPathParser.match(in:at:)` pulls `path:line:col` or `path(line,col)` out of a line of terminal output at a clicked column
 - 🚫 **Noise-aware, and configurable** — both scanners honor the one `SkippedDirs.names` set (`.git`, `node_modules`, `.build`, `DerivedData`, …). Matching is by *name*, so the list is settable: a project with real sources in `dist/` can take it off the list, and `SkippedDirs.resetToDefault()` restores `SkippedDirs.defaultNames`
 - 🪶 **Small** — Foundation plus swift-foundation-extensions (FoundationExtensions, ProcessRunner)
+- **Ignore rules without walking** — `IgnoreMatcher(root:nestedRoots:)` answers "is this URL ignored?" for a file tree or an index that enumerates on its own: git's own answer inside a checkout (`GitIgnoredSet`, one `git ls-files` per root), the parser for a plain folder, and the `.ignore` / `.rgignore` / `.fdignore` stack on top. A checkout nested inside the root is judged by its own rules once the host names it (`setNestedRoots(_:)`), the way `git check-ignore` run in that checkout would; a lookup costs one set probe per path component, never a scan of the ignored directories
 - 🧪 **Tested** — tree rendering, search caps/cancellation/symlink handling, replace fidelity (encoding, BOM, permissions), recents persistence, watcher lifecycle + flag mapping, manifest script detection (runner choice, reserved-hook filtering, Makefile heuristics), and the ignore parser against git itself (`IgnoreGitParityTests` writes pattern corpora into real repositories and compares the walk with `git ls-files`)
 
 ## Requirements
@@ -76,6 +77,16 @@ if SkippedDirs.names.contains(url.lastPathComponent) { /* skip it */ }
 // Override it — this project keeps real sources in dist/, so stop hiding them.
 SkippedDirs.names = SkippedDirs.defaultNames.subtracting(["dist"])
 SkippedDirs.resetToDefault()   // back to the shipped list
+
+// Ask about single URLs without walking: a file tree dimming rows, an index enumerating
+// on its own. Inside a checkout git itself answers; a plain folder's ignore files are parsed.
+let matcher = IgnoreMatcher(root: projectURL)
+matcher.isIgnored(url: projectURL.appendingPathComponent("build/out.o"), isDirectory: false)
+
+// A checkout nested inside the project is its own git root once you name it: everything
+// beneath it is judged by its own .gitignore, as `git check-ignore` run there would.
+matcher.setNestedRoots([projectURL.appendingPathComponent("vendor/lib")])   // or IgnoreMatcher(root:nestedRoots:)
+IgnoreRulesCache.warm(matcher.nestedRoots)   // optional: load their rules before the first question
 ```
 
 ## Notes
@@ -83,6 +94,7 @@ SkippedDirs.resetToDefault()   // back to the shipped list
 - `ProjectSearch.search` and `FileTree.ascii` are **synchronous** and do blocking file I/O — keep them off the main queue for large projects.
 - Search caps: files over 2 MB are skipped, at most 200 matches per file and 5,000 in total.
 - Two global switches shape the search walk, both meant to be set once at start-up from the host's preferences: `ProjectSearch.respectIgnoreFiles` (default on — `.gitignore` / `.ignore` / `.rgignore` / `.fdignore`, as ripgrep and fd) and `ProjectSearch.includeHiddenFiles` (default off — dot-files and dot-directories, ripgrep's `--hidden`). The name skip list applies on top of both.
+- `IgnoreMatcher` without nested roots sees a nested checkout the way `git ls-files` reports it: one untracked directory, nothing beneath it ignored. Name the checkouts and each answers from its own rules; an outer `.gitignore` never reaches inside one (git's rule), while the `.ignore` stack flows down through it (ripgrep's). The search walk (`ProjectSearch`) still answers from the opened root alone.
 - `SkippedDirs.names` is global mutable state read by both scanners. Set it once during start-up rather than mutating it concurrently with a walk; `FileTree.ascii` snapshots it per render.
 - `DirectoryEventStream` callbacks may arrive on an unpredictable dispatch queue; hop to the main queue before touching UI. Unrecognized or coalesced FSEvents flags are surfaced as `.changeInDirectory` rather than dropped.
 - `RecentItems` persists to `UserDefaults.standard` (caps: 15 files, 5 folders).

@@ -32,8 +32,10 @@ public enum IgnoreRulesCache {
     /// merely old. An explicit ``invalidate(root:)`` (an ignore file changed) still drops the entry,
     /// so the next caller loads the new rules before walking.
     public static func rules(for root: URL) -> IgnoreRules {
-        let key = root.standardizedFileURL
         lock.lock()
+        // A root given in its standardised form (every matcher's is) hits without the cost
+        // of standardising it again on each of the thousands of rows a tree asks about.
+        let key = entries[root] == nil ? root.standardizedFileURL : root
         if let hit = entries[key] {
             let stale = Date().timeIntervalSince(hit.at) >= lifetime
             let startRefresh = stale && refreshing.insert(key).inserted

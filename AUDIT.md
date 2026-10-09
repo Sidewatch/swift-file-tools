@@ -59,14 +59,50 @@ fallbacks, `DirectoryEventStream`'s weak-box lifetime and re-entrant `cancel()`,
   ripgrep and fd without `--hidden`). A host whose tree shows dot-files sets it from that toggle. The
   name skip list and the ignore files apply on top either way, and the ignore files themselves become
   candidates once the flag is on — pinned by `testHiddenFilesFollowTheFlagWhileTheSkipListAndIgnoreRulesStillApply`.
-- **A nested repository's own `.gitignore` is not applied by the outer walk** when the outer
+- **A nested repository's own `.gitignore` is not applied by the search walk** when the outer
   folder is a checkout (git's `ls-files` stops at nested repos, and `.gitignore` parsing is off
   while git answers). Its `node_modules` / `build` / `vendor` still fall to the skip list.
+  `IgnoreMatcher` does apply it once the host names the nested roots (9 Oct 2026, below); the
+  walk would need the same root switch mid-descent, not done.
+- **An outer `.gitignore` parsed by the matcher for a plain (non-checkout) root still applies
+  inside a nested checkout** through the inherited stack. Git would not read it there; the case
+  is a repository inside a folder that is not one, and the nested root's own rules still answer
+  first.
 - `IgnoreStack.isIgnored` answers for the exact path only; walkers prune, `IgnoreMatcher` checks
   ancestors. A `!` in `.ignore` cannot re-include what git ignored (git's verdict is OR-ed in).
 - `FileTree` follows symlinked directories; a cycle is bounded by `maxDepth` and `maxEntries`.
-- `GitIgnoredSet.isIgnored` is O(ignored directories) per query; walkers never ask inside a
-  pruned subtree, so it does not compound.
+- `GitIgnoredSet.isIgnored` is O(path depth) per query since 9 Oct 2026: the path's own
+  ancestors are probed in the directory set, the set is never scanned.
+
+## Ignore lookups — 9 Oct 2026
+
+Fixed, each pinned by a test that fails against the old code:
+
+- **Nothing under a nested checkout was ever ignored.** `GitIgnoredSet` runs one `git ls-files`
+  at the opened root, and git never descends into a nested repository: `nested/` came back as
+  one untracked directory, so `nested/build/` and `nested/.env` were never ignored, and the
+  `.gitignore` parser was off because the outer root is a work tree. `IgnoreMatcher` now takes
+  the nested roots the host discovers (`init(root:nestedRoots:)` / `setNestedRoots(_:)`) and
+  judges every entry by the deepest root containing it, each root with its own `GitIgnoredSet`
+  through `IgnoreRulesCache`; an ancestor is judged by its own deepest root, so a checkout
+  under an outer-ignored `vendor/` stays ignored whole, and the `.ignore` stack flows down
+  through nested roots as ripgrep's does. Pinned by `IgnoreNestedRepoTests`:
+  `testEachEntryIsJudgedByTheDeepestCheckoutContainingIt`,
+  `testNestedRootsCanBeSuppliedAfterConstruction`, and
+  `testParityWithGitCheckIgnoreRunInEachRepository` (real repositories; `git check-ignore` run in
+  each one is the oracle, composed over ancestors). Mutant: the matcher never switching to a
+  nested root's rules — 7 failures across the three tests.
+- **A lookup scanned every ignored directory.** `GitIgnoredSet.isIgnored` walked the whole
+  directory set with a string concatenation per entry on every miss, and `IgnoreMatcher` asked
+  it once per ancestor: O(depth × ignored directories) allocations per row. It now probes the
+  path's own ancestors in the set, O(depth). `IgnoreRulesCache.rules(for:)` also skips
+  re-standardising a root that already hits. Measured in `IgnoreLookupCostTests` (5,000 ignored
+  directories, 1,000 lookups, debug build): `GitIgnoredSet` 99 ms → 2.1 ms; `IgnoreMatcher` over
+  a real checkout 508 ms → 22 ms. Both tests guard at 50 ms and print their numbers. Mutant: the
+  old linear scan restored — both guards fail (99 ms, 508 ms).
+
+Checked and unchanged: `IgnoreRules.isIgnored` for the walkers, `IgnoreStack`, the parity
+corpora (`IgnoreGitParityTests` still agrees with git on all ten).
 
 ## History
 
@@ -77,3 +113,7 @@ fallbacks, `DirectoryEventStream`'s weak-box lifetime and re-entrant `cancel()`,
 - 18 Sep 2026 — `ProjectSearch.includeHiddenFiles` (default off): the host's Show Hidden Files toggle now reaches
   search, so `.env` and `.github/workflows` are searched when the tree lists them. Test first failed against
   the old walk (the flag did not exist; with it ignored the "on" set came back without the dot-files).
+- 9 Oct 2026 — ignore lookups: nested checkouts answer from their own rules through `IgnoreMatcher`'s nested
+  roots; `GitIgnoredSet.isIgnored` probes ancestors instead of scanning the listing (measured above). Two
+  `nonisolated(unsafe)` annotations on `NSRegularExpression` constants (`ProjectSearch+Parallel`, `IncludeGlobs`)
+  dropped: the type is `Sendable` and the compiler warned; the one on the `(String) -> Bool` capture stays, it is needed.

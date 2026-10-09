@@ -24,7 +24,7 @@ public enum IncludeGlobs {
         }
         guard !compiled.isEmpty else { return nil }
         let prefixes = roots.map { $0.path.hasSuffix("/") ? $0.path : $0.path + "/" }
-        nonisolated(unsafe) let patterns = compiled
+        let patterns = compiled
         return { url in
             let p = url.path
             var rel = url.lastPathComponent
