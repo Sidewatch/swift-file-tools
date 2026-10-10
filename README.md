@@ -82,10 +82,20 @@ if let file = TextFileContents(contentsOf: url), let bytes = file.data(for: newT
 
 // Keep versions on save (VS Code's rules), and bound the whole store now and then.
 let history = LocalHistory(root: appSupport.appendingPathComponent("History"))
-try history.record(bytes, for: url)                      // "File Saved"; a source names other causes
-try history.record(diskBytes, for: url, source: "Overwritten on disk")
+try history.record(bytes, for: url)                      // LocalHistorySource.saved
+try history.record(diskBytes, for: url, source: .overwritten)
 try history.move(from: oldURL, to: newURL)               // a rename keeps its versions
 history.trimToTotalSize()                                 // oldest first, across files (256 MB)
+history.entries(for: url).last?.kind                      // .saved, .agent, .changedOnDisk, .overwritten, .previous
+
+// Keep what another writer (an agent, a formatter) changed, read from disk OFF the main thread:
+// at most `limit` files per call in path order; directories, pipes, binaries, files over the
+// ceiling and unchanged bytes are skipped. A file with no versions yet asks `previous` (once, for
+// all such files) what it held before, kept first as `.previous` so the first change has a "before".
+let outcome = history.recordFromDisk(changedURLs, source: .agent, limit: 200) { firstSeen in
+    cleanBuffersOrCommittedBlobs(firstSeen)              // [URL: Data]
+}
+outcome.recorded; outcome.previousKept; outcome.skipped; outcome.unexamined
 
 // Reuse the shared noise-directory set in your own scanners.
 if SkippedDirs.names.contains(url.lastPathComponent) { /* skip it */ }

@@ -139,6 +139,25 @@ Fixed, each pinned by a test that fails against the old code (`FileRewriteTests`
   not per save) and `move(from:to:)` (the old folder's versions join the new path's, in time
   order). Mutant (both no-ops): both tests fail.
 
+## Local history from disk — 10 Oct 2026
+
+The host now keeps the files another writer changes (an agent's writes), not only its own saves.
+
+- **`LocalHistorySource`** replaces the free-form source string at the API: `.saved` ("File Saved"),
+  `.overwritten` ("Overwritten on disk"), `.agent` ("Agent"), `.changedOnDisk` ("Changed on disk"),
+  `.previous` ("Before change"). `LocalHistoryEntry.source` stays the stored string so an index with
+  a value this build does not know still reads (`kind` is nil for it);
+  `testTheStoredRawValuesNeverChange`, `testAnUnknownSourceInTheIndexStillReads`.
+- **The identical-bytes rule ignores the source**, so a host's save that comes back through FSEvents
+  is kept once. `testTheHostsOwnSaveComingBackFromDiskIsKeptOnce`. Mutant (skip only for the same
+  source): that test fails.
+- **`recordFromDisk(_:source:limit:at:previous:)`**: path order, at most `limit` files, one `stat`
+  before any read (a pipe or a large log is never opened), the binary sniff, and one `previous`
+  call for every first sighting, kept a millisecond before the change. Mutants, each failing its own
+  test: no binary check (2), no size in the stat (1), no limit (1), no previous kept (1), every file
+  a first sighting (1), the previous at the same instant (1), a pipe opened (2), a previous equal to
+  the new bytes kept (1). `LocalHistoryDiskTests`, 13 tests.
+
 ## History
 
 - 17 Sep 2026 — full audit (app + all 20 libraries), Claude with David.
@@ -154,3 +173,4 @@ Fixed, each pinned by a test that fails against the old code (`FileRewriteTests`
   dropped: the type is `Sendable` and the compiler warned; the one on the `(String) -> Bool` capture stays, it is needed.
 - 9 Oct 2026 — write paths: `FileRewrite` through links with attributes and group kept, its own errors; UTF-16 and the Latin-1 fallback in `TextFileContents`; `LocalHistory` bounded and moved with its file (section above).
 - 9 Oct 2026 — security review: `ProjectScripts` interpolated a manifest's script key into `npm run \(name)` / `composer run \(name)` unquoted, so a key `build; touch /tmp/x` ran two commands when the task was chosen. `ProjectScripts.argument(_:)` quotes any name that is not plain (`String.shellQuoted` from FoundationExtensions); plain names stay readable in a menu. `testAScriptNameIsOneShellArgument` (a `;`, a space, an `&&`, an apostrophe). Mutant: the name returned as written — 3 failures.
+- 10 Oct 2026 — local history from disk: `LocalHistorySource`, `recordFromDisk`, the cross-source identical-bytes rule (section above).

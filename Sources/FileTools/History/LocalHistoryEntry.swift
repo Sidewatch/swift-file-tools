@@ -16,7 +16,8 @@ public struct LocalHistoryEntry: Equatable, Sendable, Codable {
     public let id: String
     /// When the version was recorded.
     public let timestamp: Date
-    /// What caused the version — "File Saved" for a save; a caller may name others.
+    /// What caused the version: a ``LocalHistorySource`` raw value. Kept as written, so an
+    /// index holding a value this build does not know still reads; ``kind`` interprets it.
     public let source: String
     /// The blob's size in bytes; a cheap first check before comparing contents.
     public let byteCount: Int
@@ -25,4 +26,7 @@ public struct LocalHistoryEntry: Equatable, Sendable, Codable {
     public init(id: String, timestamp: Date, source: String, byteCount: Int) {
         self.id = id; self.timestamp = timestamp; self.source = source; self.byteCount = byteCount
     }
+
+    /// The source as a ``LocalHistorySource``, or nil for a value this build does not know.
+    public var kind: LocalHistorySource? { LocalHistorySource(rawValue: source) }
 }

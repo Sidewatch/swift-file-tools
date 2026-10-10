@@ -30,9 +30,6 @@ public struct LocalHistory: Sendable {
     /// the oldest versions first until it fits.
     public var maxTotalSize: Int
 
-    /// The source recorded for an ordinary save.
-    public static let fileSavedSource = "File Saved"
-
     /// The store's default ceiling: 256 MB.
     public static let defaultMaxTotalSize = 256 * 1024 * 1024
 
@@ -98,9 +95,10 @@ public struct LocalHistory: Sendable {
     // MARK: - Write
 
     /// Keeps `data` as a version of `file`. Returns the entry, or nil when nothing was kept:
-    /// the file is over `maxFileSize`, or the bytes equal the last kept version.
+    /// the file is over `maxFileSize`, or the bytes equal the last kept version (whatever its
+    /// source — so a host's save that comes back as a change from disk is kept once).
     @discardableResult
-    public func record(_ data: Data, for file: URL, source: String = LocalHistory.fileSavedSource, at time: Date = Date()) throws
+    public func record(_ data: Data, for file: URL, source: LocalHistorySource = .saved, at time: Date = Date()) throws
         -> LocalHistoryEntry?
     {
         guard data.count <= maxFileSize else { return nil }
@@ -114,8 +112,8 @@ public struct LocalHistory: Sendable {
             "\(Int(time.timeIntervalSince1970 * 1000))-\(String(UInt32.random(in: 0...0xffff), radix: 16))"
             + (file.pathExtension.isEmpty ? "" : "." + file.pathExtension)
         try data.write(to: dir.appendingPathComponent(id), options: .atomic)
-        let entry = LocalHistoryEntry(id: id, timestamp: time, source: source, byteCount: data.count)
-        if let last = index.entries.last, last.source == source, time.timeIntervalSince(last.timestamp) <= mergeWindow,
+        let entry = LocalHistoryEntry(id: id, timestamp: time, source: source.rawValue, byteCount: data.count)
+        if let last = index.entries.last, last.source == source.rawValue, time.timeIntervalSince(last.timestamp) <= mergeWindow,
             time >= last.timestamp
         {
             try? FileManager.default.removeItem(at: dir.appendingPathComponent(last.id))

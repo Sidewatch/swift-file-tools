@@ -28,7 +28,7 @@ final class LocalHistoryTests: XCTestCase {
         XCTAssertEqual(entries.count, 2)
         XCTAssertEqual(entries.map { history.data(of: $0, for: file).map { String(decoding: $0, as: UTF8.self) } }, ["one", "two"])
         XCTAssertEqual(entries.map(\.timestamp), [t0, t0 + 60])
-        XCTAssertEqual(entries.map(\.source), [LocalHistory.fileSavedSource, LocalHistory.fileSavedSource])
+        XCTAssertEqual(entries.map(\.kind), [.saved, .saved])
         XCTAssertTrue(entries.allSatisfy { $0.id.hasSuffix(".swift") })
     }
 
@@ -46,8 +46,8 @@ final class LocalHistoryTests: XCTestCase {
 
     func testADifferentSourceDoesNotMerge() throws {
         try history.record(Data("one".utf8), for: file, at: t0)
-        try history.record(Data("two".utf8), for: file, source: "Restored", at: t0 + 3)
-        XCTAssertEqual(history.entries(for: file).map(\.source), [LocalHistory.fileSavedSource, "Restored"])
+        try history.record(Data("two".utf8), for: file, source: .agent, at: t0 + 3)
+        XCTAssertEqual(history.entries(for: file).map(\.source), ["File Saved", "Agent"])
     }
 
     func testAnUnchangedSaveRecordsNothing() throws {
