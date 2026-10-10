@@ -89,13 +89,7 @@ public struct FileLibrary: Sendable {
 
     /// `<directory>/<base>.<ext>`, or the first `<base> N.<ext>` (N ≥ 2) that does not exist yet.
     public func uniqueURL(named base: String, in directory: URL) -> URL {
-        var candidate = directory.appendingPathComponent("\(base).\(fileExtension)")
-        var n = 2
-        while FileManager.default.fileExists(atPath: candidate.path) {
-            candidate = directory.appendingPathComponent("\(base) \(n).\(fileExtension)")
-            n += 1
-        }
-        return candidate
+        directory.appendingPathComponent(FileNaming.availableName(base, pathExtension: fileExtension, in: directory))
     }
 
     /// A filename-safe base name. Path separators and colons would escape the directory or
