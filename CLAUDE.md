@@ -11,11 +11,11 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 - `Extensions/` — Data.utf8String, URL.isDirectory
 - `Enums/` — enums with no behaviour beyond their cases and labels: FSEvent
 - `Errors/` — every Error type, one per file: FileRewriteError, ProjectFolderError
-- `Ignore/` — the engine: ignore: GitIgnoredSet, IgnoreFile, IgnoreFileNames, IgnoreMatcher, IgnorePattern, IgnoreRules, IgnoreRulesCache, IgnoreStack
+- `Ignore/` — the engine: ignore: GitIgnoredSet, IgnoreFile, IgnoreFileNames, IgnoreMatcher, IgnoreMatcherCache, IgnorePattern, IgnoreRules, IgnoreRulesCache, IgnoreStack
 - `Library/` — the engine: library: FileLibrary (global + per-project folder of one file kind)
 - `Listing/` — the engine: listing: FastDirectoryListing, FileTree, SkippedDirs
 - `Models/` — value types — the shape of a thing, nothing else: ReplaceSummary, SearchFileResult, SearchMatch, TextFileContents (+ TextFileEncoding: UTF-8, Latin-1, UTF-16 LE/BE)
-- `Search/` — the engine: search: ProjectSearch
+- `Search/` — the engine: search: ProjectSearch, SearchStreamBuffer (batches a walk's results for the main thread)
 - `Support/` — pure helpers: parsing, escaping, validation: DirectoryChildren, FileNaming (`base`, `base 2`, … free in a folder), FileRewrite (through links; mode, group, xattrs kept), JSONObject, ProjectFolder (a new project's folder: created, or an existing empty one accepted; never a folder with files), ProjectScripts (a script's name is quoted as one shell argument unless it is plain), RecentItems, TerminalPathParser
 - `Watching/` — the engine: watching: DirectoryEventStream, DiskStormDetector
 

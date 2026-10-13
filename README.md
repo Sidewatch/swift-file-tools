@@ -113,6 +113,11 @@ matcher.isIgnored(url: projectURL.appendingPathComponent("build/out.o"), isDirec
 // beneath it is judged by its own .gitignore, as `git check-ignore` run there would.
 matcher.setNestedRoots([projectURL.appendingPathComponent("vendor/lib")])   // or IgnoreMatcher(root:nestedRoots:)
 IgnoreRulesCache.warm(matcher.nestedRoots)   // optional: load their rules before the first question
+
+// One matcher per root, shared by every scanner. `matcher(for:onReady:)` never waits: nil
+// until the rules are loaded off-main, then `onReady` runs on the main queue.
+let shared = IgnoreMatcherCache.shared.matcher(for: projectURL)
+IgnoreMatcherCache.shared.noteChanged(under: projectURL) { /* an ignore file changed: rescan */ }
 ```
 
 ## Notes
