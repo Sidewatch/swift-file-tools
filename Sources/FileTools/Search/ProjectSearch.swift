@@ -156,13 +156,15 @@ public enum ProjectSearch {
         include: ((URL) -> Bool)?,
         body: (URL, Int) -> Bool
     ) {
-        let rules: IgnoreRules? = respectIgnoreFiles ? IgnoreRulesCache.rules(for: root) : nil
-        // Each frame carries the directory, its path relative to the root, and the ignore
-        // files in force there (root's first, deeper ones override).
-        var stack: [(dir: URL, rel: String, ignore: IgnoreStack)] = [(root, "", IgnoreStack())]
+        // Each frame carries the directory, its path relative to the checkout whose rules apply, the
+        // ignore files in force there (that checkout's first, deeper ones override) and those rules.
+        // A nested checkout (a directory holding `.git`) starts a frame of its own, as in git: the
+        // outer rules stop there and its own `.gitignore` and `info/exclude` take over.
+        let rootRules: IgnoreRules? = respectIgnoreFiles ? IgnoreRulesCache.rules(for: root) : nil
+        var stack: [(dir: URL, rel: String, ignore: IgnoreStack, rules: IgnoreRules?)] = [(root, "", IgnoreStack(), rootRules)]
         while let frame = stack.popLast() {
             if isCancelled() { return }
-            let (dir, rel) = (frame.dir, frame.rel)
+            let (dir, rel, rules) = (frame.dir, frame.rel, frame.rules)
             var ignore = frame.ignore
             if let rules {
                 for file in rules.files(in: dir, relativeDirectory: rel) { ignore.push(file) }
@@ -183,8 +185,20 @@ public enum ProjectSearch {
                 if !body(entry.url, Int(st.st_size)) { return }
             }
             // Directories were listed in Finder order; push reversed so they pop in order.
-            for (url, relPath) in subdirs.reversed() { stack.append((url, relPath, ignore)) }
+            for (url, relPath) in subdirs.reversed() {
+                if respectIgnoreFiles, Self.isCheckout(url) {
+                    stack.append((url, "", IgnoreStack(), IgnoreRulesCache.rules(for: url)))
+                } else {
+                    stack.append((url, relPath, ignore, rules))
+                }
+            }
         }
+    }
+
+    /// Whether `directory` is a git checkout's root (`.git` as a folder, or as the file a linked
+    /// worktree or submodule keeps). One `access` call.
+    static func isCheckout(_ directory: URL) -> Bool {
+        access(directory.appendingPathComponent(".git").path, F_OK) == 0
     }
 
     /// The single walker behind `search` and `replaceAll`: every regular text file under `root`
