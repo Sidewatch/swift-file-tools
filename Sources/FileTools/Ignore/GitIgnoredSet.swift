@@ -13,8 +13,8 @@
 //
 
 import Foundation
-import ProcessRunner
 import FoundationExtensions
+import GitKit
 
 /// The exact set of ignored files and directories in a git working tree, as reported by
 /// `git ls-files`: the preferred answer inside a checkout, since it IS git's behaviour.
@@ -82,19 +82,11 @@ public struct GitIgnoredSet: Sendable {
 
     private static let timeout: TimeInterval = 10
 
-    /// Launches `git` via `/usr/bin/env` (so it's found on the caller's PATH regardless of
-    /// where this process itself lives) and returns its stdout, or `nil` on any failure —
-    /// including a `root` that isn't a git work tree, which makes `git ls-files` exit non-zero,
-    /// and a git that hangs past `timeout`.
+    /// Runs the listing through `Git.run`, the one launch point, and returns its stdout, or `nil`
+    /// on any failure — including a `root` that isn't a git work tree, which makes `git ls-files`
+    /// exit non-zero, and a git that hangs past `timeout`. Never a bare launch: the checkout's
+    /// config is the folder's own, and its `core.fsmonitor` names a command git would run.
     private static func run(root: URL) -> String? {
-        let result = ProcessRunner.run(
-            "/usr/bin/env",
-            [
-                "git", "-C", root.path, "ls-files", "-z",
-                "--others", "--ignored", "--exclude-standard", "--directory",
-            ],
-            augmentPATH: false, timeout: timeout)
-        guard result.succeeded else { return nil }
-        return result.stdout.utf8String
+        Git.run(["ls-files", "-z", "--others", "--ignored", "--exclude-standard", "--directory"], in: root, timeout: timeout)
     }
 }

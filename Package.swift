@@ -8,7 +8,9 @@ let package = Package(
         .library(name: "FileTools", targets: ["FileTools"])
     ],
     dependencies: [
-        .package(path: "../swift-foundation-extensions")
+        .package(path: "../swift-foundation-extensions"),
+        // The one git launch point: a checkout's fsmonitor and hooks never run, prompts never hang.
+        .package(path: "../swift-git-kit"),
     ],
     targets: [
         // macOS-only: DirectoryEventStream wraps FSEvents/CoreServices.
@@ -17,6 +19,7 @@ let package = Package(
             dependencies: [
                 .product(name: "FoundationExtensions", package: "swift-foundation-extensions"),
                 .product(name: "ProcessRunner", package: "swift-foundation-extensions"),
+                .product(name: "GitKit", package: "swift-git-kit"),
             ], path: "Sources",
             swiftSettings: [.swiftLanguageMode(.v6)]),
         .testTarget(name: "FileToolsTests", dependencies: ["FileTools"], path: "Tests"),
