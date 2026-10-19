@@ -16,7 +16,7 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 - `Listing/` — the engine: listing: FastDirectoryListing, FileTree, SkippedDirs
 - `Models/` — value types — the shape of a thing, nothing else: ReplaceSummary, SearchFileResult, SearchMatch, TextFileContents (+ TextFileEncoding: UTF-8, Latin-1, UTF-16 LE/BE)
 - `Search/` — the engine: search: ProjectSearch, SearchStreamBuffer (batches a walk's results for the main thread)
-- `Support/` — pure helpers: parsing, escaping, validation: DirectoryChildren, FileNaming (`base`, `base 2`, … free in a folder), FileRewrite (through links; mode, group, xattrs kept), JSONObject, ProjectFolder (a new project's folder: created, or an existing empty one accepted; never a folder with files), ProjectScripts (a script's name is quoted as one shell argument unless it is plain), RecentItems, TerminalPathParser
+- `Support/` — pure helpers: parsing, escaping, validation: DirectoryChildren, FileNaming (`base`, `base 2`, … free in a folder), FileRewrite (through links; mode, group, xattrs kept), JSONObject, ProjectFolder (a new project's folder: created, or an existing empty one accepted; never a folder with files), ProjectScripts (a script's name is quoted as one shell argument unless it is plain), RecentItems, TerminalPathParser, FileLocationLink (an app's `scheme://open?path=&line=` link; absolute paths to files only, a trailing `:line:col` split by TerminalPathParser)
 - `Watching/` — the engine: watching: DirectoryEventStream, DiskStormDetector, EventPaths (an event batch renamed back under folders opened through a symlink, and the skip filter)
 
 ## Rules

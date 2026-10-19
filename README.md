@@ -11,7 +11,7 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 - ✍️ **Replace All** — `ProjectSearch.replaceAll(query:in:caseSensitive:regex:replacement:commit:isCancelled:)` rewrites every match per line (the same matching as search), dry-run or commit, and a rewritten file keeps its own bytes: encoding (UTF-8 or Latin-1), UTF-8 byte-order mark and permission bits (`TextFileContents` + `FileRewrite`)
 - 🏃 **Project scripts** — `ProjectScripts.detect(root:)` lists the runnable tasks in a project's manifests — `package.json` scripts (with the runner from the `packageManager` field, else the lockfile: npm/pnpm/yarn/bun), `composer.json` scripts (reserved lifecycle hooks filtered out), and `GNUmakefile`/`makefile`/`Makefile` targets — each as a `ProjectScript { name, command, source }`; a script name that is not plain (letters, digits, `_-.:@/+`) is single-quoted in `command`, so a manifest key holding `;` names a script and never runs a second command. Read-only: it reflects the project, it doesn't run anything
 - **New folders that never collide** — `FileNaming.availableName(_:pathExtension:in:)` returns `base`, else the first free `base 2`, `base 3`, … (suffix before the extension; a dangling link still holds its name); `ProjectFolder.create(at:)` makes a new project's folder or accepts an existing empty one (Finder's `.DS_Store` aside), and throws `ProjectFolderError.notEmpty` / `.notAFolder` without touching anything already there
-- 🖱️ **Terminal path references** — `TerminalPathParser.match(in:at:)` pulls `path:line:col` or `path(line,col)` out of a line of terminal output at a clicked column
+- 🖱️ **Terminal path references** — `TerminalPathParser.match(in:at:)` pulls `path:line:col` or `path(line,col)` out of a line of terminal output at a clicked column; `FileLocationLink` reads and builds an app's `scheme://open?path=…&line=…` link with the same `file:line:col` rules
 - 🚫 **Noise-aware, and configurable** — both scanners honor the one `SkippedDirs.names` set (`.git`, `node_modules`, `.build`, `DerivedData`, …). Matching is by *name*, so the list is settable: a project with real sources in `dist/` can take it off the list, and `SkippedDirs.resetToDefault()` restores `SkippedDirs.defaultNames`
 - 🪶 **Small** — Foundation plus swift-foundation-extensions (FoundationExtensions, ProcessRunner)
 - **Ignore rules without walking** — `IgnoreMatcher(root:nestedRoots:)` answers "is this URL ignored?" for a file tree or an index that enumerates on its own: git's own answer inside a checkout (`GitIgnoredSet`, one `git ls-files` per root), the parser for a plain folder, and the `.ignore` / `.rgignore` / `.fdignore` stack on top. A checkout nested inside the root is judged by its own rules once the host names it (`setNestedRoots(_:)`), the way `git check-ignore` run in that checkout would; a lookup costs one set probe per path component, never a scan of the ignored directories
@@ -118,6 +118,18 @@ IgnoreRulesCache.warm(matcher.nestedRoots)   // optional: load their rules befor
 // until the rules are loaded off-main, then `onReady` runs on the main queue.
 let shared = IgnoreMatcherCache.shared.matcher(for: projectURL)
 IgnoreMatcherCache.shared.noteChanged(under: projectURL) { /* an ignore file changed: rescan */ }
+
+// An "open this file at this line" link for your app's URL scheme. A command-line wrapper can send
+// the argument as typed (made absolute); `resolve` splits a trailing :line:col only when the literal
+// path is not a file. Links reach the app from anywhere, so only absolute paths to FILES resolve.
+let link = FileLocationLink.url(scheme: "myapp", path: "/p/src/a.ts", line: 42)
+if let ref = FileLocationLink.reference(from: incomingURL, scheme: "myapp"),
+   let target = FileLocationLink.resolve(ref, fileExists: { path in
+       var isDir: ObjCBool = false
+       return FileManager.default.fileExists(atPath: path, isDirectory: &isDir) && !isDir.boolValue
+   }) {
+    open(target.path, line: target.line)
+}
 ```
 
 ## Notes
