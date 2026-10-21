@@ -8,13 +8,15 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 
 ## Module map
 
-- `Extensions/` — Data.utf8String, URL.isDirectory
+- `Extensions/` — Data.utf8String, URL.isDirectory, LocalHistoryDiskBatch+Merge (a later batch folded into a waiting one: the EARLIER before wins, 1,000 paths at most)
 - `Enums/` — enums with no behaviour beyond their cases and labels: FSEvent
 - `Errors/` — every Error type, one per file: FileRewriteError, ProjectFolderError
+- `History/` — the engine: local history: LocalHistory (versions per file, merge window, size trim), LocalHistory+Disk (`recordFromDisk`: a bounded pass, a first sighting's "before"), LocalHistory+DiskBatch (`recordDiskBatch`: what an outside change keeps — `.git` and ignored paths out, git asked NOW for brand-new files, the before from a captured buffer else `HEAD`, roots matched through links), LocalHistoryEntry
 - `Ignore/` — the engine: ignore: GitIgnoredSet, IgnoreFile, IgnoreFileNames, IgnoreMatcher, IgnoreMatcherCache, IgnorePattern, IgnoreRules, IgnoreRulesCache, IgnoreStack
 - `Library/` — the engine: library: FileLibrary (global + per-project folder of one file kind)
+- `Internal/` — RootSpellings (a root under its given and real path; the deepest root holding a path, by name then by the path's real path)
 - `Listing/` — the engine: listing: FastDirectoryListing, FileTree, SkippedDirs
-- `Models/` — value types — the shape of a thing, nothing else: ReplaceSummary, SearchFileResult, SearchMatch, TextFileContents (+ TextFileEncoding: UTF-8, Latin-1, UTF-16 LE/BE)
+- `Models/` — value types — the shape of a thing, nothing else: LocalHistoryDiskBatch, LocalHistoryDiskRecord, ReplaceSummary, SearchFileResult, SearchMatch, TextFileContents (+ TextFileEncoding: UTF-8, Latin-1, UTF-16 LE/BE)
 - `Search/` — the engine: search: ProjectSearch, SearchStreamBuffer (batches a walk's results for the main thread)
 - `Support/` — pure helpers: parsing, escaping, validation: DirectoryChildren, FileNaming (`base`, `base 2`, … free in a folder), FileRewrite (through links; mode, group, xattrs kept), JSONObject, ProjectFolder (a new project's folder: created, or an existing empty one accepted; never a folder with files), ProjectScripts (a script's name is quoted as one shell argument unless it is plain), RecentItems, TerminalPathParser, FileLocationLink (an app's `scheme://open?path=&line=` link; absolute paths to files only, a trailing `:line:col` split by TerminalPathParser), FileComparisonLink (`scheme://diff?old=&new=`, absolute paths only), WaitMarker + WaitingFiles (the `--wait` handshake: a marker file in the user's temp folder the app deletes when the file closes; accepted only straight inside that folder, under a prefix, as a regular file of this user's)
 - `Watching/` — the engine: watching: DirectoryEventStream, DiskStormDetector, EventPaths (an event batch renamed back under folders opened through a symlink, and the skip filter)

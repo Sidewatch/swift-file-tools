@@ -97,6 +97,13 @@ let outcome = history.recordFromDisk(changedURLs, source: .agent, limit: 200) { 
 }
 outcome.recorded; outcome.previousKept; outcome.skipped; outcome.unexamined
 
+// Or hand over a whole batch of outside changes: `.git` and ignored paths are left out (git is asked
+// now about brand-new files), and a first sighting's "before" comes from `previous`, else HEAD.
+var waiting = LocalHistoryDiskBatch(paths: changedPaths, source: .agent, previous: cleanBuffers,
+                                    ignoreRoots: openedFolders, repoRoots: repositories)
+waiting.merge(laterBatch)                                // the earlier "before" wins
+let kept = history.recordDiskBatch(waiting)
+
 // Reuse the shared noise-directory set in your own scanners.
 if SkippedDirs.names.contains(url.lastPathComponent) { /* skip it */ }
 
