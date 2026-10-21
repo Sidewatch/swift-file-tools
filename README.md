@@ -62,6 +62,7 @@ RecentItems.addFile(fileURL)
 RecentItems.addFolder(folderURL)
 let recent = RecentItems.files        // [URL], newest first, missing paths dropped
 RecentItems.clearAll()
+RecentItems.defaults = UserDefaults(suiteName: "my.app.tests")!  // a test run's own store
 
 // Watch a directory for changes. The stream starts immediately; events arrive
 // batched every `debounceDuration` (default 0.1 s), on no particular queue.
@@ -171,7 +172,7 @@ let copy = FileNaming.copyDestination(for: url)     // "a copy.txt", then "a cop
 - `IgnoreMatcher` without nested roots sees a nested checkout the way `git ls-files` reports it: one untracked directory, nothing beneath it ignored. Name the checkouts and each answers from its own rules; an outer `.gitignore` never reaches inside one (git's rule), while the `.ignore` stack flows down through it (ripgrep's). The search walk (`ProjectSearch`) still answers from the opened root alone.
 - `SkippedDirs.names` is global mutable state read by both scanners. Set it once during start-up rather than mutating it concurrently with a walk; `FileTree.ascii` snapshots it per render.
 - `DirectoryEventStream` callbacks may arrive on an unpredictable dispatch queue; hop to the main queue before touching UI. Unrecognized or coalesced FSEvents flags are surfaced as `.changeInDirectory` rather than dropped.
-- `RecentItems` persists to `UserDefaults.standard` (caps: 15 files, 5 folders).
+- `RecentItems` persists to `RecentItems.defaults`, `UserDefaults.standard` unless set (caps: 15 files, 5 folders). Set a scratch suite in tests so they never write the person's list.
 
 ## For agents
 
