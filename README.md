@@ -150,6 +150,17 @@ if let marker = WaitMarker.marker(in: incomingURL, directory: NSTemporaryDirecto
 }
 // …whenever a tab closes:
 for marker in waits.settle(open: realPathsOfOpenTabs) { WaitMarker.release(marker) }
+
+// A search that streams: the first file at once, then batches, then exactly one final batch.
+ProjectSearch.stream(query: "TODO", roots: [root], caseSensitive: false, regex: false, isCancelled: { cancelled }) { batch, final in
+    DispatchQueue.main.async { show(batch); if final { done() } }
+}
+
+// Excerpts: two lines of context around each match, overlapping windows merged.
+let runs = ExcerptWindows.runs(around: [12, 14, 80], context: 2, lineCount: lines.count)   // [10...16, 78...82]
+
+// Duplicating: Finder's next free name.
+let copy = FileNaming.copyDestination(for: url)     // "a copy.txt", then "a copy 2.txt", …
 ```
 
 ## Notes
