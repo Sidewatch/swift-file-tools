@@ -8,7 +8,7 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 - 🔍 **Project search** — `ProjectSearch.search(query:in:caseSensitive:regex:isCancelled:)` recursively finds text or regex matches, skipping oversized files, binaries, symlinks and special files, with per-file and total match caps
 - 🕒 **Recent items** — `RecentItems.addFile` / `addFolder` / `files` / `folders`: a persistent, capped, most-recent-first list that drops paths no longer on disk
 - 👀 **Directory watching** — `DirectoryEventStream` streams debounced FSEvents batches as `[Event]` of typed `FSEvent` kinds; `cancel()` is thread-safe and idempotent
-- ✍️ **Replace All** — `ProjectSearch.replaceAll(query:in:caseSensitive:regex:replacement:commit:isCancelled:)` rewrites every match per line (the same matching as search), dry-run or commit, and a rewritten file keeps its own bytes: encoding (UTF-8 or Latin-1), UTF-8 byte-order mark and permission bits (`TextFileContents` + `FileRewrite`)
+- ✍️ **Replace All** — `ProjectSearch.replaceAll(query:in:caseSensitive:regex:replacement:commit:isCancelled:)` rewrites every match per line (the same matching as search), dry-run or commit, and a rewritten file keeps its own bytes: encoding (UTF-8, Windows-1252, Latin-1 or UTF-16), UTF-8 byte-order mark and permission bits (`TextFileContents` + `FileRewrite`)
 - 🏃 **Project scripts** — `ProjectScripts.detect(root:)` lists the runnable tasks in a project's manifests — `package.json` scripts (with the runner from the `packageManager` field, else the lockfile: npm/pnpm/yarn/bun), `composer.json` scripts (reserved lifecycle hooks filtered out), and `GNUmakefile`/`makefile`/`Makefile` targets — each as a `ProjectScript { name, command, source }`; a script name that is not plain (letters, digits, `_-.:@/+`) is single-quoted in `command`, so a manifest key holding `;` names a script and never runs a second command. Read-only: it reflects the project, it doesn't run anything
 - **New folders that never collide** — `FileNaming.availableName(_:pathExtension:in:)` returns `base`, else the first free `base 2`, `base 3`, … (suffix before the extension; a dangling link still holds its name); `ProjectFolder.create(at:)` makes a new project's folder or accepts an existing empty one (Finder's `.DS_Store` aside), and throws `ProjectFolderError.notEmpty` / `.notAFolder` without touching anything already there
 - 🖱️ **Terminal path references** — `TerminalPathParser.match(in:at:)` pulls `path:line:col` or `path(line,col)` out of a line of terminal output at a clicked column; `FileLocationLink` reads and builds an app's `scheme://open?path=…&line=…` link with the same `file:line:col` rules; `FileComparisonLink` and `WaitMarker` add a two-file diff link and a `--wait` handshake
@@ -73,12 +73,12 @@ let watcher = DirectoryEventStream(directory: projectURL.path) { events in
 }
 watcher.cancel()   // thread-safe, idempotent; also runs on deinit
 
-// Rewrite a user's file in its own bytes: the encoding it was read in (UTF-8, Latin-1, UTF-16
+// Rewrite a user's file in its own bytes: the encoding it was read in (UTF-8, Windows-1252, Latin-1, UTF-16
 // behind its mark), its permission bits, group and extended attributes; a symbolic link is
 // followed to its target. A text the encoding cannot hold is nil — ask, never switch silently.
 if let file = TextFileContents(contentsOf: url), let bytes = file.data(for: newText) {
     try FileRewrite.write(bytes, to: url)        // FileRewriteError: a dangling link, a read-only file
-    if file.decodedByFallback { /* "Latin-1 (assumed)": the bytes were not UTF-8 */ }
+    if file.decodedByFallback { /* "Windows-1252 (assumed)": the bytes were not UTF-8 */ }
 }
 
 // Keep versions on save (VS Code's rules), and bound the whole store now and then.

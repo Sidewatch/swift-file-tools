@@ -432,19 +432,19 @@ final class FileToolsTests: XCTestCase {
     }
 
     func testReplaceAllNonEncodableReplacementFailsInBothDryAndCommit() throws {
-        // A Latin-1 file whose replacement introduces a char it can't encode (€) must
+        // A Windows-1252 file whose replacement introduces a char it can't encode (→) must
         // be reported as FAILED (not changed) — and the dry run must agree with commit
         // so the confirmation count never overstates what gets written.
         let url = tmp.appendingPathComponent("a.txt")
-        var bytes = Data("caf".utf8); bytes.append(0xE9); bytes.append(contentsOf: " cafe\n".utf8)  // Latin-1
+        var bytes = Data("caf".utf8); bytes.append(0xE9); bytes.append(contentsOf: " cafe\n".utf8)  // Windows-1252
         try bytes.write(to: url)
 
         let dry = ProjectSearch.replaceAll(
             query: "cafe", in: tmp, caseSensitive: false, regex: false,
-            replacement: "€", commit: false, isCancelled: { false })
+            replacement: "→", commit: false, isCancelled: { false })
         let done = ProjectSearch.replaceAll(
             query: "cafe", in: tmp, caseSensitive: false, regex: false,
-            replacement: "€", commit: true, isCancelled: { false })
+            replacement: "→", commit: true, isCancelled: { false })
 
         XCTAssertEqual(dry.filesChanged, 0)
         XCTAssertEqual(dry.replacements, 0)
@@ -454,8 +454,8 @@ final class FileToolsTests: XCTestCase {
     }
 
     func testReplaceAllPreservesLatin1Encoding() throws {
-        // A Latin-1 file (byte 0xE9 = é) with an ASCII match must round-trip in
-        // Latin-1, not be silently re-encoded to UTF-8 (which would change 0xE9).
+        // A non-UTF-8 file (byte 0xE9 = é) with an ASCII match must round-trip in its own
+        // encoding, not be silently re-encoded to UTF-8 (which would change 0xE9).
         let url = tmp.appendingPathComponent("a.txt")
         var bytes = Data("caf".utf8); bytes.append(0xE9); bytes.append(contentsOf: " foo\n".utf8)  // "café foo\n" in Latin-1
         try bytes.write(to: url)

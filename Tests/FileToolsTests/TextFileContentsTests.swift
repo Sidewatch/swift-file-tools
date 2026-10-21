@@ -3,7 +3,8 @@
 //  FileToolsTests
 //
 //  Decoding a file's bytes the way a text editor must: UTF-8 with its byte-order mark
-//  remembered, Latin-1 when the bytes are not UTF-8, and nothing for a binary file.
+//  remembered, Windows-1252 when the bytes are not UTF-8, Latin-1 when they are not Windows-1252
+//  either, and nothing for a binary file.
 //
 //  Created by David Sherlock on 9/27/26.
 //  Copyright © 2026 ArrayPress Limited. MIT licence.
@@ -19,10 +20,38 @@ final class TextFileContentsTests: XCTestCase {
         XCTAssertTrue(contents.encoding.hasByteOrderMark)
     }
 
-    func testBytesThatAreNotUTF8FallBackToLatin1() throws {
+    func testBytesThatAreNotUTF8ReadAsWindows1252() throws {
         let contents = try XCTUnwrap(TextFileContents(data: Data([0x63, 0x61, 0x66, 0xE9])))
         XCTAssertEqual(contents.text, "café")
-        XCTAssertEqual(contents.encoding.encoding, .isoLatin1)
+        XCTAssertEqual(contents.encoding.encoding, .windowsCP1252)
+    }
+
+    func testWindows1252ShowsItsQuotesEuroAndDashesAndSavesThemBackByteExact() throws {
+        // “hi” €5 – … in Windows-1252: 0x80–0x9F are printable there, control characters in Latin-1.
+        let bytes = Data([0x93, 0x68, 0x69, 0x94, 0x20, 0x80, 0x35, 0x20, 0x96, 0x20, 0x85, 0x0A])
+        let contents = try XCTUnwrap(TextFileContents(data: bytes))
+        XCTAssertEqual(contents.text, "\u{201C}hi\u{201D} \u{20AC}5 \u{2013} \u{2026}\n")
+        XCTAssertEqual(contents.data(for: contents.text), bytes, "a no-op save writes the same bytes")
+        XCTAssertNotNil(contents.data(for: contents.text + "\u{20AC}"), "a typed euro fits the file's own encoding")
+        XCTAssertNil(contents.data(for: "\u{2192}"), "an arrow does not, and is never re-encoded on its own")
+    }
+
+    func testEveryDefinedWindows1252ByteRoundTrips() throws {
+        let undefined: Set<UInt8> = [0x81, 0x8D, 0x8F, 0x90, 0x9D]
+        let bytes = Data((0x80...0xFF).map { UInt8($0) }.filter { !undefined.contains($0) })
+        let contents = try XCTUnwrap(TextFileContents(data: bytes))
+        XCTAssertEqual(contents.encoding.encoding, .windowsCP1252)
+        XCTAssertEqual(contents.data(for: contents.text), bytes)
+    }
+
+    func testAByteWindows1252LeavesUndefinedFallsBackToLatin1AndRoundTrips() throws {
+        for byte: UInt8 in [0x81, 0x8D, 0x8F, 0x90, 0x9D] {
+            let bytes = Data([0x93, 0x61, byte, 0x94])
+            let contents = try XCTUnwrap(TextFileContents(data: bytes))
+            XCTAssertEqual(contents.encoding.encoding, .isoLatin1, String(format: "%02X", byte))
+            XCTAssertTrue(contents.decodedByFallback)
+            XCTAssertEqual(contents.data(for: contents.text), bytes, "Latin-1 maps every byte, so nothing is lost")
+        }
     }
 
     func testUTF16WithAMarkOpensAsTextAndRoundTripsByteExact() throws {
@@ -38,10 +67,11 @@ final class TextFileContentsTests: XCTestCase {
         XCTAssertNil(TextFileContents(data: "hi\n".data(using: .utf16LittleEndian)!), "an unmarked UTF-16 file still reads as binary")
     }
 
-    func testLatin1IsReportedAsTheFallbackItIs() throws {
+    func testANonUTF8DecodeIsReportedAsTheFallbackItIs() throws {
         XCTAssertTrue(try XCTUnwrap(TextFileContents(data: Data([0x63, 0x61, 0x66, 0xE9]))).decodedByFallback)
         XCTAssertFalse(try XCTUnwrap(TextFileContents(data: Data("café".utf8))).decodedByFallback)
         XCTAssertEqual(TextFileEncoding(encoding: .isoLatin1, hasByteOrderMark: false).displayName, "Latin-1")
+        XCTAssertEqual(TextFileEncoding(encoding: .windowsCP1252, hasByteOrderMark: false).displayName, "Windows-1252")
         XCTAssertEqual(TextFileEncoding.utf16LittleEndian.displayName, "UTF-16 LE")
         XCTAssertNil(TextFileEncoding(encoding: .isoLatin1, hasByteOrderMark: false).data(for: "→"), "never re-encoded on its own")
     }

@@ -174,3 +174,8 @@ The host now keeps the files another writer changes (an agent's writes), not onl
 - 9 Oct 2026 — write paths: `FileRewrite` through links with attributes and group kept, its own errors; UTF-16 and the Latin-1 fallback in `TextFileContents`; `LocalHistory` bounded and moved with its file (section above).
 - 9 Oct 2026 — security review: `ProjectScripts` interpolated a manifest's script key into `npm run \(name)` / `composer run \(name)` unquoted, so a key `build; touch /tmp/x` ran two commands when the task was chosen. `ProjectScripts.argument(_:)` quotes any name that is not plain (`String.shellQuoted` from FoundationExtensions); plain names stay readable in a menu. `testAScriptNameIsOneShellArgument` (a `;`, a space, an `&&`, an apostrophe). Mutant: the name returned as written — 3 failures.
 - 10 Oct 2026 — local history from disk: `LocalHistorySource`, `recordFromDisk`, the cross-source identical-bytes rule (section above).
+- 22 Oct 2026 — non-UTF-8 text reads as Windows-1252 first (old Windows files: its 0x80–0x9F are curly quotes, `€`
+  and dashes, control characters in Latin-1), Latin-1 when one of its five undefined bytes appears. Measured on
+  Foundation: those five fail the Windows-1252 decode, every defined byte round-trips. Tests: quotes and `€` shown and
+  saved back exactly, all 123 defined high bytes round-trip, each undefined byte falls back. Mutants killed: no
+  Windows-1252 step, its text read as Latin-1, not marked assumed, wrong name.

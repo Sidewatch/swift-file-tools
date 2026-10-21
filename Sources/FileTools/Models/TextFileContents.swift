@@ -47,9 +47,15 @@ public struct TextFileContents: Sendable {
     }
 
     /// Decodes `data` as text, or nil when it is binary: a NUL in the first 8,000 bytes, or
-    /// bytes that are neither UTF-8 nor decodable as Latin-1. A UTF-16 byte-order mark is read
-    /// first, since UTF-16 text is half NULs; every mark is removed from the text and remembered
-    /// in ``encoding``.
+    /// bytes that are neither UTF-8 nor decodable as Windows-1252 or Latin-1. A UTF-16 byte-order
+    /// mark is read first, since UTF-16 text is half NULs; every mark is removed from the text and
+    /// remembered in ``encoding``.
+    ///
+    /// Text that is not UTF-8 is read as Windows-1252 first: it is what old Windows files are, and
+    /// it differs from Latin-1 only in 0x80–0x9F, where it has the curly quotes, `€` and the dashes
+    /// that Latin-1 reads as invisible control characters. The five bytes Windows-1252 leaves
+    /// undefined (0x81, 0x8D, 0x8F, 0x90, 0x9D) fail its decode, and the file is read as Latin-1,
+    /// which maps every byte. Either way unchanged text saves back byte for byte.
     public init?(data: Data) {
         if let utf16 = Self.markedUTF16(data) {
             self = utf16
@@ -60,6 +66,8 @@ public struct TextFileContents: Sendable {
         let hasBOM = data.starts(with: bom)
         if let utf8 = String(data: hasBOM ? data.dropFirst(bom.count) : data, encoding: .utf8) {
             self.init(text: utf8, encoding: TextFileEncoding(encoding: .utf8, hasByteOrderMark: hasBOM))
+        } else if let windows = String(data: data, encoding: .windowsCP1252) {
+            self.init(text: windows, encoding: TextFileEncoding(encoding: .windowsCP1252, hasByteOrderMark: false), decodedByFallback: true)
         } else if let latin1 = String(data: data, encoding: .isoLatin1) {
             self.init(text: latin1, encoding: TextFileEncoding(encoding: .isoLatin1, hasByteOrderMark: false), decodedByFallback: true)
         } else {
@@ -85,7 +93,7 @@ public struct TextFileContents: Sendable {
 /// new text can be written back in the file's own bytes.
 public struct TextFileEncoding: Sendable, Equatable {
 
-    /// The string encoding: UTF-8, ISO Latin-1, or UTF-16 in either byte order.
+    /// The string encoding: UTF-8, Windows-1252, ISO Latin-1, or UTF-16 in either byte order.
     public let encoding: String.Encoding
 
     /// Whether the file began with its encoding's byte-order mark (``byteOrderMark``).
@@ -118,10 +126,12 @@ public struct TextFileEncoding: Sendable, Equatable {
         }
     }
 
-    /// A short name for a badge: "UTF-8", "UTF-8 with BOM", "Latin-1", "UTF-16 LE", "UTF-16 BE".
+    /// A short name for a badge: "UTF-8", "UTF-8 with BOM", "Windows-1252", "Latin-1", "UTF-16 LE",
+    /// "UTF-16 BE".
     public var displayName: String {
         switch encoding {
         case .utf8: return hasByteOrderMark ? "UTF-8 with BOM" : "UTF-8"
+        case .windowsCP1252: return "Windows-1252"
         case .isoLatin1: return "Latin-1"
         case .utf16LittleEndian: return "UTF-16 LE"
         case .utf16BigEndian: return "UTF-16 BE"
