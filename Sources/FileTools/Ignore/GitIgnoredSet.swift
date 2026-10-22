@@ -78,6 +78,24 @@ public struct GitIgnoredSet: Sendable {
         return false
     }
 
+    /// The rule git ignores `relativePath` by, from `git check-ignore -v` run in `root`:
+    /// `.gitignore` files, `.git/info/exclude` and `core.excludesFile` alike. Nil when git does
+    /// not ignore it (a tracked file never is), git is missing, or `root` is not a work tree.
+    /// One `git` process: ask it when the answer is wanted, never per row of a listing.
+    ///
+    /// `check-ignore` refuses literal pathspecs ("pathspec magic not supported"), so this call
+    /// turns them off; the path goes in on stdin, where git reads it as a name, never a pattern
+    /// (`app/[id]/page.tsx` is answered for itself).
+    public static func reason(relativePath: String, root: URL) -> IgnoreReason? {
+        guard
+            let output = Git.run(
+                ["-c", "core.quotePath=false", "check-ignore", "-v", "-z", "--stdin"], in: root,
+                environment: ["GIT_LITERAL_PATHSPECS": "0"],
+                timeout: timeout, input: Data((relativePath + "\u{0}").utf8))
+        else { return nil }
+        return GitCheckIgnoreOutput.reason(from: output)
+    }
+
     // MARK: - Process
 
     private static let timeout: TimeInterval = 10

@@ -14,7 +14,7 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 - 🖱️ **Terminal path references** — `TerminalPathParser.match(in:at:)` pulls `path:line:col` or `path(line,col)` out of a line of terminal output at a clicked column; `FileLocationLink` reads and builds an app's `scheme://open?path=…&line=…` link with the same `file:line:col` rules; `FileComparisonLink` and `WaitMarker` add a two-file diff link and a `--wait` handshake
 - 🚫 **Noise-aware, and configurable** — both scanners honor the one `SkippedDirs.names` set (`.git`, `node_modules`, `.build`, `DerivedData`, …). Matching is by *name*, so the list is settable: a project with real sources in `dist/` can take it off the list, and `SkippedDirs.resetToDefault()` restores `SkippedDirs.defaultNames`
 - 🪶 **Small** — Foundation plus swift-foundation-extensions (FoundationExtensions, ProcessRunner)
-- **Ignore rules without walking** — `IgnoreMatcher(root:nestedRoots:)` answers "is this URL ignored?" for a file tree or an index that enumerates on its own: git's own answer inside a checkout (`GitIgnoredSet`, one `git ls-files` per root), the parser for a plain folder, and the `.ignore` / `.rgignore` / `.fdignore` stack on top. A checkout nested inside the root is judged by its own rules once the host names it (`setNestedRoots(_:)`), the way `git check-ignore` run in that checkout would; a lookup costs one set probe per path component, never a scan of the ignored directories
+- **Ignore rules without walking** — `IgnoreMatcher(root:nestedRoots:)` answers "is this URL ignored?" for a file tree or an index that enumerates on its own: git's own answer inside a checkout (`GitIgnoredSet`, one `git ls-files` per root), the parser for a plain folder, and the `.ignore` / `.rgignore` / `.fdignore` stack on top. A checkout nested inside the root is judged by its own rules once the host names it (`setNestedRoots(_:)`), the way `git check-ignore` run in that checkout would; a lookup costs one set probe per path component, never a scan of the ignored directories. `reason(url:isDirectory:)` names the rule (`IgnoreReason`: file, line, pattern) — `git check-ignore -v` inside a checkout, the stack's last matching pattern elsewhere
 - 🧪 **Tested** — tree rendering, search caps/cancellation/symlink handling, replace fidelity (encoding, BOM, permissions), recents persistence, watcher lifecycle + flag mapping, manifest script detection (runner choice, reserved-hook filtering, Makefile heuristics), and the ignore parser against git itself (`IgnoreGitParityTests` writes pattern corpora into real repositories and compares the walk with `git ls-files`)
 
 ## Requirements
@@ -116,6 +116,8 @@ SkippedDirs.resetToDefault()   // back to the shipped list
 // on its own. Inside a checkout git itself answers; a plain folder's ignore files are parsed.
 let matcher = IgnoreMatcher(root: projectURL)
 matcher.isIgnored(url: projectURL.appendingPathComponent("build/out.o"), isDirectory: false)
+// …and why: IgnoreReason(source: ".gitignore", line: 3, pattern: "build/"). One git process, so ask on demand.
+matcher.reason(url: projectURL.appendingPathComponent("build/out.o"), isDirectory: false)
 
 // A checkout nested inside the project is its own git root once you name it: everything
 // beneath it is judged by its own .gitignore, as `git check-ignore` run there would.

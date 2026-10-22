@@ -74,20 +74,51 @@ public final class IgnoreMatcher: @unchecked Sendable {
     /// Whether `url` is ignored, itself or through an ignored ancestor directory; false outside
     /// the root and for the root itself.
     public func isIgnored(url: URL, isDirectory: Bool) -> Bool {
-        guard let rel = relativePath(of: url), !rel.isEmpty else { return false }
+        firstIgnored(url: url, isDirectory: isDirectory) != nil
+    }
+
+    /// The rule that ignores `url`, itself or through the ignored ancestor directory: git's own
+    /// answer (`git check-ignore -v`, one process) where git ignores it, else the last matching
+    /// pattern of the `.ignore` stack. Nil when `url` is not ignored. Sources read from the
+    /// scan root, a nested checkout's own rules included.
+    ///
+    /// Git also reports a folder as ignored when everything inside it is, though no rule names
+    /// the folder: then the path itself is asked about, and such a folder has no reason (nil).
+    public func reason(url: URL, isDirectory: Bool) -> IgnoreReason? {
+        guard let hit = firstIgnored(url: url, isDirectory: isDirectory) else { return nil }
+        if hit.byGit {
+            let checkout = hit.governing.relativeDirectory
+            let at = checkout.isEmpty ? root : root.appendingPathComponent(checkout, isDirectory: true)
+            let own = relativePath(of: url).flatMap { $0 == hit.path ? nil : $0 }
+            for path in [hit.path] + (own.map { [$0] } ?? []) {
+                guard let found = GitIgnoredSet.reason(relativePath: hit.governing.localPath(of: path), root: at) else { continue }
+                return found.source.hasPrefix("/") || checkout.isEmpty
+                    ? found : IgnoreReason(source: checkout + "/" + found.source, line: found.line, pattern: found.pattern)
+            }
+            return nil
+        }
+        return stack(for: Self.parent(of: hit.path)).reason(relativePath: hit.path, isDirectory: hit.isDirectory)
+    }
+
+    /// The first of `url`'s ancestors (as a directory), else `url` itself, that is ignored, with
+    /// the root it is judged by and whether git (rather than the `.ignore` stack) ignores it. A
+    /// file inside an ignored directory is ignored: every ancestor is checked, each by the
+    /// deepest root above it. Crossing into a nested checkout switches the git rules; the stack
+    /// of `.ignore` files carries on.
+    private func firstIgnored(url: URL, isDirectory: Bool) -> (path: String, isDirectory: Bool, governing: Governing, byGit: Bool)? {
+        guard let rel = relativePath(of: url), !rel.isEmpty else { return nil }
         let nested = snapshotNested()
-        // A file inside an ignored directory is ignored: check every ancestor as a directory,
-        // each judged by the deepest root above it. Crossing into a nested checkout switches
-        // the git rules; the stack of `.ignore` files carries on.
         var governing = Governing(root: root, relativeDirectory: "")
         var from = rel.startIndex
         while let slash = rel[from...].firstIndex(of: "/") {
             let ancestor = String(rel[..<slash])
-            if isIgnored(relativePath: ancestor, isDirectory: true, under: governing) { return true }
+            if let byGit = verdict(relativePath: ancestor, isDirectory: true, under: governing) {
+                return (ancestor, true, governing, byGit)
+            }
             if nested.contains(ancestor) { governing = Governing(root: root, relativeDirectory: ancestor) }
             from = rel.index(after: slash)
         }
-        return isIgnored(relativePath: rel, isDirectory: isDirectory, under: governing)
+        return verdict(relativePath: rel, isDirectory: isDirectory, under: governing).map { (rel, isDirectory, governing, $0) }
     }
 
     // MARK: - One entry
@@ -111,14 +142,19 @@ public final class IgnoreMatcher: @unchecked Sendable {
     }
 
     /// Git's verdict from the governing root, then the ignore-file stack of the parent
-    /// directory (paths in the stack are measured from the scan root).
-    private func isIgnored(relativePath: String, isDirectory: Bool, under governing: Governing) -> Bool {
+    /// directory (paths in the stack are measured from the scan root): nil when neither ignores
+    /// the entry, else whether git is the one that does.
+    private func verdict(relativePath: String, isDirectory: Bool, under governing: Governing) -> Bool? {
         if let git = governing.rules.git, git.isIgnored(relativePath: governing.localPath(of: relativePath), isDirectory: isDirectory) {
             return true
         }
-        let parent = relativePath.contains("/") ? String(relativePath[..<relativePath.lastIndex(of: "/")!]) : ""
-        let stack = stack(for: parent)
-        return !stack.isEmpty && stack.isIgnored(relativePath: relativePath, isDirectory: isDirectory)
+        let stack = stack(for: Self.parent(of: relativePath))
+        return !stack.isEmpty && stack.isIgnored(relativePath: relativePath, isDirectory: isDirectory) ? false : nil
+    }
+
+    /// `relativePath`'s parent directory, "" at the top.
+    private static func parent(of relativePath: String) -> String {
+        relativePath.contains("/") ? String(relativePath[..<relativePath.lastIndex(of: "/")!]) : ""
     }
 
     private func snapshotNested() -> Set<String> {

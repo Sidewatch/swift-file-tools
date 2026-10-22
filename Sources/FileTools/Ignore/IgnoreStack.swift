@@ -74,6 +74,17 @@ public struct IgnoreStack: Sendable {
         return verdict
     }
 
+    /// The rule that ignores `relativePath`: the last pattern in the whole stack to match it,
+    /// with its file and line. Nil when nothing matches or that last match is a `!` rule.
+    public func reason(relativePath: String, isDirectory: Bool) -> IgnoreReason? {
+        var last: (file: IgnoreFile, pattern: IgnorePattern, line: Int)?
+        for file in files {
+            if let match = file.lastMatch(for: relativePath, isDirectory: isDirectory) { last = (file, match.pattern, match.line) }
+        }
+        guard let last, !last.pattern.negated else { return nil }
+        return IgnoreReason(source: last.file.sourcePath, line: last.line, pattern: last.pattern.raw)
+    }
+
     /// Reads whichever of `names` exist directly inside `directory`, each parsed as an
     /// ``IgnoreFile`` bound to `relativeDirectory` (its path from the scan root), in `names` order.
     ///
@@ -91,7 +102,7 @@ public struct IgnoreStack: Sendable {
                 let data = try? Data(contentsOf: fileURL),
                 let text = data.utf8String
             else { continue }
-            result.append(IgnoreFile(text: text, directory: relativeDirectory))
+            result.append(IgnoreFile(text: text, directory: relativeDirectory, name: name))
         }
         return result
     }

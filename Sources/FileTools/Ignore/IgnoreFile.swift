@@ -29,6 +29,12 @@ public struct IgnoreFile: Sendable, Equatable {
     /// file, the LAST matching pattern wins).
     public let patterns: [IgnorePattern]
 
+    /// The file's name (`.gitignore`, `.ignore`, …); empty when parsed from text alone.
+    public let name: String
+
+    /// Each pattern's line in the file, counted from 1, in step with ``patterns``.
+    public let lineNumbers: [Int]
+
     /// Parses `text` as one ignore file.
     ///
     /// - Parameters:
@@ -37,13 +43,32 @@ public struct IgnoreFile: Sendable, Equatable {
     ///   - directory: The relative path (from the scan root) of the folder this
     ///     file lives in, e.g. `""` for the root or `"src/vendor"`. Leading and
     ///     trailing slashes are stripped if present.
-    public init(text: String, directory: String) {
+    ///   - name: The file's name, for ``IgnoreStack/reason(relativePath:isDirectory:)``.
+    public init(text: String, directory: String, name: String = "") {
         self.directory = IgnoreFile.normalize(directory)
-        self.patterns = text.components(separatedBy: "\n").compactMap { line in
+        self.name = name
+        var patterns: [IgnorePattern] = []
+        var lineNumbers: [Int] = []
+        for (index, line) in text.components(separatedBy: "\n").enumerated() {
             let trimmedCR = line.hasSuffix("\r") ? String(line.dropLast()) : line
-            return IgnorePattern(line: trimmedCR)
+            guard let pattern = IgnorePattern(line: trimmedCR) else { continue }
+            patterns.append(pattern)
+            lineNumbers.append(index + 1)
         }
+        self.patterns = patterns
+        self.lineNumbers = lineNumbers
     }
+
+    /// The last of this file's patterns to match `relativePath`, with its line; nil when none
+    /// does or the path is not under this file's directory.
+    func lastMatch(for relativePath: String, isDirectory: Bool) -> (pattern: IgnorePattern, line: Int)? {
+        guard let local = localPath(for: relativePath) else { return nil }
+        guard let index = patterns.lastIndex(where: { $0.matches(path: local, isDirectory: isDirectory) }) else { return nil }
+        return (patterns[index], lineNumbers[index])
+    }
+
+    /// This file's path from the scan root: its directory, then its name.
+    var sourcePath: String { directory.isEmpty ? name : directory + "/" + name }
 
     /// This file's own verdict for `relativePath`, or `nil` if none of its
     /// patterns say anything about it (either no pattern matched, or the path
@@ -53,12 +78,7 @@ public struct IgnoreFile: Sendable, Equatable {
     ///   `false` if the last matching pattern is a `!`-negation that re-includes
     ///   it, `nil` if no pattern in this file matched.
     func verdict(for relativePath: String, isDirectory: Bool) -> Bool? {
-        guard let local = localPath(for: relativePath) else { return nil }
-        var result: Bool?
-        for pattern in patterns where pattern.matches(path: local, isDirectory: isDirectory) {
-            result = !pattern.negated
-        }
-        return result
+        lastMatch(for: relativePath, isDirectory: isDirectory).map { !$0.pattern.negated }
     }
 
     /// `relativePath` made relative to this file's own directory, or `nil` when
