@@ -35,14 +35,38 @@ public enum EventPaths {
     /// The paths a tree cares about: all but those under a skipped directory (`.git`,
     /// `node_modules`, …), tested only BELOW `root` (with its trailing slash) — testing the whole
     /// path would black out a root that itself lives inside a skipped folder
-    /// (`…/node_modules/mylib`), since every event carries the skipped component.
+    /// (`…/node_modules/mylib`), since every event carries the skipped component. When `skipped` is
+    /// not empty, a game engine's cache folder below `root` is skipped too (``EngineCaches``): a
+    /// running Unity editor rewrites its `Library` without pause.
     public static func relevant(_ paths: some Sequence<String>, root: String, skipping skipped: Set<String>) -> Set<String> {
         var changed = Set<String>()
+        var caches: [String: Bool] = [:]
         for path in paths {
-            let relative = path.hasPrefix(root) ? path.dropFirst(root.count) : Substring(path)
-            guard !relative.split(separator: "/").contains(where: { skipped.contains(String($0)) }) else { continue }
+            let below = path.hasPrefix(root)
+            let relative = below ? path.dropFirst(root.count) : Substring(path)
+            let parts = relative.split(separator: "/")
+            guard !parts.contains(where: { skipped.contains(String($0)) }) else { continue }
+            if !skipped.isEmpty, below, passesThroughCache(parts, under: root, known: &caches) { continue }
             changed.insert(path)
         }
         return changed
+    }
+
+    /// Whether a path, as its components below `root`, is or lies inside an engine's cache folder;
+    /// each candidate folder is looked up on disk once per batch (`known`, by path).
+    private static func passesThroughCache(_ parts: [Substring], under root: String, known: inout [String: Bool]) -> Bool {
+        var folder = root.hasSuffix("/") ? String(root.dropLast()) : root
+        for part in parts {
+            folder += "/" + part
+            guard EngineCaches.folderNames.contains(String(part)) else { continue }
+            if let isCache = known[folder] {
+                if isCache { return true }
+                continue
+            }
+            let isCache = EngineCaches.isCache(URL(fileURLWithPath: folder))
+            known[folder] = isCache
+            if isCache { return true }
+        }
+        return false
     }
 }

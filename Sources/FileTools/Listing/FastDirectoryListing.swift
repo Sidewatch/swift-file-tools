@@ -43,7 +43,8 @@ public enum FastDirectoryListing {
 
     /// Lists `directory`, directories first then names in Finder order (`localizedStandardCompare`:
     /// case-insensitive and natural-numeric, so `file2` precedes `file10`). Names in `skipping`
-    /// are dropped; empty when the directory can't be opened.
+    /// are dropped, and a listing that drops them drops a game engine's cache folders beside its
+    /// project's marker too (``EngineCaches``); empty when the directory can't be opened.
     public static func list(
         _ directory: URL,
         includeHidden: Bool = false,
@@ -54,6 +55,8 @@ public enum FastDirectoryListing {
 
         var out: [Entry] = []
         out.reserveCapacity(64)
+        var names: [String] = []
+        var mayHoldCaches = false
 
         while let raw = readdir(dir) {
             var ent = raw.pointee
@@ -61,8 +64,10 @@ public enum FastDirectoryListing {
                 String(cString: UnsafeRawPointer($0).assumingMemoryBound(to: CChar.self))
             }
             if name == "." || name == ".." { continue }
+            names.append(name)
             if !includeHidden, name.hasPrefix(".") { continue }
             if skipping.contains(name) { continue }
+            if EngineCaches.folderNames.contains(name) { mayHoldCaches = true }
 
             let url = directory.appendingPathComponent(name)
             let isDir: Bool
@@ -80,6 +85,10 @@ public enum FastDirectoryListing {
                 isLink = lstat(url.path, &lst) == 0 && (lst.st_mode & S_IFMT) == S_IFLNK
             }
             out.append(Entry(url: url, isDirectory: isDir, isSymbolicLink: isLink, sortKey: name.lowercased()))
+        }
+        if mayHoldCaches, !skipping.isEmpty {
+            let caches = EngineCaches.skipped(among: names)
+            out.removeAll { $0.isDirectory && caches.contains($0.url.lastPathComponent) }
         }
 
         return out.sorted {
