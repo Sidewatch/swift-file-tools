@@ -179,3 +179,13 @@ The host now keeps the files another writer changes (an agent's writes), not onl
   Foundation: those five fail the Windows-1252 decode, every defined byte round-trips. Tests: quotes and `€` shown and
   saved back exactly, all 123 defined high bytes round-trip, each undefined byte falls back. Mutants killed: no
   Windows-1252 step, its text read as Latin-1, not marked assumed, wrong name.
+- 27 Oct 2026 — `LargeText/`: text files of any size, never held whole. `LargeTextFile` reads with `pread` (a
+  truncated mapped file can SIGBUS) and scans lines in the background into a sparse index (a checkpoint every 256
+  lines, lines of 64 KB or more recorded); a line still being read is not counted; `grew()` / `isTruncated` for a
+  growing or rotated log. `LargeTextSearch` with a `LargeTextMatcher` (Horspool over raw bytes; a regex over a block of
+  whole lines, offsets mapped back through `UTF8OffsetWalker`, invalid UTF-8 included) never holds the matches: next
+  and previous wrapping, a screenful, a count by block and a match's place from it. On a generated 1 GB log: open
+  0.5 ms, the scan 0.37 s, a full literal pass 0.36 s, a count of 4.9 million matches 1.1 s, a regex pass 3 s.
+  `TextFileContents.hasBinaryPrefix` and `hasLine(atLeast:in:)` answer from the bytes before any decoding.
+  `DirectoryEventStream.EventCallback` is `@Sendable`: it runs on the stream's own queue, and a non-Sendable closure
+  written in a host's main-actor code carried the main actor there and trapped. 33 mutants, all caught.

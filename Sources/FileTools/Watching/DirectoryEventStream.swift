@@ -19,8 +19,10 @@ import Foundation
 /// kinds as hints.
 public final class DirectoryEventStream {
 
-    /// A callback invoked with every batch of events since the last notification.
-    public typealias EventCallback = ([Event]) -> Void
+    /// A callback invoked with every batch of events since the last notification, on the stream's own queue. It is
+    /// `@Sendable`, so a closure written in main-actor code is not isolated to the main actor: one that was would
+    /// trap the first time the queue called it.
+    public typealias EventCallback = @Sendable ([Event]) -> Void
 
     /// Bridges the C callback to the stream without extending its lifetime.
     ///

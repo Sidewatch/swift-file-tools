@@ -61,7 +61,7 @@ public struct TextFileContents: Sendable {
             self = utf16
             return
         }
-        if data.prefix(Self.sniffLength).contains(0) { return nil }
+        if Self.hasBinaryPrefix(data) { return nil }
         let bom = TextFileEncoding.utf8ByteOrderMark
         let hasBOM = data.starts(with: bom)
         if let utf8 = String(data: hasBOM ? data.dropFirst(bom.count) : data, encoding: .utf8) {
@@ -72,6 +72,28 @@ public struct TextFileContents: Sendable {
             self.init(text: latin1, encoding: TextFileEncoding(encoding: .isoLatin1, hasByteOrderMark: false), decodedByFallback: true)
         } else {
             return nil
+        }
+    }
+
+    /// Whether `data` reads as binary before any decoding: a NUL in its first 8,000 bytes (a UTF-16 file with
+    /// its byte-order mark is the one exception ``init(data:)`` makes). Only that prefix is read, so a caller can
+    /// ask it of a memory-mapped file before deciding to read the whole file in.
+    public static func hasBinaryPrefix(_ data: Data) -> Bool { data.prefix(sniffLength).contains(0) }
+
+    /// Whether `data` holds a line of `length` bytes or more, its break not counted: one `memchr` pass that stops at
+    /// the first such line. A host asks it before handing a text to a view that lays a line out whole.
+    public static func hasLine(atLeast length: Int, in data: Data) -> Bool {
+        guard length > 0 else { return true }
+        return data.withUnsafeBytes { raw in
+            guard let base = raw.baseAddress else { return false }
+            var start = 0
+            while start < raw.count {
+                guard let hit = memchr(base + start, 0x0A, raw.count - start) else { return raw.count - start >= length }
+                let end = UnsafeRawPointer(hit) - base
+                if end - start >= length { return true }
+                start = end + 1
+            }
+            return false
         }
     }
 

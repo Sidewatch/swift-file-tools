@@ -76,6 +76,27 @@ final class TextFileContentsTests: XCTestCase {
         XCTAssertNil(TextFileEncoding(encoding: .isoLatin1, hasByteOrderMark: false).data(for: "→"), "never re-encoded on its own")
     }
 
+    func testTheBinarySniffReadsTheFirst8000BytesOnly() {
+        var bytes = Data(repeating: 0x61, count: 9000)
+        bytes[7999] = 0
+        XCTAssertTrue(TextFileContents.hasBinaryPrefix(bytes), "a NUL at the 8,000th byte")
+        XCTAssertNil(TextFileContents(data: bytes))
+        bytes[7999] = 0x61
+        bytes[8000] = 0
+        XCTAssertFalse(TextFileContents.hasBinaryPrefix(bytes), "a NUL past the sniff")
+        XCTAssertNotNil(TextFileContents(data: bytes), "decoded as text, as before")
+    }
+
+    func testALongLineIsFoundWhereverItIs() {
+        let short = Data("ab\ncd\n".utf8)
+        XCTAssertFalse(TextFileContents.hasLine(atLeast: 3, in: short))
+        XCTAssertTrue(TextFileContents.hasLine(atLeast: 2, in: short))
+        XCTAssertTrue(TextFileContents.hasLine(atLeast: 3, in: Data("a\nbbb".utf8)), "the last line, with no break after it")
+        XCTAssertTrue(TextFileContents.hasLine(atLeast: 3, in: Data("ccc\nd".utf8)), "the first line")
+        XCTAssertTrue(TextFileContents.hasLine(atLeast: 3, in: Data("cc\r\nd".utf8)), "a carriage return counts as a byte of its line")
+        XCTAssertFalse(TextFileContents.hasLine(atLeast: 1, in: Data()))
+    }
+
     func testABinaryFileIsNotText() {
         XCTAssertNil(TextFileContents(data: Data([0x50, 0x4B, 0x00, 0x03])))
     }
