@@ -1,0 +1,566 @@
+{
+  "source": "Documentation-derived: logback's default configuration (BasicConfigurator) pattern \"%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n\" https://logback.qos.ch/manual/configuration.html#automaticConf and stack trace layout https://logback.qos.ch/manual/layouts.html#ex ; time only, so the date is referenceDate",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:00.611Z",
+      "zoned": false,
+      "component": "com.example.Application"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:03.386Z",
+      "zoned": false,
+      "component": "com.example.config.AppConfig"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:05.913Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:07.385Z",
+      "zoned": false,
+      "component": "com.example.web.RateLimiter"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:08.085Z",
+      "zoned": false,
+      "component": "com.example.jobs.DigestJob"
+    },
+    {
+      "line": 6,
+      "lines": 7,
+      "level": "error",
+      "time": "2026-10-01T00:00:10.360Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:13.283Z",
+      "zoned": false,
+      "component": "com.example.mail.Mailer"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:15.995Z",
+      "zoned": false,
+      "component": "com.example.db.OrderRepository"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:18.489Z",
+      "zoned": false,
+      "component": "com.example.Application"
+    },
+    {
+      "line": 16,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:00:19.241Z",
+      "zoned": false,
+      "component": "com.example.config.AppConfig"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:20.820Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:22.024Z",
+      "zoned": false,
+      "component": "com.example.web.RateLimiter"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:24.558Z",
+      "zoned": false,
+      "component": "com.example.jobs.DigestJob"
+    },
+    {
+      "line": 21,
+      "lines": 7,
+      "level": "error",
+      "time": "2026-10-01T00:00:26.320Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:28.644Z",
+      "zoned": false,
+      "component": "com.example.mail.Mailer"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:31.030Z",
+      "zoned": false,
+      "component": "com.example.db.OrderRepository"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:31.212Z",
+      "zoned": false,
+      "component": "com.example.Application"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:34.183Z",
+      "zoned": false,
+      "component": "com.example.config.AppConfig"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:36.359Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:38.588Z",
+      "zoned": false,
+      "component": "com.example.web.RateLimiter"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:41.131Z",
+      "zoned": false,
+      "component": "com.example.jobs.DigestJob"
+    },
+    {
+      "line": 35,
+      "lines": 7,
+      "level": "error",
+      "time": "2026-10-01T00:00:43.264Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:44.028Z",
+      "zoned": false,
+      "component": "com.example.mail.Mailer"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:45.577Z",
+      "zoned": false,
+      "component": "com.example.db.OrderRepository"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:47.390Z",
+      "zoned": false,
+      "component": "com.example.Application"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:48.324Z",
+      "zoned": false,
+      "component": "com.example.config.AppConfig"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:50.418Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:50.947Z",
+      "zoned": false,
+      "component": "com.example.web.RateLimiter"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:51.299Z",
+      "zoned": false,
+      "component": "com.example.jobs.DigestJob"
+    },
+    {
+      "line": 49,
+      "lines": 7,
+      "level": "error",
+      "time": "2026-10-01T00:00:51.520Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:54.350Z",
+      "zoned": false,
+      "component": "com.example.mail.Mailer"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:55.107Z",
+      "zoned": false,
+      "component": "com.example.db.OrderRepository"
+    },
+    {
+      "line": 58,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:00:57.607Z",
+      "zoned": false,
+      "component": "com.example.Application"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:59.968Z",
+      "zoned": false,
+      "component": "com.example.config.AppConfig"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:01.782Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:03.839Z",
+      "zoned": false,
+      "component": "com.example.web.RateLimiter"
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:04.753Z",
+      "zoned": false,
+      "component": "com.example.jobs.DigestJob"
+    },
+    {
+      "line": 64,
+      "lines": 7,
+      "level": "error",
+      "time": "2026-10-01T00:01:07.683Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:09.860Z",
+      "zoned": false,
+      "component": "com.example.mail.Mailer"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:12.018Z",
+      "zoned": false,
+      "component": "com.example.db.OrderRepository"
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:12.618Z",
+      "zoned": false,
+      "component": "com.example.Application"
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:14.633Z",
+      "zoned": false,
+      "component": "com.example.config.AppConfig"
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:17.182Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:18.874Z",
+      "zoned": false,
+      "component": "com.example.web.RateLimiter"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:21.460Z",
+      "zoned": false,
+      "component": "com.example.jobs.DigestJob"
+    },
+    {
+      "line": 78,
+      "lines": 7,
+      "level": "error",
+      "time": "2026-10-01T00:01:23.425Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 85,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:26.175Z",
+      "zoned": false,
+      "component": "com.example.mail.Mailer"
+    },
+    {
+      "line": 86,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:26.460Z",
+      "zoned": false,
+      "component": "com.example.db.OrderRepository"
+    },
+    {
+      "line": 87,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:27.474Z",
+      "zoned": false,
+      "component": "com.example.Application"
+    },
+    {
+      "line": 88,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:29.982Z",
+      "zoned": false,
+      "component": "com.example.config.AppConfig"
+    },
+    {
+      "line": 89,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:30.363Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 90,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:31.731Z",
+      "zoned": false,
+      "component": "com.example.web.RateLimiter"
+    },
+    {
+      "line": 91,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:33.282Z",
+      "zoned": false,
+      "component": "com.example.jobs.DigestJob"
+    },
+    {
+      "line": 92,
+      "lines": 7,
+      "level": "error",
+      "time": "2026-10-01T00:01:36.103Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 99,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:36.904Z",
+      "zoned": false,
+      "component": "com.example.mail.Mailer"
+    },
+    {
+      "line": 100,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:01:38.997Z",
+      "zoned": false,
+      "component": "com.example.db.OrderRepository"
+    },
+    {
+      "line": 102,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:40.752Z",
+      "zoned": false,
+      "component": "com.example.Application"
+    },
+    {
+      "line": 103,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:43.226Z",
+      "zoned": false,
+      "component": "com.example.config.AppConfig"
+    },
+    {
+      "line": 104,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:44.996Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 105,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:46.632Z",
+      "zoned": false,
+      "component": "com.example.web.RateLimiter"
+    },
+    {
+      "line": 106,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:47.183Z",
+      "zoned": false,
+      "component": "com.example.jobs.DigestJob"
+    },
+    {
+      "line": 107,
+      "lines": 7,
+      "level": "error",
+      "time": "2026-10-01T00:01:47.872Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 114,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:49.365Z",
+      "zoned": false,
+      "component": "com.example.mail.Mailer"
+    },
+    {
+      "line": 115,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:50.219Z",
+      "zoned": false,
+      "component": "com.example.db.OrderRepository"
+    },
+    {
+      "line": 116,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:50.518Z",
+      "zoned": false,
+      "component": "com.example.Application"
+    },
+    {
+      "line": 117,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:52.934Z",
+      "zoned": false,
+      "component": "com.example.config.AppConfig"
+    },
+    {
+      "line": 118,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:53.910Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    },
+    {
+      "line": 119,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:56.501Z",
+      "zoned": false,
+      "component": "com.example.web.RateLimiter"
+    },
+    {
+      "line": 120,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:57.713Z",
+      "zoned": false,
+      "component": "com.example.jobs.DigestJob"
+    },
+    {
+      "line": 121,
+      "lines": 7,
+      "level": "error",
+      "time": "2026-10-01T00:01:59.490Z",
+      "zoned": false,
+      "component": "com.example.web.OrderController"
+    }
+  ]
+}

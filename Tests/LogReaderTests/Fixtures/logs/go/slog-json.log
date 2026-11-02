@@ -1,0 +1,70 @@
+{"time":"2026-09-30T19:00:01.49929-05:00","level":"INFO","msg":"server started","addr":":8080","component":"api"}
+{"time":"2026-09-30T19:00:04.053902-05:00","level":"WARN","msg":"slow request","method":"GET","path":"/api/report","duration":"2.31s","component":"api"}
+{"time":"2026-09-30T19:00:05.094678-05:00","level":"INFO","msg":"user signed in","user":"user-1042","ip":"203.0.113.17"}
+{"time":"2026-09-30T19:00:08.008609-05:00","level":"ERROR+4","msg":"data loss detected","table":"orders","component":"db","service":"checkout"}
+{"time":"2026-09-30T19:00:08.113719-05:00","level":"WARN+2","msg":"disk nearly full","used":"97%","component":"storage"}
+{"time":"2026-09-30T19:00:10.834672-05:00","level":"DEBUG","msg":"cache lookup","key":"user:1042","hit":true}
+{"time":"2026-09-30T19:00:11.401456-05:00","level":"ERROR","msg":"query failed","err":"pq: relation \"order_items\" does not exist","component":"db"}
+{"time":"2026-09-30T19:00:11.483361-05:00","level":"INFO","msg":"message with spaces and \"quotes\"","note":"a=b c"}
+{"time":"2026-09-30T19:00:12.450326-05:00","level":"DEBUG-4","msg":"very verbose detail","n":7}
+{"time":"2026-09-30T19:00:12.532753-05:00","level":"INFO","msg":"server started","addr":":8080","component":"api"}
+{"time":"2026-09-30T19:00:13.938122-05:00","level":"WARN","msg":"slow request","method":"GET","path":"/api/report","duration":"2.31s","component":"api","service":"checkout"}
+{"time":"2026-09-30T19:00:16.915815-05:00","level":"INFO","msg":"user signed in","user":"user-1042","ip":"203.0.113.17"}
+{"time":"2026-09-30T19:00:18.59167-05:00","level":"ERROR+4","msg":"data loss detected","table":"orders","component":"db"}
+{"time":"2026-09-30T19:00:20.983284-05:00","level":"WARN+2","msg":"disk nearly full","used":"97%","component":"storage"}
+{"time":"2026-09-30T19:00:22.061116-05:00","level":"DEBUG","msg":"cache lookup","key":"user:1042","hit":true}
+{"time":"2026-09-30T19:00:22.100125-05:00","level":"ERROR","msg":"query failed","err":"pq: relation \"order_items\" does not exist","component":"db"}
+{"time":"2026-09-30T19:00:23.175252-05:00","level":"INFO","msg":"message with spaces and \"quotes\"","note":"a=b c"}
+{"time":"2026-09-30T19:00:24.191948-05:00","level":"DEBUG-4","msg":"very verbose detail","n":7,"service":"checkout"}
+{"time":"2026-09-30T19:00:26.472365-05:00","level":"INFO","msg":"server started","addr":":8080","component":"api"}
+{"time":"2026-09-30T19:00:26.747372-05:00","level":"WARN","msg":"slow request","method":"GET","path":"/api/report","duration":"2.31s","component":"api"}
+{"time":"2026-09-30T19:00:26.9929-05:00","level":"INFO","msg":"user signed in","user":"user-1042","ip":"203.0.113.17"}
+{"time":"2026-09-30T19:00:29.572358-05:00","level":"ERROR+4","msg":"data loss detected","table":"orders","component":"db"}
+{"time":"2026-09-30T19:00:31.862334-05:00","level":"WARN+2","msg":"disk nearly full","used":"97%","component":"storage"}
+{"time":"2026-09-30T19:00:34.135481-05:00","level":"DEBUG","msg":"cache lookup","key":"user:1042","hit":true}
+{"time":"2026-09-30T19:00:34.839239-05:00","level":"ERROR","msg":"query failed","err":"pq: relation \"order_items\" does not exist","component":"db","service":"checkout"}
+{"time":"2026-09-30T19:00:36.242632-05:00","level":"INFO","msg":"message with spaces and \"quotes\"","note":"a=b c"}
+{"time":"2026-09-30T19:00:37.524793-05:00","level":"DEBUG-4","msg":"very verbose detail","n":7}
+{"time":"2026-09-30T19:00:37.718016-05:00","level":"INFO","msg":"server started","addr":":8080","component":"api"}
+{"time":"2026-09-30T19:00:38.08674-05:00","level":"WARN","msg":"slow request","method":"GET","path":"/api/report","duration":"2.31s","component":"api"}
+{"time":"2026-09-30T19:00:40.852036-05:00","level":"INFO","msg":"user signed in","user":"user-1042","ip":"203.0.113.17"}
+{"time":"2026-09-30T19:00:42.485247-05:00","level":"ERROR+4","msg":"data loss detected","table":"orders","component":"db"}
+{"time":"2026-09-30T19:00:43.723605-05:00","level":"WARN+2","msg":"disk nearly full","used":"97%","component":"storage","service":"checkout"}
+{"time":"2026-09-30T19:00:46.576911-05:00","level":"DEBUG","msg":"cache lookup","key":"user:1042","hit":true}
+{"time":"2026-09-30T19:00:47.645251-05:00","level":"ERROR","msg":"query failed","err":"pq: relation \"order_items\" does not exist","component":"db"}
+{"time":"2026-09-30T19:00:50.59482-05:00","level":"INFO","msg":"message with spaces and \"quotes\"","note":"a=b c"}
+{"time":"2026-09-30T19:00:52.007946-05:00","level":"DEBUG-4","msg":"very verbose detail","n":7}
+{"time":"2026-09-30T19:00:52.510702-05:00","level":"INFO","msg":"server started","addr":":8080","component":"api"}
+{"time":"2026-09-30T19:00:53.728311-05:00","level":"WARN","msg":"slow request","method":"GET","path":"/api/report","duration":"2.31s","component":"api"}
+{"time":"2026-09-30T19:00:56.557564-05:00","level":"INFO","msg":"user signed in","user":"user-1042","ip":"203.0.113.17","service":"checkout"}
+{"time":"2026-09-30T19:00:59.015938-05:00","level":"ERROR+4","msg":"data loss detected","table":"orders","component":"db"}
+{"time":"2026-09-30T19:01:00.402544-05:00","level":"WARN+2","msg":"disk nearly full","used":"97%","component":"storage"}
+{"time":"2026-09-30T19:01:02.333692-05:00","level":"DEBUG","msg":"cache lookup","key":"user:1042","hit":true}
+{"time":"2026-09-30T19:01:02.513701-05:00","level":"ERROR","msg":"query failed","err":"pq: relation \"order_items\" does not exist","component":"db"}
+{"time":"2026-09-30T19:01:04.820283-05:00","level":"INFO","msg":"message with spaces and \"quotes\"","note":"a=b c"}
+{"time":"2026-09-30T19:01:06.250772-05:00","level":"DEBUG-4","msg":"very verbose detail","n":7}
+{"time":"2026-09-30T19:01:06.373586-05:00","level":"INFO","msg":"server started","addr":":8080","component":"api","service":"checkout"}
+{"time":"2026-09-30T19:01:08.811496-05:00","level":"WARN","msg":"slow request","method":"GET","path":"/api/report","duration":"2.31s","component":"api"}
+{"time":"2026-09-30T19:01:09.201365-05:00","level":"INFO","msg":"user signed in","user":"user-1042","ip":"203.0.113.17"}
+{"time":"2026-09-30T19:01:11.430278-05:00","level":"ERROR+4","msg":"data loss detected","table":"orders","component":"db"}
+{"time":"2026-09-30T19:01:11.451863-05:00","level":"WARN+2","msg":"disk nearly full","used":"97%","component":"storage"}
+{"time":"2026-09-30T19:01:13.996892-05:00","level":"DEBUG","msg":"cache lookup","key":"user:1042","hit":true}
+{"time":"2026-09-30T19:01:15.194845-05:00","level":"ERROR","msg":"query failed","err":"pq: relation \"order_items\" does not exist","component":"db"}
+{"time":"2026-09-30T19:01:18.081537-05:00","level":"INFO","msg":"message with spaces and \"quotes\"","note":"a=b c","service":"checkout"}
+{"time":"2026-09-30T19:01:19.79112-05:00","level":"DEBUG-4","msg":"very verbose detail","n":7}
+{"time":"2026-09-30T19:01:21.44426-05:00","level":"INFO","msg":"server started","addr":":8080","component":"api"}
+{"time":"2026-09-30T19:01:22.241547-05:00","level":"WARN","msg":"slow request","method":"GET","path":"/api/report","duration":"2.31s","component":"api"}
+{"time":"2026-09-30T19:01:22.300337-05:00","level":"INFO","msg":"user signed in","user":"user-1042","ip":"203.0.113.17"}
+{"time":"2026-09-30T19:01:22.488036-05:00","level":"ERROR+4","msg":"data loss detected","table":"orders","component":"db"}
+{"time":"2026-09-30T19:01:24.223951-05:00","level":"WARN+2","msg":"disk nearly full","used":"97%","component":"storage"}
+{"time":"2026-09-30T19:01:26.490605-05:00","level":"DEBUG","msg":"cache lookup","key":"user:1042","hit":true,"service":"checkout"}
+{"time":"2026-09-30T19:01:27.740659-05:00","level":"ERROR","msg":"query failed","err":"pq: relation \"order_items\" does not exist","component":"db"}
+{"time":"2026-09-30T19:01:27.945181-05:00","level":"INFO","msg":"message with spaces and \"quotes\"","note":"a=b c"}
+{"time":"2026-09-30T19:01:29.71176-05:00","level":"DEBUG-4","msg":"very verbose detail","n":7}
+{"time":"2026-09-30T19:01:30.322909-05:00","level":"INFO","msg":"server started","addr":":8080","component":"api"}
+{"time":"2026-09-30T19:01:31.141555-05:00","level":"WARN","msg":"slow request","method":"GET","path":"/api/report","duration":"2.31s","component":"api"}
+{"time":"2026-09-30T19:01:31.601173-05:00","level":"INFO","msg":"user signed in","user":"user-1042","ip":"203.0.113.17"}
+{"time":"2026-09-30T19:01:32.477196-05:00","level":"ERROR+4","msg":"data loss detected","table":"orders","component":"db","service":"checkout"}
+{"time":"2026-09-30T19:01:33.744865-05:00","level":"WARN+2","msg":"disk nearly full","used":"97%","component":"storage"}
+{"time":"2026-09-30T19:01:35.588428-05:00","level":"DEBUG","msg":"cache lookup","key":"user:1042","hit":true}
+{"time":"2026-09-30T19:01:36.906151-05:00","level":"ERROR","msg":"query failed","err":"pq: relation \"order_items\" does not exist","component":"db"}

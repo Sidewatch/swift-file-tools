@@ -1,0 +1,70 @@
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"port":3000,"msg":"server listening","time":"2026-10-01T00:01:40.923Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"method":"GET","url":"/api/orders/1042","statusCode":200,"responseTime":14,"msg":"request completed","time":"2026-10-01T00:01:41.980Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":30,"user":"user-1042","ip":"203.0.113.17","msg":"user signed in","time":"2026-10-01T00:01:42.141Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"keys":1200,"msg":"cache warmed","time":"2026-10-01T00:01:42.206Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":10,"queue":0,"msg":"tick","time":"2026-10-01T00:01:44.031Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":50,"host":"api.example.com","status":502,"msg":"upstream failed","time":"2026-10-01T00:01:45.568Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":50,"err":{"code":"E_NOT_FOUND"},"msg":"invoice run failed","time":"2026-10-01T00:01:45.729Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":20,"count":42,"msg":"loaded routes","time":"2026-10-01T00:01:47.842Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":40,"ms":812,"sql":"SELECT * FROM orders WHERE user_id = $1","msg":"slow query","time":"2026-10-01T00:01:49.283Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":60,"host":"198.51.100.20","port":5432,"msg":"database unreachable","time":"2026-10-01T00:01:49.508Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":30,"port":3000,"msg":"server listening","time":"2026-10-01T00:01:49.533Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"method":"GET","url":"/api/orders/1042","statusCode":200,"responseTime":14,"msg":"request completed","time":"2026-10-01T00:01:49.726Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"user":"user-1042","ip":"203.0.113.17","msg":"user signed in","time":"2026-10-01T00:01:50.239Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"keys":1200,"msg":"cache warmed","time":"2026-10-01T00:01:50.336Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":10,"queue":0,"msg":"tick","time":"2026-10-01T00:01:51.009Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":50,"host":"api.example.com","status":502,"msg":"upstream failed","time":"2026-10-01T00:01:51.618Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":50,"err":{"code":"E_NOT_FOUND"},"msg":"invoice run failed","time":"2026-10-01T00:01:52.739Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":20,"count":42,"msg":"loaded routes","time":"2026-10-01T00:01:53.444Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":40,"ms":812,"sql":"SELECT * FROM orders WHERE user_id = $1","msg":"slow query","time":"2026-10-01T00:01:55.077Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":60,"host":"198.51.100.20","port":5432,"msg":"database unreachable","time":"2026-10-01T00:01:57.126Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"port":3000,"msg":"server listening","time":"2026-10-01T00:01:57.287Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"method":"GET","url":"/api/orders/1042","statusCode":200,"responseTime":14,"msg":"request completed","time":"2026-10-01T00:01:58.568Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":30,"user":"user-1042","ip":"203.0.113.17","msg":"user signed in","time":"2026-10-01T00:01:59.913Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"keys":1200,"msg":"cache warmed","time":"2026-10-01T00:02:00.234Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":10,"queue":0,"msg":"tick","time":"2026-10-01T00:02:01.643Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":50,"host":"api.example.com","status":502,"msg":"upstream failed","time":"2026-10-01T00:02:01.644Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":50,"err":{"code":"E_NOT_FOUND"},"msg":"invoice run failed","time":"2026-10-01T00:02:02.093Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":20,"count":42,"msg":"loaded routes","time":"2026-10-01T00:02:03.110Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":40,"ms":812,"sql":"SELECT * FROM orders WHERE user_id = $1","msg":"slow query","time":"2026-10-01T00:02:04.871Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":60,"host":"198.51.100.20","port":5432,"msg":"database unreachable","time":"2026-10-01T00:02:06.024Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":30,"port":3000,"msg":"server listening","time":"2026-10-01T00:02:07.273Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"method":"GET","url":"/api/orders/1042","statusCode":200,"responseTime":14,"msg":"request completed","time":"2026-10-01T00:02:08.330Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"user":"user-1042","ip":"203.0.113.17","msg":"user signed in","time":"2026-10-01T00:02:10.475Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"keys":1200,"msg":"cache warmed","time":"2026-10-01T00:02:11.372Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":10,"queue":0,"msg":"tick","time":"2026-10-01T00:02:13.133Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":50,"host":"api.example.com","status":502,"msg":"upstream failed","time":"2026-10-01T00:02:14.990Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":50,"err":{"code":"E_NOT_FOUND"},"msg":"invoice run failed","time":"2026-10-01T00:02:16.047Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":20,"count":42,"msg":"loaded routes","time":"2026-10-01T00:02:16.912Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":40,"ms":812,"sql":"SELECT * FROM orders WHERE user_id = $1","msg":"slow query","time":"2026-10-01T00:02:19.281Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":60,"host":"198.51.100.20","port":5432,"msg":"database unreachable","time":"2026-10-01T00:02:20.786Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"port":3000,"msg":"server listening","time":"2026-10-01T00:02:22.739Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"method":"GET","url":"/api/orders/1042","statusCode":200,"responseTime":14,"msg":"request completed","time":"2026-10-01T00:02:22.836Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":30,"user":"user-1042","ip":"203.0.113.17","msg":"user signed in","time":"2026-10-01T00:02:23.797Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"keys":1200,"msg":"cache warmed","time":"2026-10-01T00:02:24.918Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":10,"queue":0,"msg":"tick","time":"2026-10-01T00:02:26.135Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":50,"host":"api.example.com","status":502,"msg":"upstream failed","time":"2026-10-01T00:02:26.552Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":50,"err":{"code":"E_NOT_FOUND"},"msg":"invoice run failed","time":"2026-10-01T00:02:26.745Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":20,"count":42,"msg":"loaded routes","time":"2026-10-01T00:02:27.322Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":40,"ms":812,"sql":"SELECT * FROM orders WHERE user_id = $1","msg":"slow query","time":"2026-10-01T00:02:27.675Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":60,"host":"198.51.100.20","port":5432,"msg":"database unreachable","time":"2026-10-01T00:02:28.924Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":30,"port":3000,"msg":"server listening","time":"2026-10-01T00:02:30.397Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"method":"GET","url":"/api/orders/1042","statusCode":200,"responseTime":14,"msg":"request completed","time":"2026-10-01T00:02:31.998Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"user":"user-1042","ip":"203.0.113.17","msg":"user signed in","time":"2026-10-01T00:02:32.767Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"keys":1200,"msg":"cache warmed","time":"2026-10-01T00:02:32.864Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":10,"queue":0,"msg":"tick","time":"2026-10-01T00:02:33.537Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":50,"host":"api.example.com","status":502,"msg":"upstream failed","time":"2026-10-01T00:02:33.762Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":50,"err":{"code":"E_NOT_FOUND"},"msg":"invoice run failed","time":"2026-10-01T00:02:35.843Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":20,"count":42,"msg":"loaded routes","time":"2026-10-01T00:02:37.860Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":40,"ms":812,"sql":"SELECT * FROM orders WHERE user_id = $1","msg":"slow query","time":"2026-10-01T00:02:39.429Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":60,"host":"198.51.100.20","port":5432,"msg":"database unreachable","time":"2026-10-01T00:02:40.582Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"port":3000,"msg":"server listening","time":"2026-10-01T00:02:41.383Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"method":"GET","url":"/api/orders/1042","statusCode":200,"responseTime":14,"msg":"request completed","time":"2026-10-01T00:02:42.312Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":30,"user":"user-1042","ip":"203.0.113.17","msg":"user signed in","time":"2026-10-01T00:02:43.209Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":30,"keys":1200,"msg":"cache warmed","time":"2026-10-01T00:02:43.626Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":10,"queue":0,"msg":"tick","time":"2026-10-01T00:02:44.043Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":50,"host":"api.example.com","status":502,"msg":"upstream failed","time":"2026-10-01T00:02:45.484Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"component":"invoice","level":50,"err":{"code":"E_NOT_FOUND"},"msg":"invoice run failed","time":"2026-10-01T00:02:47.117Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":20,"count":42,"msg":"loaded routes","time":"2026-10-01T00:02:48.174Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":40,"ms":812,"sql":"SELECT * FROM orders WHERE user_id = $1","msg":"slow query","time":"2026-10-01T00:02:49.967Z","v":0}
+{"name":"billing","hostname":"web-01","pid":6429,"level":60,"host":"198.51.100.20","port":5432,"msg":"database unreachable","time":"2026-10-01T00:02:51.024Z","v":0}

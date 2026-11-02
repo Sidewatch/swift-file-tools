@@ -1,0 +1,518 @@
+{
+  "source": "Documentation-derived: MySQL 8 error log, traditional format 'time thread [label] [err_code] [subsystem] message' https://dev.mysql.com/doc/refman/8.4/en/error-log-format.html ; log_timestamps=UTC (the default)",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:26.105Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:28.028Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:52.940Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:21.211Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:24.203Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:53.776Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:19.530Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:32.857Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:45.129Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:06.398Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:19.536Z",
+      "zoned": true,
+      "component": "Repl"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:38.284Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:58.202Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:59.865Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:24.019Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:47.235Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:03.395Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:26.417Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:46.499Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:52.646Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:09.096Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:06:38.426Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:06:43.297Z",
+      "zoned": true,
+      "component": "Repl"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:07:01.775Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:07:05.085Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:07:34.674Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:07:57.185Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:08:00.452Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:08:29.350Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:08:43.591Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:09:13.513Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:09:31.308Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:09:57.263Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:10:00.189Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:10:11.612Z",
+      "zoned": true,
+      "component": "Repl"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:10:24.712Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:10:29.599Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:10:32.707Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:10:39.631Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:10:53.823Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:21.021Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:11:32.076Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:59.736Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:12:25.126Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:29.643Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:12:44.182Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:12:51.327Z",
+      "zoned": true,
+      "component": "Repl"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:52.589Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:04.725Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:10.697Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:14.470Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:13:26.036Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:54.322Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:13:55.674Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:58.598Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:14:15.601Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:14:27.379Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:14:28.081Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:14:50.055Z",
+      "zoned": true,
+      "component": "Repl"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:15:17.631Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:15:19.434Z",
+      "zoned": true,
+      "component": "Server"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:15:23.644Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:15:27.620Z",
+      "zoned": true,
+      "component": "InnoDB"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:15:43.185Z",
+      "zoned": true,
+      "component": "Server"
+    }
+  ]
+}

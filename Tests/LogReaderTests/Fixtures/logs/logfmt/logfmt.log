@@ -1,0 +1,90 @@
+time=2026-10-01T00:11:28.704Z level=info msg="request handled" component=api method=GET path=/api/orders/1000 status=200 duration=0ms
+time=2026-10-01T00:11:31.609Z level=debug msg="cache miss" component=worker user=user-1001
+time=2026-10-01T00:11:32.786Z level=info msg="job enqueued" component=scheduler err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:11:33.507Z level=warn msg="slow query" component=db method=GET path=/api/orders/1003 status=200 duration=21ms query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:11:34.004Z level=error msg="upstream unavailable"
+time=2026-10-01T00:11:36.989Z level=info msg="user signed in" component=worker user=user-1005
+time=2026-10-01T00:11:39.758Z level=trace msg=tick component=scheduler method=GET path=/api/orders/1006 status=200 duration=42ms
+time=2026-10-01T00:11:40.999Z level=fatal msg="config invalid" component=db err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:11:41.528Z level=info msg="shutdown complete" component=api
+time=2026-10-01T00:11:43.625Z level=debug msg=retrying component=worker method=GET path=/api/orders/1009 status=200 duration=63ms user=user-1009
+time=2026-10-01T00:11:43.666Z level=info msg="request handled" component=scheduler query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:11:45.667Z level=debug msg="cache miss" component=db
+time=2026-10-01T00:11:47.444Z level=info msg="job enqueued" component=api method=GET path=/api/orders/1012 status=200 duration=84ms err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:11:47.965Z level=warn msg="slow query" user=user-1013
+time=2026-10-01T00:11:50.750Z level=error msg="upstream unavailable" component=scheduler
+time=2026-10-01T00:11:53.207Z level=info msg="user signed in" component=db method=GET path=/api/orders/1015 status=200 duration=105ms
+time=2026-10-01T00:11:55.032Z level=trace msg=tick component=api
+time=2026-10-01T00:11:57.425Z level=fatal msg="config invalid" component=worker user=user-1017 err="dial tcp 198.51.100.20:5432: connect: connection refused" query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:11:59.906Z level=info msg="shutdown complete" component=scheduler method=GET path=/api/orders/1018 status=200 duration=126ms
+time=2026-10-01T00:12:01.531Z level=debug msg=retrying component=db
+time=2026-10-01T00:12:03.308Z level=info msg="request handled" component=api
+time=2026-10-01T00:12:04.525Z level=debug msg="cache miss" component=worker method=GET path=/api/orders/1021 status=200 duration=147ms user=user-1021
+time=2026-10-01T00:12:04.782Z level=info msg="job enqueued" err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:12:05.743Z level=warn msg="slow query" component=db
+time=2026-10-01T00:12:08.376Z level=error msg="upstream unavailable" component=api method=GET path=/api/orders/1024 status=502 duration=168ms query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:12:11.353Z level=info msg="user signed in" component=worker user=user-1025
+time=2026-10-01T00:12:12.314Z level=trace msg=tick component=scheduler
+time=2026-10-01T00:12:14.091Z level=fatal msg="config invalid" component=db method=GET path=/api/orders/1027 status=200 duration=189ms err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:12:15.588Z level=info msg="shutdown complete" component=api
+time=2026-10-01T00:12:17.389Z level=debug msg=retrying component=worker user=user-1029
+time=2026-10-01T00:12:18.646Z level=info msg="request handled" component=scheduler method=GET path=/api/orders/1030 status=200 duration=210ms
+time=2026-10-01T00:12:21.327Z level=debug msg="cache miss" query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:12:22.928Z level=info msg="job enqueued" component=api err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:12:25.337Z level=warn msg="slow query" component=worker method=GET path=/api/orders/1033 status=200 duration=231ms user=user-1033
+time=2026-10-01T00:12:27.298Z level=error msg="upstream unavailable" component=scheduler
+time=2026-10-01T00:12:28.851Z level=info msg="user signed in" component=db
+time=2026-10-01T00:12:30.100Z level=trace msg=tick component=api method=GET path=/api/orders/1036 status=200 duration=252ms
+time=2026-10-01T00:12:30.245Z level=fatal msg="config invalid" component=worker user=user-1037 err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:12:31.830Z level=info msg="shutdown complete" component=scheduler query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:12:33.375Z level=debug msg=retrying component=db method=GET path=/api/orders/1039 status=200 duration=273ms
+time=2026-10-01T00:12:35.216Z level=info msg="request handled"
+time=2026-10-01T00:12:36.129Z level=debug msg="cache miss" component=worker user=user-1041
+time=2026-10-01T00:12:38.634Z level=info msg="job enqueued" component=scheduler method=GET path=/api/orders/1042 status=200 duration=294ms err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:12:41.043Z level=warn msg="slow query" component=db
+time=2026-10-01T00:12:43.828Z level=error msg="upstream unavailable" component=api
+time=2026-10-01T00:12:45.973Z level=info msg="user signed in" component=worker method=GET path=/api/orders/1045 status=200 duration=315ms user=user-1045 query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:12:47.502Z level=trace msg=tick component=scheduler
+time=2026-10-01T00:12:47.815Z level=fatal msg="config invalid" component=db err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:12:48.336Z level=info msg="shutdown complete" component=api method=GET path=/api/orders/1048 status=200 duration=336ms
+time=2026-10-01T00:12:48.521Z level=debug msg=retrying user=user-1049
+time=2026-10-01T00:12:49.018Z level=info msg="request handled" component=scheduler
+time=2026-10-01T00:12:49.787Z level=debug msg="cache miss" component=db method=GET path=/api/orders/1051 status=200 duration=357ms
+time=2026-10-01T00:12:50.780Z level=info msg="job enqueued" component=api err="dial tcp 198.51.100.20:5432: connect: connection refused" query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:12:52.357Z level=warn msg="slow query" component=worker user=user-1053
+time=2026-10-01T00:12:54.486Z level=error msg="upstream unavailable" component=scheduler method=GET path=/api/orders/1054 status=502 duration=378ms
+time=2026-10-01T00:12:55.071Z level=info msg="user signed in" component=db
+time=2026-10-01T00:12:55.152Z level=trace msg=tick component=api
+time=2026-10-01T00:12:57.241Z level=fatal msg="config invalid" component=worker method=GET path=/api/orders/1057 status=200 duration=399ms user=user-1057 err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:12:59.386Z level=info msg="shutdown complete"
+time=2026-10-01T00:13:02.275Z level=debug msg=retrying component=db query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:13:02.692Z level=info msg="request handled" component=api method=GET path=/api/orders/1060 status=200 duration=420ms
+time=2026-10-01T00:13:04.525Z level=debug msg="cache miss" component=worker user=user-1061
+time=2026-10-01T00:13:06.142Z level=info msg="job enqueued" component=scheduler err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:13:08.959Z level=warn msg="slow query" component=db method=GET path=/api/orders/1063 status=200 duration=441ms
+time=2026-10-01T00:13:11.240Z level=error msg="upstream unavailable" component=api
+time=2026-10-01T00:13:13.145Z level=info msg="user signed in" component=worker user=user-1065
+time=2026-10-01T00:13:15.218Z level=trace msg=tick component=scheduler method=GET path=/api/orders/1066 status=200 duration=462ms query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:13:17.227Z level=fatal msg="config invalid" err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:13:18.988Z level=info msg="shutdown complete" component=api
+time=2026-10-01T00:13:19.557Z level=debug msg=retrying component=worker method=GET path=/api/orders/1069 status=200 duration=483ms user=user-1069
+time=2026-10-01T00:13:22.390Z level=info msg="request handled" component=scheduler
+time=2026-10-01T00:13:22.903Z level=debug msg="cache miss" component=db
+time=2026-10-01T00:13:23.472Z level=info msg="job enqueued" component=api method=GET path=/api/orders/1072 status=200 duration=504ms err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:13:24.049Z level=warn msg="slow query" component=worker user=user-1073 query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:13:24.066Z level=error msg="upstream unavailable" component=scheduler
+time=2026-10-01T00:13:26.131Z level=info msg="user signed in" component=db method=GET path=/api/orders/1075 status=200 duration=525ms
+time=2026-10-01T00:13:27.852Z level=trace msg=tick
+time=2026-10-01T00:13:27.901Z level=fatal msg="config invalid" component=worker user=user-1077 err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:13:29.230Z level=info msg="shutdown complete" component=scheduler method=GET path=/api/orders/1078 status=200 duration=546ms
+time=2026-10-01T00:13:31.703Z level=debug msg=retrying component=db
+time=2026-10-01T00:13:34.368Z level=info msg="request handled" component=api query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:13:35.521Z level=debug msg="cache miss" component=worker method=GET path=/api/orders/1081 status=200 duration=567ms user=user-1081
+time=2026-10-01T00:13:35.594Z level=info msg="job enqueued" component=scheduler err="dial tcp 198.51.100.20:5432: connect: connection refused"
+time=2026-10-01T00:13:35.995Z level=warn msg="slow query" component=db
+time=2026-10-01T00:13:37.668Z level=error msg="upstream unavailable" component=api method=GET path=/api/orders/1084 status=502 duration=588ms
+time=2026-10-01T00:13:37.693Z level=info msg="user signed in" user=user-1085
+time=2026-10-01T00:13:38.062Z level=trace msg=tick component=scheduler
+time=2026-10-01T00:13:38.815Z level=fatal msg="config invalid" component=db method=GET path=/api/orders/1087 status=200 duration=609ms err="dial tcp 198.51.100.20:5432: connect: connection refused" query="SELECT id, total FROM orders WHERE status = 'open'"
+time=2026-10-01T00:13:40.072Z level=info msg="shutdown complete" component=api
+time=2026-10-01T00:13:41.153Z level=debug msg=retrying component=worker user=user-1089

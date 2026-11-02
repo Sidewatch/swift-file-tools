@@ -1,0 +1,102 @@
+I1001 00:00:04.581511       1 controller.go:123] "Reconciling" deployment="default/web"
+I1001 00:00:06.273624      18 reflector.go:359] Listing and watching *v1.Pod from k8s.io/client-go/informers/factory.go:160
+W1001 00:00:10.236580      35 reflector.go:547] k8s.io/client-go/informers/factory.go:160: watch of *v1.Pod ended with: an error on the server ("unable to decode an event from the watch stream") has prevented the request from succeeding
+E1001 00:00:18.975808       1 controller.go:211] "Reconciler error" err="Operation cannot be fulfilled on deployments.apps \"web\": the object has been modified" controller="deployment" namespace="default" name="web"
+I1001 00:00:26.673359      18 leaderelection.go:250] attempting to acquire leader lease kube-system/kube-controller-manager...
+I1001 00:00:35.401402      35 server.go:88] "Serving" address="[::]:10257"
+I1001 00:00:40.115583       1 pod_workers.go:965] "Pod spec changed" pod="default/web-0" diff=<
+	-  image: example/web:1.4.1
+	+  image: example/web:1.4.2
+ >
+W1001 00:00:42.099741      18 warnings.go:70] metadata.finalizers: "example.com/cleanup": prefer a domain-qualified finalizer name
+E1001 00:00:48.297786      35 kubelet.go:2412] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"web\" with CrashLoopBackOff" pod="default/web-0"
+I1001 00:00:53.586229       1 controller.go:123] "Reconciling" deployment="default/web"
+I1001 00:00:59.509567      18 reflector.go:359] Listing and watching *v1.Pod from k8s.io/client-go/informers/factory.go:160
+W1001 00:01:03.739525      35 reflector.go:547] k8s.io/client-go/informers/factory.go:160: watch of *v1.Pod ended with: an error on the server ("unable to decode an event from the watch stream") has prevented the request from succeeding
+E1001 00:01:08.813642       1 controller.go:211] "Reconciler error" err="Operation cannot be fulfilled on deployments.apps \"web\": the object has been modified" controller="deployment" namespace="default" name="web"
+I1001 00:01:12.928802      18 leaderelection.go:250] attempting to acquire leader lease kube-system/kube-controller-manager...
+I1001 00:01:21.775330      35 server.go:88] "Serving" address="[::]:10257"
+I1001 00:01:22.847902       1 pod_workers.go:965] "Pod spec changed" pod="default/web-0" diff=<
+	-  image: example/web:1.4.1
+	+  image: example/web:1.4.2
+ >
+W1001 00:01:29.916814      18 warnings.go:70] metadata.finalizers: "example.com/cleanup": prefer a domain-qualified finalizer name
+E1001 00:01:37.242048      35 kubelet.go:2412] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"web\" with CrashLoopBackOff" pod="default/web-0"
+I1001 00:01:43.678573       1 controller.go:123] "Reconciling" deployment="default/web"
+I1001 00:01:46.857996      18 reflector.go:359] Listing and watching *v1.Pod from k8s.io/client-go/informers/factory.go:160
+W1001 00:01:49.932938      35 reflector.go:547] k8s.io/client-go/informers/factory.go:160: watch of *v1.Pod ended with: an error on the server ("unable to decode an event from the watch stream") has prevented the request from succeeding
+E1001 00:01:50.216940       1 controller.go:211] "Reconciler error" err="Operation cannot be fulfilled on deployments.apps \"web\": the object has been modified" controller="deployment" namespace="default" name="web"
+I1001 00:01:51.179682      18 leaderelection.go:250] attempting to acquire leader lease kube-system/kube-controller-manager...
+I1001 00:01:56.410501      35 server.go:88] "Serving" address="[::]:10257"
+I1001 00:02:00.258203       1 pod_workers.go:965] "Pod spec changed" pod="default/web-0" diff=<
+	-  image: example/web:1.4.1
+	+  image: example/web:1.4.2
+ >
+W1001 00:02:08.464627      18 warnings.go:70] metadata.finalizers: "example.com/cleanup": prefer a domain-qualified finalizer name
+E1001 00:02:15.670394      35 kubelet.go:2412] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"web\" with CrashLoopBackOff" pod="default/web-0"
+I1001 00:02:17.211425       1 controller.go:123] "Reconciling" deployment="default/web"
+I1001 00:02:25.190544      18 reflector.go:359] Listing and watching *v1.Pod from k8s.io/client-go/informers/factory.go:160
+W1001 00:02:31.871690      35 reflector.go:547] k8s.io/client-go/informers/factory.go:160: watch of *v1.Pod ended with: an error on the server ("unable to decode an event from the watch stream") has prevented the request from succeeding
+E1001 00:02:33.173613       1 controller.go:211] "Reconciler error" err="Operation cannot be fulfilled on deployments.apps \"web\": the object has been modified" controller="deployment" namespace="default" name="web"
+I1001 00:02:40.930877      18 leaderelection.go:250] attempting to acquire leader lease kube-system/kube-controller-manager...
+I1001 00:02:46.810390      35 server.go:88] "Serving" address="[::]:10257"
+I1001 00:02:51.806316       1 pod_workers.go:965] "Pod spec changed" pod="default/web-0" diff=<
+	-  image: example/web:1.4.1
+	+  image: example/web:1.4.2
+ >
+W1001 00:02:54.891670      18 warnings.go:70] metadata.finalizers: "example.com/cleanup": prefer a domain-qualified finalizer name
+E1001 00:03:03.174567      35 kubelet.go:2412] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"web\" with CrashLoopBackOff" pod="default/web-0"
+I1001 00:03:10.405300       1 controller.go:123] "Reconciling" deployment="default/web"
+I1001 00:03:14.943100      18 reflector.go:359] Listing and watching *v1.Pod from k8s.io/client-go/informers/factory.go:160
+W1001 00:03:18.478091      35 reflector.go:547] k8s.io/client-go/informers/factory.go:160: watch of *v1.Pod ended with: an error on the server ("unable to decode an event from the watch stream") has prevented the request from succeeding
+E1001 00:03:22.121581       1 controller.go:211] "Reconciler error" err="Operation cannot be fulfilled on deployments.apps \"web\": the object has been modified" controller="deployment" namespace="default" name="web"
+I1001 00:03:25.189983      18 leaderelection.go:250] attempting to acquire leader lease kube-system/kube-controller-manager...
+I1001 00:03:33.360020      35 server.go:88] "Serving" address="[::]:10257"
+I1001 00:03:37.308823       1 pod_workers.go:965] "Pod spec changed" pod="default/web-0" diff=<
+	-  image: example/web:1.4.1
+	+  image: example/web:1.4.2
+ >
+W1001 00:03:40.356085      18 warnings.go:70] metadata.finalizers: "example.com/cleanup": prefer a domain-qualified finalizer name
+E1001 00:03:41.443189      35 kubelet.go:2412] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"web\" with CrashLoopBackOff" pod="default/web-0"
+I1001 00:03:43.616227       1 controller.go:123] "Reconciling" deployment="default/web"
+I1001 00:03:43.653471      18 reflector.go:359] Listing and watching *v1.Pod from k8s.io/client-go/informers/factory.go:160
+W1001 00:03:51.981385      35 reflector.go:547] k8s.io/client-go/informers/factory.go:160: watch of *v1.Pod ended with: an error on the server ("unable to decode an event from the watch stream") has prevented the request from succeeding
+E1001 00:03:57.923655       1 controller.go:211] "Reconciler error" err="Operation cannot be fulfilled on deployments.apps \"web\": the object has been modified" controller="deployment" namespace="default" name="web"
+I1001 00:04:06.681521      18 leaderelection.go:250] attempting to acquire leader lease kube-system/kube-controller-manager...
+I1001 00:04:11.637538      35 server.go:88] "Serving" address="[::]:10257"
+I1001 00:04:18.101081       1 pod_workers.go:965] "Pod spec changed" pod="default/web-0" diff=<
+	-  image: example/web:1.4.1
+	+  image: example/web:1.4.2
+ >
+W1001 00:04:22.764165      18 warnings.go:70] metadata.finalizers: "example.com/cleanup": prefer a domain-qualified finalizer name
+E1001 00:04:29.021104      35 kubelet.go:2412] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"web\" with CrashLoopBackOff" pod="default/web-0"
+I1001 00:04:31.389431       1 controller.go:123] "Reconciling" deployment="default/web"
+I1001 00:04:36.318485      18 reflector.go:359] Listing and watching *v1.Pod from k8s.io/client-go/informers/factory.go:160
+W1001 00:04:39.169001      35 reflector.go:547] k8s.io/client-go/informers/factory.go:160: watch of *v1.Pod ended with: an error on the server ("unable to decode an event from the watch stream") has prevented the request from succeeding
+E1001 00:04:42.553890       1 controller.go:211] "Reconciler error" err="Operation cannot be fulfilled on deployments.apps \"web\": the object has been modified" controller="deployment" namespace="default" name="web"
+I1001 00:04:42.981512      18 leaderelection.go:250] attempting to acquire leader lease kube-system/kube-controller-manager...
+I1001 00:04:44.373222      35 server.go:88] "Serving" address="[::]:10257"
+I1001 00:04:50.775336       1 pod_workers.go:965] "Pod spec changed" pod="default/web-0" diff=<
+	-  image: example/web:1.4.1
+	+  image: example/web:1.4.2
+ >
+W1001 00:04:51.418166      18 warnings.go:70] metadata.finalizers: "example.com/cleanup": prefer a domain-qualified finalizer name
+E1001 00:04:56.937881      35 kubelet.go:2412] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"web\" with CrashLoopBackOff" pod="default/web-0"
+I1001 00:04:59.678342       1 controller.go:123] "Reconciling" deployment="default/web"
+I1001 00:04:59.877076      18 reflector.go:359] Listing and watching *v1.Pod from k8s.io/client-go/informers/factory.go:160
+W1001 00:05:02.050508      35 reflector.go:547] k8s.io/client-go/informers/factory.go:160: watch of *v1.Pod ended with: an error on the server ("unable to decode an event from the watch stream") has prevented the request from succeeding
+E1001 00:05:03.554640       1 controller.go:211] "Reconciler error" err="Operation cannot be fulfilled on deployments.apps \"web\": the object has been modified" controller="deployment" namespace="default" name="web"
+I1001 00:05:07.761171      18 leaderelection.go:250] attempting to acquire leader lease kube-system/kube-controller-manager...
+I1001 00:05:08.788067      35 server.go:88] "Serving" address="[::]:10257"
+I1001 00:05:16.230906       1 pod_workers.go:965] "Pod spec changed" pod="default/web-0" diff=<
+	-  image: example/web:1.4.1
+	+  image: example/web:1.4.2
+ >
+W1001 00:05:19.819411      18 warnings.go:70] metadata.finalizers: "example.com/cleanup": prefer a domain-qualified finalizer name
+E1001 00:05:24.377300      35 kubelet.go:2412] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"web\" with CrashLoopBackOff" pod="default/web-0"
+F1001 00:05:27.306300       1 server.go:301] failed to load kubeconfig: open /etc/kubernetes/admin.conf: no such file or directory
+goroutine 1 [running]:
+k8s.io/klog/v2.stacks(0x1)
+	k8s.io/klog/v2@v2.130.1/klog.go:1029 +0x8a
+main.main()
+	example.com/operator/cmd/main.go:42 +0x1f4

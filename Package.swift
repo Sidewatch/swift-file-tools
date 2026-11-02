@@ -5,7 +5,8 @@ let package = Package(
     name: "FileTools",
     platforms: [.macOS(.v14)],
     products: [
-        .library(name: "FileTools", targets: ["FileTools"])
+        .library(name: "FileTools", targets: ["FileTools"]),
+        .library(name: "LogReader", targets: ["LogReader"]),
     ],
     dependencies: [
         .package(path: "../swift-foundation-extensions"),
@@ -20,8 +21,12 @@ let package = Package(
                 .product(name: "FoundationExtensions", package: "swift-foundation-extensions"),
                 .product(name: "ProcessRunner", package: "swift-foundation-extensions"),
                 .product(name: "GitKit", package: "swift-git-kit"),
-            ], path: "Sources",
+            ], path: "Sources/FileTools",
             swiftSettings: [.swiftLanguageMode(.v6)]),
-        .testTarget(name: "FileToolsTests", dependencies: ["FileTools"], path: "Tests"),
+        // Log files of any size read as entries: every popular format's header, an index, filters.
+        .target(name: "LogReader", dependencies: ["FileTools"], path: "Sources/LogReader", swiftSettings: [.swiftLanguageMode(.v6)]),
+        .testTarget(name: "FileToolsTests", dependencies: ["FileTools"], path: "Tests/FileToolsTests"),
+        .testTarget(
+            name: "LogReaderTests", dependencies: ["LogReader"], path: "Tests/LogReaderTests", resources: [.copy("Fixtures")]),
     ]
 )

@@ -1,0 +1,137 @@
+
+00:00:00.794 [info] Running ShopWeb.Endpoint with Bandit 1.5.7 at 0.0.0.0:4000 (http)
+
+00:00:01.549 [info] Access ShopWeb.Endpoint at http://localhost:4000
+
+00:00:03.055 [debug] QUERY OK source="orders" db=1.2ms idle=812.3ms
+SELECT o0."id", o0."total" FROM "orders" AS o0 WHERE (o0."user_id" = $1) [1042]
+
+00:00:03.603 [info] GET /api/orders
+
+00:00:05.194 [info] Sent 200 in 14ms
+
+00:00:07.033 [warning] Rate limit hit for user-1042
+
+00:00:07.206 [error] GenServer Shop.Cart terminating
+** (RuntimeError) cart 551 is locked
+    (shop 0.1.0) lib/shop/cart.ex:42: Shop.Cart.handle_call/3
+    (stdlib 6.1) gen_server.erl:2381: :gen_server.try_handle_call/4
+Last message: {:checkout, 551}
+
+00:00:08.901 [notice] Application shop started at :nonode@nohost
+
+00:00:12.725 [critical] Database pool exhausted
+
+00:00:12.870 [alert] Disk usage at 97%
+
+00:00:13.339 [emergency] Node is going down
+
+00:00:14.567 [info] Running ShopWeb.Endpoint with Bandit 1.5.7 at 0.0.0.0:4000 (http)
+
+00:00:18.547 [info] Access ShopWeb.Endpoint at http://localhost:4000
+
+00:00:20.328 [debug] QUERY OK source="orders" db=1.2ms idle=812.3ms
+SELECT o0."id", o0."total" FROM "orders" AS o0 WHERE (o0."user_id" = $1) [1042]
+
+00:00:21.128 [info] GET /api/orders
+
+00:00:22.265 [info] Sent 200 in 14ms
+
+00:00:25.832 [warning] Rate limit hit for user-1042
+
+00:00:26.879 [error] GenServer Shop.Cart terminating
+** (RuntimeError) cart 551 is locked
+    (shop 0.1.0) lib/shop/cart.ex:42: Shop.Cart.handle_call/3
+    (stdlib 6.1) gen_server.erl:2381: :gen_server.try_handle_call/4
+Last message: {:checkout, 551}
+
+00:00:29.806 [notice] Application shop started at :nonode@nohost
+
+00:00:30.397 [critical] Database pool exhausted
+
+00:00:32.856 [alert] Disk usage at 97%
+
+00:00:34.012 [emergency] Node is going down
+
+00:00:34.694 [info] Running ShopWeb.Endpoint with Bandit 1.5.7 at 0.0.0.0:4000 (http)
+
+00:00:37.726 [info] Access ShopWeb.Endpoint at http://localhost:4000
+
+00:00:39.077 [debug] QUERY OK source="orders" db=1.2ms idle=812.3ms
+SELECT o0."id", o0."total" FROM "orders" AS o0 WHERE (o0."user_id" = $1) [1042]
+
+00:00:40.345 [info] GET /api/orders
+
+00:00:43.843 [info] Sent 200 in 14ms
+
+00:00:45.412 [warning] Rate limit hit for user-1042
+
+00:00:47.291 [error] GenServer Shop.Cart terminating
+** (RuntimeError) cart 551 is locked
+    (shop 0.1.0) lib/shop/cart.ex:42: Shop.Cart.handle_call/3
+    (stdlib 6.1) gen_server.erl:2381: :gen_server.try_handle_call/4
+Last message: {:checkout, 551}
+
+00:00:49.670 [notice] Application shop started at :nonode@nohost
+
+00:00:52.098 [critical] Database pool exhausted
+
+00:00:52.221 [alert] Disk usage at 97%
+
+00:00:55.934 [emergency] Node is going down
+
+00:00:57.002 [info] Running ShopWeb.Endpoint with Bandit 1.5.7 at 0.0.0.0:4000 (http)
+
+00:00:58.360 [info] Access ShopWeb.Endpoint at http://localhost:4000
+
+00:01:00.754 [debug] QUERY OK source="orders" db=1.2ms idle=812.3ms
+SELECT o0."id", o0."total" FROM "orders" AS o0 WHERE (o0."user_id" = $1) [1042]
+
+00:01:00.897 [info] GET /api/orders
+
+00:01:04.408 [info] Sent 200 in 14ms
+
+00:01:05.347 [warning] Rate limit hit for user-1042
+
+00:01:06.202 [error] GenServer Shop.Cart terminating
+** (RuntimeError) cart 551 is locked
+    (shop 0.1.0) lib/shop/cart.ex:42: Shop.Cart.handle_call/3
+    (stdlib 6.1) gen_server.erl:2381: :gen_server.try_handle_call/4
+Last message: {:checkout, 551}
+
+00:01:08.573 [notice] Application shop started at :nonode@nohost
+
+00:01:10.003 [critical] Database pool exhausted
+
+00:01:10.992 [alert] Disk usage at 97%
+
+00:01:11.859 [emergency] Node is going down
+
+00:01:12.913 [info] Running ShopWeb.Endpoint with Bandit 1.5.7 at 0.0.0.0:4000 (http)
+
+00:01:15.242 [info] Access ShopWeb.Endpoint at http://localhost:4000
+
+00:01:16.825 [debug] QUERY OK source="orders" db=1.2ms idle=812.3ms
+SELECT o0."id", o0."total" FROM "orders" AS o0 WHERE (o0."user_id" = $1) [1042]
+
+00:01:19.375 [info] GET /api/orders
+
+00:01:22.456 [info] Sent 200 in 14ms
+
+00:01:23.248 [warning] Rate limit hit for user-1042
+
+00:01:27.012 [error] GenServer Shop.Cart terminating
+** (RuntimeError) cart 551 is locked
+    (shop 0.1.0) lib/shop/cart.ex:42: Shop.Cart.handle_call/3
+    (stdlib 6.1) gen_server.erl:2381: :gen_server.try_handle_call/4
+Last message: {:checkout, 551}
+
+00:01:28.742 [notice] Application shop started at :nonode@nohost
+
+00:01:30.226 [critical] Database pool exhausted
+
+00:01:32.120 [alert] Disk usage at 97%
+
+00:01:33.865 [emergency] Node is going down
+
+00:01:34.275 [info] Running ShopWeb.Endpoint with Bandit 1.5.7 at 0.0.0.0:4000 (http)

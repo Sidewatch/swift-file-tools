@@ -1,0 +1,702 @@
+{
+  "source": "Documentation-derived: logcat -v threadtime 'date time PID TID priority tag: message' https://developer.android.com/tools/logcat#outputFormat (tag left-aligned in 8 columns as logcat prints it); '--------- beginning of' dividers are not entries; no year (referenceDate)",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:00.431Z",
+      "zoned": false,
+      "component": "ActivityManager"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:01.273Z",
+      "zoned": false,
+      "component": "OpenGLRenderer"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:02.729Z",
+      "zoned": false,
+      "component": "ShopViewModel"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:03.196Z",
+      "zoned": false,
+      "component": "OkHttp"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:05.219Z",
+      "zoned": false,
+      "component": "ShopRepository"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:05.605Z",
+      "zoned": false,
+      "component": "chatty"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:07.639Z",
+      "zoned": false,
+      "component": "Choreographer"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:10.185Z",
+      "zoned": false,
+      "component": "ActivityTaskManager"
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:10.508Z",
+      "zoned": false,
+      "component": "WifiStateMachine"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:11.054Z",
+      "zoned": false,
+      "component": "ActivityManager"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:12.413Z",
+      "zoned": false,
+      "component": "OpenGLRenderer"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:14.571Z",
+      "zoned": false,
+      "component": "ShopViewModel"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:15.428Z",
+      "zoned": false,
+      "component": "OkHttp"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:17.395Z",
+      "zoned": false,
+      "component": "ShopRepository"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:18.034Z",
+      "zoned": false,
+      "component": "chatty"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:20.640Z",
+      "zoned": false,
+      "component": "Choreographer"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:23.459Z",
+      "zoned": false,
+      "component": "ActivityTaskManager"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:24.685Z",
+      "zoned": false,
+      "component": "WifiStateMachine"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:27.536Z",
+      "zoned": false,
+      "component": "ActivityManager"
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:29.927Z",
+      "zoned": false,
+      "component": "OpenGLRenderer"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:31.083Z",
+      "zoned": false,
+      "component": "ShopViewModel"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:31.500Z",
+      "zoned": false,
+      "component": "OkHttp"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:32.160Z",
+      "zoned": false,
+      "component": "ShopRepository"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:33.532Z",
+      "zoned": false,
+      "component": "chatty"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:34.684Z",
+      "zoned": false,
+      "component": "Choreographer"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:37.270Z",
+      "zoned": false,
+      "component": "ActivityTaskManager"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:39.390Z",
+      "zoned": false,
+      "component": "WifiStateMachine"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:41.888Z",
+      "zoned": false,
+      "component": "ActivityManager"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:44.324Z",
+      "zoned": false,
+      "component": "OpenGLRenderer"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:47.248Z",
+      "zoned": false,
+      "component": "ShopViewModel"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:49.635Z",
+      "zoned": false,
+      "component": "OkHttp"
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:51.670Z",
+      "zoned": false,
+      "component": "ShopRepository"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:53.506Z",
+      "zoned": false,
+      "component": "chatty"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:54.707Z",
+      "zoned": false,
+      "component": "Choreographer"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:56.824Z",
+      "zoned": false,
+      "component": "ActivityTaskManager"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:58.406Z",
+      "zoned": false,
+      "component": "WifiStateMachine"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:00.058Z",
+      "zoned": false,
+      "component": "ActivityManager"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:02.342Z",
+      "zoned": false,
+      "component": "OpenGLRenderer"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:05.341Z",
+      "zoned": false,
+      "component": "ShopViewModel"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:06.797Z",
+      "zoned": false,
+      "component": "OkHttp"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:07.891Z",
+      "zoned": false,
+      "component": "ShopRepository"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:10.676Z",
+      "zoned": false,
+      "component": "chatty"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:11.285Z",
+      "zoned": false,
+      "component": "Choreographer"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:11.433Z",
+      "zoned": false,
+      "component": "ActivityTaskManager"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:13.139Z",
+      "zoned": false,
+      "component": "WifiStateMachine"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:13.718Z",
+      "zoned": false,
+      "component": "ActivityManager"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:15.845Z",
+      "zoned": false,
+      "component": "OpenGLRenderer"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:18.670Z",
+      "zoned": false,
+      "component": "ShopViewModel"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:18.700Z",
+      "zoned": false,
+      "component": "OkHttp"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:19.101Z",
+      "zoned": false,
+      "component": "ShopRepository"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:21.057Z",
+      "zoned": false,
+      "component": "chatty"
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:21.061Z",
+      "zoned": false,
+      "component": "AndroidRuntime"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:21.061Z",
+      "zoned": false,
+      "component": "AndroidRuntime"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:21.061Z",
+      "zoned": false,
+      "component": "AndroidRuntime"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:21.061Z",
+      "zoned": false,
+      "component": "AndroidRuntime"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:21.061Z",
+      "zoned": false,
+      "component": "AndroidRuntime"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:21.064Z",
+      "zoned": false,
+      "component": "libc"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:21.064Z",
+      "zoned": false,
+      "component": "DEBUG"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:21.986Z",
+      "zoned": false,
+      "component": "Choreographer"
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:23.360Z",
+      "zoned": false,
+      "component": "ActivityTaskManager"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:23.651Z",
+      "zoned": false,
+      "component": "WifiStateMachine"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:23.935Z",
+      "zoned": false,
+      "component": "ActivityManager"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:26.304Z",
+      "zoned": false,
+      "component": "OpenGLRenderer"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:28.407Z",
+      "zoned": false,
+      "component": "ShopViewModel"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:29.288Z",
+      "zoned": false,
+      "component": "OkHttp"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:31.874Z",
+      "zoned": false,
+      "component": "ShopRepository"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:34.809Z",
+      "zoned": false,
+      "component": "chatty"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:35.324Z",
+      "zoned": false,
+      "component": "Choreographer"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:36.266Z",
+      "zoned": false,
+      "component": "ActivityTaskManager"
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:38.436Z",
+      "zoned": false,
+      "component": "WifiStateMachine"
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:39.309Z",
+      "zoned": false,
+      "component": "ActivityManager"
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:42.282Z",
+      "zoned": false,
+      "component": "OpenGLRenderer"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:42.604Z",
+      "zoned": false,
+      "component": "ShopViewModel"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:44.474Z",
+      "zoned": false,
+      "component": "OkHttp"
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:47.031Z",
+      "zoned": false,
+      "component": "ShopRepository"
+    },
+    {
+      "line": 79,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:49.109Z",
+      "zoned": false,
+      "component": "chatty"
+    },
+    {
+      "line": 80,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:49.573Z",
+      "zoned": false,
+      "component": "Choreographer"
+    },
+    {
+      "line": 81,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:50.723Z",
+      "zoned": false,
+      "component": "ActivityTaskManager"
+    },
+    {
+      "line": 82,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:51.632Z",
+      "zoned": false,
+      "component": "WifiStateMachine"
+    },
+    {
+      "line": 83,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:51.670Z",
+      "zoned": false,
+      "component": "ActivityManager"
+    },
+    {
+      "line": 84,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:53.645Z",
+      "zoned": false,
+      "component": "OpenGLRenderer"
+    },
+    {
+      "line": 85,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:55.615Z",
+      "zoned": false,
+      "component": "ShopViewModel"
+    },
+    {
+      "line": 86,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:55.900Z",
+      "zoned": false,
+      "component": "OkHttp"
+    },
+    {
+      "line": 87,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:57.185Z",
+      "zoned": false,
+      "component": "ShopRepository"
+    },
+    {
+      "line": 88,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:59.154Z",
+      "zoned": false,
+      "component": "chatty"
+    },
+    {
+      "line": 89,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:00.861Z",
+      "zoned": false,
+      "component": "Choreographer"
+    },
+    {
+      "line": 90,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:03.792Z",
+      "zoned": false,
+      "component": "ActivityTaskManager"
+    }
+  ]
+}

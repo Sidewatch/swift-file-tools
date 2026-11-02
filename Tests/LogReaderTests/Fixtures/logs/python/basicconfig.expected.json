@@ -1,0 +1,566 @@
+{
+  "source": "Python 3.14.10 logging, logging.BASIC_FORMAT ('%(levelname)s:%(name)s:%(message)s', the basicConfig default); script pylog.py",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "fatal",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 10,
+      "lines": 3,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 14,
+      "lines": 8,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "fatal",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 29,
+      "lines": 16,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "fatal",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 53,
+      "lines": 8,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 61,
+      "lines": 3,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "fatal",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 73,
+      "lines": 3,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 78,
+      "lines": 16,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 94,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 95,
+      "lines": 1,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 96,
+      "lines": 8,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 104,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 105,
+      "lines": 1,
+      "level": "fatal",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 106,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 107,
+      "lines": 3,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 110,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 111,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 112,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 113,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 114,
+      "lines": 1,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 115,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 116,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 117,
+      "lines": 1,
+      "level": "fatal",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 118,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 119,
+      "lines": 3,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 122,
+      "lines": 1,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 123,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 124,
+      "lines": 8,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 132,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 133,
+      "lines": 1,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 134,
+      "lines": 16,
+      "level": "error",
+      "time": null,
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 150,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 151,
+      "lines": 1,
+      "level": "fatal",
+      "time": null,
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 152,
+      "lines": 1,
+      "level": "warning",
+      "time": null,
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 153,
+      "lines": 3,
+      "level": "info",
+      "time": null,
+      "zoned": false,
+      "component": "app.http"
+    }
+  ]
+}

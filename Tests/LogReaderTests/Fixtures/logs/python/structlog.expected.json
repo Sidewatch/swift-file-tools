@@ -1,0 +1,486 @@
+{
+  "source": "structlog 26.1.0 on Python 3.14.10, processors add_log_level, TimeStamper(fmt='iso', utc=True), format_exc_info, JSONRenderer; WriteLoggerFactory; script slog.py",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.314Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-11-02T08:49:31.330Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-11-02T08:49:31.346Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:31.363Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:49:31.379Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:31.396Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.412Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.429Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.445Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-11-02T08:49:31.461Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-11-02T08:49:31.478Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:31.494Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:49:31.510Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:31.527Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.542Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.557Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.573Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-11-02T08:49:31.587Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-11-02T08:49:31.604Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:31.621Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:49:31.637Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:31.654Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.671Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.687Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.703Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-11-02T08:49:31.720Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-11-02T08:49:31.736Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:31.752Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:49:31.766Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:31.780Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.797Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.814Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.831Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-11-02T08:49:31.847Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-11-02T08:49:31.861Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:31.878Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:49:31.894Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:31.911Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.928Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.945Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:31.961Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-11-02T08:49:31.975Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-11-02T08:49:31.992Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:32.008Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:49:32.025Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:32.040Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:32.057Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:32.070Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:32.087Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-11-02T08:49:32.102Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-11-02T08:49:32.119Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:32.135Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:49:32.152Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:32.168Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:32.186Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:32.202Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:49:32.218Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-11-02T08:49:32.232Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-11-02T08:49:32.248Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:49:32.265Z",
+      "zoned": true,
+      "component": null
+    }
+  ]
+}

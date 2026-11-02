@@ -1,0 +1,199 @@
+2026-10-01 00:01:32,030 - app - INFO - service started on port 8080
+2026-10-01 00:01:34,058 - billing.worker - DEBUG - loaded 31 settings from config/app.ini
+2026-10-01 00:01:35,465 - app.db - INFO - GET /api/orders/1042 200 18ms
+2026-10-01 00:01:37,304 - root - WARNING - slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01 00:01:38,484 - app.http - ERROR - payment provider returned 502 for order 7731
+2026-10-01 00:01:40,979 - app - INFO - user-1042 signed in from 203.0.113.17
+2026-10-01 00:01:41,279 - billing.worker - DEBUG - cache hit ratio 0.87
+2026-10-01 00:01:41,763 - app.db - CRITICAL - disk almost full: 97% used on /var/lib/app
+2026-10-01 00:01:43,860 - root - WARNING - retrying job 5521 (attempt 2 of 5)
+2026-10-01 00:01:45,573 - app.http - INFO - multi-line note:
+  first detail
+  second detail
+2026-10-01 00:01:46,249 - app - INFO - service started on port 8080
+2026-10-01 00:01:47,651 - billing.worker - ERROR - could not parse quantity for line item 11
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01 00:01:48,274 - app.db - INFO - GET /api/orders/1042 200 18ms
+2026-10-01 00:01:50,277 - root - WARNING - slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01 00:01:52,005 - app.http - ERROR - payment provider returned 502 for order 7731
+2026-10-01 00:01:52,166 - app - INFO - user-1042 signed in from 203.0.113.17
+2026-10-01 00:01:52,484 - billing.worker - DEBUG - cache hit ratio 0.87
+2026-10-01 00:01:54,770 - app.db - CRITICAL - disk almost full: 97% used on /var/lib/app
+2026-10-01 00:01:57,118 - root - WARNING - retrying job 5521 (attempt 2 of 5)
+2026-10-01 00:01:58,404 - app.http - ERROR - job failed
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 81, in fail_chain
+    {}["missing"]
+    ~~^^^^^^^^^^^
+KeyError: 'missing'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 94, in run
+    try: fail_chain()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 83, in fail_chain
+    raise RuntimeError("could not load order 7731") from e
+RuntimeError: could not load order 7731
+2026-10-01 00:01:59,798 - app - INFO - service started on port 8080
+2026-10-01 00:02:01,233 - billing.worker - DEBUG - loaded 31 settings from config/app.ini
+2026-10-01 00:02:03,668 - app.db - INFO - GET /api/orders/1042 200 18ms
+2026-10-01 00:02:05,703 - root - WARNING - slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01 00:02:08,079 - app.http - ERROR - payment provider returned 502 for order 7731
+2026-10-01 00:02:09,948 - app - INFO - user-1042 signed in from 203.0.113.17
+2026-10-01 00:02:10,230 - billing.worker - DEBUG - cache hit ratio 0.87
+2026-10-01 00:02:10,614 - app.db - CRITICAL - disk almost full: 97% used on /var/lib/app
+2026-10-01 00:02:11,720 - root - ERROR - could not parse quantity for line item 28
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01 00:02:13,662 - app.http - INFO - multi-line note:
+  first detail
+  second detail
+2026-10-01 00:02:13,929 - app - INFO - service started on port 8080
+2026-10-01 00:02:14,178 - billing.worker - DEBUG - loaded 31 settings from config/app.ini
+2026-10-01 00:02:15,447 - app.db - INFO - GET /api/orders/1042 200 18ms
+2026-10-01 00:02:17,815 - root - WARNING - slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01 00:02:19,641 - app.http - ERROR - payment provider returned 502 for order 7731
+2026-10-01 00:02:20,807 - app - INFO - user-1042 signed in from 203.0.113.17
+2026-10-01 00:02:22,388 - billing.worker - DEBUG - cache hit ratio 0.87
+2026-10-01 00:02:23,810 - app.db - CRITICAL - disk almost full: 97% used on /var/lib/app
+2026-10-01 00:02:23,903 - root - WARNING - retrying job 5521 (attempt 2 of 5)
+2026-10-01 00:02:25,795 - app.http - INFO - multi-line note:
+  first detail
+  second detail
+2026-10-01 00:02:27,251 - app - INFO - service started on port 8080
+2026-10-01 00:02:27,940 - billing.worker - DEBUG - loaded 31 settings from config/app.ini
+2026-10-01 00:02:28,420 - app.db - ERROR - job failed
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 81, in fail_chain
+    {}["missing"]
+    ~~^^^^^^^^^^^
+KeyError: 'missing'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 94, in run
+    try: fail_chain()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 83, in fail_chain
+    raise RuntimeError("could not load order 7731") from e
+RuntimeError: could not load order 7731
+2026-10-01 00:02:30,443 - root - WARNING - slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01 00:02:30,685 - app.http - ERROR - payment provider returned 502 for order 7731
+2026-10-01 00:02:31,579 - app - ERROR - could not parse quantity for line item 45
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01 00:02:32,757 - billing.worker - DEBUG - cache hit ratio 0.87
+2026-10-01 00:02:33,287 - app.db - CRITICAL - disk almost full: 97% used on /var/lib/app
+2026-10-01 00:02:34,302 - root - WARNING - retrying job 5521 (attempt 2 of 5)
+2026-10-01 00:02:35,932 - app.http - INFO - multi-line note:
+  first detail
+  second detail
+2026-10-01 00:02:37,534 - app - INFO - service started on port 8080
+2026-10-01 00:02:39,568 - billing.worker - DEBUG - loaded 31 settings from config/app.ini
+2026-10-01 00:02:39,899 - app.db - INFO - GET /api/orders/1042 200 18ms
+2026-10-01 00:02:40,581 - root - WARNING - slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01 00:02:42,421 - app.http - ERROR - payment provider returned 502 for order 7731
+2026-10-01 00:02:44,067 - app - INFO - user-1042 signed in from 203.0.113.17
+2026-10-01 00:02:46,318 - billing.worker - DEBUG - cache hit ratio 0.87
+2026-10-01 00:02:47,457 - app.db - CRITICAL - disk almost full: 97% used on /var/lib/app
+2026-10-01 00:02:48,018 - root - WARNING - retrying job 5521 (attempt 2 of 5)
+2026-10-01 00:02:49,782 - app.http - INFO - multi-line note:
+  first detail
+  second detail
+2026-10-01 00:02:52,036 - app - INFO - service started on port 8080
+2026-10-01 00:02:53,177 - billing.worker - DEBUG - loaded 31 settings from config/app.ini
+2026-10-01 00:02:54,879 - app.db - ERROR - could not parse quantity for line item 62
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01 00:02:56,349 - root - WARNING - slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01 00:02:57,908 - app.http - ERROR - payment provider returned 502 for order 7731
+2026-10-01 00:02:58,854 - app - ERROR - job failed
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 81, in fail_chain
+    {}["missing"]
+    ~~^^^^^^^^^^^
+KeyError: 'missing'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 94, in run
+    try: fail_chain()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 83, in fail_chain
+    raise RuntimeError("could not load order 7731") from e
+RuntimeError: could not load order 7731
+2026-10-01 00:02:59,473 - billing.worker - DEBUG - cache hit ratio 0.87
+2026-10-01 00:02:59,813 - app.db - CRITICAL - disk almost full: 97% used on /var/lib/app
+2026-10-01 00:03:00,535 - root - WARNING - retrying job 5521 (attempt 2 of 5)
+2026-10-01 00:03:01,155 - app.http - INFO - multi-line note:
+  first detail
+  second detail
+2026-10-01 00:03:02,106 - app - INFO - service started on port 8080
+2026-10-01 00:03:03,062 - billing.worker - DEBUG - loaded 31 settings from config/app.ini
+2026-10-01 00:03:03,112 - app.db - INFO - GET /api/orders/1042 200 18ms
+2026-10-01 00:03:05,099 - root - WARNING - slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01 00:03:07,513 - app.http - ERROR - payment provider returned 502 for order 7731
+2026-10-01 00:03:08,260 - app - INFO - user-1042 signed in from 203.0.113.17
+2026-10-01 00:03:09,337 - billing.worker - DEBUG - cache hit ratio 0.87
+2026-10-01 00:03:10,492 - app.db - CRITICAL - disk almost full: 97% used on /var/lib/app
+2026-10-01 00:03:10,509 - root - WARNING - retrying job 5521 (attempt 2 of 5)
+2026-10-01 00:03:11,106 - app.http - ERROR - could not parse quantity for line item 79
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01 00:03:12,823 - app - INFO - service started on port 8080
+2026-10-01 00:03:15,013 - billing.worker - DEBUG - loaded 31 settings from config/app.ini
+2026-10-01 00:03:16,526 - app.db - INFO - GET /api/orders/1042 200 18ms
+2026-10-01 00:03:19,024 - root - WARNING - slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01 00:03:21,344 - app.http - ERROR - payment provider returned 502 for order 7731
+2026-10-01 00:03:22,650 - app - INFO - user-1042 signed in from 203.0.113.17
+2026-10-01 00:03:23,165 - billing.worker - DEBUG - cache hit ratio 0.87
+2026-10-01 00:03:25,277 - app.db - CRITICAL - disk almost full: 97% used on /var/lib/app
+2026-10-01 00:03:25,499 - root - ERROR - job failed
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 81, in fail_chain
+    {}["missing"]
+    ~~^^^^^^^^^^^
+KeyError: 'missing'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 94, in run
+    try: fail_chain()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 83, in fail_chain
+    raise RuntimeError("could not load order 7731") from e
+RuntimeError: could not load order 7731
+2026-10-01 00:03:27,370 - app.http - INFO - multi-line note:
+  first detail
+  second detail

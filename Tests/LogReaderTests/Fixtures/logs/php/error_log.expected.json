@@ -1,0 +1,366 @@
+{
+    "source": "PHP 8.5.12 CLI error_log (php -n -d log_errors=1 -d error_log=FILE -d date.timezone=UTC), one run of trigger.php per entry; script errlog.php",
+    "referenceDate": "2026-10-01",
+    "entries": [
+        {
+            "line": 1,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:00.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 2,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:00.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 3,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:00.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 4,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:01.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 5,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:01.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 6,
+            "lines": 6,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:01.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 12,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:02.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 13,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:02.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 14,
+            "lines": 5,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:02.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 19,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:03.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 20,
+            "lines": 4,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:03.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 24,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:03.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 25,
+            "lines": 4,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:04.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 29,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:04.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 30,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:04.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 31,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:05.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 32,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:05.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 33,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:05.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 34,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:06.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 35,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:06.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 36,
+            "lines": 6,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:06.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 42,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:07.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 43,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:07.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 44,
+            "lines": 5,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:07.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 49,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:08.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 50,
+            "lines": 4,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:08.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 54,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:08.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 55,
+            "lines": 4,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:09.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 59,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:09.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 60,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:09.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 61,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:10.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 62,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:10.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 63,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:10.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 64,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:11.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 65,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:11.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 66,
+            "lines": 6,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:11.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 72,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:12.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 73,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:12.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 74,
+            "lines": 5,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:12.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 79,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:13.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 80,
+            "lines": 4,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:13.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 84,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:13.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 85,
+            "lines": 4,
+            "level": "fatal",
+            "time": "2026-11-02T08:52:14.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 89,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-11-02T08:52:14.000Z",
+            "zoned": true,
+            "component": null
+        },
+        {
+            "line": 90,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-11-02T08:52:14.000Z",
+            "zoned": true,
+            "component": null
+        }
+    ]
+}

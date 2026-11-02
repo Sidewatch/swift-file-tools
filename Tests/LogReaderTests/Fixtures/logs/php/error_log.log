@@ -1,0 +1,90 @@
+[02-Nov-2026 08:52:00 UTC] PHP Warning:  Undefined variable $undefinedVariable in /srv/app/app/trigger.php on line 7
+[02-Nov-2026 08:52:00 UTC] PHP Notice:  cache miss for key user:1042 in /srv/app/app/trigger.php on line 10
+[02-Nov-2026 08:52:00 UTC] PHP Deprecated:  Config option "legacy_mode" is deprecated in /srv/app/app/trigger.php on line 12
+[02-Nov-2026 08:52:01 UTC] PHP Warning:  Undefined array key "missing_key" in /srv/app/app/trigger.php on line 8
+[02-Nov-2026 08:52:01 UTC] PHP Warning:  payment gateway slow: 2300ms in /srv/app/app/trigger.php on line 14
+[02-Nov-2026 08:52:01 UTC] PHP Fatal error:  Uncaught RuntimeException: order 7731 not found in /srv/app/app/trigger.php:4
+Stack trace:
+#0 /srv/app/app/trigger.php(5): load_order(7731)
+#1 /srv/app/app/trigger.php(15): controller(7731)
+#2 {main}
+  thrown in /srv/app/app/trigger.php on line 4
+[02-Nov-2026 08:52:02 UTC] PHP Deprecated:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in /srv/app/app/trigger.php on line 13
+[02-Nov-2026 08:52:02 UTC] PHP Warning:  fopen(/nonexistent/app/cache.json): Failed to open stream: No such file or directory in /srv/app/app/trigger.php on line 9
+[02-Nov-2026 08:52:02 UTC] PHP Fatal error:  Uncaught TypeError: {closure:/srv/app/app/trigger.php:17}(): Argument #1 ($n) must be of type int, string given, called in /srv/app/app/trigger.php on line 17 and defined in /srv/app/app/trigger.php:17
+Stack trace:
+#0 /srv/app/app/trigger.php(17): {closure:/srv/app/app/trigger.php:17}('forty-two')
+#1 {main}
+  thrown in /srv/app/app/trigger.php on line 17
+[02-Nov-2026 08:52:03 UTC] PHP Notice:  cache miss for key user:1042 in /srv/app/app/trigger.php on line 10
+[02-Nov-2026 08:52:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function method() on null in /srv/app/app/trigger.php:16
+Stack trace:
+#0 {main}
+  thrown in /srv/app/app/trigger.php on line 16
+[02-Nov-2026 08:52:03 UTC] PHP Warning:  Undefined variable $undefinedVariable in /srv/app/app/trigger.php on line 7
+[02-Nov-2026 08:52:04 UTC] PHP Fatal error:  Allowed memory size of 4194304 bytes exhausted (tried to allocate 8404992 bytes) in /srv/app/app/trigger.php on line 18
+Stack trace:
+#0 /srv/app/app/trigger.php(18): str_repeat('x', 8388608)
+#1 {main}
+[02-Nov-2026 08:52:04 UTC] PHP Warning:  payment gateway slow: 2300ms in /srv/app/app/trigger.php on line 14
+[02-Nov-2026 08:52:04 UTC] PHP Deprecated:  Config option "legacy_mode" is deprecated in /srv/app/app/trigger.php on line 12
+[02-Nov-2026 08:52:05 UTC] PHP Warning:  Undefined variable $undefinedVariable in /srv/app/app/trigger.php on line 7
+[02-Nov-2026 08:52:05 UTC] PHP Notice:  cache miss for key user:1042 in /srv/app/app/trigger.php on line 10
+[02-Nov-2026 08:52:05 UTC] PHP Deprecated:  Config option "legacy_mode" is deprecated in /srv/app/app/trigger.php on line 12
+[02-Nov-2026 08:52:06 UTC] PHP Warning:  Undefined array key "missing_key" in /srv/app/app/trigger.php on line 8
+[02-Nov-2026 08:52:06 UTC] PHP Warning:  payment gateway slow: 2300ms in /srv/app/app/trigger.php on line 14
+[02-Nov-2026 08:52:06 UTC] PHP Fatal error:  Uncaught RuntimeException: order 7731 not found in /srv/app/app/trigger.php:4
+Stack trace:
+#0 /srv/app/app/trigger.php(5): load_order(7731)
+#1 /srv/app/app/trigger.php(15): controller(7731)
+#2 {main}
+  thrown in /srv/app/app/trigger.php on line 4
+[02-Nov-2026 08:52:07 UTC] PHP Deprecated:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in /srv/app/app/trigger.php on line 13
+[02-Nov-2026 08:52:07 UTC] PHP Warning:  fopen(/nonexistent/app/cache.json): Failed to open stream: No such file or directory in /srv/app/app/trigger.php on line 9
+[02-Nov-2026 08:52:07 UTC] PHP Fatal error:  Uncaught TypeError: {closure:/srv/app/app/trigger.php:17}(): Argument #1 ($n) must be of type int, string given, called in /srv/app/app/trigger.php on line 17 and defined in /srv/app/app/trigger.php:17
+Stack trace:
+#0 /srv/app/app/trigger.php(17): {closure:/srv/app/app/trigger.php:17}('forty-two')
+#1 {main}
+  thrown in /srv/app/app/trigger.php on line 17
+[02-Nov-2026 08:52:08 UTC] PHP Notice:  cache miss for key user:1042 in /srv/app/app/trigger.php on line 10
+[02-Nov-2026 08:52:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function method() on null in /srv/app/app/trigger.php:16
+Stack trace:
+#0 {main}
+  thrown in /srv/app/app/trigger.php on line 16
+[02-Nov-2026 08:52:08 UTC] PHP Warning:  Undefined variable $undefinedVariable in /srv/app/app/trigger.php on line 7
+[02-Nov-2026 08:52:09 UTC] PHP Fatal error:  Allowed memory size of 4194304 bytes exhausted (tried to allocate 8404992 bytes) in /srv/app/app/trigger.php on line 18
+Stack trace:
+#0 /srv/app/app/trigger.php(18): str_repeat('x', 8388608)
+#1 {main}
+[02-Nov-2026 08:52:09 UTC] PHP Warning:  payment gateway slow: 2300ms in /srv/app/app/trigger.php on line 14
+[02-Nov-2026 08:52:09 UTC] PHP Deprecated:  Config option "legacy_mode" is deprecated in /srv/app/app/trigger.php on line 12
+[02-Nov-2026 08:52:10 UTC] PHP Warning:  Undefined variable $undefinedVariable in /srv/app/app/trigger.php on line 7
+[02-Nov-2026 08:52:10 UTC] PHP Notice:  cache miss for key user:1042 in /srv/app/app/trigger.php on line 10
+[02-Nov-2026 08:52:10 UTC] PHP Deprecated:  Config option "legacy_mode" is deprecated in /srv/app/app/trigger.php on line 12
+[02-Nov-2026 08:52:11 UTC] PHP Warning:  Undefined array key "missing_key" in /srv/app/app/trigger.php on line 8
+[02-Nov-2026 08:52:11 UTC] PHP Warning:  payment gateway slow: 2300ms in /srv/app/app/trigger.php on line 14
+[02-Nov-2026 08:52:11 UTC] PHP Fatal error:  Uncaught RuntimeException: order 7731 not found in /srv/app/app/trigger.php:4
+Stack trace:
+#0 /srv/app/app/trigger.php(5): load_order(7731)
+#1 /srv/app/app/trigger.php(15): controller(7731)
+#2 {main}
+  thrown in /srv/app/app/trigger.php on line 4
+[02-Nov-2026 08:52:12 UTC] PHP Deprecated:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in /srv/app/app/trigger.php on line 13
+[02-Nov-2026 08:52:12 UTC] PHP Warning:  fopen(/nonexistent/app/cache.json): Failed to open stream: No such file or directory in /srv/app/app/trigger.php on line 9
+[02-Nov-2026 08:52:12 UTC] PHP Fatal error:  Uncaught TypeError: {closure:/srv/app/app/trigger.php:17}(): Argument #1 ($n) must be of type int, string given, called in /srv/app/app/trigger.php on line 17 and defined in /srv/app/app/trigger.php:17
+Stack trace:
+#0 /srv/app/app/trigger.php(17): {closure:/srv/app/app/trigger.php:17}('forty-two')
+#1 {main}
+  thrown in /srv/app/app/trigger.php on line 17
+[02-Nov-2026 08:52:13 UTC] PHP Notice:  cache miss for key user:1042 in /srv/app/app/trigger.php on line 10
+[02-Nov-2026 08:52:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function method() on null in /srv/app/app/trigger.php:16
+Stack trace:
+#0 {main}
+  thrown in /srv/app/app/trigger.php on line 16
+[02-Nov-2026 08:52:13 UTC] PHP Warning:  Undefined variable $undefinedVariable in /srv/app/app/trigger.php on line 7
+[02-Nov-2026 08:52:14 UTC] PHP Fatal error:  Allowed memory size of 4194304 bytes exhausted (tried to allocate 8404992 bytes) in /srv/app/app/trigger.php on line 18
+Stack trace:
+#0 /srv/app/app/trigger.php(18): str_repeat('x', 8388608)
+#1 {main}
+[02-Nov-2026 08:52:14 UTC] PHP Warning:  payment gateway slow: 2300ms in /srv/app/app/trigger.php on line 14
+[02-Nov-2026 08:52:14 UTC] PHP Deprecated:  Config option "legacy_mode" is deprecated in /srv/app/app/trigger.php on line 12

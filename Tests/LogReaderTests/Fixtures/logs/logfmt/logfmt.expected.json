@@ -1,0 +1,726 @@
+{
+  "source": "logfmt 1.4.0 (Heroku's npm package) logfmt.stringify() on Node v26.13.0; keys time, level, msg, component; script syslogfmt.js",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:28.704Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:11:31.609Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:32.786Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:11:33.507Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:11:34.004Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:36.989Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:11:39.758Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:11:40.999Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:41.528Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:11:43.625Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:43.666Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:11:45.667Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:47.444Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:11:47.965Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:11:50.750Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:53.207Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:11:55.032Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:11:57.425Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:59.906Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:12:01.531Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:03.308Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:12:04.525Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:04.782Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:12:05.743Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:12:08.376Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:11.353Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:12:12.314Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:12:14.091Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:15.588Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:12:17.389Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:18.646Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:12:21.327Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:22.928Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:12:25.337Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:12:27.298Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:28.851Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:12:30.100Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:12:30.245Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:31.830Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:12:33.375Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:35.216Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:12:36.129Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:38.634Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:12:41.043Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:12:43.828Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:45.973Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:12:47.502Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:12:47.815Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:48.336Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:12:48.521Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:49.018Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:12:49.787Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:50.780Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:12:52.357Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:12:54.486Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:55.071Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:12:55.152Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:12:57.241Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:59.386Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:13:02.275Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:02.692Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:13:04.525Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:06.142Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:13:08.959Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:13:11.240Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:13.145Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:13:15.218Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:13:17.227Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:18.988Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:13:19.557Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:22.390Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:13:22.903Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:23.472Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:13:24.049Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:13:24.066Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:26.131Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:13:27.852Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:13:27.901Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 79,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:29.230Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 80,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:13:31.703Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 81,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:34.368Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 82,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:13:35.521Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 83,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:35.594Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 84,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:13:35.995Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 85,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:13:37.668Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 86,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:37.693Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 87,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:13:38.062Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 88,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:13:38.815Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 89,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:40.072Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 90,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:13:41.153Z",
+      "zoned": true,
+      "component": "worker"
+    }
+  ]
+}

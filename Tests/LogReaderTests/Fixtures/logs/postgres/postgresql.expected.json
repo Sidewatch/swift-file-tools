@@ -1,0 +1,766 @@
+{
+  "source": "Documentation-derived: PostgreSQL stderr log with the default log_line_prefix '%m [%p] ' https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-LINE-PREFIX and severity levels https://www.postgresql.org/docs/current/runtime-config-logging.html#RUNTIME-CONFIG-SEVERITY-LEVELS ; DETAIL/HINT/CONTEXT/STATEMENT lines (which repeat the prefix) and tab-indented lines continue the entry above",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:14.135Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:23.793Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:27.556Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:46.680Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 5,
+      "lines": 3,
+      "level": "error",
+      "time": "2026-10-01T00:00:51.800Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 8,
+      "lines": 4,
+      "level": "error",
+      "time": "2026-10-01T00:01:04.446Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:20.383Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:29.109Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 14,
+      "lines": 2,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:39.610Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:55.612Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 17,
+      "lines": 3,
+      "level": "error",
+      "time": "2026-10-01T00:02:08.339Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 20,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:02:21.773Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "notice",
+      "time": "2026-10-01T00:02:37.072Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 24,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:02:56.860Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:15.473Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:17.739Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:34.253Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:38.071Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:03:47.824Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:00.141Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:03.704Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:15.345Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:18.768Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 41,
+      "lines": 3,
+      "level": "error",
+      "time": "2026-10-01T00:04:19.336Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 44,
+      "lines": 4,
+      "level": "error",
+      "time": "2026-10-01T00:04:32.683Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:50.620Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:06.359Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 50,
+      "lines": 2,
+      "level": "fatal",
+      "time": "2026-10-01T00:05:23.773Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:33.506Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 53,
+      "lines": 3,
+      "level": "error",
+      "time": "2026-10-01T00:05:43.494Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 56,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:05:57.791Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "notice",
+      "time": "2026-10-01T00:06:10.290Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 60,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:06:28.956Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:34.372Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:06:34.539Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:45.099Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:07:04.935Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:07:06.286Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:07:14.751Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:07:22.411Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:07:25.910Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:07:39.898Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 77,
+      "lines": 3,
+      "level": "error",
+      "time": "2026-10-01T00:07:52.057Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 80,
+      "lines": 4,
+      "level": "error",
+      "time": "2026-10-01T00:07:54.681Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 84,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:08:11.672Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 85,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:08:30.885Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 86,
+      "lines": 2,
+      "level": "fatal",
+      "time": "2026-10-01T00:08:42.558Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 88,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:08:56.708Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 89,
+      "lines": 3,
+      "level": "error",
+      "time": "2026-10-01T00:09:06.886Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 92,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:09:26.733Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 95,
+      "lines": 1,
+      "level": "notice",
+      "time": "2026-10-01T00:09:37.171Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 96,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:09:53.528Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 104,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:09:54.130Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 105,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:10:05.290Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 106,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:10:21.466Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 107,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:10:33.220Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 108,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:10:34.077Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 109,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:10:48.364Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 110,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:10:50.480Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 111,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:09.780Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 112,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:16.543Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 113,
+      "lines": 3,
+      "level": "error",
+      "time": "2026-10-01T00:11:17.221Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 116,
+      "lines": 4,
+      "level": "error",
+      "time": "2026-10-01T00:11:29.626Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 120,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:29.863Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 121,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:11:47.067Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 122,
+      "lines": 2,
+      "level": "fatal",
+      "time": "2026-10-01T00:12:02.168Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 124,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:12:06.655Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 125,
+      "lines": 3,
+      "level": "error",
+      "time": "2026-10-01T00:12:20.514Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 128,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:12:38.498Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 131,
+      "lines": 1,
+      "level": "notice",
+      "time": "2026-10-01T00:12:44.016Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 132,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:12:55.659Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 140,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:59.673Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 141,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:13:07.032Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 142,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:08.104Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 143,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:10.142Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 144,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:13:12.981Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 145,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:21.791Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 146,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:30.201Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 147,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:31.647Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 148,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:13:43.099Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 149,
+      "lines": 3,
+      "level": "error",
+      "time": "2026-10-01T00:13:58.988Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 152,
+      "lines": 4,
+      "level": "error",
+      "time": "2026-10-01T00:14:11.242Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 156,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:14:26.764Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 157,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:14:32.050Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 158,
+      "lines": 2,
+      "level": "fatal",
+      "time": "2026-10-01T00:14:51.250Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 160,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:15:11.111Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 161,
+      "lines": 3,
+      "level": "error",
+      "time": "2026-10-01T00:15:28.194Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 164,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:15:40.417Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 167,
+      "lines": 1,
+      "level": "notice",
+      "time": "2026-10-01T00:15:59.881Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 168,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:16:08.544Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 176,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:16:27.396Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 177,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:16:44.446Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 178,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:16:56.157Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 179,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:17:04.401Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 180,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:17:23.379Z",
+      "zoned": true,
+      "component": null
+    }
+  ]
+}

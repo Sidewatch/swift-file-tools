@@ -1,0 +1,64 @@
+2026-10-01T00:00:26.105950Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.4.3) starting as process 1
+2026-10-01T00:00:28.028728Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-10-01T00:00:52.940930Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-10-01T00:01:21.211897Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-10-01T00:01:24.203465Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-10-01T00:01:53.776851Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-10-01T00:02:19.530015Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.4.3'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-10-01T00:02:32.857754Z 8 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-10-01T00:02:45.129331Z 12 [Note] [MY-010914] [Server] Aborted connection 12 to db: 'shop' user: 'app' host: '203.0.113.17' (Got an error reading communication packets).
+2026-10-01T00:03:06.398123Z 0 [Error] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 11
+2026-10-01T00:03:19.536922Z 14 [Error] [MY-010584] [Repl] Replica SQL for channel '': Worker 1 failed executing transaction 'ANONYMOUS' at source log binlog.000042, end_log_pos 1337; Error 'Duplicate entry '7731' for key 'orders.PRIMARY'' on query. Default database: 'shop'. Query: 'INSERT INTO orders VALUES (7731)', Error_code: MY-001062
+2026-10-01T00:03:38.284125Z 0 [Note] [MY-011953] [InnoDB] Page cleaner took 4321ms to flush 210 and evict 0 pages
+2026-10-01T00:03:58.202025Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.4.3) starting as process 1
+2026-10-01T00:03:59.865056Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-10-01T00:04:24.019028Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-10-01T00:04:47.235792Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-10-01T00:05:03.395524Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-10-01T00:05:26.417195Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-10-01T00:05:46.499949Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.4.3'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-10-01T00:05:52.646879Z 8 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-10-01T00:06:09.096630Z 12 [Note] [MY-010914] [Server] Aborted connection 12 to db: 'shop' user: 'app' host: '203.0.113.17' (Got an error reading communication packets).
+2026-10-01T00:06:38.426256Z 0 [Error] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 11
+2026-10-01T00:06:43.297275Z 14 [Error] [MY-010584] [Repl] Replica SQL for channel '': Worker 1 failed executing transaction 'ANONYMOUS' at source log binlog.000042, end_log_pos 1337; Error 'Duplicate entry '7731' for key 'orders.PRIMARY'' on query. Default database: 'shop'. Query: 'INSERT INTO orders VALUES (7731)', Error_code: MY-001062
+2026-10-01T00:07:01.775173Z 0 [Note] [MY-011953] [InnoDB] Page cleaner took 4321ms to flush 210 and evict 0 pages
+2026-10-01T00:07:05.085824Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.4.3) starting as process 1
+2026-10-01T00:07:34.674240Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-10-01T00:07:57.185372Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-10-01T00:08:00.452255Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-10-01T00:08:29.350514Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-10-01T00:08:43.591121Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-10-01T00:09:13.513198Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.4.3'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-10-01T00:09:31.308767Z 8 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-10-01T00:09:57.263168Z 12 [Note] [MY-010914] [Server] Aborted connection 12 to db: 'shop' user: 'app' host: '203.0.113.17' (Got an error reading communication packets).
+2026-10-01T00:10:00.189481Z 0 [Error] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 11
+2026-10-01T00:10:11.612651Z 14 [Error] [MY-010584] [Repl] Replica SQL for channel '': Worker 1 failed executing transaction 'ANONYMOUS' at source log binlog.000042, end_log_pos 1337; Error 'Duplicate entry '7731' for key 'orders.PRIMARY'' on query. Default database: 'shop'. Query: 'INSERT INTO orders VALUES (7731)', Error_code: MY-001062
+2026-10-01T00:10:24.712687Z 0 [Note] [MY-011953] [InnoDB] Page cleaner took 4321ms to flush 210 and evict 0 pages
+2026-10-01T00:10:29.599581Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.4.3) starting as process 1
+2026-10-01T00:10:32.707203Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-10-01T00:10:39.631208Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-10-01T00:10:53.823801Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-10-01T00:11:21.021585Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-10-01T00:11:32.076790Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-10-01T00:11:59.736741Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.4.3'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-10-01T00:12:25.126603Z 8 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-10-01T00:12:29.643154Z 12 [Note] [MY-010914] [Server] Aborted connection 12 to db: 'shop' user: 'app' host: '203.0.113.17' (Got an error reading communication packets).
+2026-10-01T00:12:44.182056Z 0 [Error] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 11
+2026-10-01T00:12:51.327643Z 14 [Error] [MY-010584] [Repl] Replica SQL for channel '': Worker 1 failed executing transaction 'ANONYMOUS' at source log binlog.000042, end_log_pos 1337; Error 'Duplicate entry '7731' for key 'orders.PRIMARY'' on query. Default database: 'shop'. Query: 'INSERT INTO orders VALUES (7731)', Error_code: MY-001062
+2026-10-01T00:12:52.589703Z 0 [Note] [MY-011953] [InnoDB] Page cleaner took 4321ms to flush 210 and evict 0 pages
+2026-10-01T00:13:04.725147Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.4.3) starting as process 1
+2026-10-01T00:13:10.697999Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-10-01T00:13:14.470703Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-10-01T00:13:26.036243Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-10-01T00:13:54.322465Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-10-01T00:13:55.674093Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-10-01T00:13:58.598332Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.4.3'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-10-01T00:14:15.601937Z 8 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-10-01T00:14:27.379417Z 12 [Note] [MY-010914] [Server] Aborted connection 12 to db: 'shop' user: 'app' host: '203.0.113.17' (Got an error reading communication packets).
+2026-10-01T00:14:28.081163Z 0 [Error] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 11
+2026-10-01T00:14:50.055934Z 14 [Error] [MY-010584] [Repl] Replica SQL for channel '': Worker 1 failed executing transaction 'ANONYMOUS' at source log binlog.000042, end_log_pos 1337; Error 'Duplicate entry '7731' for key 'orders.PRIMARY'' on query. Default database: 'shop'. Query: 'INSERT INTO orders VALUES (7731)', Error_code: MY-001062
+2026-10-01T00:15:17.631396Z 0 [Note] [MY-011953] [InnoDB] Page cleaner took 4321ms to flush 210 and evict 0 pages
+2026-10-01T00:15:19.434052Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.4.3) starting as process 1
+2026-10-01T00:15:23.644202Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-10-01T00:15:27.620939Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-10-01T00:15:43.185861Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.

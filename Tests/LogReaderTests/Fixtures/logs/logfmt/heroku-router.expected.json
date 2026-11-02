@@ -1,0 +1,646 @@
+{
+  "source": "Documentation-derived: Heroku log format 'timestamp source[dyno]: message' https://devcenter.heroku.com/articles/logging#log-format and router fields https://devcenter.heroku.com/articles/http-routing#heroku-router-log-format , error codes https://devcenter.heroku.com/articles/error-codes",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:02.639Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:05.234Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:06.241Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:09.565Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:10.964Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:12.474Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:15.435Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:16.896Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:20.794Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:22.695Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:24.243Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:24.345Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:25.880Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:26.452Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:29.654Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:29.682Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:30.253Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:31.054Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:32.589Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:36.474Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:39.694Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:42.425Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:43.333Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:46.535Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:47.180Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:48.339Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:50.751Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:53.815Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:54.606Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:54.739Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:56.152Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:57.716Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:01.629Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:04.095Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:05.820Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:07.462Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:10.982Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:14.969Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:17.546Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:21.547Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:23.147Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:23.500Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:24.371Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:27.937Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:31.405Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:32.997Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:35.941Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:39.651Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:41.100Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:42.215Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:43.745Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:47.553Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:48.612Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:52.574Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:52.749Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:54.216Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:56.032Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:56.274Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:59.623Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:03.494Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:05.200Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:08.065Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:09.166Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:10.439Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:13.199Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:15.324Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:15.757Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:15.846Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:18.371Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:22.175Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:23.568Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:25.350Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:27.978Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:28.303Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:28.507Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:30.627Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:31.447Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:34.543Z",
+      "zoned": true,
+      "component": "heroku"
+    },
+    {
+      "line": 79,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:37.158Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 80,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:38.849Z",
+      "zoned": true,
+      "component": "heroku"
+    }
+  ]
+}

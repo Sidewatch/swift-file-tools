@@ -1,0 +1,590 @@
+{
+  "source": "Documentation-derived: klog header 'Lmmdd hh:mm:ss.uuuuuu threadid file:line] msg' https://github.com/kubernetes/klog/blob/main/klog.go (header comment) and structured values incl. multi-line 'key=<' blocks https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/migration-to-structured-logging.md ; no year (referenceDate) and no zone",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:04.581Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:06.273Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:10.236Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:18.975Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:26.673Z",
+      "zoned": false,
+      "component": "leaderelection.go"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:35.401Z",
+      "zoned": false,
+      "component": "server.go"
+    },
+    {
+      "line": 7,
+      "lines": 4,
+      "level": "info",
+      "time": "2026-10-01T00:00:40.115Z",
+      "zoned": false,
+      "component": "pod_workers.go"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:42.099Z",
+      "zoned": false,
+      "component": "warnings.go"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:48.297Z",
+      "zoned": false,
+      "component": "kubelet.go"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:53.586Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:59.509Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:03.739Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:08.813Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:12.928Z",
+      "zoned": false,
+      "component": "leaderelection.go"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:21.775Z",
+      "zoned": false,
+      "component": "server.go"
+    },
+    {
+      "line": 19,
+      "lines": 4,
+      "level": "info",
+      "time": "2026-10-01T00:01:22.847Z",
+      "zoned": false,
+      "component": "pod_workers.go"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:29.916Z",
+      "zoned": false,
+      "component": "warnings.go"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:37.242Z",
+      "zoned": false,
+      "component": "kubelet.go"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:43.678Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:46.857Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:49.932Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:50.216Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:51.179Z",
+      "zoned": false,
+      "component": "leaderelection.go"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:56.410Z",
+      "zoned": false,
+      "component": "server.go"
+    },
+    {
+      "line": 31,
+      "lines": 4,
+      "level": "info",
+      "time": "2026-10-01T00:02:00.258Z",
+      "zoned": false,
+      "component": "pod_workers.go"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:08.464Z",
+      "zoned": false,
+      "component": "warnings.go"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:15.670Z",
+      "zoned": false,
+      "component": "kubelet.go"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:17.211Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:25.190Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:31.871Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:33.173Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:40.930Z",
+      "zoned": false,
+      "component": "leaderelection.go"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:46.810Z",
+      "zoned": false,
+      "component": "server.go"
+    },
+    {
+      "line": 43,
+      "lines": 4,
+      "level": "info",
+      "time": "2026-10-01T00:02:51.806Z",
+      "zoned": false,
+      "component": "pod_workers.go"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:54.891Z",
+      "zoned": false,
+      "component": "warnings.go"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:03.174Z",
+      "zoned": false,
+      "component": "kubelet.go"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:10.405Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:14.943Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:18.478Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:22.121Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:25.189Z",
+      "zoned": false,
+      "component": "leaderelection.go"
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:33.360Z",
+      "zoned": false,
+      "component": "server.go"
+    },
+    {
+      "line": 55,
+      "lines": 4,
+      "level": "info",
+      "time": "2026-10-01T00:03:37.308Z",
+      "zoned": false,
+      "component": "pod_workers.go"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:40.356Z",
+      "zoned": false,
+      "component": "warnings.go"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:41.443Z",
+      "zoned": false,
+      "component": "kubelet.go"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:43.616Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:43.653Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:51.981Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:57.923Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:06.681Z",
+      "zoned": false,
+      "component": "leaderelection.go"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:11.637Z",
+      "zoned": false,
+      "component": "server.go"
+    },
+    {
+      "line": 67,
+      "lines": 4,
+      "level": "info",
+      "time": "2026-10-01T00:04:18.101Z",
+      "zoned": false,
+      "component": "pod_workers.go"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:22.764Z",
+      "zoned": false,
+      "component": "warnings.go"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:29.021Z",
+      "zoned": false,
+      "component": "kubelet.go"
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:31.389Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:36.318Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:39.169Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:42.553Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:42.981Z",
+      "zoned": false,
+      "component": "leaderelection.go"
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:44.373Z",
+      "zoned": false,
+      "component": "server.go"
+    },
+    {
+      "line": 79,
+      "lines": 4,
+      "level": "info",
+      "time": "2026-10-01T00:04:50.775Z",
+      "zoned": false,
+      "component": "pod_workers.go"
+    },
+    {
+      "line": 83,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:51.418Z",
+      "zoned": false,
+      "component": "warnings.go"
+    },
+    {
+      "line": 84,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:56.937Z",
+      "zoned": false,
+      "component": "kubelet.go"
+    },
+    {
+      "line": 85,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:59.678Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 86,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:59.877Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 87,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:02.050Z",
+      "zoned": false,
+      "component": "reflector.go"
+    },
+    {
+      "line": 88,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:03.554Z",
+      "zoned": false,
+      "component": "controller.go"
+    },
+    {
+      "line": 89,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:07.761Z",
+      "zoned": false,
+      "component": "leaderelection.go"
+    },
+    {
+      "line": 90,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:08.788Z",
+      "zoned": false,
+      "component": "server.go"
+    },
+    {
+      "line": 91,
+      "lines": 4,
+      "level": "info",
+      "time": "2026-10-01T00:05:16.230Z",
+      "zoned": false,
+      "component": "pod_workers.go"
+    },
+    {
+      "line": 95,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:19.819Z",
+      "zoned": false,
+      "component": "warnings.go"
+    },
+    {
+      "line": 96,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:24.377Z",
+      "zoned": false,
+      "component": "kubelet.go"
+    },
+    {
+      "line": 97,
+      "lines": 6,
+      "level": "fatal",
+      "time": "2026-10-01T00:05:27.306Z",
+      "zoned": false,
+      "component": "server.go"
+    }
+  ]
+}

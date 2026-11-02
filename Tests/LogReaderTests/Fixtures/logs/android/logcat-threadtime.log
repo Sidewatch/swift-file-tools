@@ -1,0 +1,90 @@
+--------- beginning of main
+10-01 00:00:00.431  1203  1230 I ActivityManager: Start proc 4120:com.example.shop/u0a201 for top-activity {com.example.shop/com.example.shop.MainActivity}
+10-01 00:00:01.273  4120  4120 D OpenGLRenderer: Setting vsync rate to 60
+10-01 00:00:02.729  4120  4120 V ShopViewModel: loadCart user=user-1042
+10-01 00:00:03.196  4120  4161 W OkHttp  : A connection to https://api.example.com/ was leaked. Did you forget to close a response body?
+10-01 00:00:05.219  4120  4161 E ShopRepository: fetch failed: java.net.UnknownHostException: Unable to resolve host "api.example.com"
+10-01 00:00:05.605   612   612 I chatty  : uid=1000(system) Binder:612_3 identical 4 lines
+10-01 00:00:07.639  4120  4120 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+10-01 00:00:10.185  1203  1255 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{8f2a1c u0 com.example.shop/.MainActivity t42}
+10-01 00:00:10.508   980  1001 D WifiStateMachine: connected to SSID "ExampleNet" rssi=-58
+10-01 00:00:11.054  1203  1230 I ActivityManager: Start proc 4120:com.example.shop/u0a201 for top-activity {com.example.shop/com.example.shop.MainActivity}
+10-01 00:00:12.413  4120  4120 D OpenGLRenderer: Setting vsync rate to 60
+10-01 00:00:14.571  4120  4120 V ShopViewModel: loadCart user=user-1042
+10-01 00:00:15.428  4120  4161 W OkHttp  : A connection to https://api.example.com/ was leaked. Did you forget to close a response body?
+10-01 00:00:17.395  4120  4161 E ShopRepository: fetch failed: java.net.UnknownHostException: Unable to resolve host "api.example.com"
+10-01 00:00:18.034   612   612 I chatty  : uid=1000(system) Binder:612_3 identical 4 lines
+10-01 00:00:20.640  4120  4120 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+10-01 00:00:23.459  1203  1255 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{8f2a1c u0 com.example.shop/.MainActivity t42}
+10-01 00:00:24.685   980  1001 D WifiStateMachine: connected to SSID "ExampleNet" rssi=-58
+10-01 00:00:27.536  1203  1230 I ActivityManager: Start proc 4120:com.example.shop/u0a201 for top-activity {com.example.shop/com.example.shop.MainActivity}
+10-01 00:00:29.927  4120  4120 D OpenGLRenderer: Setting vsync rate to 60
+10-01 00:00:31.083  4120  4120 V ShopViewModel: loadCart user=user-1042
+10-01 00:00:31.500  4120  4161 W OkHttp  : A connection to https://api.example.com/ was leaked. Did you forget to close a response body?
+10-01 00:00:32.160  4120  4161 E ShopRepository: fetch failed: java.net.UnknownHostException: Unable to resolve host "api.example.com"
+10-01 00:00:33.532   612   612 I chatty  : uid=1000(system) Binder:612_3 identical 4 lines
+10-01 00:00:34.684  4120  4120 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+10-01 00:00:37.270  1203  1255 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{8f2a1c u0 com.example.shop/.MainActivity t42}
+10-01 00:00:39.390   980  1001 D WifiStateMachine: connected to SSID "ExampleNet" rssi=-58
+10-01 00:00:41.888  1203  1230 I ActivityManager: Start proc 4120:com.example.shop/u0a201 for top-activity {com.example.shop/com.example.shop.MainActivity}
+10-01 00:00:44.324  4120  4120 D OpenGLRenderer: Setting vsync rate to 60
+10-01 00:00:47.248  4120  4120 V ShopViewModel: loadCart user=user-1042
+10-01 00:00:49.635  4120  4161 W OkHttp  : A connection to https://api.example.com/ was leaked. Did you forget to close a response body?
+10-01 00:00:51.670  4120  4161 E ShopRepository: fetch failed: java.net.UnknownHostException: Unable to resolve host "api.example.com"
+10-01 00:00:53.506   612   612 I chatty  : uid=1000(system) Binder:612_3 identical 4 lines
+10-01 00:00:54.707  4120  4120 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+10-01 00:00:56.824  1203  1255 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{8f2a1c u0 com.example.shop/.MainActivity t42}
+10-01 00:00:58.406   980  1001 D WifiStateMachine: connected to SSID "ExampleNet" rssi=-58
+10-01 00:01:00.058  1203  1230 I ActivityManager: Start proc 4120:com.example.shop/u0a201 for top-activity {com.example.shop/com.example.shop.MainActivity}
+10-01 00:01:02.342  4120  4120 D OpenGLRenderer: Setting vsync rate to 60
+10-01 00:01:05.341  4120  4120 V ShopViewModel: loadCart user=user-1042
+10-01 00:01:06.797  4120  4161 W OkHttp  : A connection to https://api.example.com/ was leaked. Did you forget to close a response body?
+10-01 00:01:07.891  4120  4161 E ShopRepository: fetch failed: java.net.UnknownHostException: Unable to resolve host "api.example.com"
+10-01 00:01:10.676   612   612 I chatty  : uid=1000(system) Binder:612_3 identical 4 lines
+10-01 00:01:11.285  4120  4120 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+10-01 00:01:11.433  1203  1255 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{8f2a1c u0 com.example.shop/.MainActivity t42}
+10-01 00:01:13.139   980  1001 D WifiStateMachine: connected to SSID "ExampleNet" rssi=-58
+10-01 00:01:13.718  1203  1230 I ActivityManager: Start proc 4120:com.example.shop/u0a201 for top-activity {com.example.shop/com.example.shop.MainActivity}
+10-01 00:01:15.845  4120  4120 D OpenGLRenderer: Setting vsync rate to 60
+10-01 00:01:18.670  4120  4120 V ShopViewModel: loadCart user=user-1042
+10-01 00:01:18.700  4120  4161 W OkHttp  : A connection to https://api.example.com/ was leaked. Did you forget to close a response body?
+10-01 00:01:19.101  4120  4161 E ShopRepository: fetch failed: java.net.UnknownHostException: Unable to resolve host "api.example.com"
+10-01 00:01:21.057   612   612 I chatty  : uid=1000(system) Binder:612_3 identical 4 lines
+--------- beginning of crash
+10-01 00:01:21.061  4120  4120 E AndroidRuntime: FATAL EXCEPTION: main
+10-01 00:01:21.061  4120  4120 E AndroidRuntime: Process: com.example.shop, PID: 4120
+10-01 00:01:21.061  4120  4120 E AndroidRuntime: java.lang.IllegalStateException: Cart must not be empty
+10-01 00:01:21.061  4120  4120 E AndroidRuntime: 	at com.example.shop.CartFragment.onCheckout(CartFragment.kt:88)
+10-01 00:01:21.061  4120  4120 E AndroidRuntime: 	at android.view.View.performClick(View.java:7659)
+10-01 00:01:21.064  4120  4199 F libc    : Fatal signal 6 (SIGABRT), code -1 (SI_QUEUE) in tid 4199 (RenderThread), pid 4120 (example.shop)
+10-01 00:01:21.064  4230  4230 A DEBUG   : Abort message: 'Check failed: renderer != nullptr'
+--------- beginning of main
+10-01 00:01:21.986  4120  4120 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+10-01 00:01:23.360  1203  1255 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{8f2a1c u0 com.example.shop/.MainActivity t42}
+10-01 00:01:23.651   980  1001 D WifiStateMachine: connected to SSID "ExampleNet" rssi=-58
+10-01 00:01:23.935  1203  1230 I ActivityManager: Start proc 4120:com.example.shop/u0a201 for top-activity {com.example.shop/com.example.shop.MainActivity}
+10-01 00:01:26.304  4120  4120 D OpenGLRenderer: Setting vsync rate to 60
+10-01 00:01:28.407  4120  4120 V ShopViewModel: loadCart user=user-1042
+10-01 00:01:29.288  4120  4161 W OkHttp  : A connection to https://api.example.com/ was leaked. Did you forget to close a response body?
+10-01 00:01:31.874  4120  4161 E ShopRepository: fetch failed: java.net.UnknownHostException: Unable to resolve host "api.example.com"
+10-01 00:01:34.809   612   612 I chatty  : uid=1000(system) Binder:612_3 identical 4 lines
+10-01 00:01:35.324  4120  4120 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+10-01 00:01:36.266  1203  1255 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{8f2a1c u0 com.example.shop/.MainActivity t42}
+10-01 00:01:38.436   980  1001 D WifiStateMachine: connected to SSID "ExampleNet" rssi=-58
+10-01 00:01:39.309  1203  1230 I ActivityManager: Start proc 4120:com.example.shop/u0a201 for top-activity {com.example.shop/com.example.shop.MainActivity}
+10-01 00:01:42.282  4120  4120 D OpenGLRenderer: Setting vsync rate to 60
+10-01 00:01:42.604  4120  4120 V ShopViewModel: loadCart user=user-1042
+10-01 00:01:44.474  4120  4161 W OkHttp  : A connection to https://api.example.com/ was leaked. Did you forget to close a response body?
+10-01 00:01:47.031  4120  4161 E ShopRepository: fetch failed: java.net.UnknownHostException: Unable to resolve host "api.example.com"
+10-01 00:01:49.109   612   612 I chatty  : uid=1000(system) Binder:612_3 identical 4 lines
+10-01 00:01:49.573  4120  4120 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+10-01 00:01:50.723  1203  1255 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{8f2a1c u0 com.example.shop/.MainActivity t42}
+10-01 00:01:51.632   980  1001 D WifiStateMachine: connected to SSID "ExampleNet" rssi=-58
+10-01 00:01:51.670  1203  1230 I ActivityManager: Start proc 4120:com.example.shop/u0a201 for top-activity {com.example.shop/com.example.shop.MainActivity}
+10-01 00:01:53.645  4120  4120 D OpenGLRenderer: Setting vsync rate to 60
+10-01 00:01:55.615  4120  4120 V ShopViewModel: loadCart user=user-1042
+10-01 00:01:55.900  4120  4161 W OkHttp  : A connection to https://api.example.com/ was leaked. Did you forget to close a response body?
+10-01 00:01:57.185  4120  4161 E ShopRepository: fetch failed: java.net.UnknownHostException: Unable to resolve host "api.example.com"
+10-01 00:01:59.154   612   612 I chatty  : uid=1000(system) Binder:612_3 identical 4 lines
+10-01 00:02:00.861  4120  4120 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+10-01 00:02:03.792  1203  1255 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{8f2a1c u0 com.example.shop/.MainActivity t42}

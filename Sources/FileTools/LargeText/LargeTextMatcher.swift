@@ -52,7 +52,7 @@ public final class LargeTextMatcher: @unchecked Sendable {
 
     /// Calls `body` with each match in `bytes` — whole lines that start at byte `start` of the file — in order, as byte
     /// ranges in the file, until it returns false.
-    func enumerate(in bytes: ArraySlice<UInt8>, at start: Int, _ body: (Range<Int>) -> Bool) {
+    public func enumerate(in bytes: ArraySlice<UInt8>, at start: Int, _ body: (Range<Int>) -> Bool) {
         switch method {
         case .literal(let pattern, let folding, let skip):
             Self.sweep(pattern, skip: skip, folding: folding, in: bytes, at: start, body)

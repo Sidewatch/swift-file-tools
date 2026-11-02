@@ -1,0 +1,646 @@
+{
+  "source": "Documentation-derived: RFC 3164 HEADER (TIMESTAMP 'Mmm dd hh:mm:ss' with a space-padded day, HOSTNAME) and TAG[pid]: CONTENT https://www.rfc-editor.org/rfc/rfc3164#section-4.1.2 , as syslog daemons write files (the <PRI> part is not stored, so lines carry no level); no year, so referenceDate's year",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:26.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:58.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:34.000Z",
+      "zoned": false,
+      "component": "CRON"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:04.000Z",
+      "zoned": false,
+      "component": "kernel"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:20.000Z",
+      "zoned": false,
+      "component": "postfix/smtpd"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:36.000Z",
+      "zoned": false,
+      "component": "systemd"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:44.000Z",
+      "zoned": false,
+      "component": "sudo"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:03:00.000Z",
+      "zoned": false,
+      "component": "nginx"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:03:35.000Z",
+      "zoned": false,
+      "component": "dhclient"
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:03:43.000Z",
+      "zoned": false,
+      "component": "su"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:03:50.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:04:19.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:04:55.000Z",
+      "zoned": false,
+      "component": "CRON"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:05:16.000Z",
+      "zoned": false,
+      "component": "kernel"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:05:18.000Z",
+      "zoned": false,
+      "component": "postfix/smtpd"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:05:30.000Z",
+      "zoned": false,
+      "component": "systemd"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:05:49.000Z",
+      "zoned": false,
+      "component": "sudo"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:06:25.000Z",
+      "zoned": false,
+      "component": "nginx"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:06:46.000Z",
+      "zoned": false,
+      "component": "dhclient"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:07:17.000Z",
+      "zoned": false,
+      "component": "su"
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:07:32.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:08:02.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:08:03.000Z",
+      "zoned": false,
+      "component": "CRON"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:08:04.000Z",
+      "zoned": false,
+      "component": "kernel"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:08:09.000Z",
+      "zoned": false,
+      "component": "postfix/smtpd"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:08:38.000Z",
+      "zoned": false,
+      "component": "systemd"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:08:57.000Z",
+      "zoned": false,
+      "component": "sudo"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:09:10.000Z",
+      "zoned": false,
+      "component": "nginx"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:09:32.000Z",
+      "zoned": false,
+      "component": "dhclient"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:09:43.000Z",
+      "zoned": false,
+      "component": "su"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:10:20.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:10:59.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:11:39.000Z",
+      "zoned": false,
+      "component": "CRON"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:11:41.000Z",
+      "zoned": false,
+      "component": "kernel"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:12:02.000Z",
+      "zoned": false,
+      "component": "postfix/smtpd"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:12:04.000Z",
+      "zoned": false,
+      "component": "systemd"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:12:09.000Z",
+      "zoned": false,
+      "component": "sudo"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:12:32.000Z",
+      "zoned": false,
+      "component": "nginx"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:12:43.000Z",
+      "zoned": false,
+      "component": "dhclient"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:13:09.000Z",
+      "zoned": false,
+      "component": "su"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:13:15.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:13:17.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:13:47.000Z",
+      "zoned": false,
+      "component": "CRON"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:14:06.000Z",
+      "zoned": false,
+      "component": "kernel"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:14:31.000Z",
+      "zoned": false,
+      "component": "postfix/smtpd"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:14:38.000Z",
+      "zoned": false,
+      "component": "systemd"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:14:38.000Z",
+      "zoned": false,
+      "component": "sudo"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:14:46.000Z",
+      "zoned": false,
+      "component": "nginx"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:15:04.000Z",
+      "zoned": false,
+      "component": "dhclient"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:15:33.000Z",
+      "zoned": false,
+      "component": "su"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:15:38.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:16:16.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:16:36.000Z",
+      "zoned": false,
+      "component": "CRON"
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:17:13.000Z",
+      "zoned": false,
+      "component": "kernel"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:17:27.000Z",
+      "zoned": false,
+      "component": "postfix/smtpd"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:17:45.000Z",
+      "zoned": false,
+      "component": "systemd"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:18:20.000Z",
+      "zoned": false,
+      "component": "sudo"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:18:48.000Z",
+      "zoned": false,
+      "component": "nginx"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:19:08.000Z",
+      "zoned": false,
+      "component": "dhclient"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:19:18.000Z",
+      "zoned": false,
+      "component": "su"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:19:56.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:20:06.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:20:32.000Z",
+      "zoned": false,
+      "component": "CRON"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:20:57.000Z",
+      "zoned": false,
+      "component": "kernel"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:21:13.000Z",
+      "zoned": false,
+      "component": "postfix/smtpd"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:21:17.000Z",
+      "zoned": false,
+      "component": "systemd"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:21:48.000Z",
+      "zoned": false,
+      "component": "sudo"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:21:55.000Z",
+      "zoned": false,
+      "component": "nginx"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:22:03.000Z",
+      "zoned": false,
+      "component": "dhclient"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:22:42.000Z",
+      "zoned": false,
+      "component": "su"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:22:56.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:22:59.000Z",
+      "zoned": false,
+      "component": "sshd"
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:23:19.000Z",
+      "zoned": false,
+      "component": "CRON"
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:23:37.000Z",
+      "zoned": false,
+      "component": "kernel"
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:23:55.000Z",
+      "zoned": false,
+      "component": "postfix/smtpd"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:24:13.000Z",
+      "zoned": false,
+      "component": "systemd"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:24:16.000Z",
+      "zoned": false,
+      "component": "sudo"
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:24:55.000Z",
+      "zoned": false,
+      "component": "nginx"
+    },
+    {
+      "line": 79,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:25:22.000Z",
+      "zoned": false,
+      "component": "dhclient"
+    },
+    {
+      "line": 80,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:25:58.000Z",
+      "zoned": false,
+      "component": "su"
+    }
+  ]
+}

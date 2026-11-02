@@ -1,0 +1,566 @@
+{
+  "source": "Ruby 2.6.10 stdlib Logger (logger.rb 1.3.0) default Formatter, simulated clock, TZ=UTC; script rblog.rb; Logger.new(io, progname: \"mailer\"), some calls pass their own progname",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:38.390Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:38.580Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:38.692Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:40.742Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 5,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:01:41.769Z",
+      "zoned": false,
+      "component": "importer"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:44.007Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 14,
+      "lines": 3,
+      "level": "debug",
+      "time": "2026-10-01T00:01:44.334Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:45.965Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:48.329Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:50.646Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:52.052Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:53.122Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:53.496Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:54.459Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:56.490Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 25,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:01:57.917Z",
+      "zoned": false,
+      "component": "importer"
+    },
+    {
+      "line": 33,
+      "lines": 3,
+      "level": "debug",
+      "time": "2026-10-01T00:01:59.427Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:00.580Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:01.537Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:03.881Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:04.899Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:04.934Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:06.106Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:07.611Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:09.372Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:09.381Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 45,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:02:11.125Z",
+      "zoned": false,
+      "component": "importer"
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:12.894Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:15.155Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:15.398Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:16.169Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:16.528Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:16.695Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:17.436Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:18.595Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:18.917Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 62,
+      "lines": 3,
+      "level": "debug",
+      "time": "2026-10-01T00:02:20.450Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 65,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:02:20.616Z",
+      "zoned": false,
+      "component": "importer"
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:20.708Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:21.838Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:23.800Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:25.845Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:27.392Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:28.491Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 79,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:30.687Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 80,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:31.050Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 81,
+      "lines": 3,
+      "level": "debug",
+      "time": "2026-10-01T00:02:31.239Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 84,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:32.039Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 85,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:02:34.309Z",
+      "zoned": false,
+      "component": "importer"
+    },
+    {
+      "line": 93,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:36.225Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 94,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:37.174Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 95,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:37.726Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 96,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:39.198Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 97,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:40.612Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 98,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:43.097Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 99,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:43.969Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 100,
+      "lines": 3,
+      "level": "debug",
+      "time": "2026-10-01T00:02:44.532Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 103,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:46.040Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 104,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:47.778Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 105,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:02:49.137Z",
+      "zoned": false,
+      "component": "importer"
+    },
+    {
+      "line": 113,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:50.567Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 114,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:51.882Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 115,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:54.290Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 116,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:56.601Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 117,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:56.982Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 118,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:57.722Z",
+      "zoned": false,
+      "component": "scheduler"
+    },
+    {
+      "line": 119,
+      "lines": 3,
+      "level": "debug",
+      "time": "2026-10-01T00:02:59.780Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 122,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:01.451Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 123,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:01.597Z",
+      "zoned": false,
+      "component": "mailer"
+    },
+    {
+      "line": 124,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:03:03.228Z",
+      "zoned": false,
+      "component": "scheduler"
+    }
+  ]
+}

@@ -1,0 +1,486 @@
+{
+  "source": "Documentation-derived: Spring Boot default log format (ISO-8601 time, %5p level, PID, '---', [application name], [thread], logger, ':' message) https://docs.spring.io/spring-boot/reference/features/logging.html#features.logging.log-format",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:03.740Z",
+      "zoned": true,
+      "component": "c.e.shop.ShopApplication"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:05.503Z",
+      "zoned": true,
+      "component": "o.s.b.w.embedded.tomcat.TomcatWebServer"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:06.145Z",
+      "zoned": true,
+      "component": "c.e.shop.config.SecurityConfig"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:11.085Z",
+      "zoned": true,
+      "component": "o.h.engine.jdbc.spi.SqlExceptionHelper"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:12.086Z",
+      "zoned": true,
+      "component": "c.e.shop.web.CartController"
+    },
+    {
+      "line": 6,
+      "lines": 5,
+      "level": "error",
+      "time": "2026-10-01T00:00:15.220Z",
+      "zoned": true,
+      "component": "o.a.c.c.C.[.[.[/].[dispatcherServlet]"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:19.000Z",
+      "zoned": true,
+      "component": "c.e.shop.jobs.StockSync"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:21.772Z",
+      "zoned": true,
+      "component": "c.e.shop.ShopApplication"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:22.747Z",
+      "zoned": true,
+      "component": "o.s.b.w.embedded.tomcat.TomcatWebServer"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:26.756Z",
+      "zoned": true,
+      "component": "c.e.shop.config.SecurityConfig"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:27.432Z",
+      "zoned": true,
+      "component": "o.h.engine.jdbc.spi.SqlExceptionHelper"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:28.517Z",
+      "zoned": true,
+      "component": "c.e.shop.web.CartController"
+    },
+    {
+      "line": 17,
+      "lines": 5,
+      "level": "error",
+      "time": "2026-10-01T00:00:30.342Z",
+      "zoned": true,
+      "component": "o.a.c.c.C.[.[.[/].[dispatcherServlet]"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:35.122Z",
+      "zoned": true,
+      "component": "c.e.shop.jobs.StockSync"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:35.327Z",
+      "zoned": true,
+      "component": "c.e.shop.ShopApplication"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:35.690Z",
+      "zoned": true,
+      "component": "o.s.b.w.embedded.tomcat.TomcatWebServer"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:37.537Z",
+      "zoned": true,
+      "component": "c.e.shop.config.SecurityConfig"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:38.418Z",
+      "zoned": true,
+      "component": "o.h.engine.jdbc.spi.SqlExceptionHelper"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:39.466Z",
+      "zoned": true,
+      "component": "c.e.shop.web.CartController"
+    },
+    {
+      "line": 28,
+      "lines": 5,
+      "level": "error",
+      "time": "2026-10-01T00:00:44.443Z",
+      "zoned": true,
+      "component": "o.a.c.c.C.[.[.[/].[dispatcherServlet]"
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:48.733Z",
+      "zoned": true,
+      "component": "c.e.shop.jobs.StockSync"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:51.141Z",
+      "zoned": true,
+      "component": "c.e.shop.ShopApplication"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:52.646Z",
+      "zoned": true,
+      "component": "o.s.b.w.embedded.tomcat.TomcatWebServer"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:56.003Z",
+      "zoned": true,
+      "component": "c.e.shop.config.SecurityConfig"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:00.763Z",
+      "zoned": true,
+      "component": "o.h.engine.jdbc.spi.SqlExceptionHelper"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:04.165Z",
+      "zoned": true,
+      "component": "c.e.shop.web.CartController"
+    },
+    {
+      "line": 39,
+      "lines": 5,
+      "level": "error",
+      "time": "2026-10-01T00:01:06.024Z",
+      "zoned": true,
+      "component": "o.a.c.c.C.[.[.[/].[dispatcherServlet]"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:10.716Z",
+      "zoned": true,
+      "component": "c.e.shop.jobs.StockSync"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:12.757Z",
+      "zoned": true,
+      "component": "c.e.shop.ShopApplication"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:13.465Z",
+      "zoned": true,
+      "component": "o.s.b.w.embedded.tomcat.TomcatWebServer"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:16.491Z",
+      "zoned": true,
+      "component": "c.e.shop.config.SecurityConfig"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:18.153Z",
+      "zoned": true,
+      "component": "o.h.engine.jdbc.spi.SqlExceptionHelper"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:22.910Z",
+      "zoned": true,
+      "component": "c.e.shop.web.CartController"
+    },
+    {
+      "line": 50,
+      "lines": 5,
+      "level": "error",
+      "time": "2026-10-01T00:01:24.703Z",
+      "zoned": true,
+      "component": "o.a.c.c.C.[.[.[/].[dispatcherServlet]"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:28.883Z",
+      "zoned": true,
+      "component": "c.e.shop.jobs.StockSync"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:32.774Z",
+      "zoned": true,
+      "component": "c.e.shop.ShopApplication"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:34.832Z",
+      "zoned": true,
+      "component": "o.s.b.w.embedded.tomcat.TomcatWebServer"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:37.139Z",
+      "zoned": true,
+      "component": "c.e.shop.config.SecurityConfig"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:38.909Z",
+      "zoned": true,
+      "component": "o.h.engine.jdbc.spi.SqlExceptionHelper"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:43.239Z",
+      "zoned": true,
+      "component": "c.e.shop.web.CartController"
+    },
+    {
+      "line": 61,
+      "lines": 5,
+      "level": "error",
+      "time": "2026-10-01T00:01:47.007Z",
+      "zoned": true,
+      "component": "o.a.c.c.C.[.[.[/].[dispatcherServlet]"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:51.340Z",
+      "zoned": true,
+      "component": "c.e.shop.jobs.StockSync"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:52.924Z",
+      "zoned": true,
+      "component": "c.e.shop.ShopApplication"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:57.215Z",
+      "zoned": true,
+      "component": "o.s.b.w.embedded.tomcat.TomcatWebServer"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:59.646Z",
+      "zoned": true,
+      "component": "c.e.shop.config.SecurityConfig"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:59.988Z",
+      "zoned": true,
+      "component": "o.h.engine.jdbc.spi.SqlExceptionHelper"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:03.936Z",
+      "zoned": true,
+      "component": "c.e.shop.web.CartController"
+    },
+    {
+      "line": 72,
+      "lines": 5,
+      "level": "error",
+      "time": "2026-10-01T00:02:05.131Z",
+      "zoned": true,
+      "component": "o.a.c.c.C.[.[.[/].[dispatcherServlet]"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:02:06.208Z",
+      "zoned": true,
+      "component": "c.e.shop.jobs.StockSync"
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:09.652Z",
+      "zoned": true,
+      "component": "c.e.shop.ShopApplication"
+    },
+    {
+      "line": 79,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:13.855Z",
+      "zoned": true,
+      "component": "o.s.b.w.embedded.tomcat.TomcatWebServer"
+    },
+    {
+      "line": 80,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:15.928Z",
+      "zoned": true,
+      "component": "c.e.shop.config.SecurityConfig"
+    },
+    {
+      "line": 81,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:16.750Z",
+      "zoned": true,
+      "component": "o.h.engine.jdbc.spi.SqlExceptionHelper"
+    },
+    {
+      "line": 82,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:20.695Z",
+      "zoned": true,
+      "component": "c.e.shop.web.CartController"
+    },
+    {
+      "line": 83,
+      "lines": 5,
+      "level": "error",
+      "time": "2026-10-01T00:02:23.549Z",
+      "zoned": true,
+      "component": "o.a.c.c.C.[.[.[/].[dispatcherServlet]"
+    },
+    {
+      "line": 88,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:02:24.344Z",
+      "zoned": true,
+      "component": "c.e.shop.jobs.StockSync"
+    },
+    {
+      "line": 89,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:25.084Z",
+      "zoned": true,
+      "component": "c.e.shop.ShopApplication"
+    },
+    {
+      "line": 90,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:27.591Z",
+      "zoned": true,
+      "component": "o.s.b.w.embedded.tomcat.TomcatWebServer"
+    },
+    {
+      "line": 91,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:31.568Z",
+      "zoned": true,
+      "component": "c.e.shop.config.SecurityConfig"
+    },
+    {
+      "line": 92,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:32.588Z",
+      "zoned": true,
+      "component": "o.h.engine.jdbc.spi.SqlExceptionHelper"
+    }
+  ]
+}

@@ -1,0 +1,726 @@
+{
+  "source": "pino 9.14.0 on Node v26.13.0, default JSON; base set to {pid, hostname: \"web-01\"} (and module: \"worker\" for the second logger) so the real hostname is not written; script nodelog.js",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:00.201Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:00.906Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:01.227Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:02.028Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:03.213Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:05.486Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:06.415Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:00:08.144Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:08.305Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:10.450Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:10.451Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:11.892Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:13.173Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:14.582Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:15.383Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:17.624Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:17.881Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:00:20.242Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:21.139Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:23.508Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:25.557Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:25.590Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:25.719Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:26.232Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:27.673Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:30.010Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:30.811Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:00:31.324Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:33.277Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:35.422Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:36.479Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:38.048Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:39.041Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:41.146Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:42.075Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:42.780Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:44.797Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:00:44.926Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:46.559Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:48.184Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:48.313Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:49.018Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:49.403Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:50.588Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:51.069Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:51.294Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:51.295Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:00:51.680Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:52.929Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:54.242Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:54.819Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:56.708Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:00:56.837Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:58.630Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:59.239Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:59.240Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:59.809Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:00.642Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:02.499Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:03.204Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:03.909Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:05.574Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:06.375Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:07.624Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:09.161Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:09.898Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:10.923Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:12.460Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:13.829Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:15.686Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:17.063Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:18.920Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:20.521Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:21.258Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:21.547Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:22.092Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:22.125Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:22.990Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 79,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:24.943Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 80,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:27.088Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 81,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:28.881Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 82,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:30.706Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 83,
+      "lines": 1,
+      "level": "trace",
+      "time": "2026-10-01T00:01:31.315Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 84,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:31.508Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 85,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:32.885Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 86,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:34.710Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 87,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:35.639Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 88,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:37.208Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 89,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:37.657Z",
+      "zoned": true,
+      "component": "worker"
+    },
+    {
+      "line": 90,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:39.450Z",
+      "zoned": true,
+      "component": "api"
+    }
+  ]
+}

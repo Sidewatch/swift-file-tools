@@ -1,0 +1,510 @@
+{
+  "source": "macOS 27.2 /usr/bin/log show --timezone UTC --info --debug --predicate 'subsystem == \"com.example.logfixture\" AND processID == <pid>' (default style), same messages; expected from log show --style ndjson of the same query",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:47.340Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:47.365Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:47.439Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:47.487Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:47.542Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:47.607Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:47.680Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:47.760Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 10,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-11-02T08:56:47.848Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:47.945Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:48.049Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:48.191Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:48.229Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:48.275Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:48.329Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:48.391Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:48.460Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 21,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-11-02T08:56:48.533Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:48.616Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:48.709Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:48.920Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:48.947Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:48.982Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:49.025Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:49.076Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:49.135Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 32,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-11-02T08:56:49.202Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:49.276Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:49.359Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:49.548Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:49.653Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:49.768Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:49.800Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:49.840Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:49.888Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 43,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-11-02T08:56:49.944Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:50.008Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:50.080Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:50.240Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:50.335Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:50.439Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:50.548Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:50.585Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:50.618Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 54,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-11-02T08:56:50.663Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:50.716Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:50.777Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:50.923Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:51.008Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:51.100Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:51.201Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:51.309Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:51.336Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 65,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-11-02T08:56:51.370Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:51.412Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:51.462Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:51.587Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:51.658Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:51.739Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-11-02T08:56:51.829Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-11-02T08:56:51.927Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-11-02T08:56:52.032Z",
+      "zoned": true,
+      "component": "logfixture"
+    },
+    {
+      "line": 76,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-11-02T08:56:52.146Z",
+      "zoned": true,
+      "component": "logfixture"
+    }
+  ]
+}

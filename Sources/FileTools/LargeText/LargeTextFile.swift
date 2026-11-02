@@ -329,8 +329,9 @@ public final class LargeTextFile: @unchecked Sendable {
         return lower + index
     }
 
-    /// Reads the bytes in `range` (fewer at the file's end, none past it).
-    func bytes(in range: Range<Int>) -> [UInt8] { Self.read(descriptor, range) }
+    /// Reads the bytes in `range` (fewer at the file's end, none past it): for a reader that does its own
+    /// decoding, such as a search or a log index.
+    public func bytes(in range: Range<Int>) -> [UInt8] { Self.read(descriptor, range) }
 
     /// The start of the line holding byte `offset`: just past the last line break before it, looked for at most
     /// `limit` bytes back without the scan's help (it may not have got there); 0 at the file's start, and `offset`

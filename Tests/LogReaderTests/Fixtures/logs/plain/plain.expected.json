@@ -1,0 +1,646 @@
+{
+  "source": "Python 3.14.10 logging, format '%(asctime)s.%(msecs)03dZ %(levelname)-5s [%(name)s] req=%(req)s %(message)s', gmtime converter, WARNING renamed WARN and CRITICAL renamed FATAL with addLevelName; script pylog.py",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:29.661Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:31.269Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:32.900Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:34.535Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:36.150Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:36.575Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:38.548Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:03:40.189Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:40.444Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 10,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:03:41.225Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:41.501Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 14,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:03:42.357Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:44.162Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:44.827Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:45.278Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:46.671Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:49.132Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:03:49.348Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:49.768Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 29,
+      "lines": 16,
+      "level": "error",
+      "time": "2026-10-01T00:03:49.769Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:52.091Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:52.711Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:54.909Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:55.325Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:56.815Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:56.920Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:57.209Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:03:58.061Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 53,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:03:59.603Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 61,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:04:00.212Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:01.246Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:04:02.669Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:05.136Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:06.628Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:08.571Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:09.075Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:04:09.548Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:04:11.548Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:13.457Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 73,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:04:15.425Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:17.407Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:04:18.685Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 78,
+      "lines": 16,
+      "level": "error",
+      "time": "2026-10-01T00:04:19.037Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 94,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:19.628Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 95,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:20.047Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 96,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:04:21.451Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 104,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:04:22.536Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 105,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:04:24.497Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 106,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:25.159Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 107,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:04:27.274Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 110,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:27.369Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 111,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:04:28.210Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 112,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:30.374Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 113,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:31.856Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 114,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:32.457Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 115,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:34.682Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 116,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:04:34.793Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 117,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:04:36.957Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 118,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:38.178Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 119,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:04:38.551Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 122,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:39.621Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 123,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:04:41.745Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 124,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:04:43.248Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 132,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:43.933Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 133,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:45.390Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 134,
+      "lines": 16,
+      "level": "error",
+      "time": "2026-10-01T00:04:46.303Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 150,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:04:48.485Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 151,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:04:50.704Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 152,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:52.764Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 153,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:04:54.115Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 156,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:55.029Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 157,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:04:55.829Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 158,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:56.810Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 159,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:58.452Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 160,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:59.381Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 161,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:00.200Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 162,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:05:02.321Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 163,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:05:04.340Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 164,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:05.797Z",
+      "zoned": true,
+      "component": "scheduler"
+    },
+    {
+      "line": 165,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:05:05.916Z",
+      "zoned": true,
+      "component": "http"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+2026-10-01T00:05:06.031Z INFO  [auth] service started on port 8080
+{"ts": "2026-10-01T00:05:07.176Z", "level": "debug", "service": "search", "msg": "loaded 31 settings from config/app.ini"}
+{"ts": "2026-10-01T00:05:09.111Z", "level": "info", "service": "gateway", "msg": "GET /api/orders/1042 200 18ms"}
+2026-10-01T00:05:10.173Z WARN  [http] slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:05:10.967Z ERROR [db] payment provider returned 502 for order 7731
+2026-10-01T00:05:13.446Z INFO  [auth] user-1042 signed in from 203.0.113.17
+{"ts": "2026-10-01T00:05:14.857Z", "level": "debug", "service": "search", "msg": "cache hit ratio 0.87"}
+{"ts": "2026-10-01T00:05:16.689Z", "level": "fatal", "service": "gateway", "msg": "disk almost full: 97% used on /var/lib/app"}
+2026-10-01T00:05:18.121Z WARN  [http] retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:05:19.615Z INFO  [db] multi-line note:
+  first detail
+  second detail
+2026-10-01T00:05:19.945Z INFO  [auth] service started on port 8080
+{"ts": "2026-10-01T00:05:20.849Z", "level": "error", "service": "search", "msg": "could not parse quantity for line item 11", "err": "Traceback (most recent call last):\n  File \"/srv/app/pylog.py\", line 91, in run\n    try: fail_parse()\n         ~~~~~~~~~~^^\n  File \"/srv/app/pylog.py\", line 77, in fail_parse\n    return int(\"forty-two\")\nValueError: invalid literal for int() with base 10: 'forty-two'"}
+{"ts": "2026-10-01T00:05:21.268Z", "level": "info", "service": "gateway", "msg": "GET /api/orders/1042 200 18ms"}
+2026-10-01T00:05:22.198Z WARN  [http] slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:05:24.124Z ERROR [db] payment provider returned 502 for order 7731
+2026-10-01T00:05:24.930Z INFO  [auth] user-1042 signed in from 203.0.113.17
+{"ts": "2026-10-01T00:05:26.314Z", "level": "debug", "service": "search", "msg": "cache hit ratio 0.87"}
+{"ts": "2026-10-01T00:05:27.152Z", "level": "fatal", "service": "gateway", "msg": "disk almost full: 97% used on /var/lib/app"}
+2026-10-01T00:05:29.129Z WARN  [http] retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:05:31.629Z ERROR [db] job failed
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 81, in fail_chain
+    {}["missing"]
+    ~~^^^^^^^^^^^
+KeyError: 'missing'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 94, in run
+    try: fail_chain()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 83, in fail_chain
+    raise RuntimeError("could not load order 7731") from e
+RuntimeError: could not load order 7731
+2026-10-01T00:05:31.637Z INFO  [auth] service started on port 8080
+{"ts": "2026-10-01T00:05:33.601Z", "level": "debug", "service": "search", "msg": "loaded 31 settings from config/app.ini"}
+{"ts": "2026-10-01T00:05:35.011Z", "level": "info", "service": "gateway", "msg": "GET /api/orders/1042 200 18ms"}
+2026-10-01T00:05:35.359Z WARN  [http] slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:05:35.851Z ERROR [db] payment provider returned 502 for order 7731
+2026-10-01T00:05:37.443Z INFO  [auth] user-1042 signed in from 203.0.113.17
+{"ts": "2026-10-01T00:05:38.260Z", "level": "debug", "service": "search", "msg": "cache hit ratio 0.87"}
+{"ts": "2026-10-01T00:05:40.219Z", "level": "fatal", "service": "gateway", "msg": "disk almost full: 97% used on /var/lib/app"}
+2026-10-01T00:05:40.951Z ERROR [http] could not parse quantity for line item 28
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01T00:05:42.729Z INFO  [db] multi-line note:
+  first detail
+  second detail
+2026-10-01T00:05:44.091Z INFO  [auth] service started on port 8080
+{"ts": "2026-10-01T00:05:44.447Z", "level": "debug", "service": "search", "msg": "loaded 31 settings from config/app.ini"}
+{"ts": "2026-10-01T00:05:46.069Z", "level": "info", "service": "gateway", "msg": "GET /api/orders/1042 200 18ms"}
+2026-10-01T00:05:47.967Z WARN  [http] slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:05:49.612Z ERROR [db] payment provider returned 502 for order 7731
+2026-10-01T00:05:49.960Z INFO  [auth] user-1042 signed in from 203.0.113.17
+{"ts": "2026-10-01T00:05:50.611Z", "level": "debug", "service": "search", "msg": "cache hit ratio 0.87"}
+{"ts": "2026-10-01T00:05:51.308Z", "level": "fatal", "service": "gateway", "msg": "disk almost full: 97% used on /var/lib/app"}
+2026-10-01T00:05:51.829Z WARN  [http] retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:05:51.942Z INFO  [db] multi-line note:
+  first detail
+  second detail
+2026-10-01T00:05:52.562Z INFO  [auth] service started on port 8080
+{"ts": "2026-10-01T00:05:54.982Z", "level": "debug", "service": "search", "msg": "loaded 31 settings from config/app.ini"}
+{"ts": "2026-10-01T00:05:56.889Z", "level": "error", "service": "gateway", "msg": "job failed", "err": "Traceback (most recent call last):\n  File \"/srv/app/pylog.py\", line 81, in fail_chain\n    {}[\"missing\"]\n    ~~^^^^^^^^^^^\nKeyError: 'missing'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/srv/app/pylog.py\", line 94, in run\n    try: fail_chain()\n         ~~~~~~~~~~^^\n  File \"/srv/app/pylog.py\", line 83, in fail_chain\n    raise RuntimeError(\"could not load order 7731\") from e\nRuntimeError: could not load order 7731"}
+2026-10-01T00:05:57.488Z WARN  [http] slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:05:59.929Z ERROR [db] payment provider returned 502 for order 7731
+2026-10-01T00:06:01.872Z ERROR [auth] could not parse quantity for line item 45
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+{"ts": "2026-10-01T00:06:03.308Z", "level": "debug", "service": "search", "msg": "cache hit ratio 0.87"}
+{"ts": "2026-10-01T00:06:03.947Z", "level": "fatal", "service": "gateway", "msg": "disk almost full: 97% used on /var/lib/app"}
+2026-10-01T00:06:06.195Z WARN  [http] retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:06:08.441Z INFO  [db] multi-line note:
+  first detail
+  second detail
+2026-10-01T00:06:08.978Z INFO  [auth] service started on port 8080
+{"ts": "2026-10-01T00:06:09.066Z", "level": "debug", "service": "search", "msg": "loaded 31 settings from config/app.ini"}
+{"ts": "2026-10-01T00:06:09.125Z", "level": "info", "service": "gateway", "msg": "GET /api/orders/1042 200 18ms"}
+2026-10-01T00:06:09.546Z WARN  [http] slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:06:11.703Z ERROR [db] payment provider returned 502 for order 7731
+2026-10-01T00:06:12.274Z INFO  [auth] user-1042 signed in from 203.0.113.17
+{"ts": "2026-10-01T00:06:14.051Z", "level": "debug", "service": "search", "msg": "cache hit ratio 0.87"}
+{"ts": "2026-10-01T00:06:14.849Z", "level": "fatal", "service": "gateway", "msg": "disk almost full: 97% used on /var/lib/app"}
+2026-10-01T00:06:15.714Z WARN  [http] retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:06:15.829Z INFO  [db] multi-line note:
+  first detail
+  second detail
+2026-10-01T00:06:16.861Z INFO  [auth] service started on port 8080
+{"ts": "2026-10-01T00:06:17.733Z", "level": "debug", "service": "search", "msg": "loaded 31 settings from config/app.ini"}
+{"ts": "2026-10-01T00:06:18.933Z", "level": "error", "service": "gateway", "msg": "could not parse quantity for line item 62", "err": "Traceback (most recent call last):\n  File \"/srv/app/pylog.py\", line 91, in run\n    try: fail_parse()\n         ~~~~~~~~~~^^\n  File \"/srv/app/pylog.py\", line 77, in fail_parse\n    return int(\"forty-two\")\nValueError: invalid literal for int() with base 10: 'forty-two'"}
+2026-10-01T00:06:20.986Z WARN  [http] slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:06:21.972Z ERROR [db] payment provider returned 502 for order 7731
+2026-10-01T00:06:24.375Z ERROR [auth] job failed
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 81, in fail_chain
+    {}["missing"]
+    ~~^^^^^^^^^^^
+KeyError: 'missing'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 94, in run
+    try: fail_chain()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 83, in fail_chain
+    raise RuntimeError("could not load order 7731") from e
+RuntimeError: could not load order 7731
+{"ts": "2026-10-01T00:06:25.711Z", "level": "debug", "service": "search", "msg": "cache hit ratio 0.87"}
+{"ts": "2026-10-01T00:06:26.774Z", "level": "fatal", "service": "gateway", "msg": "disk almost full: 97% used on /var/lib/app"}
+2026-10-01T00:06:29.004Z WARN  [http] retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:06:30.721Z INFO  [db] multi-line note:
+  first detail
+  second detail
+2026-10-01T00:06:31.258Z INFO  [auth] service started on port 8080
+{"ts": "2026-10-01T00:06:31.508Z", "level": "debug", "service": "search", "msg": "loaded 31 settings from config/app.ini"}
+{"ts": "2026-10-01T00:06:32.958Z", "level": "info", "service": "gateway", "msg": "GET /api/orders/1042 200 18ms"}
+2026-10-01T00:06:34.835Z WARN  [http] slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:06:37.225Z ERROR [db] payment provider returned 502 for order 7731
+2026-10-01T00:06:39.342Z INFO  [auth] user-1042 signed in from 203.0.113.17
+{"ts": "2026-10-01T00:06:41.065Z", "level": "debug", "service": "search", "msg": "cache hit ratio 0.87"}
+{"ts": "2026-10-01T00:06:43.120Z", "level": "fatal", "service": "gateway", "msg": "disk almost full: 97% used on /var/lib/app"}
+2026-10-01T00:06:43.656Z WARN  [http] retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:06:45.835Z ERROR [db] could not parse quantity for line item 79
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01T00:06:46.457Z INFO  [auth] service started on port 8080
+{"ts": "2026-10-01T00:06:48.602Z", "level": "debug", "service": "search", "msg": "loaded 31 settings from config/app.ini"}
+{"ts": "2026-10-01T00:06:50.694Z", "level": "info", "service": "gateway", "msg": "GET /api/orders/1042 200 18ms"}
+2026-10-01T00:06:50.771Z WARN  [http] slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:06:52.574Z ERROR [db] payment provider returned 502 for order 7731
+2026-10-01T00:06:53.325Z INFO  [auth] user-1042 signed in from 203.0.113.17
+{"ts": "2026-10-01T00:06:55.818Z", "level": "debug", "service": "search", "msg": "cache hit ratio 0.87"}
+{"ts": "2026-10-01T00:06:55.835Z", "level": "fatal", "service": "gateway", "msg": "disk almost full: 97% used on /var/lib/app"}
+2026-10-01T00:06:56.449Z ERROR [http] job failed
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 81, in fail_chain
+    {}["missing"]
+    ~~^^^^^^^^^^^
+KeyError: 'missing'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 94, in run
+    try: fail_chain()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 83, in fail_chain
+    raise RuntimeError("could not load order 7731") from e
+RuntimeError: could not load order 7731
+2026-10-01T00:06:57.155Z INFO  [db] multi-line note:
+  first detail
+  second detail

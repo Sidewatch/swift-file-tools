@@ -1,0 +1,60 @@
+{"log":"Listening on http://0.0.0.0:3000\n","stream":"stdout","time":"2026-10-01T00:00:00.790701000Z"}
+{"log":"GET /api/orders/1042 200 14ms\n","stream":"stdout","time":"2026-10-01T00:00:03.115260037Z"}
+{"log":"Error: connect ECONNREFUSED 198.51.100.20:5432\n","stream":"stderr","time":"2026-10-01T00:00:03.265371074Z"}
+{"log":"    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)\n","stream":"stderr","time":"2026-10-01T00:00:05.178117111Z"}
+{"log":"worker 3 ready\n","stream":"stdout","time":"2026-10-01T00:00:06.727627148Z"}
+{"log":"progress: 40%","stream":"stdout","time":"2026-10-01T00:00:06.752514185Z"}
+{"log":"\r\n","stream":"stdout","time":"2026-10-01T00:00:06.937363222Z"}
+{"log":"warning: \"quoted\" value and a tab\tin it\n","stream":"stderr","time":"2026-10-01T00:00:08.404834259Z"}
+{"log":"{\"inner\":\"json text stays a string\"}\n","stream":"stdout","time":"2026-10-01T00:00:10.840514296Z"}
+{"log":"Listening on http://0.0.0.0:3000\n","stream":"stdout","time":"2026-10-01T00:00:12.983871333Z"}
+{"log":"GET /api/orders/1042 200 14ms\n","stream":"stdout","time":"2026-10-01T00:00:13.847117370Z"}
+{"log":"Error: connect ECONNREFUSED 198.51.100.20:5432\n","stream":"stderr","time":"2026-10-01T00:00:15.791448407Z"}
+{"log":"    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)\n","stream":"stderr","time":"2026-10-01T00:00:18.070725444Z"}
+{"log":"worker 3 ready\n","stream":"stdout","time":"2026-10-01T00:00:19.672427481Z"}
+{"log":"progress: 40%","stream":"stdout","time":"2026-10-01T00:00:20.589260518Z"}
+{"log":"\r\n","stream":"stdout","time":"2026-10-01T00:00:21.572045555Z"}
+{"log":"warning: \"quoted\" value and a tab\tin it\n","stream":"stderr","time":"2026-10-01T00:00:23.394715592Z"}
+{"log":"{\"inner\":\"json text stays a string\"}\n","stream":"stdout","time":"2026-10-01T00:00:23.585456629Z"}
+{"log":"Listening on http://0.0.0.0:3000\n","stream":"stdout","time":"2026-10-01T00:00:25.179709666Z"}
+{"log":"GET /api/orders/1042 200 14ms\n","stream":"stdout","time":"2026-10-01T00:00:27.568711703Z"}
+{"log":"Error: connect ECONNREFUSED 198.51.100.20:5432\n","stream":"stderr","time":"2026-10-01T00:00:27.727400740Z"}
+{"log":"    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)\n","stream":"stderr","time":"2026-10-01T00:00:27.991800777Z"}
+{"log":"worker 3 ready\n","stream":"stdout","time":"2026-10-01T00:00:29.485318814Z"}
+{"log":"progress: 40%","stream":"stdout","time":"2026-10-01T00:00:30.267131851Z"}
+{"log":"\r\n","stream":"stdout","time":"2026-10-01T00:00:32.762393888Z"}
+{"log":"warning: \"quoted\" value and a tab\tin it\n","stream":"stderr","time":"2026-10-01T00:00:34.762936925Z"}
+{"log":"{\"inner\":\"json text stays a string\"}\n","stream":"stdout","time":"2026-10-01T00:00:35.028031962Z"}
+{"log":"Listening on http://0.0.0.0:3000\n","stream":"stdout","time":"2026-10-01T00:00:36.049135999Z"}
+{"log":"GET /api/orders/1042 200 14ms\n","stream":"stdout","time":"2026-10-01T00:00:37.152801036Z"}
+{"log":"Error: connect ECONNREFUSED 198.51.100.20:5432\n","stream":"stderr","time":"2026-10-01T00:00:39.645133073Z"}
+{"log":"    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)\n","stream":"stderr","time":"2026-10-01T00:00:41.486983110Z"}
+{"log":"worker 3 ready\n","stream":"stdout","time":"2026-10-01T00:00:42.367611147Z"}
+{"log":"progress: 40%","stream":"stdout","time":"2026-10-01T00:00:42.467659184Z"}
+{"log":"\r\n","stream":"stdout","time":"2026-10-01T00:00:44.002469221Z"}
+{"log":"warning: \"quoted\" value and a tab\tin it\n","stream":"stderr","time":"2026-10-01T00:00:45.015805258Z"}
+{"log":"{\"inner\":\"json text stays a string\"}\n","stream":"stdout","time":"2026-10-01T00:00:45.251763295Z"}
+{"log":"Listening on http://0.0.0.0:3000\n","stream":"stdout","time":"2026-10-01T00:00:47.030842332Z"}
+{"log":"GET /api/orders/1042 200 14ms\n","stream":"stdout","time":"2026-10-01T00:00:47.185191369Z"}
+{"log":"Error: connect ECONNREFUSED 198.51.100.20:5432\n","stream":"stderr","time":"2026-10-01T00:00:47.535892406Z"}
+{"log":"    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)\n","stream":"stderr","time":"2026-10-01T00:00:48.667546443Z"}
+{"log":"worker 3 ready\n","stream":"stdout","time":"2026-10-01T00:00:51.122512480Z"}
+{"log":"progress: 40%","stream":"stdout","time":"2026-10-01T00:00:51.347718517Z"}
+{"log":"\r\n","stream":"stdout","time":"2026-10-01T00:00:52.646021554Z"}
+{"log":"warning: \"quoted\" value and a tab\tin it\n","stream":"stderr","time":"2026-10-01T00:00:54.920768591Z"}
+{"log":"{\"inner\":\"json text stays a string\"}\n","stream":"stdout","time":"2026-10-01T00:00:56.039589628Z"}
+{"log":"Listening on http://0.0.0.0:3000\n","stream":"stdout","time":"2026-10-01T00:00:57.572136665Z"}
+{"log":"GET /api/orders/1042 200 14ms\n","stream":"stdout","time":"2026-10-01T00:00:58.135948702Z"}
+{"log":"Error: connect ECONNREFUSED 198.51.100.20:5432\n","stream":"stderr","time":"2026-10-01T00:00:59.176616739Z"}
+{"log":"    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)\n","stream":"stderr","time":"2026-10-01T00:01:00.529119776Z"}
+{"log":"worker 3 ready\n","stream":"stdout","time":"2026-10-01T00:01:02.373786813Z"}
+{"log":"progress: 40%","stream":"stdout","time":"2026-10-01T00:01:04.414277850Z"}
+{"log":"\r\n","stream":"stdout","time":"2026-10-01T00:01:04.436434887Z"}
+{"log":"warning: \"quoted\" value and a tab\tin it\n","stream":"stderr","time":"2026-10-01T00:01:06.784647924Z"}
+{"log":"{\"inner\":\"json text stays a string\"}\n","stream":"stdout","time":"2026-10-01T00:01:07.728180961Z"}
+{"log":"Listening on http://0.0.0.0:3000\n","stream":"stdout","time":"2026-10-01T00:01:08.586945998Z"}
+{"log":"GET /api/orders/1042 200 14ms\n","stream":"stdout","time":"2026-10-01T00:01:10.770170035Z"}
+{"log":"Error: connect ECONNREFUSED 198.51.100.20:5432\n","stream":"stderr","time":"2026-10-01T00:01:12.782246072Z"}
+{"log":"    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)\n","stream":"stderr","time":"2026-10-01T00:01:12.936845109Z"}
+{"log":"worker 3 ready\n","stream":"stdout","time":"2026-10-01T00:01:13.769150146Z"}
+{"log":"progress: 40%","stream":"stdout","time":"2026-10-01T00:01:14.561682183Z"}

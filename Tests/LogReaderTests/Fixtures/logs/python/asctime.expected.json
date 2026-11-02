@@ -1,0 +1,726 @@
+{
+  "source": "Python 3.14.10 logging, format '%(asctime)s - %(name)s - %(levelname)s - %(message)s', default datefmt, TZ=UTC; script pylog.py",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:32.030Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:34.058Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:35.465Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:37.304Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:38.484Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:40.979Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:41.279Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:41.763Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:43.860Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 10,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:01:45.573Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:46.249Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 14,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:01:47.651Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:48.274Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:50.277Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:52.005Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:52.166Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:52.484Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:54.770Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:57.118Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 29,
+      "lines": 16,
+      "level": "error",
+      "time": "2026-10-01T00:01:58.404Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:59.798Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:01.233Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:03.668Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:05.703Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:08.079Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:09.948Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:10.230Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:10.614Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 53,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:02:11.720Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 61,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:02:13.662Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:13.929Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:14.178Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:15.447Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:17.815Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:19.641Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:20.807Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:22.388Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:23.810Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:23.903Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 73,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:02:25.795Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:27.251Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:27.940Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 78,
+      "lines": 16,
+      "level": "error",
+      "time": "2026-10-01T00:02:28.420Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 94,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:30.443Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 95,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:30.685Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 96,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:02:31.579Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 104,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:32.757Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 105,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:33.287Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 106,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:34.302Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 107,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:02:35.932Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 110,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:37.534Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 111,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:39.568Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 112,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:39.899Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 113,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:40.581Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 114,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:42.421Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 115,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:44.067Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 116,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:46.318Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 117,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:47.457Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 118,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:48.018Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 119,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:02:49.782Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 122,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:52.036Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 123,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:53.177Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 124,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:02:54.879Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 132,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:56.349Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 133,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:57.908Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 134,
+      "lines": 16,
+      "level": "error",
+      "time": "2026-10-01T00:02:58.854Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 150,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:02:59.473Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 151,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:59.813Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 152,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:00.535Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 153,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:03:01.155Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 156,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:02.106Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 157,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:03.062Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 158,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:03.112Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 159,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:05.099Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 160,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:07.513Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 161,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:08.260Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 162,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:09.337Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 163,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:03:10.492Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 164,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:10.509Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 165,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:03:11.106Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 173,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:12.823Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 174,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:15.013Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 175,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:16.526Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 176,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:19.024Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 177,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:21.344Z",
+      "zoned": false,
+      "component": "app.http"
+    },
+    {
+      "line": 178,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:22.650Z",
+      "zoned": false,
+      "component": "app"
+    },
+    {
+      "line": 179,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:03:23.165Z",
+      "zoned": false,
+      "component": "billing.worker"
+    },
+    {
+      "line": 180,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:03:25.277Z",
+      "zoned": false,
+      "component": "app.db"
+    },
+    {
+      "line": 181,
+      "lines": 16,
+      "level": "error",
+      "time": "2026-10-01T00:03:25.499Z",
+      "zoned": false,
+      "component": "root"
+    },
+    {
+      "line": 197,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:03:27.370Z",
+      "zoned": false,
+      "component": "app.http"
+    }
+  ]
+}

@@ -1,0 +1,566 @@
+{
+  "source": "Documentation-derived: journalctl --output=short-iso as described in journalctl(1) https://www.freedesktop.org/software/systemd/man/latest/journalctl.html#-o ; continuation lines of multi-line messages are indented to the message column, '-- Boot … --' separators are not entries; times in a +02:00 zone",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 2,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:08.000Z",
+      "zoned": true,
+      "component": "sshd"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:19.000Z",
+      "zoned": true,
+      "component": "systemd"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:45.000Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:15.000Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 6,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:01:41.000Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:05.000Z",
+      "zoned": true,
+      "component": "CRON"
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:10.000Z",
+      "zoned": true,
+      "component": "systemd-logind"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:39.000Z",
+      "zoned": true,
+      "component": "dockerd"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:03:07.000Z",
+      "zoned": true,
+      "component": "sudo"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:03:31.000Z",
+      "zoned": true,
+      "component": "sshd"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:04:01.000Z",
+      "zoned": true,
+      "component": "systemd"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:04:14.000Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:04:37.000Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 17,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:04:41.000Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:04:49.000Z",
+      "zoned": true,
+      "component": "CRON"
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:04:55.000Z",
+      "zoned": true,
+      "component": "systemd-logind"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:00.000Z",
+      "zoned": true,
+      "component": "dockerd"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:05:15.000Z",
+      "zoned": true,
+      "component": "sudo"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:05:21.000Z",
+      "zoned": true,
+      "component": "sshd"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:05:49.000Z",
+      "zoned": true,
+      "component": "systemd"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:06:09.000Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:06:34.000Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 28,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:07:01.000Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:07:15.000Z",
+      "zoned": true,
+      "component": "CRON"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:07:16.000Z",
+      "zoned": true,
+      "component": "systemd-logind"
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:07:32.000Z",
+      "zoned": true,
+      "component": "dockerd"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:07:49.000Z",
+      "zoned": true,
+      "component": "sudo"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:08:03.000Z",
+      "zoned": true,
+      "component": "sshd"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:08:10.000Z",
+      "zoned": true,
+      "component": "systemd"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:08:30.000Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:08:35.000Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 39,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:08:59.000Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:09:10.000Z",
+      "zoned": true,
+      "component": "CRON"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:09:12.000Z",
+      "zoned": true,
+      "component": "systemd-logind"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:09:30.000Z",
+      "zoned": true,
+      "component": "dockerd"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:09:50.000Z",
+      "zoned": true,
+      "component": "sudo"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:10:10.000Z",
+      "zoned": true,
+      "component": "sshd"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:10:27.000Z",
+      "zoned": true,
+      "component": "systemd"
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:10:49.000Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:11:01.000Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 50,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:11:22.000Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:11:36.000Z",
+      "zoned": true,
+      "component": "CRON"
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:12:05.000Z",
+      "zoned": true,
+      "component": "systemd-logind"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:12:29.000Z",
+      "zoned": true,
+      "component": "dockerd"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:12:56.000Z",
+      "zoned": true,
+      "component": "sudo"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:13:10.000Z",
+      "zoned": true,
+      "component": "sshd"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:13:17.000Z",
+      "zoned": true,
+      "component": "systemd"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:13:32.000Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:13:35.000Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 62,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:13:40.000Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:13:42.000Z",
+      "zoned": true,
+      "component": "CRON"
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:13:55.000Z",
+      "zoned": true,
+      "component": "systemd-logind"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:14:19.000Z",
+      "zoned": true,
+      "component": "dockerd"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:14:27.000Z",
+      "zoned": true,
+      "component": "sudo"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:14:30.000Z",
+      "zoned": true,
+      "component": "sshd"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:14:39.000Z",
+      "zoned": true,
+      "component": "systemd"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:14:51.000Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:15:12.000Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 73,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:15:28.000Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:15:39.000Z",
+      "zoned": true,
+      "component": "CRON"
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:15:59.000Z",
+      "zoned": true,
+      "component": "systemd-logind"
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:16:01.000Z",
+      "zoned": true,
+      "component": "dockerd"
+    },
+    {
+      "line": 79,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:16:21.000Z",
+      "zoned": true,
+      "component": "sudo"
+    },
+    {
+      "line": 80,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:16:28.000Z",
+      "zoned": true,
+      "component": "sshd"
+    },
+    {
+      "line": 81,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:16:35.000Z",
+      "zoned": true,
+      "component": "systemd"
+    },
+    {
+      "line": 82,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:16:39.000Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 83,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:16:44.000Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 84,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:17:01.000Z",
+      "zoned": true,
+      "component": "app"
+    },
+    {
+      "line": 87,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:17:03.000Z",
+      "zoned": true,
+      "component": "CRON"
+    },
+    {
+      "line": 88,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:17:09.000Z",
+      "zoned": true,
+      "component": "systemd-logind"
+    }
+  ]
+}

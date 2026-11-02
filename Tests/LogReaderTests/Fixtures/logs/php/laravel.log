@@ -1,0 +1,112 @@
+[2026-10-01 00:40:33] production.INFO: User signed in {"user_id":1042,"ip":"203.0.113.17"} 
+[2026-10-01 01:33:15] production.DEBUG: Cache hit {"key":"settings:site"} 
+[2026-10-01 01:44:58] production.WARNING: Slow request {"path":"/api/orders","ms":2310} 
+[2026-10-01 02:26:34] production.ERROR: No query results for model [App\Models\Order] 7703 {"exception":"[object] (RuntimeException(code: 0): No query results for model [App\\Models\\Order] 7703 at /srv/app/laravel.php:16)
+[stacktrace]
+#0 /srv/app/laravel.php(17): OrderRepository->find(7703)
+#1 /srv/app/laravel.php(36): OrderController->show(7703)
+#2 {main}
+"} 
+[2026-10-01 03:32:55] production.NOTICE: Password reset requested {"user_id":1077} 
+[2026-10-01 04:39:25] payments.INFO: Queued job dispatched {"job":"App\\Jobs\\SendInvoice","queue":"default"} 
+[2026-10-01 05:00:56] production.CRITICAL: Database connection lost {"host":"198.51.100.20"} 
+[2026-10-01 05:31:16] production.ALERT: Disk usage at 97%  
+[2026-10-01 06:05:49] production.EMERGENCY: Application down  
+[2026-10-01 07:05:19] production.INFO: Webhook payload:
+{"id":"evt_1","type":"invoice.paid"}  
+[2026-10-01 07:25:58] production.INFO: User signed in {"user_id":1042,"ip":"203.0.113.17"} 
+[2026-10-01 07:53:02] production.DEBUG: Cache hit {"key":"settings:site"} 
+[2026-10-01 08:46:27] payments.WARNING: Slow request {"path":"/api/orders","ms":2310} 
+[2026-10-01 09:09:37] production.ERROR: No query results for model [App\Models\Order] 7713 {"exception":"[object] (RuntimeException(code: 0): No query results for model [App\\Models\\Order] 7713 at /srv/app/laravel.php:16)
+[stacktrace]
+#0 /srv/app/laravel.php(17): OrderRepository->find(7713)
+#1 /srv/app/laravel.php(36): OrderController->show(7713)
+#2 {main}
+"} 
+[2026-10-01 10:00:52] production.NOTICE: Password reset requested {"user_id":1077} 
+[2026-10-01 10:19:20] production.INFO: Queued job dispatched {"job":"App\\Jobs\\SendInvoice","queue":"default"} 
+[2026-10-01 11:08:09] production.CRITICAL: Database connection lost {"host":"198.51.100.20"} 
+[2026-10-01 11:39:15] production.ALERT: Disk usage at 97%  
+[2026-10-01 12:03:30] production.EMERGENCY: Application down  
+[2026-10-01 12:18:10] payments.INFO: Webhook payload:
+{"id":"evt_1","type":"invoice.paid"}  
+[2026-10-01 12:28:47] production.INFO: User signed in {"user_id":1042,"ip":"203.0.113.17"} 
+[2026-10-01 12:43:17] production.DEBUG: Cache hit {"key":"settings:site"} 
+[2026-10-01 13:34:24] production.WARNING: Slow request {"path":"/api/orders","ms":2310} 
+[2026-10-01 14:17:48] production.ERROR: No query results for model [App\Models\Order] 7723 {"exception":"[object] (RuntimeException(code: 0): No query results for model [App\\Models\\Order] 7723 at /srv/app/laravel.php:16)
+[stacktrace]
+#0 /srv/app/laravel.php(17): OrderRepository->find(7723)
+#1 /srv/app/laravel.php(36): OrderController->show(7723)
+#2 {main}
+"} 
+[2026-10-01 14:33:25] production.NOTICE: Password reset requested {"user_id":1077} 
+[2026-10-01 14:35:35] production.INFO: Queued job dispatched {"job":"App\\Jobs\\SendInvoice","queue":"default"} 
+[2026-10-01 15:13:34] payments.CRITICAL: Database connection lost {"host":"198.51.100.20"} 
+[2026-10-01 15:54:14] production.ALERT: Disk usage at 97%  
+[2026-10-01 16:58:03] production.EMERGENCY: Application down  
+[2026-10-01 17:47:05] production.INFO: Webhook payload:
+{"id":"evt_1","type":"invoice.paid"}  
+[2026-10-01 18:03:56] production.INFO: User signed in {"user_id":1042,"ip":"203.0.113.17"} 
+[2026-10-01 18:07:12] production.DEBUG: Cache hit {"key":"settings:site"} 
+[2026-10-01 18:08:17] production.WARNING: Slow request {"path":"/api/orders","ms":2310} 
+[2026-10-01 18:54:35] payments.ERROR: No query results for model [App\Models\Order] 7733 {"exception":"[object] (RuntimeException(code: 0): No query results for model [App\\Models\\Order] 7733 at /srv/app/laravel.php:16)
+[stacktrace]
+#0 /srv/app/laravel.php(17): OrderRepository->find(7733)
+#1 /srv/app/laravel.php(36): OrderController->show(7733)
+#2 {main}
+"} 
+[2026-10-01 19:44:42] production.NOTICE: Password reset requested {"user_id":1077} 
+[2026-10-01 19:53:46] production.INFO: Queued job dispatched {"job":"App\\Jobs\\SendInvoice","queue":"default"} 
+[2026-10-01 20:56:55] production.CRITICAL: Database connection lost {"host":"198.51.100.20"} 
+[2026-10-01 21:42:05] production.ALERT: Disk usage at 97%  
+[2026-10-01 22:00:24] production.EMERGENCY: Application down  
+[2026-10-01 22:51:00] production.INFO: Webhook payload:
+{"id":"evt_1","type":"invoice.paid"}  
+[2026-10-01 23:32:29] payments.INFO: User signed in {"user_id":1042,"ip":"203.0.113.17"} 
+[2026-10-01 23:39:43] production.DEBUG: Cache hit {"key":"settings:site"} 
+[2026-10-01 23:47:34] production.WARNING: Slow request {"path":"/api/orders","ms":2310} 
+[2026-10-02 00:30:38] production.ERROR: No query results for model [App\Models\Order] 7743 {"exception":"[object] (RuntimeException(code: 0): No query results for model [App\\Models\\Order] 7743 at /srv/app/laravel.php:16)
+[stacktrace]
+#0 /srv/app/laravel.php(17): OrderRepository->find(7743)
+#1 /srv/app/laravel.php(36): OrderController->show(7743)
+#2 {main}
+"} 
+[2026-10-02 00:46:11] production.NOTICE: Password reset requested {"user_id":1077} 
+[2026-10-02 00:51:13] production.INFO: Queued job dispatched {"job":"App\\Jobs\\SendInvoice","queue":"default"} 
+[2026-10-02 01:09:24] production.CRITICAL: Database connection lost {"host":"198.51.100.20"} 
+[2026-10-02 01:55:36] payments.ALERT: Disk usage at 97%  
+[2026-10-02 02:02:49] production.EMERGENCY: Application down  
+[2026-10-02 03:07:31] production.INFO: Webhook payload:
+{"id":"evt_1","type":"invoice.paid"}  
+[2026-10-02 03:13:06] production.INFO: User signed in {"user_id":1042,"ip":"203.0.113.17"} 
+[2026-10-02 03:44:50] production.DEBUG: Cache hit {"key":"settings:site"} 
+[2026-10-02 03:54:23] production.WARNING: Slow request {"path":"/api/orders","ms":2310} 
+[2026-10-02 04:48:53] production.ERROR: No query results for model [App\Models\Order] 7753 {"exception":"[object] (RuntimeException(code: 0): No query results for model [App\\Models\\Order] 7753 at /srv/app/laravel.php:16)
+[stacktrace]
+#0 /srv/app/laravel.php(17): OrderRepository->find(7753)
+#1 /srv/app/laravel.php(36): OrderController->show(7753)
+#2 {main}
+"} 
+[2026-10-02 05:01:04] payments.NOTICE: Password reset requested {"user_id":1077} 
+[2026-10-02 05:31:08] production.INFO: Queued job dispatched {"job":"App\\Jobs\\SendInvoice","queue":"default"} 
+[2026-10-02 06:04:53] production.CRITICAL: Database connection lost {"host":"198.51.100.20"} 
+[2026-10-02 06:33:43] production.ALERT: Disk usage at 97%  
+[2026-10-02 06:38:38] production.EMERGENCY: Application down  
+[2026-10-02 06:44:06] production.INFO: Webhook payload:
+{"id":"evt_1","type":"invoice.paid"}  
+[2026-10-02 07:20:43] production.INFO: User signed in {"user_id":1042,"ip":"203.0.113.17"} 
+[2026-10-02 08:03:53] payments.DEBUG: Cache hit {"key":"settings:site"} 
+[2026-10-02 08:58:04] production.WARNING: Slow request {"path":"/api/orders","ms":2310} 
+[2026-10-02 10:02:08] production.ERROR: No query results for model [App\Models\Order] 7763 {"exception":"[object] (RuntimeException(code: 0): No query results for model [App\\Models\\Order] 7763 at /srv/app/laravel.php:16)
+[stacktrace]
+#0 /srv/app/laravel.php(17): OrderRepository->find(7763)
+#1 /srv/app/laravel.php(36): OrderController->show(7763)
+#2 {main}
+"} 
+[2026-10-02 10:52:49] production.NOTICE: Password reset requested {"user_id":1077} 
+[2026-10-02 11:01:15] production.INFO: Queued job dispatched {"job":"App\\Jobs\\SendInvoice","queue":"default"} 
+[2026-10-02 12:05:46] production.CRITICAL: Database connection lost {"host":"198.51.100.20"} 
+[2026-10-02 12:45:46] production.ALERT: Disk usage at 97%  
+[2026-10-02 13:04:07] payments.EMERGENCY: Application down  
+[2026-10-02 14:05:17] production.INFO: Webhook payload:
+{"id":"evt_1","type":"invoice.paid"}  

@@ -1,0 +1,92 @@
+2026-10-01T00:00:03.740Z  INFO 4127 --- [shop] [           main] c.e.shop.ShopApplication                 : Starting ShopApplication using Java 21.0.5 with PID 4127 (/srv/app/shop.jar started by app in /srv/app)
+2026-10-01T00:00:05.503Z  INFO 4127 --- [shop] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-01T00:00:06.145Z DEBUG 4127 --- [shop] [           main] c.e.shop.config.SecurityConfig           : Configured 4 security filters
+2026-10-01T00:00:11.085Z  WARN 4127 --- [shop] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2026-10-01T00:00:12.086Z  INFO 4127 --- [shop] [nio-8080-exec-1] c.e.shop.web.CartController              : Cart 551 updated by user-1042
+2026-10-01T00:00:15.220Z ERROR 4127 --- [shop] [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+java.lang.NullPointerException: Cannot invoke "com.example.shop.Cart.items()" because "cart" is null
+	at com.example.shop.web.CartController.checkout(CartController.java:71) ~[classes/:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+2026-10-01T00:00:19.000Z TRACE 4127 --- [shop] [   scheduling-1] c.e.shop.jobs.StockSync                  : polling supplier feed
+2026-10-01T00:00:21.772Z  INFO 4127 --- [shop] [           main] c.e.shop.ShopApplication                 : Starting ShopApplication using Java 21.0.5 with PID 4127 (/srv/app/shop.jar started by app in /srv/app)
+2026-10-01T00:00:22.747Z  INFO 4127 --- [shop] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-01T00:00:26.756Z DEBUG 4127 --- [shop] [           main] c.e.shop.config.SecurityConfig           : Configured 4 security filters
+2026-10-01T00:00:27.432Z  WARN 4127 --- [shop] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2026-10-01T00:00:28.517Z  INFO 4127 --- [shop] [nio-8080-exec-1] c.e.shop.web.CartController              : Cart 551 updated by user-1042
+2026-10-01T00:00:30.342Z ERROR 4127 --- [shop] [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+java.lang.NullPointerException: Cannot invoke "com.example.shop.Cart.items()" because "cart" is null
+	at com.example.shop.web.CartController.checkout(CartController.java:71) ~[classes/:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+2026-10-01T00:00:35.122Z TRACE 4127 --- [shop] [   scheduling-1] c.e.shop.jobs.StockSync                  : polling supplier feed
+2026-10-01T00:00:35.327Z  INFO 4127 --- [shop] [           main] c.e.shop.ShopApplication                 : Starting ShopApplication using Java 21.0.5 with PID 4127 (/srv/app/shop.jar started by app in /srv/app)
+2026-10-01T00:00:35.690Z  INFO 4127 --- [shop] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-01T00:00:37.537Z DEBUG 4127 --- [shop] [           main] c.e.shop.config.SecurityConfig           : Configured 4 security filters
+2026-10-01T00:00:38.418Z  WARN 4127 --- [shop] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2026-10-01T00:00:39.466Z  INFO 4127 --- [shop] [nio-8080-exec-1] c.e.shop.web.CartController              : Cart 551 updated by user-1042
+2026-10-01T00:00:44.443Z ERROR 4127 --- [shop] [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+java.lang.NullPointerException: Cannot invoke "com.example.shop.Cart.items()" because "cart" is null
+	at com.example.shop.web.CartController.checkout(CartController.java:71) ~[classes/:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+2026-10-01T00:00:48.733Z TRACE 4127 --- [shop] [   scheduling-1] c.e.shop.jobs.StockSync                  : polling supplier feed
+2026-10-01T00:00:51.141Z  INFO 4127 --- [shop] [           main] c.e.shop.ShopApplication                 : Starting ShopApplication using Java 21.0.5 with PID 4127 (/srv/app/shop.jar started by app in /srv/app)
+2026-10-01T00:00:52.646Z  INFO 4127 --- [shop] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-01T00:00:56.003Z DEBUG 4127 --- [shop] [           main] c.e.shop.config.SecurityConfig           : Configured 4 security filters
+2026-10-01T00:01:00.763Z  WARN 4127 --- [shop] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2026-10-01T00:01:04.165Z  INFO 4127 --- [shop] [nio-8080-exec-1] c.e.shop.web.CartController              : Cart 551 updated by user-1042
+2026-10-01T00:01:06.024Z ERROR 4127 --- [shop] [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+java.lang.NullPointerException: Cannot invoke "com.example.shop.Cart.items()" because "cart" is null
+	at com.example.shop.web.CartController.checkout(CartController.java:71) ~[classes/:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+2026-10-01T00:01:10.716Z TRACE 4127 --- [shop] [   scheduling-1] c.e.shop.jobs.StockSync                  : polling supplier feed
+2026-10-01T00:01:12.757Z  INFO 4127 --- [shop] [           main] c.e.shop.ShopApplication                 : Starting ShopApplication using Java 21.0.5 with PID 4127 (/srv/app/shop.jar started by app in /srv/app)
+2026-10-01T00:01:13.465Z  INFO 4127 --- [shop] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-01T00:01:16.491Z DEBUG 4127 --- [shop] [           main] c.e.shop.config.SecurityConfig           : Configured 4 security filters
+2026-10-01T00:01:18.153Z  WARN 4127 --- [shop] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2026-10-01T00:01:22.910Z  INFO 4127 --- [shop] [nio-8080-exec-1] c.e.shop.web.CartController              : Cart 551 updated by user-1042
+2026-10-01T00:01:24.703Z ERROR 4127 --- [shop] [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+java.lang.NullPointerException: Cannot invoke "com.example.shop.Cart.items()" because "cart" is null
+	at com.example.shop.web.CartController.checkout(CartController.java:71) ~[classes/:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+2026-10-01T00:01:28.883Z TRACE 4127 --- [shop] [   scheduling-1] c.e.shop.jobs.StockSync                  : polling supplier feed
+2026-10-01T00:01:32.774Z  INFO 4127 --- [shop] [           main] c.e.shop.ShopApplication                 : Starting ShopApplication using Java 21.0.5 with PID 4127 (/srv/app/shop.jar started by app in /srv/app)
+2026-10-01T00:01:34.832Z  INFO 4127 --- [shop] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-01T00:01:37.139Z DEBUG 4127 --- [shop] [           main] c.e.shop.config.SecurityConfig           : Configured 4 security filters
+2026-10-01T00:01:38.909Z  WARN 4127 --- [shop] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2026-10-01T00:01:43.239Z  INFO 4127 --- [shop] [nio-8080-exec-1] c.e.shop.web.CartController              : Cart 551 updated by user-1042
+2026-10-01T00:01:47.007Z ERROR 4127 --- [shop] [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+java.lang.NullPointerException: Cannot invoke "com.example.shop.Cart.items()" because "cart" is null
+	at com.example.shop.web.CartController.checkout(CartController.java:71) ~[classes/:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+2026-10-01T00:01:51.340Z TRACE 4127 --- [shop] [   scheduling-1] c.e.shop.jobs.StockSync                  : polling supplier feed
+2026-10-01T00:01:52.924Z  INFO 4127 --- [shop] [           main] c.e.shop.ShopApplication                 : Starting ShopApplication using Java 21.0.5 with PID 4127 (/srv/app/shop.jar started by app in /srv/app)
+2026-10-01T00:01:57.215Z  INFO 4127 --- [shop] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-01T00:01:59.646Z DEBUG 4127 --- [shop] [           main] c.e.shop.config.SecurityConfig           : Configured 4 security filters
+2026-10-01T00:01:59.988Z  WARN 4127 --- [shop] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2026-10-01T00:02:03.936Z  INFO 4127 --- [shop] [nio-8080-exec-1] c.e.shop.web.CartController              : Cart 551 updated by user-1042
+2026-10-01T00:02:05.131Z ERROR 4127 --- [shop] [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+java.lang.NullPointerException: Cannot invoke "com.example.shop.Cart.items()" because "cart" is null
+	at com.example.shop.web.CartController.checkout(CartController.java:71) ~[classes/:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+2026-10-01T00:02:06.208Z TRACE 4127 --- [shop] [   scheduling-1] c.e.shop.jobs.StockSync                  : polling supplier feed
+2026-10-01T00:02:09.652Z  INFO 4127 --- [shop] [           main] c.e.shop.ShopApplication                 : Starting ShopApplication using Java 21.0.5 with PID 4127 (/srv/app/shop.jar started by app in /srv/app)
+2026-10-01T00:02:13.855Z  INFO 4127 --- [shop] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-01T00:02:15.928Z DEBUG 4127 --- [shop] [           main] c.e.shop.config.SecurityConfig           : Configured 4 security filters
+2026-10-01T00:02:16.750Z  WARN 4127 --- [shop] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2026-10-01T00:02:20.695Z  INFO 4127 --- [shop] [nio-8080-exec-1] c.e.shop.web.CartController              : Cart 551 updated by user-1042
+2026-10-01T00:02:23.549Z ERROR 4127 --- [shop] [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+java.lang.NullPointerException: Cannot invoke "com.example.shop.Cart.items()" because "cart" is null
+	at com.example.shop.web.CartController.checkout(CartController.java:71) ~[classes/:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+2026-10-01T00:02:24.344Z TRACE 4127 --- [shop] [   scheduling-1] c.e.shop.jobs.StockSync                  : polling supplier feed
+2026-10-01T00:02:25.084Z  INFO 4127 --- [shop] [           main] c.e.shop.ShopApplication                 : Starting ShopApplication using Java 21.0.5 with PID 4127 (/srv/app/shop.jar started by app in /srv/app)
+2026-10-01T00:02:27.591Z  INFO 4127 --- [shop] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-01T00:02:31.568Z DEBUG 4127 --- [shop] [           main] c.e.shop.config.SecurityConfig           : Configured 4 security filters
+2026-10-01T00:02:32.588Z  WARN 4127 --- [shop] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000

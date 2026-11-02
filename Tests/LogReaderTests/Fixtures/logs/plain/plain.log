@@ -1,0 +1,172 @@
+2026-10-01T00:03:29.661Z INFO  [auth] req=r00fa7 service started on port 8080
+2026-10-01T00:03:31.269Z DEBUG [billing] req=r00fae loaded 31 settings from config/app.ini
+2026-10-01T00:03:32.900Z INFO  [db] req=r00fb5 GET /api/orders/1042 200 18ms
+2026-10-01T00:03:34.535Z WARN  [scheduler] req=r00fbc slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:03:36.150Z ERROR [http] req=r00fc3 payment provider returned 502 for order 7731
+2026-10-01T00:03:36.575Z INFO  [auth] req=r00fca user-1042 signed in from 203.0.113.17
+2026-10-01T00:03:38.548Z DEBUG [billing] req=r00fd1 cache hit ratio 0.87
+2026-10-01T00:03:40.189Z FATAL [db] req=r00fd8 disk almost full: 97% used on /var/lib/app
+2026-10-01T00:03:40.444Z WARN  [scheduler] req=r00fdf retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:03:41.225Z INFO  [http] req=r00fe6 multi-line note:
+  first detail
+  second detail
+2026-10-01T00:03:41.501Z INFO  [auth] req=r00fed service started on port 8080
+2026-10-01T00:03:42.357Z ERROR [billing] req=r00ff4 could not parse quantity for line item 11
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01T00:03:44.162Z INFO  [db] req=r00ffb GET /api/orders/1042 200 18ms
+2026-10-01T00:03:44.827Z WARN  [scheduler] req=r01002 slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:03:45.278Z ERROR [http] req=r01009 payment provider returned 502 for order 7731
+2026-10-01T00:03:46.671Z INFO  [auth] req=r01010 user-1042 signed in from 203.0.113.17
+2026-10-01T00:03:49.132Z DEBUG [billing] req=r01017 cache hit ratio 0.87
+2026-10-01T00:03:49.348Z FATAL [db] req=r0101e disk almost full: 97% used on /var/lib/app
+2026-10-01T00:03:49.768Z WARN  [scheduler] req=r01025 retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:03:49.769Z ERROR [http] req=r0102c job failed
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 81, in fail_chain
+    {}["missing"]
+    ~~^^^^^^^^^^^
+KeyError: 'missing'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 94, in run
+    try: fail_chain()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 83, in fail_chain
+    raise RuntimeError("could not load order 7731") from e
+RuntimeError: could not load order 7731
+2026-10-01T00:03:52.091Z INFO  [auth] req=r01033 service started on port 8080
+2026-10-01T00:03:52.711Z DEBUG [billing] req=r0103a loaded 31 settings from config/app.ini
+2026-10-01T00:03:54.909Z INFO  [db] req=r01041 GET /api/orders/1042 200 18ms
+2026-10-01T00:03:55.325Z WARN  [scheduler] req=r01048 slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:03:56.815Z ERROR [http] req=r0104f payment provider returned 502 for order 7731
+2026-10-01T00:03:56.920Z INFO  [auth] req=r01056 user-1042 signed in from 203.0.113.17
+2026-10-01T00:03:57.209Z DEBUG [billing] req=r0105d cache hit ratio 0.87
+2026-10-01T00:03:58.061Z FATAL [db] req=r01064 disk almost full: 97% used on /var/lib/app
+2026-10-01T00:03:59.603Z ERROR [scheduler] req=r0106b could not parse quantity for line item 28
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01T00:04:00.212Z INFO  [http] req=r01072 multi-line note:
+  first detail
+  second detail
+2026-10-01T00:04:01.246Z INFO  [auth] req=r01079 service started on port 8080
+2026-10-01T00:04:02.669Z DEBUG [billing] req=r01080 loaded 31 settings from config/app.ini
+2026-10-01T00:04:05.136Z INFO  [db] req=r01087 GET /api/orders/1042 200 18ms
+2026-10-01T00:04:06.628Z WARN  [scheduler] req=r0108e slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:04:08.571Z ERROR [http] req=r01095 payment provider returned 502 for order 7731
+2026-10-01T00:04:09.075Z INFO  [auth] req=r0109c user-1042 signed in from 203.0.113.17
+2026-10-01T00:04:09.548Z DEBUG [billing] req=r010a3 cache hit ratio 0.87
+2026-10-01T00:04:11.548Z FATAL [db] req=r010aa disk almost full: 97% used on /var/lib/app
+2026-10-01T00:04:13.457Z WARN  [scheduler] req=r010b1 retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:04:15.425Z INFO  [http] req=r010b8 multi-line note:
+  first detail
+  second detail
+2026-10-01T00:04:17.407Z INFO  [auth] req=r010bf service started on port 8080
+2026-10-01T00:04:18.685Z DEBUG [billing] req=r010c6 loaded 31 settings from config/app.ini
+2026-10-01T00:04:19.037Z ERROR [db] req=r010cd job failed
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 81, in fail_chain
+    {}["missing"]
+    ~~^^^^^^^^^^^
+KeyError: 'missing'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 94, in run
+    try: fail_chain()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 83, in fail_chain
+    raise RuntimeError("could not load order 7731") from e
+RuntimeError: could not load order 7731
+2026-10-01T00:04:19.628Z WARN  [scheduler] req=r010d4 slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:04:20.047Z ERROR [http] req=r010db payment provider returned 502 for order 7731
+2026-10-01T00:04:21.451Z ERROR [auth] req=r010e2 could not parse quantity for line item 45
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01T00:04:22.536Z DEBUG [billing] req=r010e9 cache hit ratio 0.87
+2026-10-01T00:04:24.497Z FATAL [db] req=r010f0 disk almost full: 97% used on /var/lib/app
+2026-10-01T00:04:25.159Z WARN  [scheduler] req=r010f7 retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:04:27.274Z INFO  [http] req=r010fe multi-line note:
+  first detail
+  second detail
+2026-10-01T00:04:27.369Z INFO  [auth] req=r01105 service started on port 8080
+2026-10-01T00:04:28.210Z DEBUG [billing] req=r0110c loaded 31 settings from config/app.ini
+2026-10-01T00:04:30.374Z INFO  [db] req=r01113 GET /api/orders/1042 200 18ms
+2026-10-01T00:04:31.856Z WARN  [scheduler] req=r0111a slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:04:32.457Z ERROR [http] req=r01121 payment provider returned 502 for order 7731
+2026-10-01T00:04:34.682Z INFO  [auth] req=r01128 user-1042 signed in from 203.0.113.17
+2026-10-01T00:04:34.793Z DEBUG [billing] req=r0112f cache hit ratio 0.87
+2026-10-01T00:04:36.957Z FATAL [db] req=r01136 disk almost full: 97% used on /var/lib/app
+2026-10-01T00:04:38.178Z WARN  [scheduler] req=r0113d retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:04:38.551Z INFO  [http] req=r01144 multi-line note:
+  first detail
+  second detail
+2026-10-01T00:04:39.621Z INFO  [auth] req=r0114b service started on port 8080
+2026-10-01T00:04:41.745Z DEBUG [billing] req=r01152 loaded 31 settings from config/app.ini
+2026-10-01T00:04:43.248Z ERROR [db] req=r01159 could not parse quantity for line item 62
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'
+2026-10-01T00:04:43.933Z WARN  [scheduler] req=r01160 slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:04:45.390Z ERROR [http] req=r01167 payment provider returned 502 for order 7731
+2026-10-01T00:04:46.303Z ERROR [auth] req=r0116e job failed
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 81, in fail_chain
+    {}["missing"]
+    ~~^^^^^^^^^^^
+KeyError: 'missing'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 94, in run
+    try: fail_chain()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 83, in fail_chain
+    raise RuntimeError("could not load order 7731") from e
+RuntimeError: could not load order 7731
+2026-10-01T00:04:48.485Z DEBUG [billing] req=r01175 cache hit ratio 0.87
+2026-10-01T00:04:50.704Z FATAL [db] req=r0117c disk almost full: 97% used on /var/lib/app
+2026-10-01T00:04:52.764Z WARN  [scheduler] req=r01183 retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:04:54.115Z INFO  [http] req=r0118a multi-line note:
+  first detail
+  second detail
+2026-10-01T00:04:55.029Z INFO  [auth] req=r01191 service started on port 8080
+2026-10-01T00:04:55.829Z DEBUG [billing] req=r01198 loaded 31 settings from config/app.ini
+2026-10-01T00:04:56.810Z INFO  [db] req=r0119f GET /api/orders/1042 200 18ms
+2026-10-01T00:04:58.452Z WARN  [scheduler] req=r011a6 slow query (912ms): SELECT * FROM orders WHERE status = 'open'
+2026-10-01T00:04:59.381Z ERROR [http] req=r011ad payment provider returned 502 for order 7731
+2026-10-01T00:05:00.200Z INFO  [auth] req=r011b4 user-1042 signed in from 203.0.113.17
+2026-10-01T00:05:02.321Z DEBUG [billing] req=r011bb cache hit ratio 0.87
+2026-10-01T00:05:04.340Z FATAL [db] req=r011c2 disk almost full: 97% used on /var/lib/app
+2026-10-01T00:05:05.797Z WARN  [scheduler] req=r011c9 retrying job 5521 (attempt 2 of 5)
+2026-10-01T00:05:05.916Z ERROR [http] req=r011d0 could not parse quantity for line item 79
+Traceback (most recent call last):
+  File "/srv/app/pylog.py", line 91, in run
+    try: fail_parse()
+         ~~~~~~~~~~^^
+  File "/srv/app/pylog.py", line 77, in fail_parse
+    return int("forty-two")
+ValueError: invalid literal for int() with base 10: 'forty-two'

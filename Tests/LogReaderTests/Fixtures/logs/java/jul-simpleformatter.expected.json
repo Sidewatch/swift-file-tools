@@ -1,0 +1,390 @@
+{
+  "source": "Documentation-derived: java.util.logging.SimpleFormatter default format https://docs.oracle.com/en/java/javase/21/docs/api/java.logging/java/util/logging/SimpleFormatter.html and the throwable layout of Throwable.printStackTrace (a record with a throwable ends with an empty line, part of the entry) https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html#printStackTrace()",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:01:16.372Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 3,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:01:42.098Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 5,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:02:52.975Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 7,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:03:40.187Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 9,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:04:41.615Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 11,
+      "lines": 2,
+      "level": "warning",
+      "time": "2026-10-01T00:04:48.174Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 13,
+      "lines": 2,
+      "level": "trace",
+      "time": "2026-10-01T00:06:15.336Z",
+      "zoned": false,
+      "component": "com.example.cache.CacheLoader"
+    },
+    {
+      "line": 15,
+      "lines": 10,
+      "level": "error",
+      "time": "2026-10-01T00:07:21.533Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 26,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:07:49.850Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 28,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:09:08.960Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 30,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:09:38.218Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 32,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:10:16.235Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 34,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:11:20.065Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 36,
+      "lines": 2,
+      "level": "warning",
+      "time": "2026-10-01T00:11:48.101Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 38,
+      "lines": 2,
+      "level": "trace",
+      "time": "2026-10-01T00:12:31.428Z",
+      "zoned": false,
+      "component": "com.example.cache.CacheLoader"
+    },
+    {
+      "line": 40,
+      "lines": 2,
+      "level": "error",
+      "time": "2026-10-01T00:13:29.035Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 42,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:13:38.456Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 44,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:14:12.111Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 46,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:14:37.645Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 48,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:14:58.956Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 50,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:15:10.803Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 52,
+      "lines": 2,
+      "level": "warning",
+      "time": "2026-10-01T00:16:09.357Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 54,
+      "lines": 2,
+      "level": "trace",
+      "time": "2026-10-01T00:17:19.985Z",
+      "zoned": false,
+      "component": "com.example.cache.CacheLoader"
+    },
+    {
+      "line": 56,
+      "lines": 10,
+      "level": "error",
+      "time": "2026-10-01T00:18:08.224Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 67,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:18:33.538Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 69,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:19:35.562Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 71,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:20:18.495Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 73,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:20:49.997Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 75,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:22:13.745Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 77,
+      "lines": 2,
+      "level": "warning",
+      "time": "2026-10-01T00:23:06.884Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 79,
+      "lines": 2,
+      "level": "trace",
+      "time": "2026-10-01T00:24:02.435Z",
+      "zoned": false,
+      "component": "com.example.cache.CacheLoader"
+    },
+    {
+      "line": 81,
+      "lines": 2,
+      "level": "error",
+      "time": "2026-10-01T00:24:29.933Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 83,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:24:38.377Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 85,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:25:34.958Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 87,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:26:36.462Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 89,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:27:16.545Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 91,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:27:44.499Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 93,
+      "lines": 2,
+      "level": "warning",
+      "time": "2026-10-01T00:27:59.221Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 95,
+      "lines": 2,
+      "level": "trace",
+      "time": "2026-10-01T00:29:24.916Z",
+      "zoned": false,
+      "component": "com.example.cache.CacheLoader"
+    },
+    {
+      "line": 97,
+      "lines": 10,
+      "level": "error",
+      "time": "2026-10-01T00:30:47.024Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 108,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:32:16.372Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 110,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:32:59.633Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    },
+    {
+      "line": 112,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:34:26.968Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 114,
+      "lines": 2,
+      "level": "debug",
+      "time": "2026-10-01T00:35:02.205Z",
+      "zoned": false,
+      "component": "com.example.db.ConnectionPool"
+    },
+    {
+      "line": 116,
+      "lines": 2,
+      "level": "info",
+      "time": "2026-10-01T00:35:54.131Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 118,
+      "lines": 2,
+      "level": "warning",
+      "time": "2026-10-01T00:36:44.043Z",
+      "zoned": false,
+      "component": "com.example.http.Server"
+    },
+    {
+      "line": 120,
+      "lines": 2,
+      "level": "trace",
+      "time": "2026-10-01T00:37:14.273Z",
+      "zoned": false,
+      "component": "com.example.cache.CacheLoader"
+    },
+    {
+      "line": 122,
+      "lines": 2,
+      "level": "error",
+      "time": "2026-10-01T00:38:09.912Z",
+      "zoned": false,
+      "component": "com.example.orders.OrderService"
+    }
+  ]
+}

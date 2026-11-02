@@ -1,0 +1,80 @@
+2026/10/01 00:00:03 listening on :8080
+2026/10/01 00:00:07 GET /api/orders/1042 200 14.2ms
+2026/10/01 00:00:10 dial tcp 198.51.100.20:5432: connect: connection refused
+2026/10/01 00:00:11 config: using defaults for 3 keys
+2026/10/01 00:00:11 multi-line value:
+first continuation
+second continuation
+2026/10/01 00:00:13 worker 3 finished job 5521
+2026/10/01 00:00:17 http: TLS handshake error from 203.0.113.17:52144: EOF
+2026/10/01 00:00:18 panic recovered: runtime error: index out of range [5] with length 3
+2026/10/01 00:00:22 listening on :8080
+2026/10/01 00:00:25 GET /api/orders/1042 200 14.2ms
+2026/10/01 00:00:25 dial tcp 198.51.100.20:5432: connect: connection refused
+2026/10/01 00:00:30 config: using defaults for 3 keys
+2026/10/01 00:00:34 multi-line value:
+first continuation
+second continuation
+2026/10/01 00:00:36 worker 3 finished job 5521
+2026/10/01 00:00:39 http: TLS handshake error from 203.0.113.17:52144: EOF
+2026/10/01 00:00:41 panic recovered: runtime error: index out of range [5] with length 3
+2026/10/01 00:00:45 listening on :8080
+2026/10/01 00:00:49 GET /api/orders/1042 200 14.2ms
+2026/10/01 00:00:49 dial tcp 198.51.100.20:5432: connect: connection refused
+2026/10/01 00:00:53 config: using defaults for 3 keys
+2026/10/01 00:00:53 multi-line value:
+first continuation
+second continuation
+2026/10/01 00:00:57 worker 3 finished job 5521
+2026/10/01 00:01:02 http: TLS handshake error from 203.0.113.17:52144: EOF
+2026/10/01 00:01:07 panic recovered: runtime error: index out of range [5] with length 3
+2026/10/01 00:01:09 listening on :8080
+2026/10/01 00:01:14 GET /api/orders/1042 200 14.2ms
+2026/10/01 00:01:16 dial tcp 198.51.100.20:5432: connect: connection refused
+2026/10/01 00:01:18 config: using defaults for 3 keys
+2026/10/01 00:01:21 multi-line value:
+first continuation
+second continuation
+2026/10/01 00:01:23 worker 3 finished job 5521
+2026/10/01 00:01:25 http: TLS handshake error from 203.0.113.17:52144: EOF
+2026/10/01 00:01:27 panic recovered: runtime error: index out of range [5] with length 3
+2026/10/01 00:01:30 listening on :8080
+2026/10/01 00:01:32 GET /api/orders/1042 200 14.2ms
+2026/10/01 00:01:36 dial tcp 198.51.100.20:5432: connect: connection refused
+2026/10/01 00:01:36 config: using defaults for 3 keys
+2026/10/01 00:01:39 multi-line value:
+first continuation
+second continuation
+2026/10/01 00:01:42 worker 3 finished job 5521
+2026/10/01 00:01:43 http: TLS handshake error from 203.0.113.17:52144: EOF
+2026/10/01 00:01:47 panic recovered: runtime error: index out of range [5] with length 3
+2026/10/01 00:01:51 listening on :8080
+2026/10/01 00:01:55 GET /api/orders/1042 200 14.2ms
+2026/10/01 00:01:55 dial tcp 198.51.100.20:5432: connect: connection refused
+2026/10/01 00:01:59 config: using defaults for 3 keys
+2026/10/01 00:02:01 multi-line value:
+first continuation
+second continuation
+2026/10/01 00:02:04 worker 3 finished job 5521
+2026/10/01 00:02:05 http: TLS handshake error from 203.0.113.17:52144: EOF
+2026/10/01 00:02:07 panic recovered: runtime error: index out of range [5] with length 3
+2026/10/01 00:02:07 listening on :8080
+2026/10/01 00:02:10 GET /api/orders/1042 200 14.2ms
+2026/10/01 00:02:13 dial tcp 198.51.100.20:5432: connect: connection refused
+2026/10/01 00:02:14 config: using defaults for 3 keys
+2026/10/01 00:02:14 multi-line value:
+first continuation
+second continuation
+2026/10/01 00:02:17 worker 3 finished job 5521
+2026/10/01 00:02:20 http: TLS handshake error from 203.0.113.17:52144: EOF
+2026/10/01 00:02:24 panic recovered: runtime error: index out of range [5] with length 3
+2026/10/01 00:02:28 listening on :8080
+2026/10/01 00:02:30 GET /api/orders/1042 200 14.2ms
+2026/10/01 00:02:33 dial tcp 198.51.100.20:5432: connect: connection refused
+2026/10/01 00:02:35 config: using defaults for 3 keys
+2026/10/01 00:02:37 multi-line value:
+first continuation
+second continuation
+2026/10/01 00:02:41 worker 3 finished job 5521
+2026/10/01 00:02:41 http: TLS handshake error from 203.0.113.17:52144: EOF
+2026/10/01 00:02:42 panic recovered: runtime error: index out of range [5] with length 3

@@ -1,0 +1,180 @@
+2026-10-01 00:00:14.135 UTC [1] LOG:  starting PostgreSQL 17.2 on aarch64-unknown-linux-gnu, compiled by gcc (GCC) 13.2.0, 64-bit
+2026-10-01 00:00:23.793 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-01 00:00:27.556 UTC [27] LOG:  database system was shut down at 2026-09-30 23:58:01 UTC
+2026-10-01 00:00:46.680 UTC [1] LOG:  database system is ready to accept connections
+2026-10-01 00:00:51.800 UTC [412] ERROR:  duplicate key value violates unique constraint "users_email_key"
+2026-10-01 00:00:51.800 UTC [412] DETAIL:  Key (email)=(user-1042@example.com) already exists.
+2026-10-01 00:00:51.800 UTC [412] STATEMENT:  INSERT INTO users (email, name) VALUES ('user-1042@example.com', 'User 1042');
+2026-10-01 00:01:04.446 UTC [413] ERROR:  relation "order_items" does not exist at character 15
+2026-10-01 00:01:04.446 UTC [413] STATEMENT:  SELECT *
+	  FROM order_items
+	 WHERE order_id = 7731;
+2026-10-01 00:01:20.383 UTC [25] LOG:  checkpoint starting: time
+2026-10-01 00:01:29.109 UTC [25] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.312 s, sync=0.004 s, total=4.330 s; sync files=12, longest=0.002 s, average=0.001 s; distance=301 kB, estimate=301 kB; lsn=0/1A3C2B8, redo lsn=0/1A3C280
+2026-10-01 00:01:39.610 UTC [420] FATAL:  password authentication failed for user "app"
+2026-10-01 00:01:39.610 UTC [420] DETAIL:  Connection matched file "/var/lib/postgresql/data/pg_hba.conf" line 99: "host all all all scram-sha-256"
+2026-10-01 00:01:55.612 UTC [431] WARNING:  there is no transaction in progress
+2026-10-01 00:02:08.339 UTC [440] ERROR:  canceling statement due to statement timeout
+2026-10-01 00:02:08.339 UTC [440] CONTEXT:  while scanning block 1200 of relation "public.events"
+2026-10-01 00:02:08.339 UTC [440] STATEMENT:  SELECT count(*) FROM events;
+2026-10-01 00:02:21.773 UTC [52] LOG:  automatic vacuum of table "shop.public.orders": index scans: 1
+	pages: 0 removed, 312 remain, 312 scanned (100.00% of total)
+	tuples: 120 removed, 9800 remain, 0 are dead but not yet removable
+2026-10-01 00:02:37.072 UTC [460] NOTICE:  table "tmp_import" does not exist, skipping
+2026-10-01 00:02:56.860 UTC [470] ERROR:  deadlock detected
+2026-10-01 00:02:56.860 UTC [470] DETAIL:  Process 470 waits for ShareLock on transaction 5521; blocked by process 471.
+	Process 471 waits for ShareLock on transaction 5520; blocked by process 470.
+	Process 470: UPDATE accounts SET balance = balance - 10 WHERE id = 1;
+	Process 471: UPDATE accounts SET balance = balance + 10 WHERE id = 2;
+2026-10-01 00:02:56.860 UTC [470] HINT:  See server log for query details.
+2026-10-01 00:02:56.860 UTC [470] CONTEXT:  while updating tuple (0,12) in relation "accounts"
+2026-10-01 00:02:56.860 UTC [470] STATEMENT:  UPDATE accounts SET balance = balance - 10 WHERE id = 1;
+2026-10-01 00:03:15.473 UTC [480] LOG:  duration: 2310.442 ms  statement: SELECT * FROM orders WHERE status = 'open' ORDER BY created_at DESC;
+2026-10-01 00:03:17.739 UTC [481] DEBUG1:  autovacuum: processing database "shop"
+2026-10-01 00:03:34.253 UTC [490] LOG:  connection received: host=203.0.113.17 port=52144
+2026-10-01 00:03:38.071 UTC [490] LOG:  connection authorized: user=app database=shop application_name=psql
+2026-10-01 00:03:47.824 UTC [1] PANIC:  could not write to file "pg_wal/xlogtemp.31": No space left on device
+2026-10-01 00:04:00.141 UTC [1] LOG:  starting PostgreSQL 17.2 on aarch64-unknown-linux-gnu, compiled by gcc (GCC) 13.2.0, 64-bit
+2026-10-01 00:04:03.704 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-01 00:04:15.345 UTC [27] LOG:  database system was shut down at 2026-09-30 23:58:01 UTC
+2026-10-01 00:04:18.768 UTC [1] LOG:  database system is ready to accept connections
+2026-10-01 00:04:19.336 UTC [512] ERROR:  duplicate key value violates unique constraint "users_email_key"
+2026-10-01 00:04:19.336 UTC [512] DETAIL:  Key (email)=(user-1042@example.com) already exists.
+2026-10-01 00:04:19.336 UTC [512] STATEMENT:  INSERT INTO users (email, name) VALUES ('user-1042@example.com', 'User 1042');
+2026-10-01 00:04:32.683 UTC [513] ERROR:  relation "order_items" does not exist at character 15
+2026-10-01 00:04:32.683 UTC [513] STATEMENT:  SELECT *
+	  FROM order_items
+	 WHERE order_id = 7731;
+2026-10-01 00:04:50.620 UTC [25] LOG:  checkpoint starting: time
+2026-10-01 00:05:06.359 UTC [25] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.312 s, sync=0.004 s, total=4.330 s; sync files=12, longest=0.002 s, average=0.001 s; distance=301 kB, estimate=301 kB; lsn=0/1A3C2B8, redo lsn=0/1A3C280
+2026-10-01 00:05:23.773 UTC [520] FATAL:  password authentication failed for user "app"
+2026-10-01 00:05:23.773 UTC [520] DETAIL:  Connection matched file "/var/lib/postgresql/data/pg_hba.conf" line 99: "host all all all scram-sha-256"
+2026-10-01 00:05:33.506 UTC [531] WARNING:  there is no transaction in progress
+2026-10-01 00:05:43.494 UTC [540] ERROR:  canceling statement due to statement timeout
+2026-10-01 00:05:43.494 UTC [540] CONTEXT:  while scanning block 1200 of relation "public.events"
+2026-10-01 00:05:43.494 UTC [540] STATEMENT:  SELECT count(*) FROM events;
+2026-10-01 00:05:57.791 UTC [52] LOG:  automatic vacuum of table "shop.public.orders": index scans: 1
+	pages: 0 removed, 312 remain, 312 scanned (100.00% of total)
+	tuples: 120 removed, 9800 remain, 0 are dead but not yet removable
+2026-10-01 00:06:10.290 UTC [560] NOTICE:  table "tmp_import" does not exist, skipping
+2026-10-01 00:06:28.956 UTC [570] ERROR:  deadlock detected
+2026-10-01 00:06:28.956 UTC [570] DETAIL:  Process 470 waits for ShareLock on transaction 5521; blocked by process 471.
+	Process 471 waits for ShareLock on transaction 5520; blocked by process 470.
+	Process 470: UPDATE accounts SET balance = balance - 10 WHERE id = 1;
+	Process 471: UPDATE accounts SET balance = balance + 10 WHERE id = 2;
+2026-10-01 00:06:28.956 UTC [570] HINT:  See server log for query details.
+2026-10-01 00:06:28.956 UTC [570] CONTEXT:  while updating tuple (0,12) in relation "accounts"
+2026-10-01 00:06:28.956 UTC [570] STATEMENT:  UPDATE accounts SET balance = balance - 10 WHERE id = 1;
+2026-10-01 00:06:34.372 UTC [580] LOG:  duration: 2310.442 ms  statement: SELECT * FROM orders WHERE status = 'open' ORDER BY created_at DESC;
+2026-10-01 00:06:34.539 UTC [581] DEBUG1:  autovacuum: processing database "shop"
+2026-10-01 00:06:45.099 UTC [590] LOG:  connection received: host=203.0.113.17 port=52144
+2026-10-01 00:07:04.935 UTC [590] LOG:  connection authorized: user=app database=shop application_name=psql
+2026-10-01 00:07:06.286 UTC [1] PANIC:  could not write to file "pg_wal/xlogtemp.31": No space left on device
+2026-10-01 00:07:14.751 UTC [1] LOG:  starting PostgreSQL 17.2 on aarch64-unknown-linux-gnu, compiled by gcc (GCC) 13.2.0, 64-bit
+2026-10-01 00:07:22.411 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-01 00:07:25.910 UTC [27] LOG:  database system was shut down at 2026-09-30 23:58:01 UTC
+2026-10-01 00:07:39.898 UTC [1] LOG:  database system is ready to accept connections
+2026-10-01 00:07:52.057 UTC [612] ERROR:  duplicate key value violates unique constraint "users_email_key"
+2026-10-01 00:07:52.057 UTC [612] DETAIL:  Key (email)=(user-1042@example.com) already exists.
+2026-10-01 00:07:52.057 UTC [612] STATEMENT:  INSERT INTO users (email, name) VALUES ('user-1042@example.com', 'User 1042');
+2026-10-01 00:07:54.681 UTC [613] ERROR:  relation "order_items" does not exist at character 15
+2026-10-01 00:07:54.681 UTC [613] STATEMENT:  SELECT *
+	  FROM order_items
+	 WHERE order_id = 7731;
+2026-10-01 00:08:11.672 UTC [25] LOG:  checkpoint starting: time
+2026-10-01 00:08:30.885 UTC [25] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.312 s, sync=0.004 s, total=4.330 s; sync files=12, longest=0.002 s, average=0.001 s; distance=301 kB, estimate=301 kB; lsn=0/1A3C2B8, redo lsn=0/1A3C280
+2026-10-01 00:08:42.558 UTC [620] FATAL:  password authentication failed for user "app"
+2026-10-01 00:08:42.558 UTC [620] DETAIL:  Connection matched file "/var/lib/postgresql/data/pg_hba.conf" line 99: "host all all all scram-sha-256"
+2026-10-01 00:08:56.708 UTC [631] WARNING:  there is no transaction in progress
+2026-10-01 00:09:06.886 UTC [640] ERROR:  canceling statement due to statement timeout
+2026-10-01 00:09:06.886 UTC [640] CONTEXT:  while scanning block 1200 of relation "public.events"
+2026-10-01 00:09:06.886 UTC [640] STATEMENT:  SELECT count(*) FROM events;
+2026-10-01 00:09:26.733 UTC [52] LOG:  automatic vacuum of table "shop.public.orders": index scans: 1
+	pages: 0 removed, 312 remain, 312 scanned (100.00% of total)
+	tuples: 120 removed, 9800 remain, 0 are dead but not yet removable
+2026-10-01 00:09:37.171 UTC [660] NOTICE:  table "tmp_import" does not exist, skipping
+2026-10-01 00:09:53.528 UTC [670] ERROR:  deadlock detected
+2026-10-01 00:09:53.528 UTC [670] DETAIL:  Process 470 waits for ShareLock on transaction 5521; blocked by process 471.
+	Process 471 waits for ShareLock on transaction 5520; blocked by process 470.
+	Process 470: UPDATE accounts SET balance = balance - 10 WHERE id = 1;
+	Process 471: UPDATE accounts SET balance = balance + 10 WHERE id = 2;
+2026-10-01 00:09:53.528 UTC [670] HINT:  See server log for query details.
+2026-10-01 00:09:53.528 UTC [670] CONTEXT:  while updating tuple (0,12) in relation "accounts"
+2026-10-01 00:09:53.528 UTC [670] STATEMENT:  UPDATE accounts SET balance = balance - 10 WHERE id = 1;
+2026-10-01 00:09:54.130 UTC [680] LOG:  duration: 2310.442 ms  statement: SELECT * FROM orders WHERE status = 'open' ORDER BY created_at DESC;
+2026-10-01 00:10:05.290 UTC [681] DEBUG1:  autovacuum: processing database "shop"
+2026-10-01 00:10:21.466 UTC [690] LOG:  connection received: host=203.0.113.17 port=52144
+2026-10-01 00:10:33.220 UTC [690] LOG:  connection authorized: user=app database=shop application_name=psql
+2026-10-01 00:10:34.077 UTC [1] PANIC:  could not write to file "pg_wal/xlogtemp.31": No space left on device
+2026-10-01 00:10:48.364 UTC [1] LOG:  starting PostgreSQL 17.2 on aarch64-unknown-linux-gnu, compiled by gcc (GCC) 13.2.0, 64-bit
+2026-10-01 00:10:50.480 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-01 00:11:09.780 UTC [27] LOG:  database system was shut down at 2026-09-30 23:58:01 UTC
+2026-10-01 00:11:16.543 UTC [1] LOG:  database system is ready to accept connections
+2026-10-01 00:11:17.221 UTC [712] ERROR:  duplicate key value violates unique constraint "users_email_key"
+2026-10-01 00:11:17.221 UTC [712] DETAIL:  Key (email)=(user-1042@example.com) already exists.
+2026-10-01 00:11:17.221 UTC [712] STATEMENT:  INSERT INTO users (email, name) VALUES ('user-1042@example.com', 'User 1042');
+2026-10-01 00:11:29.626 UTC [713] ERROR:  relation "order_items" does not exist at character 15
+2026-10-01 00:11:29.626 UTC [713] STATEMENT:  SELECT *
+	  FROM order_items
+	 WHERE order_id = 7731;
+2026-10-01 00:11:29.863 UTC [25] LOG:  checkpoint starting: time
+2026-10-01 00:11:47.067 UTC [25] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.312 s, sync=0.004 s, total=4.330 s; sync files=12, longest=0.002 s, average=0.001 s; distance=301 kB, estimate=301 kB; lsn=0/1A3C2B8, redo lsn=0/1A3C280
+2026-10-01 00:12:02.168 UTC [720] FATAL:  password authentication failed for user "app"
+2026-10-01 00:12:02.168 UTC [720] DETAIL:  Connection matched file "/var/lib/postgresql/data/pg_hba.conf" line 99: "host all all all scram-sha-256"
+2026-10-01 00:12:06.655 UTC [731] WARNING:  there is no transaction in progress
+2026-10-01 00:12:20.514 UTC [740] ERROR:  canceling statement due to statement timeout
+2026-10-01 00:12:20.514 UTC [740] CONTEXT:  while scanning block 1200 of relation "public.events"
+2026-10-01 00:12:20.514 UTC [740] STATEMENT:  SELECT count(*) FROM events;
+2026-10-01 00:12:38.498 UTC [52] LOG:  automatic vacuum of table "shop.public.orders": index scans: 1
+	pages: 0 removed, 312 remain, 312 scanned (100.00% of total)
+	tuples: 120 removed, 9800 remain, 0 are dead but not yet removable
+2026-10-01 00:12:44.016 UTC [760] NOTICE:  table "tmp_import" does not exist, skipping
+2026-10-01 00:12:55.659 UTC [770] ERROR:  deadlock detected
+2026-10-01 00:12:55.659 UTC [770] DETAIL:  Process 470 waits for ShareLock on transaction 5521; blocked by process 471.
+	Process 471 waits for ShareLock on transaction 5520; blocked by process 470.
+	Process 470: UPDATE accounts SET balance = balance - 10 WHERE id = 1;
+	Process 471: UPDATE accounts SET balance = balance + 10 WHERE id = 2;
+2026-10-01 00:12:55.659 UTC [770] HINT:  See server log for query details.
+2026-10-01 00:12:55.659 UTC [770] CONTEXT:  while updating tuple (0,12) in relation "accounts"
+2026-10-01 00:12:55.659 UTC [770] STATEMENT:  UPDATE accounts SET balance = balance - 10 WHERE id = 1;
+2026-10-01 00:12:59.673 UTC [780] LOG:  duration: 2310.442 ms  statement: SELECT * FROM orders WHERE status = 'open' ORDER BY created_at DESC;
+2026-10-01 00:13:07.032 UTC [781] DEBUG1:  autovacuum: processing database "shop"
+2026-10-01 00:13:08.104 UTC [790] LOG:  connection received: host=203.0.113.17 port=52144
+2026-10-01 00:13:10.142 UTC [790] LOG:  connection authorized: user=app database=shop application_name=psql
+2026-10-01 00:13:12.981 UTC [1] PANIC:  could not write to file "pg_wal/xlogtemp.31": No space left on device
+2026-10-01 00:13:21.791 UTC [1] LOG:  starting PostgreSQL 17.2 on aarch64-unknown-linux-gnu, compiled by gcc (GCC) 13.2.0, 64-bit
+2026-10-01 00:13:30.201 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-01 00:13:31.647 UTC [27] LOG:  database system was shut down at 2026-09-30 23:58:01 UTC
+2026-10-01 00:13:43.099 UTC [1] LOG:  database system is ready to accept connections
+2026-10-01 00:13:58.988 UTC [812] ERROR:  duplicate key value violates unique constraint "users_email_key"
+2026-10-01 00:13:58.988 UTC [812] DETAIL:  Key (email)=(user-1042@example.com) already exists.
+2026-10-01 00:13:58.988 UTC [812] STATEMENT:  INSERT INTO users (email, name) VALUES ('user-1042@example.com', 'User 1042');
+2026-10-01 00:14:11.242 UTC [813] ERROR:  relation "order_items" does not exist at character 15
+2026-10-01 00:14:11.242 UTC [813] STATEMENT:  SELECT *
+	  FROM order_items
+	 WHERE order_id = 7731;
+2026-10-01 00:14:26.764 UTC [25] LOG:  checkpoint starting: time
+2026-10-01 00:14:32.050 UTC [25] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.312 s, sync=0.004 s, total=4.330 s; sync files=12, longest=0.002 s, average=0.001 s; distance=301 kB, estimate=301 kB; lsn=0/1A3C2B8, redo lsn=0/1A3C280
+2026-10-01 00:14:51.250 UTC [820] FATAL:  password authentication failed for user "app"
+2026-10-01 00:14:51.250 UTC [820] DETAIL:  Connection matched file "/var/lib/postgresql/data/pg_hba.conf" line 99: "host all all all scram-sha-256"
+2026-10-01 00:15:11.111 UTC [831] WARNING:  there is no transaction in progress
+2026-10-01 00:15:28.194 UTC [840] ERROR:  canceling statement due to statement timeout
+2026-10-01 00:15:28.194 UTC [840] CONTEXT:  while scanning block 1200 of relation "public.events"
+2026-10-01 00:15:28.194 UTC [840] STATEMENT:  SELECT count(*) FROM events;
+2026-10-01 00:15:40.417 UTC [52] LOG:  automatic vacuum of table "shop.public.orders": index scans: 1
+	pages: 0 removed, 312 remain, 312 scanned (100.00% of total)
+	tuples: 120 removed, 9800 remain, 0 are dead but not yet removable
+2026-10-01 00:15:59.881 UTC [860] NOTICE:  table "tmp_import" does not exist, skipping
+2026-10-01 00:16:08.544 UTC [870] ERROR:  deadlock detected
+2026-10-01 00:16:08.544 UTC [870] DETAIL:  Process 470 waits for ShareLock on transaction 5521; blocked by process 471.
+	Process 471 waits for ShareLock on transaction 5520; blocked by process 470.
+	Process 470: UPDATE accounts SET balance = balance - 10 WHERE id = 1;
+	Process 471: UPDATE accounts SET balance = balance + 10 WHERE id = 2;
+2026-10-01 00:16:08.544 UTC [870] HINT:  See server log for query details.
+2026-10-01 00:16:08.544 UTC [870] CONTEXT:  while updating tuple (0,12) in relation "accounts"
+2026-10-01 00:16:08.544 UTC [870] STATEMENT:  UPDATE accounts SET balance = balance - 10 WHERE id = 1;
+2026-10-01 00:16:27.396 UTC [880] LOG:  duration: 2310.442 ms  statement: SELECT * FROM orders WHERE status = 'open' ORDER BY created_at DESC;
+2026-10-01 00:16:44.446 UTC [881] DEBUG1:  autovacuum: processing database "shop"
+2026-10-01 00:16:56.157 UTC [890] LOG:  connection received: host=203.0.113.17 port=52144
+2026-10-01 00:17:04.401 UTC [890] LOG:  connection authorized: user=app database=shop application_name=psql
+2026-10-01 00:17:23.379 UTC [1] PANIC:  could not write to file "pg_wal/xlogtemp.31": No space left on device

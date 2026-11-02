@@ -1,0 +1,123 @@
+Oct 01, 2026 12:01:16 AM com.example.orders.OrderService placeOrder
+INFO: Order 7731 placed for user-1042
+Oct 01, 2026 12:01:42 AM com.example.orders.OrderService loadConfig
+CONFIG: orders.maxItems=50
+Oct 01, 2026 12:02:52 AM com.example.db.ConnectionPool borrow
+FINE: borrowed connection 3 of 10
+Oct 01, 2026 12:03:40 AM com.example.db.ConnectionPool evict
+FINER: evicting idle connection 7
+Oct 01, 2026 12:04:41 AM com.example.http.Server start
+INFO: Listening on port 8080
+Oct 01, 2026 12:04:48 AM com.example.http.Server handle
+WARNING: Slow request GET /api/orders took 2310 ms
+Oct 01, 2026 12:06:15 AM com.example.cache.CacheLoader refresh
+FINEST: refresh tick
+Oct 01, 2026 12:07:21 AM com.example.orders.OrderService charge
+SEVERE: Payment failed for order 7731
+java.lang.IllegalStateException: gateway returned 502
+	at com.example.payments.GatewayClient.charge(GatewayClient.java:88)
+	at com.example.orders.OrderService.charge(OrderService.java:142)
+	at com.example.orders.OrderService.placeOrder(OrderService.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	... 4 more
+
+Oct 01, 2026 12:07:49 AM com.example.orders.OrderService placeOrder
+INFO: Order 7731 placed for user-1042
+Oct 01, 2026 12:09:08 AM com.example.orders.OrderService loadConfig
+CONFIG: orders.maxItems=50
+Oct 01, 2026 12:09:38 AM com.example.db.ConnectionPool borrow
+FINE: borrowed connection 3 of 10
+Oct 01, 2026 12:10:16 AM com.example.db.ConnectionPool evict
+FINER: evicting idle connection 7
+Oct 01, 2026 12:11:20 AM com.example.http.Server start
+INFO: Listening on port 8080
+Oct 01, 2026 12:11:48 AM com.example.http.Server handle
+WARNING: Slow request GET /api/orders took 2310 ms
+Oct 01, 2026 12:12:31 AM com.example.cache.CacheLoader refresh
+FINEST: refresh tick
+Oct 01, 2026 12:13:29 AM com.example.orders.OrderService charge
+SEVERE: Payment failed for order 7731
+Oct 01, 2026 12:13:38 AM com.example.orders.OrderService placeOrder
+INFO: Order 7731 placed for user-1042
+Oct 01, 2026 12:14:12 AM com.example.orders.OrderService loadConfig
+CONFIG: orders.maxItems=50
+Oct 01, 2026 12:14:37 AM com.example.db.ConnectionPool borrow
+FINE: borrowed connection 3 of 10
+Oct 01, 2026 12:14:58 AM com.example.db.ConnectionPool evict
+FINER: evicting idle connection 7
+Oct 01, 2026 12:15:10 AM com.example.http.Server start
+INFO: Listening on port 8080
+Oct 01, 2026 12:16:09 AM com.example.http.Server handle
+WARNING: Slow request GET /api/orders took 2310 ms
+Oct 01, 2026 12:17:19 AM com.example.cache.CacheLoader refresh
+FINEST: refresh tick
+Oct 01, 2026 12:18:08 AM com.example.orders.OrderService charge
+SEVERE: Payment failed for order 7731
+java.lang.IllegalStateException: gateway returned 502
+	at com.example.payments.GatewayClient.charge(GatewayClient.java:88)
+	at com.example.orders.OrderService.charge(OrderService.java:142)
+	at com.example.orders.OrderService.placeOrder(OrderService.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	... 4 more
+
+Oct 01, 2026 12:18:33 AM com.example.orders.OrderService placeOrder
+INFO: Order 7731 placed for user-1042
+Oct 01, 2026 12:19:35 AM com.example.orders.OrderService loadConfig
+CONFIG: orders.maxItems=50
+Oct 01, 2026 12:20:18 AM com.example.db.ConnectionPool borrow
+FINE: borrowed connection 3 of 10
+Oct 01, 2026 12:20:49 AM com.example.db.ConnectionPool evict
+FINER: evicting idle connection 7
+Oct 01, 2026 12:22:13 AM com.example.http.Server start
+INFO: Listening on port 8080
+Oct 01, 2026 12:23:06 AM com.example.http.Server handle
+WARNING: Slow request GET /api/orders took 2310 ms
+Oct 01, 2026 12:24:02 AM com.example.cache.CacheLoader refresh
+FINEST: refresh tick
+Oct 01, 2026 12:24:29 AM com.example.orders.OrderService charge
+SEVERE: Payment failed for order 7731
+Oct 01, 2026 12:24:38 AM com.example.orders.OrderService placeOrder
+INFO: Order 7731 placed for user-1042
+Oct 01, 2026 12:25:34 AM com.example.orders.OrderService loadConfig
+CONFIG: orders.maxItems=50
+Oct 01, 2026 12:26:36 AM com.example.db.ConnectionPool borrow
+FINE: borrowed connection 3 of 10
+Oct 01, 2026 12:27:16 AM com.example.db.ConnectionPool evict
+FINER: evicting idle connection 7
+Oct 01, 2026 12:27:44 AM com.example.http.Server start
+INFO: Listening on port 8080
+Oct 01, 2026 12:27:59 AM com.example.http.Server handle
+WARNING: Slow request GET /api/orders took 2310 ms
+Oct 01, 2026 12:29:24 AM com.example.cache.CacheLoader refresh
+FINEST: refresh tick
+Oct 01, 2026 12:30:47 AM com.example.orders.OrderService charge
+SEVERE: Payment failed for order 7731
+java.lang.IllegalStateException: gateway returned 502
+	at com.example.payments.GatewayClient.charge(GatewayClient.java:88)
+	at com.example.orders.OrderService.charge(OrderService.java:142)
+	at com.example.orders.OrderService.placeOrder(OrderService.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	... 4 more
+
+Oct 01, 2026 12:32:16 AM com.example.orders.OrderService placeOrder
+INFO: Order 7731 placed for user-1042
+Oct 01, 2026 12:32:59 AM com.example.orders.OrderService loadConfig
+CONFIG: orders.maxItems=50
+Oct 01, 2026 12:34:26 AM com.example.db.ConnectionPool borrow
+FINE: borrowed connection 3 of 10
+Oct 01, 2026 12:35:02 AM com.example.db.ConnectionPool evict
+FINER: evicting idle connection 7
+Oct 01, 2026 12:35:54 AM com.example.http.Server start
+INFO: Listening on port 8080
+Oct 01, 2026 12:36:44 AM com.example.http.Server handle
+WARNING: Slow request GET /api/orders took 2310 ms
+Oct 01, 2026 12:37:14 AM com.example.cache.CacheLoader refresh
+FINEST: refresh tick
+Oct 01, 2026 12:38:09 AM com.example.orders.OrderService charge
+SEVERE: Payment failed for order 7731

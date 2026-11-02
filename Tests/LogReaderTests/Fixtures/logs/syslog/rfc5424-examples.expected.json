@@ -1,0 +1,326 @@
+{
+  "source": "Documentation-derived: the four examples of RFC 5424 section 6.5 verbatim (BOM written as the real U+FEFF bytes) https://www.rfc-editor.org/rfc/rfc5424#section-6.5 , then lines built to the ABNF of section 6 including NILVALUE timestamps and app names, numeric offsets and structured data",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2003-10-11T22:14:15.003Z",
+      "zoned": true,
+      "component": "su"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "notice",
+      "time": "2003-08-24T12:14:15.000Z",
+      "zoned": true,
+      "component": "myproc"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "notice",
+      "time": "2003-10-11T22:14:15.003Z",
+      "zoned": true,
+      "component": "evntslog"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "notice",
+      "time": "2003-10-11T22:14:15.003Z",
+      "zoned": true,
+      "component": "evntslog"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:18.367Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:36.602Z",
+      "zoned": true,
+      "component": "postgres"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:52.262Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "notice",
+      "time": "2026-10-01T00:00:58.556Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "fatal",
+      "time": null,
+      "zoned": false,
+      "component": "kernel"
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:13.019Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:29.625Z",
+      "zoned": true,
+      "component": "postgres"
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:01:42.668Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:46.465Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:04.484Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:11.784Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "notice",
+      "time": "2026-10-01T00:02:16.067Z",
+      "zoned": true,
+      "component": "postgres"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:17.929Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "debug",
+      "time": null,
+      "zoned": false,
+      "component": "billing"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:02:48.239Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:03:00.699Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:16.331Z",
+      "zoned": true,
+      "component": "postgres"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:33.965Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:48.446Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "notice",
+      "time": "2026-10-01T00:03:58.034Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:04:02.702Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:04:04.825Z",
+      "zoned": true,
+      "component": "postgres"
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "fatal",
+      "time": null,
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:04:28.491Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:36.495Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:45.918Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:00.220Z",
+      "zoned": true,
+      "component": "postgres"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "notice",
+      "time": "2026-10-01T00:05:08.467Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:05:09.389Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:05:10.065Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:05:25.671Z",
+      "zoned": true,
+      "component": "nginx"
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "fatal",
+      "time": null,
+      "zoned": false,
+      "component": "postgres"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:44.392Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:53.948Z",
+      "zoned": true,
+      "component": "billing"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:06:10.156Z",
+      "zoned": true,
+      "component": "kernel"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "notice",
+      "time": "2026-10-01T00:06:14.590Z",
+      "zoned": true,
+      "component": "nginx"
+    }
+  ]
+}

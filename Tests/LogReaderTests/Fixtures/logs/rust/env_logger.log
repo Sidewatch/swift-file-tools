@@ -1,0 +1,70 @@
+[2026-11-02T08:47:59Z INFO  audit] server listening on 0.0.0.0:8080
+[2026-11-02T08:48:01Z DEBUG logfixture::db] loaded 42 routes from config/routes.toml
+[2026-11-02T08:48:01Z TRACE logfixture::cache] poll tick queue_depth=0
+[2026-11-02T08:48:01Z INFO  logfixture] GET /api/orders/1042 200 12ms
+[2026-11-02T08:48:01Z WARN  logfixture::http::server] slow query took 812ms: SELECT * FROM orders WHERE user_id = $1
+[2026-11-02T08:48:01Z ERROR audit] connection to 198.51.100.20:5432 refused
+[2026-11-02T08:48:01Z INFO  logfixture::db] cache warm: 1200 keys
+[2026-11-02T08:48:01Z DEBUG logfixture::cache] pool stats idle=4 busy=1
+[2026-11-02T08:48:01Z ERROR logfixture] request failed: upstream timeout
+    caused by: deadline has elapsed
+    caused by: operation timed out
+[2026-11-02T08:48:01Z WARN  logfixture::http::server] retrying job 7731 (attempt 2 of 5)
+[2026-11-02T08:48:02Z INFO  audit] user-1042 signed in from 203.0.113.17
+[2026-11-02T08:48:02Z TRACE logfixture::db] entered handler orders::show
+[2026-11-02T08:48:02Z INFO  logfixture::cache] server listening on 0.0.0.0:8080
+[2026-11-02T08:48:02Z DEBUG logfixture] loaded 42 routes from config/routes.toml
+[2026-11-02T08:48:02Z TRACE logfixture::http::server] poll tick queue_depth=0
+[2026-11-02T08:48:02Z INFO  audit] GET /api/orders/1042 200 12ms
+[2026-11-02T08:48:02Z WARN  logfixture::db] slow query took 812ms: SELECT * FROM orders WHERE user_id = $1
+[2026-11-02T08:48:02Z ERROR logfixture::cache] connection to 198.51.100.20:5432 refused
+[2026-11-02T08:48:02Z INFO  logfixture] cache warm: 1200 keys
+[2026-11-02T08:48:03Z DEBUG logfixture::http::server] pool stats idle=4 busy=1
+[2026-11-02T08:48:03Z ERROR audit] request failed: upstream timeout
+    caused by: deadline has elapsed
+    caused by: operation timed out
+[2026-11-02T08:48:03Z WARN  logfixture::db] retrying job 7731 (attempt 2 of 5)
+[2026-11-02T08:48:03Z INFO  logfixture::cache] user-1042 signed in from 203.0.113.17
+[2026-11-02T08:48:03Z TRACE logfixture] entered handler orders::show
+[2026-11-02T08:48:03Z INFO  logfixture::http::server] server listening on 0.0.0.0:8080
+[2026-11-02T08:48:03Z DEBUG audit] loaded 42 routes from config/routes.toml
+[2026-11-02T08:48:03Z TRACE logfixture::db] poll tick queue_depth=0
+[2026-11-02T08:48:03Z INFO  logfixture::cache] GET /api/orders/1042 200 12ms
+[2026-11-02T08:48:04Z WARN  logfixture] slow query took 812ms: SELECT * FROM orders WHERE user_id = $1
+[2026-11-02T08:48:04Z ERROR logfixture::http::server] connection to 198.51.100.20:5432 refused
+[2026-11-02T08:48:04Z INFO  audit] cache warm: 1200 keys
+[2026-11-02T08:48:04Z DEBUG logfixture::db] pool stats idle=4 busy=1
+[2026-11-02T08:48:04Z ERROR logfixture::cache] request failed: upstream timeout
+    caused by: deadline has elapsed
+    caused by: operation timed out
+[2026-11-02T08:48:04Z WARN  logfixture] retrying job 7731 (attempt 2 of 5)
+[2026-11-02T08:48:04Z INFO  logfixture::http::server] user-1042 signed in from 203.0.113.17
+[2026-11-02T08:48:04Z TRACE audit] entered handler orders::show
+[2026-11-02T08:48:04Z INFO  logfixture::db] server listening on 0.0.0.0:8080
+[2026-11-02T08:48:05Z DEBUG logfixture::cache] loaded 42 routes from config/routes.toml
+[2026-11-02T08:48:05Z TRACE logfixture] poll tick queue_depth=0
+[2026-11-02T08:48:05Z INFO  logfixture::http::server] GET /api/orders/1042 200 12ms
+[2026-11-02T08:48:05Z WARN  audit] slow query took 812ms: SELECT * FROM orders WHERE user_id = $1
+[2026-11-02T08:48:05Z ERROR logfixture::db] connection to 198.51.100.20:5432 refused
+[2026-11-02T08:48:05Z INFO  logfixture::cache] cache warm: 1200 keys
+[2026-11-02T08:48:05Z DEBUG logfixture] pool stats idle=4 busy=1
+[2026-11-02T08:48:05Z ERROR logfixture::http::server] request failed: upstream timeout
+    caused by: deadline has elapsed
+    caused by: operation timed out
+[2026-11-02T08:48:05Z WARN  audit] retrying job 7731 (attempt 2 of 5)
+[2026-11-02T08:48:06Z INFO  logfixture::db] user-1042 signed in from 203.0.113.17
+[2026-11-02T08:48:06Z TRACE logfixture::cache] entered handler orders::show
+[2026-11-02T08:48:06Z INFO  logfixture] server listening on 0.0.0.0:8080
+[2026-11-02T08:48:06Z DEBUG logfixture::http::server] loaded 42 routes from config/routes.toml
+[2026-11-02T08:48:06Z TRACE audit] poll tick queue_depth=0
+[2026-11-02T08:48:06Z INFO  logfixture::db] GET /api/orders/1042 200 12ms
+[2026-11-02T08:48:06Z WARN  logfixture::cache] slow query took 812ms: SELECT * FROM orders WHERE user_id = $1
+[2026-11-02T08:48:06Z ERROR logfixture] connection to 198.51.100.20:5432 refused
+[2026-11-02T08:48:06Z INFO  logfixture::http::server] cache warm: 1200 keys
+[2026-11-02T08:48:08Z DEBUG audit] pool stats idle=4 busy=1
+[2026-11-02T08:48:08Z ERROR logfixture::db] request failed: upstream timeout
+    caused by: deadline has elapsed
+    caused by: operation timed out
+[2026-11-02T08:48:08Z WARN  logfixture::cache] retrying job 7731 (attempt 2 of 5)
+[2026-11-02T08:48:08Z INFO  logfixture] user-1042 signed in from 203.0.113.17
+[2026-11-02T08:48:08Z TRACE logfixture::http::server] entered handler orders::show

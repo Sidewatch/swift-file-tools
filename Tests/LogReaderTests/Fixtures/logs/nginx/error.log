@@ -1,0 +1,65 @@
+2026/10/01 00:00:12 [notice] 1#1: using the "epoll" event method
+2026/10/01 00:00:28 [notice] 1#1: nginx/1.27.2
+2026/10/01 00:00:41 [notice] 1#1: start worker processes
+2026/10/01 00:00:48 [warn] 1#1: conflicting server name "example.com" on 0.0.0.0:80, ignored
+2026/10/01 00:00:54 [error] 29#29: *7 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 203.0.113.7, server: example.com, request: "GET /favicon.ico HTTP/1.1", host: "example.com"
+2026/10/01 00:01:07 [error] 29#29: *12 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 198.51.100.23, server: example.com, request: "GET /api/report HTTP/1.1", upstream: "http://192.0.2.10:8080/api/report", host: "example.com"
+2026/10/01 00:01:09 [info] 30#30: *15 client 203.0.113.150 closed keepalive connection
+2026/10/01 00:01:23 [debug] 30#30: *16 http keepalive handler
+2026/10/01 00:01:38 [crit] 30#30: *20 SSL_do_handshake() failed (SSL: error:0A00006C:SSL routines::bad key share) while SSL handshaking, client: 192.0.2.44, server: 0.0.0.0:443
+2026/10/01 00:01:53 [error] 29#29: *23 connect() failed (111: Connection refused) while connecting to upstream, client: 203.0.113.7, server: example.com, request: "GET /api/orders HTTP/1.1", upstream: "http://192.0.2.10:8080/api/orders", host: "example.com"
+2026/10/01 00:01:54 [alert] 1#1: worker process 30 exited on signal 9
+2026/10/01 00:02:11 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2026/10/01 00:02:22 [warn] 29#29: *32 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream
+2026/10/01 00:02:28 [notice] 1#1: using the "epoll" event method
+2026/10/01 00:02:36 [notice] 1#1: nginx/1.27.2
+2026/10/01 00:02:53 [notice] 1#1: start worker processes
+2026/10/01 00:03:10 [warn] 1#1: conflicting server name "example.com" on 0.0.0.0:80, ignored
+2026/10/01 00:03:16 [error] 29#29: *20 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 203.0.113.7, server: example.com, request: "GET /favicon.ico HTTP/1.1", host: "example.com"
+2026/10/01 00:03:29 [error] 29#29: *25 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 198.51.100.23, server: example.com, request: "GET /api/report HTTP/1.1", upstream: "http://192.0.2.10:8080/api/report", host: "example.com"
+2026/10/01 00:03:40 [info] 30#30: *28 client 203.0.113.150 closed keepalive connection
+2026/10/01 00:03:56 [debug] 30#30: *29 http keepalive handler
+2026/10/01 00:04:00 [crit] 30#30: *33 SSL_do_handshake() failed (SSL: error:0A00006C:SSL routines::bad key share) while SSL handshaking, client: 192.0.2.44, server: 0.0.0.0:443
+2026/10/01 00:04:14 [error] 29#29: *36 connect() failed (111: Connection refused) while connecting to upstream, client: 203.0.113.7, server: example.com, request: "GET /api/orders HTTP/1.1", upstream: "http://192.0.2.10:8080/api/orders", host: "example.com"
+2026/10/01 00:04:29 [alert] 1#1: worker process 30 exited on signal 9
+2026/10/01 00:04:31 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2026/10/01 00:04:48 [warn] 29#29: *45 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream
+2026/10/01 00:04:56 [notice] 1#1: using the "epoll" event method
+2026/10/01 00:05:04 [notice] 1#1: nginx/1.27.2
+2026/10/01 00:05:19 [notice] 1#1: start worker processes
+2026/10/01 00:05:34 [warn] 1#1: conflicting server name "example.com" on 0.0.0.0:80, ignored
+2026/10/01 00:05:51 [error] 29#29: *33 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 203.0.113.7, server: example.com, request: "GET /favicon.ico HTTP/1.1", host: "example.com"
+2026/10/01 00:06:00 [error] 29#29: *38 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 198.51.100.23, server: example.com, request: "GET /api/report HTTP/1.1", upstream: "http://192.0.2.10:8080/api/report", host: "example.com"
+2026/10/01 00:06:01 [info] 30#30: *41 client 203.0.113.150 closed keepalive connection
+2026/10/01 00:06:07 [debug] 30#30: *42 http keepalive handler
+2026/10/01 00:06:10 [crit] 30#30: *46 SSL_do_handshake() failed (SSL: error:0A00006C:SSL routines::bad key share) while SSL handshaking, client: 192.0.2.44, server: 0.0.0.0:443
+2026/10/01 00:06:12 [error] 29#29: *49 connect() failed (111: Connection refused) while connecting to upstream, client: 203.0.113.7, server: example.com, request: "GET /api/orders HTTP/1.1", upstream: "http://192.0.2.10:8080/api/orders", host: "example.com"
+2026/10/01 00:06:24 [alert] 1#1: worker process 30 exited on signal 9
+2026/10/01 00:06:33 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2026/10/01 00:06:33 [warn] 29#29: *58 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream
+2026/10/01 00:06:39 [notice] 1#1: using the "epoll" event method
+2026/10/01 00:06:46 [notice] 1#1: nginx/1.27.2
+2026/10/01 00:06:53 [notice] 1#1: start worker processes
+2026/10/01 00:06:57 [warn] 1#1: conflicting server name "example.com" on 0.0.0.0:80, ignored
+2026/10/01 00:07:09 [error] 29#29: *46 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 203.0.113.7, server: example.com, request: "GET /favicon.ico HTTP/1.1", host: "example.com"
+2026/10/01 00:07:13 [error] 29#29: *51 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 198.51.100.23, server: example.com, request: "GET /api/report HTTP/1.1", upstream: "http://192.0.2.10:8080/api/report", host: "example.com"
+2026/10/01 00:07:20 [info] 30#30: *54 client 203.0.113.150 closed keepalive connection
+2026/10/01 00:07:27 [debug] 30#30: *55 http keepalive handler
+2026/10/01 00:07:41 [crit] 30#30: *59 SSL_do_handshake() failed (SSL: error:0A00006C:SSL routines::bad key share) while SSL handshaking, client: 192.0.2.44, server: 0.0.0.0:443
+2026/10/01 00:07:49 [error] 29#29: *62 connect() failed (111: Connection refused) while connecting to upstream, client: 203.0.113.7, server: example.com, request: "GET /api/orders HTTP/1.1", upstream: "http://192.0.2.10:8080/api/orders", host: "example.com"
+2026/10/01 00:07:59 [alert] 1#1: worker process 30 exited on signal 9
+2026/10/01 00:08:10 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2026/10/01 00:08:17 [warn] 29#29: *71 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream
+2026/10/01 00:08:27 [notice] 1#1: using the "epoll" event method
+2026/10/01 00:08:36 [notice] 1#1: nginx/1.27.2
+2026/10/01 00:08:47 [notice] 1#1: start worker processes
+2026/10/01 00:09:02 [warn] 1#1: conflicting server name "example.com" on 0.0.0.0:80, ignored
+2026/10/01 00:09:10 [error] 29#29: *59 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 203.0.113.7, server: example.com, request: "GET /favicon.ico HTTP/1.1", host: "example.com"
+2026/10/01 00:09:22 [error] 29#29: *64 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 198.51.100.23, server: example.com, request: "GET /api/report HTTP/1.1", upstream: "http://192.0.2.10:8080/api/report", host: "example.com"
+2026/10/01 00:09:24 [info] 30#30: *67 client 203.0.113.150 closed keepalive connection
+2026/10/01 00:09:30 [debug] 30#30: *68 http keepalive handler
+2026/10/01 00:09:43 [crit] 30#30: *72 SSL_do_handshake() failed (SSL: error:0A00006C:SSL routines::bad key share) while SSL handshaking, client: 192.0.2.44, server: 0.0.0.0:443
+2026/10/01 00:09:56 [error] 29#29: *75 connect() failed (111: Connection refused) while connecting to upstream, client: 203.0.113.7, server: example.com, request: "GET /api/orders HTTP/1.1", upstream: "http://192.0.2.10:8080/api/orders", host: "example.com"
+2026/10/01 00:10:13 [alert] 1#1: worker process 30 exited on signal 9
+2026/10/01 00:10:32 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2026/10/01 00:10:43 [warn] 29#29: *84 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream

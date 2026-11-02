@@ -1,0 +1,726 @@
+{
+  "source": "Python 3.14.10 logging; text lines use '%(asctime)s.%(msecs)03dZ %(levelname)-5s [%(name)s] %(message)s', the gateway and search loggers use a JSON formatter ({ts, level, service, msg, err}); script pylog.py",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:06.031Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:05:07.176Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:09.111Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:10.173Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:10.967Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:13.446Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:05:14.857Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:05:16.689Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:18.121Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 10,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:05:19.615Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:19.945Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:20.849Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:21.268Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:22.198Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:24.124Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:24.930Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:05:26.314Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:05:27.152Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:29.129Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 22,
+      "lines": 16,
+      "level": "error",
+      "time": "2026-10-01T00:05:31.629Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:31.637Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:05:33.601Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:35.011Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:35.359Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:35.851Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:37.443Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:05:38.260Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:05:40.219Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 46,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:05:40.951Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 54,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:05:42.729Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:44.091Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:05:44.447Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:46.069Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:47.967Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:49.612Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:49.960Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:05:50.611Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:05:51.308Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:51.829Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 66,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:05:51.942Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:52.562Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:05:54.982Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:56.889Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:57.488Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:59.929Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 74,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:06:01.872Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 82,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:06:03.308Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 83,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:06:03.947Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 84,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:06:06.195Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 85,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:06:08.441Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 88,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:08.978Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 89,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:06:09.066Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 90,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:09.125Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 91,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:06:09.546Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 92,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:06:11.703Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 93,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:12.274Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 94,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:06:14.051Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 95,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:06:14.849Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 96,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:06:15.714Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 97,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:06:15.829Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 100,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:16.861Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 101,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:06:17.733Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 102,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:06:18.933Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 103,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:06:20.986Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 104,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:06:21.972Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 105,
+      "lines": 16,
+      "level": "error",
+      "time": "2026-10-01T00:06:24.375Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 121,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:06:25.711Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 122,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:06:26.774Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 123,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:06:29.004Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 124,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:06:30.721Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 127,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:31.258Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 128,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:06:31.508Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 129,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:32.958Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 130,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:06:34.835Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 131,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:06:37.225Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 132,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:39.342Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 133,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:06:41.065Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 134,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:06:43.120Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 135,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:06:43.656Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 136,
+      "lines": 8,
+      "level": "error",
+      "time": "2026-10-01T00:06:45.835Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 144,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:46.457Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 145,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:06:48.602Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 146,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:50.694Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 147,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:06:50.771Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 148,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:06:52.574Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 149,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:53.325Z",
+      "zoned": true,
+      "component": "auth"
+    },
+    {
+      "line": 150,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:06:55.818Z",
+      "zoned": true,
+      "component": "search"
+    },
+    {
+      "line": 151,
+      "lines": 1,
+      "level": "fatal",
+      "time": "2026-10-01T00:06:55.835Z",
+      "zoned": true,
+      "component": "gateway"
+    },
+    {
+      "line": 152,
+      "lines": 16,
+      "level": "error",
+      "time": "2026-10-01T00:06:56.449Z",
+      "zoned": true,
+      "component": "http"
+    },
+    {
+      "line": 168,
+      "lines": 3,
+      "level": "info",
+      "time": "2026-10-01T00:06:57.155Z",
+      "zoned": true,
+      "component": "db"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{"logger": "billing", "request_id": "req-3000", "order_id": 7700, "total_cents": 1999, "event": "order.created", "level": "info", "timestamp": "2026-11-02T08:49:31.314076Z"}
+{"logger": "auth", "request_id": "req-3001", "key": "user:1001", "hit": true, "event": "cache.lookup", "level": "debug", "timestamp": "2026-11-02T08:49:31.330608Z"}
+{"logger": "search", "request_id": "req-3002", "user": "user-1002", "retry_after": 30, "event": "rate.limited", "level": "warning", "timestamp": "2026-11-02T08:49:31.346960Z"}
+{"request_id": "req-3003", "host": "api.example.com", "status": 502, "event": "upstream.failed", "level": "error", "timestamp": "2026-11-02T08:49:31.363314Z"}
+{"logger": "billing", "request_id": "req-3004", "host": "198.51.100.20", "port": 5432, "event": "db.unreachable", "level": "critical", "timestamp": "2026-11-02T08:49:31.379668Z"}
+{"logger": "auth", "request_id": "req-3005", "report": "monthly", "event": "report.failed", "level": "error", "timestamp": "2026-11-02T08:49:31.396038Z", "exception": "Traceback (most recent call last):\n  File \"/srv/app/slog.py\", line 31, in <module>\n    try: 1 / 0\n         ~~^~~\nZeroDivisionError: division by zero"}
+{"logger": "search", "request_id": "req-3006", "user": "user-1006", "ip": "203.0.113.7", "event": "user.login", "level": "info", "timestamp": "2026-11-02T08:49:31.412868Z"}
+{"request_id": "req-3007", "job": "digest", "duration_ms": 127, "event": "job.done", "level": "info", "timestamp": "2026-11-02T08:49:31.429218Z"}
+{"logger": "billing", "request_id": "req-3008", "order_id": 7708, "total_cents": 2007, "event": "order.created", "level": "info", "timestamp": "2026-11-02T08:49:31.445543Z"}
+{"logger": "auth", "request_id": "req-3009", "key": "user:1009", "hit": false, "event": "cache.lookup", "level": "debug", "timestamp": "2026-11-02T08:49:31.461860Z"}
+{"logger": "search", "request_id": "req-3010", "user": "user-1010", "retry_after": 30, "event": "rate.limited", "level": "warning", "timestamp": "2026-11-02T08:49:31.478188Z"}
+{"request_id": "req-3011", "host": "api.example.com", "status": 502, "event": "upstream.failed", "level": "error", "timestamp": "2026-11-02T08:49:31.494516Z"}
+{"logger": "billing", "request_id": "req-3012", "host": "198.51.100.20", "port": 5432, "event": "db.unreachable", "level": "critical", "timestamp": "2026-11-02T08:49:31.510849Z"}
+{"logger": "auth", "request_id": "req-3013", "report": "monthly", "event": "report.failed", "level": "error", "timestamp": "2026-11-02T08:49:31.527355Z", "exception": "Traceback (most recent call last):\n  File \"/srv/app/slog.py\", line 31, in <module>\n    try: 1 / 0\n         ~~^~~\nZeroDivisionError: division by zero"}
+{"logger": "search", "request_id": "req-3014", "user": "user-1014", "ip": "203.0.113.15", "event": "user.login", "level": "info", "timestamp": "2026-11-02T08:49:31.542227Z"}
+{"request_id": "req-3015", "job": "digest", "duration_ms": 135, "event": "job.done", "level": "info", "timestamp": "2026-11-02T08:49:31.557367Z"}
+{"logger": "billing", "request_id": "req-3016", "order_id": 7716, "total_cents": 2015, "event": "order.created", "level": "info", "timestamp": "2026-11-02T08:49:31.573804Z"}
+{"logger": "auth", "request_id": "req-3017", "key": "user:1017", "hit": true, "event": "cache.lookup", "level": "debug", "timestamp": "2026-11-02T08:49:31.587923Z"}
+{"logger": "search", "request_id": "req-3018", "user": "user-1018", "retry_after": 30, "event": "rate.limited", "level": "warning", "timestamp": "2026-11-02T08:49:31.604431Z"}
+{"request_id": "req-3019", "host": "api.example.com", "status": 502, "event": "upstream.failed", "level": "error", "timestamp": "2026-11-02T08:49:31.621234Z"}
+{"logger": "billing", "request_id": "req-3020", "host": "198.51.100.20", "port": 5432, "event": "db.unreachable", "level": "critical", "timestamp": "2026-11-02T08:49:31.637858Z"}
+{"logger": "auth", "request_id": "req-3021", "report": "monthly", "event": "report.failed", "level": "error", "timestamp": "2026-11-02T08:49:31.654155Z", "exception": "Traceback (most recent call last):\n  File \"/srv/app/slog.py\", line 31, in <module>\n    try: 1 / 0\n         ~~^~~\nZeroDivisionError: division by zero"}
+{"logger": "search", "request_id": "req-3022", "user": "user-1022", "ip": "203.0.113.23", "event": "user.login", "level": "info", "timestamp": "2026-11-02T08:49:31.671602Z"}
+{"request_id": "req-3023", "job": "digest", "duration_ms": 143, "event": "job.done", "level": "info", "timestamp": "2026-11-02T08:49:31.687465Z"}
+{"logger": "billing", "request_id": "req-3024", "order_id": 7724, "total_cents": 2023, "event": "order.created", "level": "info", "timestamp": "2026-11-02T08:49:31.703821Z"}
+{"logger": "auth", "request_id": "req-3025", "key": "user:1025", "hit": true, "event": "cache.lookup", "level": "debug", "timestamp": "2026-11-02T08:49:31.720312Z"}
+{"logger": "search", "request_id": "req-3026", "user": "user-1026", "retry_after": 30, "event": "rate.limited", "level": "warning", "timestamp": "2026-11-02T08:49:31.736969Z"}
+{"request_id": "req-3027", "host": "api.example.com", "status": 502, "event": "upstream.failed", "level": "error", "timestamp": "2026-11-02T08:49:31.752375Z"}
+{"logger": "billing", "request_id": "req-3028", "host": "198.51.100.20", "port": 5432, "event": "db.unreachable", "level": "critical", "timestamp": "2026-11-02T08:49:31.766199Z"}
+{"logger": "auth", "request_id": "req-3029", "report": "monthly", "event": "report.failed", "level": "error", "timestamp": "2026-11-02T08:49:31.780608Z", "exception": "Traceback (most recent call last):\n  File \"/srv/app/slog.py\", line 31, in <module>\n    try: 1 / 0\n         ~~^~~\nZeroDivisionError: division by zero"}
+{"logger": "search", "request_id": "req-3030", "user": "user-1030", "ip": "203.0.113.31", "event": "user.login", "level": "info", "timestamp": "2026-11-02T08:49:31.797935Z"}
+{"request_id": "req-3031", "job": "digest", "duration_ms": 151, "event": "job.done", "level": "info", "timestamp": "2026-11-02T08:49:31.814545Z"}
+{"logger": "billing", "request_id": "req-3032", "order_id": 7732, "total_cents": 2031, "event": "order.created", "level": "info", "timestamp": "2026-11-02T08:49:31.831109Z"}
+{"logger": "auth", "request_id": "req-3033", "key": "user:1033", "hit": false, "event": "cache.lookup", "level": "debug", "timestamp": "2026-11-02T08:49:31.847653Z"}
+{"logger": "search", "request_id": "req-3034", "user": "user-1034", "retry_after": 30, "event": "rate.limited", "level": "warning", "timestamp": "2026-11-02T08:49:31.861856Z"}
+{"request_id": "req-3035", "host": "api.example.com", "status": 502, "event": "upstream.failed", "level": "error", "timestamp": "2026-11-02T08:49:31.878418Z"}
+{"logger": "billing", "request_id": "req-3036", "host": "198.51.100.20", "port": 5432, "event": "db.unreachable", "level": "critical", "timestamp": "2026-11-02T08:49:31.894946Z"}
+{"logger": "auth", "request_id": "req-3037", "report": "monthly", "event": "report.failed", "level": "error", "timestamp": "2026-11-02T08:49:31.911449Z", "exception": "Traceback (most recent call last):\n  File \"/srv/app/slog.py\", line 31, in <module>\n    try: 1 / 0\n         ~~^~~\nZeroDivisionError: division by zero"}
+{"logger": "search", "request_id": "req-3038", "user": "user-1038", "ip": "203.0.113.39", "event": "user.login", "level": "info", "timestamp": "2026-11-02T08:49:31.928794Z"}
+{"request_id": "req-3039", "job": "digest", "duration_ms": 159, "event": "job.done", "level": "info", "timestamp": "2026-11-02T08:49:31.945293Z"}
+{"logger": "billing", "request_id": "req-3040", "order_id": 7740, "total_cents": 2039, "event": "order.created", "level": "info", "timestamp": "2026-11-02T08:49:31.961814Z"}
+{"logger": "auth", "request_id": "req-3041", "key": "user:1041", "hit": true, "event": "cache.lookup", "level": "debug", "timestamp": "2026-11-02T08:49:31.975554Z"}
+{"logger": "search", "request_id": "req-3042", "user": "user-1042", "retry_after": 30, "event": "rate.limited", "level": "warning", "timestamp": "2026-11-02T08:49:31.992194Z"}
+{"request_id": "req-3043", "host": "api.example.com", "status": 502, "event": "upstream.failed", "level": "error", "timestamp": "2026-11-02T08:49:32.008803Z"}
+{"logger": "billing", "request_id": "req-3044", "host": "198.51.100.20", "port": 5432, "event": "db.unreachable", "level": "critical", "timestamp": "2026-11-02T08:49:32.025476Z"}
+{"logger": "auth", "request_id": "req-3045", "report": "monthly", "event": "report.failed", "level": "error", "timestamp": "2026-11-02T08:49:32.040415Z", "exception": "Traceback (most recent call last):\n  File \"/srv/app/slog.py\", line 31, in <module>\n    try: 1 / 0\n         ~~^~~\nZeroDivisionError: division by zero"}
+{"logger": "search", "request_id": "req-3046", "user": "user-1046", "ip": "203.0.113.47", "event": "user.login", "level": "info", "timestamp": "2026-11-02T08:49:32.057132Z"}
+{"request_id": "req-3047", "job": "digest", "duration_ms": 167, "event": "job.done", "level": "info", "timestamp": "2026-11-02T08:49:32.070842Z"}
+{"logger": "billing", "request_id": "req-3048", "order_id": 7748, "total_cents": 2047, "event": "order.created", "level": "info", "timestamp": "2026-11-02T08:49:32.087396Z"}
+{"logger": "auth", "request_id": "req-3049", "key": "user:1049", "hit": true, "event": "cache.lookup", "level": "debug", "timestamp": "2026-11-02T08:49:32.102979Z"}
+{"logger": "search", "request_id": "req-3050", "user": "user-1050", "retry_after": 30, "event": "rate.limited", "level": "warning", "timestamp": "2026-11-02T08:49:32.119484Z"}
+{"request_id": "req-3051", "host": "api.example.com", "status": 502, "event": "upstream.failed", "level": "error", "timestamp": "2026-11-02T08:49:32.135983Z"}
+{"logger": "billing", "request_id": "req-3052", "host": "198.51.100.20", "port": 5432, "event": "db.unreachable", "level": "critical", "timestamp": "2026-11-02T08:49:32.152495Z"}
+{"logger": "auth", "request_id": "req-3053", "report": "monthly", "event": "report.failed", "level": "error", "timestamp": "2026-11-02T08:49:32.168961Z", "exception": "Traceback (most recent call last):\n  File \"/srv/app/slog.py\", line 31, in <module>\n    try: 1 / 0\n         ~~^~~\nZeroDivisionError: division by zero"}
+{"logger": "search", "request_id": "req-3054", "user": "user-1054", "ip": "203.0.113.55", "event": "user.login", "level": "info", "timestamp": "2026-11-02T08:49:32.186201Z"}
+{"request_id": "req-3055", "job": "digest", "duration_ms": 175, "event": "job.done", "level": "info", "timestamp": "2026-11-02T08:49:32.202681Z"}
+{"logger": "billing", "request_id": "req-3056", "order_id": 7756, "total_cents": 2055, "event": "order.created", "level": "info", "timestamp": "2026-11-02T08:49:32.218252Z"}
+{"logger": "auth", "request_id": "req-3057", "key": "user:1057", "hit": false, "event": "cache.lookup", "level": "debug", "timestamp": "2026-11-02T08:49:32.232309Z"}
+{"logger": "search", "request_id": "req-3058", "user": "user-1058", "retry_after": 30, "event": "rate.limited", "level": "warning", "timestamp": "2026-11-02T08:49:32.248854Z"}
+{"request_id": "req-3059", "host": "api.example.com", "status": 502, "event": "upstream.failed", "level": "error", "timestamp": "2026-11-02T08:49:32.265384Z"}

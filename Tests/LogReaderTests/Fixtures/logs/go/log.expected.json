@@ -1,0 +1,518 @@
+{
+  "source": "Documentation-derived: Go standard log package default flags LstdFlags ('2009/01/23 01:23:23 message') https://pkg.go.dev/log#pkg-constants ; no level, local time, no zone",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:03.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:07.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:10.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:11.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 5,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:00:11.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:13.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:17.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:18.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:22.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:25.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:25.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:30.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 15,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:00:34.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:36.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:39.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:41.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:45.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:49.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:49.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:53.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 25,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:00:53.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:00:57.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:02.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:07.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:09.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:14.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:16.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:18.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 35,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:01:21.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:23.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:25.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:27.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:30.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:32.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:36.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:36.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 45,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:01:39.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:42.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:43.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:47.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:51.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:55.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:55.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:01:59.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 55,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:02:01.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:04.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:05.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:07.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:07.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:10.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:13.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:14.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 65,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:02:14.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:17.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:20.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:24.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:28.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:30.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:33.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:35.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 75,
+      "lines": 3,
+      "level": null,
+      "time": "2026-10-01T00:02:37.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:41.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 79,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:41.000Z",
+      "zoned": false,
+      "component": null
+    },
+    {
+      "line": 80,
+      "lines": 1,
+      "level": null,
+      "time": "2026-10-01T00:02:42.000Z",
+      "zoned": false,
+      "component": null
+    }
+  ]
+}

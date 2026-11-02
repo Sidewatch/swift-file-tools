@@ -1,0 +1,966 @@
+{
+  "source": "Documentation-derived: nginx predefined 'combined' log_format https://nginx.org/en/docs/http/ngx_http_log_module.html#log_format ; $time_local written in a +0200 zone",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:00.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:06.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:09.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:12.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:12.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:14.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:17.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:23.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:29.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:34.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:38.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:43.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:45.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:49.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:53.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:58.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:03.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:06.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:08.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:12.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:16.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:17.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:21.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:23.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:25.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:30.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:32.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:32.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:35.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:36.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:37.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:42.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:44.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:46.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:51.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:55.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:01.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:06.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:07.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:11.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:12.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:17.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:23.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:27.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:31.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:35.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:40.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:02:45.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:48.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:52.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:02:52.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:02:57.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:00.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:04.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:07.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:12.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:15.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:16.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:17.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:20.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:24.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:29.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:30.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:33.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:03:35.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:36.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:37.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:41.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:42.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:48.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 71,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:50.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 72,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:54.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 73,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:03:54.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 74,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:03:56.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 75,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:01.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 76,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:06.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 77,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:11.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 78,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:14.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 79,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:15.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 80,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:21.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 81,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:23.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 82,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:26.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 83,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:27.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 84,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:30.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 85,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:35.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 86,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:35.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 87,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:36.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 88,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:40.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 89,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:44.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 90,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:04:49.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 91,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:04:51.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 92,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:04:56.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 93,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:00.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 94,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:00.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 95,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:01.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 96,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:04.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 97,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:08.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 98,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:12.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 99,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:14.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 100,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:14.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 101,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:16.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 102,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:16.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 103,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:21.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 104,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:27.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 105,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:30.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 106,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:34.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 107,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:05:38.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 108,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:38.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 109,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:38.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 110,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:40.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 111,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:44.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 112,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:47.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 113,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:52.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 114,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:05:57.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 115,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:05:59.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 116,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:02.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 117,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:06.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 118,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:06:07.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 119,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:06:08.000Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 120,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:06:09.000Z",
+      "zoned": true,
+      "component": null
+    }
+  ]
+}

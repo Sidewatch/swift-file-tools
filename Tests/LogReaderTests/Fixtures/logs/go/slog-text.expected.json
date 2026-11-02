@@ -1,0 +1,566 @@
+{
+  "source": "Documentation-derived: log/slog TextHandler 'time=\u2026 level=\u2026 msg=\u2026 key=value' https://pkg.go.dev/log/slog#TextHandler (time as RFC 3339 with milliseconds; levels between the named ones are written as e.g. ERROR+4) ; UTC",
+  "referenceDate": "2026-10-01",
+  "entries": [
+    {
+      "line": 1,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:01.978Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 2,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:02.489Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 3,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:04.847Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 4,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:06.928Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 5,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:08.769Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 6,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:10.688Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 7,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:12.824Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 8,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:15.028Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 9,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:15.988Z",
+      "zoned": true,
+      "component": "storage"
+    },
+    {
+      "line": 10,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:18.687Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 11,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:19.133Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 12,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:21.446Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 13,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:23.384Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 14,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:26.326Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 15,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:26.749Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 16,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:28.896Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 17,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:29.784Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 18,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:31.220Z",
+      "zoned": true,
+      "component": "storage"
+    },
+    {
+      "line": 19,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:32.967Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 20,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:33.329Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 21,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:34.979Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 22,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:35.563Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 23,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:38.054Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 24,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:38.151Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 25,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:40.117Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 26,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:40.597Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 27,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:41.933Z",
+      "zoned": true,
+      "component": "storage"
+    },
+    {
+      "line": 28,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:42.950Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 29,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:43.855Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 30,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:46.251Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 31,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:47.119Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 32,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:49.913Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 33,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:52.315Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 34,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:00:53.592Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 35,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:54.007Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 36,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:55.930Z",
+      "zoned": true,
+      "component": "storage"
+    },
+    {
+      "line": 37,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:00:56.160Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 38,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:00:56.559Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 39,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:00:59.435Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 40,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:01.903Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 41,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:03.302Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 42,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:06.281Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 43,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:07.076Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 44,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:09.681Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 45,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:11.547Z",
+      "zoned": true,
+      "component": "storage"
+    },
+    {
+      "line": 46,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:11.944Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 47,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:12.783Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 48,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:15.355Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 49,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:17.655Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 50,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:18.441Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 51,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:21.422Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 52,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:22.395Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 53,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:24.147Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 54,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:25.728Z",
+      "zoned": true,
+      "component": "storage"
+    },
+    {
+      "line": 55,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:27.239Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 56,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:27.810Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 57,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:29.691Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 58,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:30.683Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 59,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:31.896Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 60,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:33.553Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 61,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:35.297Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 62,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:37.363Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 63,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:39.217Z",
+      "zoned": true,
+      "component": "storage"
+    },
+    {
+      "line": 64,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:39.240Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 65,
+      "lines": 1,
+      "level": "debug",
+      "time": "2026-10-01T00:01:40.252Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 66,
+      "lines": 1,
+      "level": "warning",
+      "time": "2026-10-01T00:01:41.137Z",
+      "zoned": true,
+      "component": "api"
+    },
+    {
+      "line": 67,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:42.095Z",
+      "zoned": true,
+      "component": "db"
+    },
+    {
+      "line": 68,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:44.950Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 69,
+      "lines": 1,
+      "level": "info",
+      "time": "2026-10-01T00:01:47.035Z",
+      "zoned": true,
+      "component": null
+    },
+    {
+      "line": 70,
+      "lines": 1,
+      "level": "error",
+      "time": "2026-10-01T00:01:48.256Z",
+      "zoned": true,
+      "component": "db"
+    }
+  ]
+}

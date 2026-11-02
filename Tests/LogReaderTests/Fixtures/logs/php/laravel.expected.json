@@ -1,0 +1,566 @@
+{
+    "source": "monolog/monolog 3.12.1 on PHP 8.5.12, StreamHandler + LineFormatter(null, 'Y-m-d H:i:s', allowInlineLineBreaks: true, ignoreEmptyContextAndExtra: true) with includeStacktraces(), the formatter Laravel's LogManager builds; channels 'production' and 'payments'; script laravel.php",
+    "referenceDate": "2026-10-01",
+    "entries": [
+        {
+            "line": 1,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-01T00:40:33.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 2,
+            "lines": 1,
+            "level": "debug",
+            "time": "2026-10-01T01:33:15.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 3,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-10-01T01:44:58.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 4,
+            "lines": 6,
+            "level": "error",
+            "time": "2026-10-01T02:26:34.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 10,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-10-01T03:32:55.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 11,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-01T04:39:25.000Z",
+            "zoned": false,
+            "component": "payments"
+        },
+        {
+            "line": 12,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T05:00:56.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 13,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T05:31:16.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 14,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T06:05:49.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 15,
+            "lines": 2,
+            "level": "info",
+            "time": "2026-10-01T07:05:19.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 17,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-01T07:25:58.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 18,
+            "lines": 1,
+            "level": "debug",
+            "time": "2026-10-01T07:53:02.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 19,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-10-01T08:46:27.000Z",
+            "zoned": false,
+            "component": "payments"
+        },
+        {
+            "line": 20,
+            "lines": 6,
+            "level": "error",
+            "time": "2026-10-01T09:09:37.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 26,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-10-01T10:00:52.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 27,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-01T10:19:20.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 28,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T11:08:09.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 29,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T11:39:15.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 30,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T12:03:30.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 31,
+            "lines": 2,
+            "level": "info",
+            "time": "2026-10-01T12:18:10.000Z",
+            "zoned": false,
+            "component": "payments"
+        },
+        {
+            "line": 33,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-01T12:28:47.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 34,
+            "lines": 1,
+            "level": "debug",
+            "time": "2026-10-01T12:43:17.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 35,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-10-01T13:34:24.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 36,
+            "lines": 6,
+            "level": "error",
+            "time": "2026-10-01T14:17:48.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 42,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-10-01T14:33:25.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 43,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-01T14:35:35.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 44,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T15:13:34.000Z",
+            "zoned": false,
+            "component": "payments"
+        },
+        {
+            "line": 45,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T15:54:14.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 46,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T16:58:03.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 47,
+            "lines": 2,
+            "level": "info",
+            "time": "2026-10-01T17:47:05.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 49,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-01T18:03:56.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 50,
+            "lines": 1,
+            "level": "debug",
+            "time": "2026-10-01T18:07:12.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 51,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-10-01T18:08:17.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 52,
+            "lines": 6,
+            "level": "error",
+            "time": "2026-10-01T18:54:35.000Z",
+            "zoned": false,
+            "component": "payments"
+        },
+        {
+            "line": 58,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-10-01T19:44:42.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 59,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-01T19:53:46.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 60,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T20:56:55.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 61,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T21:42:05.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 62,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-01T22:00:24.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 63,
+            "lines": 2,
+            "level": "info",
+            "time": "2026-10-01T22:51:00.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 65,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-01T23:32:29.000Z",
+            "zoned": false,
+            "component": "payments"
+        },
+        {
+            "line": 66,
+            "lines": 1,
+            "level": "debug",
+            "time": "2026-10-01T23:39:43.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 67,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-10-01T23:47:34.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 68,
+            "lines": 6,
+            "level": "error",
+            "time": "2026-10-02T00:30:38.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 74,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-10-02T00:46:11.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 75,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-02T00:51:13.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 76,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-02T01:09:24.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 77,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-02T01:55:36.000Z",
+            "zoned": false,
+            "component": "payments"
+        },
+        {
+            "line": 78,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-02T02:02:49.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 79,
+            "lines": 2,
+            "level": "info",
+            "time": "2026-10-02T03:07:31.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 81,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-02T03:13:06.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 82,
+            "lines": 1,
+            "level": "debug",
+            "time": "2026-10-02T03:44:50.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 83,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-10-02T03:54:23.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 84,
+            "lines": 6,
+            "level": "error",
+            "time": "2026-10-02T04:48:53.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 90,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-10-02T05:01:04.000Z",
+            "zoned": false,
+            "component": "payments"
+        },
+        {
+            "line": 91,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-02T05:31:08.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 92,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-02T06:04:53.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 93,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-02T06:33:43.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 94,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-02T06:38:38.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 95,
+            "lines": 2,
+            "level": "info",
+            "time": "2026-10-02T06:44:06.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 97,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-02T07:20:43.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 98,
+            "lines": 1,
+            "level": "debug",
+            "time": "2026-10-02T08:03:53.000Z",
+            "zoned": false,
+            "component": "payments"
+        },
+        {
+            "line": 99,
+            "lines": 1,
+            "level": "warning",
+            "time": "2026-10-02T08:58:04.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 100,
+            "lines": 6,
+            "level": "error",
+            "time": "2026-10-02T10:02:08.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 106,
+            "lines": 1,
+            "level": "notice",
+            "time": "2026-10-02T10:52:49.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 107,
+            "lines": 1,
+            "level": "info",
+            "time": "2026-10-02T11:01:15.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 108,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-02T12:05:46.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 109,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-02T12:45:46.000Z",
+            "zoned": false,
+            "component": "production"
+        },
+        {
+            "line": 110,
+            "lines": 1,
+            "level": "fatal",
+            "time": "2026-10-02T13:04:07.000Z",
+            "zoned": false,
+            "component": "payments"
+        },
+        {
+            "line": 111,
+            "lines": 2,
+            "level": "info",
+            "time": "2026-10-02T14:05:17.000Z",
+            "zoned": false,
+            "component": "production"
+        }
+    ]
+}

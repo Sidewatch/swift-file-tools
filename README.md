@@ -14,6 +14,7 @@ A small bundle of macOS file utilities for tooling and code-review UIs — an AS
 - **Terminal path references** — `TerminalPathParser.match(in:at:)` pulls `path:line:col` or `path(line,col)` out of a line of terminal output at a clicked column; `FileLocationLink` reads and builds an app's `scheme://open?path=…&line=…` link with the same `file:line:col` rules; `FileComparisonLink` and `WaitMarker` add a two-file diff link and a `--wait` handshake
 - **Noise-aware, and configurable** — both scanners honor the one `SkippedDirs.names` set (`.git`, `node_modules`, `.build`, `DerivedData`, …). Matching is by *name*, so the list is settable: a project with real sources in `dist/` can take it off the list, and `SkippedDirs.resetToDefault()` restores `SkippedDirs.defaultNames`
 - **Text files of any size** — `LargeTextFile` reads a file in pieces with `pread` (never a mapping a truncation could turn into a crash): it opens in a millisecond, finds its lines in the background (a sparse index, a checkpoint every 256 lines, long lines noted), hands out any line or byte range, and reads on as a log grows. `LargeTextSearch` with a `LargeTextMatcher` (a literal swept for in the raw bytes, or a regular expression over blocks of whole lines) never holds the matches: the next match from a place and the one before, both wrapping; the matches in a screenful; and a count of them all that can then say where any one falls. A 1 GB log: a full literal pass 0.36 s, a count of 4.9 million matches 1.1 s, a regex count 3 s, in the memory of one 8 MB read
+- **Log files as entries (module `LogReader`)** — `LogIndex` reads a log of any size once, in the background, as entries: a line with a header starts one and the lines without (a stack trace, PostgreSQL's DETAIL) continue it, about 30 bytes an entry, the text read from the file when shown; a growing file reads on, a half-written last line is read again whole. `LogLineParser` reads the header of every popular format: plain `time LEVEL [component]` lines, JSON lines (pino, bunyan, winston, structlog, zap, slog, ECS, Docker's json-file), logfmt (and Heroku), Python's logging, log4j / logback / Spring Boot, java.util.logging, Rust's env_logger and tracing, Ruby's Logger and Rails, Laravel / Monolog, PHP's error log, Apache's access and error logs, nginx's, Go's log and slog, syslog (RFC 3164 and 5424), journald, macOS's `log show`, klog, logcat, PostgreSQL, MySQL, Redis, Elixir. `matching(_:)` filters by level, time, component and text (`LargeTextMatcher`, once over each 8 MB run). Checked against 44 logs real tools wrote (and documentation samples for the ones not installed) with their generators' own answers, 3,208 entries in `Tests/LogReaderTests/Fixtures/logs`. A 73 MB log: 512,161 entries in 1.0 s, a level filter in 1 ms, a text filter in 49 ms
 - **Small** — Foundation plus swift-foundation-extensions (FoundationExtensions, ProcessRunner)
 - **Ignore rules without walking** — `IgnoreMatcher(root:nestedRoots:)` answers "is this URL ignored?" for a file tree or an index that enumerates on its own: git's own answer inside a checkout (`GitIgnoredSet`, one `git ls-files` per root), the parser for a plain folder, and the `.ignore` / `.rgignore` / `.fdignore` stack on top. A checkout nested inside the root is judged by its own rules once the host names it (`setNestedRoots(_:)`), the way `git check-ignore` run in that checkout would; a lookup costs one set probe per path component, never a scan of the ignored directories. `reason(url:isDirectory:)` names the rule (`IgnoreReason`: file, line, pattern) — `git check-ignore -v` inside a checkout, the stack's last matching pattern elsewhere
 - **Tested** — tree rendering, search caps/cancellation/symlink handling, replace fidelity (encoding, BOM, permissions), recents persistence, watcher lifecycle + flag mapping, manifest script detection (runner choice, reserved-hook filtering, Makefile heuristics), and the ignore parser against git itself (`IgnoreGitParityTests` writes pattern corpora into real repositories and compares the walk with `git ls-files`)
@@ -175,6 +176,15 @@ let place = count.flatMap { c in next.flatMap { LargeTextSearch.index(of: $0, in
 
 // Duplicating: Finder's next free name.
 let copy = FileNaming.copyDestination(for: url)     // "a copy.txt", then "a copy 2.txt", …
+```
+
+```swift
+import LogReader
+
+// A log read as entries, then filtered (scan runs in the background; `update` on the main queue).
+let index = LogIndex(url: URL(fileURLWithPath: "/var/log/app.log"))!
+index.scan { summary in print(summary.entryCount, summary.levelCounts) }
+let errors = index.matching(LogFilter(levels: [.error, .fatal], showsUnleveled: false, text: "timeout"))
 ```
 
 ## Notes
