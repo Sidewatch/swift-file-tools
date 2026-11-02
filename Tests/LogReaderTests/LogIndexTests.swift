@@ -43,10 +43,10 @@ final class LogIndexTests: XCTestCase {
         return index
     }
 
-    func rescan(_ index: LogIndex) {
+    func rescan(_ index: LogIndex, timeout: TimeInterval = 10) {
         let done = expectation(description: "scan")
         index.scan { summary in if summary.isComplete { done.fulfill() } }
-        wait(for: [done], timeout: 10)
+        wait(for: [done], timeout: timeout)
     }
 
     let sample = """
@@ -145,10 +145,45 @@ final class LogIndexTests: XCTestCase {
         XCTAssertEqual(index.matching(LogFilter(text: "after")), [1])
     }
 
+    /// The scan parses a block's headers without holding the lock, so a reader (the table drawing its rows) is
+    /// answered at once while a large file is still being read, not after each block's parse.
+    func testEntriesAreAnsweredWhileAScanRuns() throws {
+        let line = "2026-10-01T00:00:00.000Z INFO  [api] GET /api/orders/1042 200 14ms user=user-1042 trace=4bf92f3577b34da6\n"
+        let url = write(String(repeating: line, count: (24 << 20) / line.utf8.count))
+        let index = LogIndex(file: try XCTUnwrap(LargeTextFile(url: url)), reference: ref)
+        let longest = LongestWait()
+        let reader = Thread {
+            while !longest.isStopped {
+                let start = DispatchTime.now().uptimeNanoseconds
+                _ = index.entry(at: 0)
+                longest.note(DispatchTime.now().uptimeNanoseconds - start)
+                usleep(500)
+            }
+        }
+        reader.start()
+        rescan(index, timeout: 120)
+        longest.stop()
+        XCTAssertGreaterThan(index.entryCount, 200_000)
+        // A debug build waits about 10 ms for the lock's appends, and waited 400 to 600 ms when the lock covered the parse.
+        XCTAssertLessThan(longest.milliseconds, 100, "a reader waited for a whole block's parse")
+    }
+
     func testCRLFLinesReadTheSame() throws {
         let index = try scanned(write("2026-10-01T00:00:00Z INFO [a] one\r\n  more\r\n2026-10-01T00:00:01Z WARN [b] two\r\n"))
         XCTAssertEqual(index.entryCount, 2)
         XCTAssertEqual(index.entry(at: 0).map { index.text(of: $0) }, "2026-10-01T00:00:00Z INFO [a] one\r\n  more")
         XCTAssertEqual(index.entry(at: 1)?.component, "b")
     }
+}
+
+/// The longest a reader thread waited, and when it should stop.
+private final class LongestWait: @unchecked Sendable {
+    private let lock = NSLock()
+    private var longest: UInt64 = 0
+    private var stopped = false
+
+    var isStopped: Bool { lock.withLock { stopped } }
+    var milliseconds: Double { lock.withLock { Double(longest) / 1_000_000 } }
+    func note(_ nanoseconds: UInt64) { lock.withLock { longest = max(longest, nanoseconds) } }
+    func stop() { lock.withLock { stopped = true } }
 }

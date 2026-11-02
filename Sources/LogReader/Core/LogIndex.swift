@@ -129,14 +129,16 @@ public final class LogIndex: @unchecked Sendable {
         while pos < size, !isStopped {
             let bytes = file.bytes(in: pos..<min(size, pos + Self.block))
             guard !bytes.isEmpty else { break }
-            let consumed = lock.withLock { readLines(bytes[...], at: pos) }
+            let consumed = readLines(bytes[...], at: pos)
             if consumed > 0 {
                 pos += consumed
             } else if pos + bytes.count >= size {
                 break  // the last line, with no break yet
             } else if let end = nextBreak(after: pos + bytes.count, size: size) {
+                let line = Self.trimmed(bytes[0..<min(bytes.count, Self.headLimit)])
+                let head = LogLineParser.head(of: line, reference: reference)
                 lock.withLock {
-                    read(line: bytes[0..<min(bytes.count, Self.headLimit)], start: pos)
+                    read(line: line, head: head, start: pos)
                     scanned = end + 1
                 }
                 pos = end + 1
@@ -149,34 +151,46 @@ public final class LogIndex: @unchecked Sendable {
             }
         }
         if pos < size, !isStopped {
-            let rest = file.bytes(in: pos..<min(size, pos + Self.headLimit))
+            let rest = Self.trimmed(file.bytes(in: pos..<min(size, pos + Self.headLimit))[...])
+            let head = LogLineParser.head(of: rest, reference: reference)
             lock.withLock {
                 let line = lineNumber, saw = sawHeader, blanks = pendingBlanks
-                let change = read(line: rest[...], start: pos)
+                let change = read(line: rest, head: head, start: pos)
                 tail = (change, pos, line, saw, blanks)
             }
         }
     }
 
-    /// Reads every whole line in `bytes` (which start at file offset `start`); how many bytes they took.
+    /// Reads every whole line in `bytes` (which start at file offset `start`); how many bytes they took. The
+    /// headers are parsed first with the lock free, since that is the slow part and the table reads entries
+    /// meanwhile; the lock is held only to add them.
     private func readLines(_ bytes: ArraySlice<UInt8>, at start: Int) -> Int {
+        var lines: [Range<Int>] = []
         var lineStart = bytes.startIndex
         while let nl = bytes[lineStart...].firstIndex(of: 0x0A) {
-            read(line: bytes[lineStart..<nl], start: start + (lineStart - bytes.startIndex))
+            lines.append(lineStart..<nl)
             lineStart = nl + 1
         }
+        let heads = lines.map { LogLineParser.head(of: Self.trimmed(bytes[$0]), reference: reference) }
         let consumed = lineStart - bytes.startIndex
-        scanned = start + consumed
+        lock.withLock {
+            for (range, head) in zip(lines, heads) {
+                read(line: Self.trimmed(bytes[range]), head: head, start: start + (range.lowerBound - bytes.startIndex))
+            }
+            scanned = start + consumed
+        }
         return consumed
     }
 
-    /// One line: a new entry when it has a header (or no header has been seen, or it is a separator), else one more
-    /// line of the last. Blank lines join the entry above only when more of it follows them: a format that writes
-    /// one before every entry (Elixir's) leaves them to no entry.
-    @discardableResult private func read(line raw: ArraySlice<UInt8>, start: Int) -> LogColumns.Change {
-        let line = raw.last == 0x0D ? raw.dropLast() : raw
+    /// A line without its break's carriage return.
+    private static func trimmed(_ raw: ArraySlice<UInt8>) -> ArraySlice<UInt8> { raw.last == 0x0D ? raw.dropLast() : raw }
+
+    /// One line, its header already parsed: a new entry when it has one (or no header has been seen, or it is a
+    /// separator), else one more line of the last. Blank lines join the entry above only when more of it follows
+    /// them: a format that writes one before every entry (Elixir's) leaves them to no entry.
+    @discardableResult private func read(line: ArraySlice<UInt8>, head: LogLineHead?, start: Int) -> LogColumns.Change {
         defer { lineNumber += 1 }
-        if let head = LogLineParser.head(of: line, reference: reference) {
+        if let head {
             sawHeader = true
             pendingBlanks = 0
             return columns.append(head, start: start, line: lineNumber)
