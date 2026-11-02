@@ -13,10 +13,10 @@ INFO:app.http:multi-line note:
 INFO:app:service started on port 8080
 ERROR:billing.worker:could not parse quantity for line item 11
 Traceback (most recent call last):
-  File "/srv/app/pylog.py", line 91, in run
-    try: fail_parse()
-         ~~~~~~~~~~^^
-  File "/srv/app/pylog.py", line 77, in fail_parse
+  File "/srv/app/stdlib_logging.py", line 137, in log_messages
+    parse_quantity()
+    ~~~~~~~~~~~~~~^^
+  File "/srv/app/stdlib_logging.py", line 119, in parse_quantity
     return int("forty-two")
 ValueError: invalid literal for int() with base 10: 'forty-two'
 INFO:app.db:GET /api/orders/1042 200 18ms
@@ -28,7 +28,7 @@ CRITICAL:app.db:disk almost full: 97% used on /var/lib/app
 WARNING:root:retrying job 5521 (attempt 2 of 5)
 ERROR:app.http:job failed
 Traceback (most recent call last):
-  File "/srv/app/pylog.py", line 81, in fail_chain
+  File "/srv/app/stdlib_logging.py", line 124, in load_order
     {}["missing"]
     ~~^^^^^^^^^^^
 KeyError: 'missing'
@@ -36,11 +36,11 @@ KeyError: 'missing'
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/srv/app/pylog.py", line 94, in run
-    try: fail_chain()
-         ~~~~~~~~~~^^
-  File "/srv/app/pylog.py", line 83, in fail_chain
-    raise RuntimeError("could not load order 7731") from e
+  File "/srv/app/stdlib_logging.py", line 142, in log_messages
+    load_order()
+    ~~~~~~~~~~^^
+  File "/srv/app/stdlib_logging.py", line 126, in load_order
+    raise RuntimeError("could not load order 7731") from error
 RuntimeError: could not load order 7731
 INFO:app:service started on port 8080
 DEBUG:billing.worker:loaded 31 settings from config/app.ini
@@ -52,10 +52,10 @@ DEBUG:billing.worker:cache hit ratio 0.87
 CRITICAL:app.db:disk almost full: 97% used on /var/lib/app
 ERROR:root:could not parse quantity for line item 28
 Traceback (most recent call last):
-  File "/srv/app/pylog.py", line 91, in run
-    try: fail_parse()
-         ~~~~~~~~~~^^
-  File "/srv/app/pylog.py", line 77, in fail_parse
+  File "/srv/app/stdlib_logging.py", line 137, in log_messages
+    parse_quantity()
+    ~~~~~~~~~~~~~~^^
+  File "/srv/app/stdlib_logging.py", line 119, in parse_quantity
     return int("forty-two")
 ValueError: invalid literal for int() with base 10: 'forty-two'
 INFO:app.http:multi-line note:
@@ -77,7 +77,7 @@ INFO:app:service started on port 8080
 DEBUG:billing.worker:loaded 31 settings from config/app.ini
 ERROR:app.db:job failed
 Traceback (most recent call last):
-  File "/srv/app/pylog.py", line 81, in fail_chain
+  File "/srv/app/stdlib_logging.py", line 124, in load_order
     {}["missing"]
     ~~^^^^^^^^^^^
 KeyError: 'missing'
@@ -85,20 +85,20 @@ KeyError: 'missing'
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/srv/app/pylog.py", line 94, in run
-    try: fail_chain()
-         ~~~~~~~~~~^^
-  File "/srv/app/pylog.py", line 83, in fail_chain
-    raise RuntimeError("could not load order 7731") from e
+  File "/srv/app/stdlib_logging.py", line 142, in log_messages
+    load_order()
+    ~~~~~~~~~~^^
+  File "/srv/app/stdlib_logging.py", line 126, in load_order
+    raise RuntimeError("could not load order 7731") from error
 RuntimeError: could not load order 7731
 WARNING:root:slow query (912ms): SELECT * FROM orders WHERE status = 'open'
 ERROR:app.http:payment provider returned 502 for order 7731
 ERROR:app:could not parse quantity for line item 45
 Traceback (most recent call last):
-  File "/srv/app/pylog.py", line 91, in run
-    try: fail_parse()
-         ~~~~~~~~~~^^
-  File "/srv/app/pylog.py", line 77, in fail_parse
+  File "/srv/app/stdlib_logging.py", line 137, in log_messages
+    parse_quantity()
+    ~~~~~~~~~~~~~~^^
+  File "/srv/app/stdlib_logging.py", line 119, in parse_quantity
     return int("forty-two")
 ValueError: invalid literal for int() with base 10: 'forty-two'
 DEBUG:billing.worker:cache hit ratio 0.87
@@ -123,17 +123,17 @@ INFO:app:service started on port 8080
 DEBUG:billing.worker:loaded 31 settings from config/app.ini
 ERROR:app.db:could not parse quantity for line item 62
 Traceback (most recent call last):
-  File "/srv/app/pylog.py", line 91, in run
-    try: fail_parse()
-         ~~~~~~~~~~^^
-  File "/srv/app/pylog.py", line 77, in fail_parse
+  File "/srv/app/stdlib_logging.py", line 137, in log_messages
+    parse_quantity()
+    ~~~~~~~~~~~~~~^^
+  File "/srv/app/stdlib_logging.py", line 119, in parse_quantity
     return int("forty-two")
 ValueError: invalid literal for int() with base 10: 'forty-two'
 WARNING:root:slow query (912ms): SELECT * FROM orders WHERE status = 'open'
 ERROR:app.http:payment provider returned 502 for order 7731
 ERROR:app:job failed
 Traceback (most recent call last):
-  File "/srv/app/pylog.py", line 81, in fail_chain
+  File "/srv/app/stdlib_logging.py", line 124, in load_order
     {}["missing"]
     ~~^^^^^^^^^^^
 KeyError: 'missing'
@@ -141,11 +141,11 @@ KeyError: 'missing'
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/srv/app/pylog.py", line 94, in run
-    try: fail_chain()
-         ~~~~~~~~~~^^
-  File "/srv/app/pylog.py", line 83, in fail_chain
-    raise RuntimeError("could not load order 7731") from e
+  File "/srv/app/stdlib_logging.py", line 142, in log_messages
+    load_order()
+    ~~~~~~~~~~^^
+  File "/srv/app/stdlib_logging.py", line 126, in load_order
+    raise RuntimeError("could not load order 7731") from error
 RuntimeError: could not load order 7731
 DEBUG:billing.worker:cache hit ratio 0.87
 CRITICAL:app.db:disk almost full: 97% used on /var/lib/app

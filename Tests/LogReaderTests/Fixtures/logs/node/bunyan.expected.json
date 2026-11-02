@@ -1,5 +1,5 @@
 {
-  "source": "bunyan 1.8.15 on Node v26.13.0, default JSON, hostname option set to \"web-01\"; script nodelog.js",
+  "source": "bunyan 1.8.15 on Node v26.13.0, default JSON, hostname option set to \"web-01\"; script json_loggers.js",
   "referenceDate": "2026-10-01",
   "entries": [
     {

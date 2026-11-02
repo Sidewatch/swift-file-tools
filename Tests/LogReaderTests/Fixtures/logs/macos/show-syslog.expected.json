@@ -1,12 +1,12 @@
 {
-  "source": "macOS 27.2 /usr/bin/log show --timezone UTC --info --debug --predicate 'subsystem == \"com.example.logfixture\" AND processID == <pid>' --style syslog, messages written by a tiny os.Logger program (subsystem com.example.logfixture); expected from log show --style ndjson of the same query. Debug messages are not persisted, so log show has none",
+  "source": "macOS 27.2 /usr/bin/log show --timezone UTC --info --debug --predicate 'subsystem == \"com.example.logfixture\" AND processID == <pid>' --style syslog, messages written by a tiny os.Logger program (subsystem com.example.logfixture); expected from log show --style ndjson of the same query, except the level: the syslog style prints none. Debug messages are not persisted, so log show has none",
   "referenceDate": "2026-10-01",
   "entries": [
     {
       "line": 2,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:47.340Z",
+      "time": "2026-11-02T12:00:26.902Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -14,7 +14,7 @@
       "line": 3,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:47.365Z",
+      "time": "2026-11-02T12:00:26.925Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -22,7 +22,7 @@
       "line": 4,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:47.439Z",
+      "time": "2026-11-02T12:00:26.994Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -30,7 +30,7 @@
       "line": 5,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:47.487Z",
+      "time": "2026-11-02T12:00:27.043Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -38,7 +38,7 @@
       "line": 6,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:47.542Z",
+      "time": "2026-11-02T12:00:27.095Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -46,7 +46,7 @@
       "line": 7,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:47.607Z",
+      "time": "2026-11-02T12:00:27.156Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -54,7 +54,7 @@
       "line": 8,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:47.680Z",
+      "time": "2026-11-02T12:00:27.229Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -62,7 +62,7 @@
       "line": 9,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:47.760Z",
+      "time": "2026-11-02T12:00:27.310Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -70,7 +70,7 @@
       "line": 10,
       "lines": 3,
       "level": null,
-      "time": "2026-11-02T08:56:47.848Z",
+      "time": "2026-11-02T12:00:27.397Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -78,7 +78,7 @@
       "line": 13,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:47.945Z",
+      "time": "2026-11-02T12:00:27.491Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -86,7 +86,7 @@
       "line": 14,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.049Z",
+      "time": "2026-11-02T12:00:27.594Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -94,7 +94,7 @@
       "line": 15,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.191Z",
+      "time": "2026-11-02T12:00:27.731Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -102,7 +102,7 @@
       "line": 16,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.229Z",
+      "time": "2026-11-02T12:00:27.768Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -110,7 +110,7 @@
       "line": 17,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.275Z",
+      "time": "2026-11-02T12:00:27.809Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -118,7 +118,7 @@
       "line": 18,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.329Z",
+      "time": "2026-11-02T12:00:27.858Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -126,7 +126,7 @@
       "line": 19,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.391Z",
+      "time": "2026-11-02T12:00:27.917Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -134,7 +134,7 @@
       "line": 20,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.460Z",
+      "time": "2026-11-02T12:00:27.987Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -142,7 +142,7 @@
       "line": 21,
       "lines": 3,
       "level": null,
-      "time": "2026-11-02T08:56:48.533Z",
+      "time": "2026-11-02T12:00:28.065Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -150,7 +150,7 @@
       "line": 24,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.616Z",
+      "time": "2026-11-02T12:00:28.151Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -158,7 +158,7 @@
       "line": 25,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.709Z",
+      "time": "2026-11-02T12:00:28.242Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -166,7 +166,7 @@
       "line": 26,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.920Z",
+      "time": "2026-11-02T12:00:28.449Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -174,7 +174,7 @@
       "line": 27,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.947Z",
+      "time": "2026-11-02T12:00:28.471Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -182,7 +182,7 @@
       "line": 28,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:48.982Z",
+      "time": "2026-11-02T12:00:28.506Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -190,7 +190,7 @@
       "line": 29,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.025Z",
+      "time": "2026-11-02T12:00:28.549Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -198,7 +198,7 @@
       "line": 30,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.076Z",
+      "time": "2026-11-02T12:00:28.599Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -206,7 +206,7 @@
       "line": 31,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.135Z",
+      "time": "2026-11-02T12:00:28.658Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -214,7 +214,7 @@
       "line": 32,
       "lines": 3,
       "level": null,
-      "time": "2026-11-02T08:56:49.202Z",
+      "time": "2026-11-02T12:00:28.724Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -222,7 +222,7 @@
       "line": 35,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.276Z",
+      "time": "2026-11-02T12:00:28.799Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -230,7 +230,7 @@
       "line": 36,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.359Z",
+      "time": "2026-11-02T12:00:28.878Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -238,7 +238,7 @@
       "line": 37,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.548Z",
+      "time": "2026-11-02T12:00:29.060Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -246,7 +246,7 @@
       "line": 38,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.653Z",
+      "time": "2026-11-02T12:00:29.166Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -254,7 +254,7 @@
       "line": 39,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.768Z",
+      "time": "2026-11-02T12:00:29.278Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -262,7 +262,7 @@
       "line": 40,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.800Z",
+      "time": "2026-11-02T12:00:29.310Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -270,7 +270,7 @@
       "line": 41,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.840Z",
+      "time": "2026-11-02T12:00:29.350Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -278,7 +278,7 @@
       "line": 42,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:49.888Z",
+      "time": "2026-11-02T12:00:29.395Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -286,7 +286,7 @@
       "line": 43,
       "lines": 3,
       "level": null,
-      "time": "2026-11-02T08:56:49.944Z",
+      "time": "2026-11-02T12:00:29.451Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -294,7 +294,7 @@
       "line": 46,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.008Z",
+      "time": "2026-11-02T12:00:29.515Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -302,7 +302,7 @@
       "line": 47,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.080Z",
+      "time": "2026-11-02T12:00:29.585Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -310,7 +310,7 @@
       "line": 48,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.240Z",
+      "time": "2026-11-02T12:00:29.752Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -318,7 +318,7 @@
       "line": 49,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.335Z",
+      "time": "2026-11-02T12:00:29.847Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -326,7 +326,7 @@
       "line": 50,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.439Z",
+      "time": "2026-11-02T12:00:29.946Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -334,7 +334,7 @@
       "line": 51,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.548Z",
+      "time": "2026-11-02T12:00:30.053Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -342,7 +342,7 @@
       "line": 52,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.585Z",
+      "time": "2026-11-02T12:00:30.083Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -350,7 +350,7 @@
       "line": 53,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.618Z",
+      "time": "2026-11-02T12:00:30.116Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -358,7 +358,7 @@
       "line": 54,
       "lines": 3,
       "level": null,
-      "time": "2026-11-02T08:56:50.663Z",
+      "time": "2026-11-02T12:00:30.159Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -366,7 +366,7 @@
       "line": 57,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.716Z",
+      "time": "2026-11-02T12:00:30.212Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -374,7 +374,7 @@
       "line": 58,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.777Z",
+      "time": "2026-11-02T12:00:30.273Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -382,7 +382,7 @@
       "line": 59,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:50.923Z",
+      "time": "2026-11-02T12:00:30.416Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -390,7 +390,7 @@
       "line": 60,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.008Z",
+      "time": "2026-11-02T12:00:30.498Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -398,7 +398,7 @@
       "line": 61,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.100Z",
+      "time": "2026-11-02T12:00:30.591Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -406,7 +406,7 @@
       "line": 62,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.201Z",
+      "time": "2026-11-02T12:00:30.691Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -414,7 +414,7 @@
       "line": 63,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.309Z",
+      "time": "2026-11-02T12:00:30.799Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -422,7 +422,7 @@
       "line": 64,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.336Z",
+      "time": "2026-11-02T12:00:30.824Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -430,7 +430,7 @@
       "line": 65,
       "lines": 3,
       "level": null,
-      "time": "2026-11-02T08:56:51.370Z",
+      "time": "2026-11-02T12:00:30.858Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -438,7 +438,7 @@
       "line": 68,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.412Z",
+      "time": "2026-11-02T12:00:30.900Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -446,7 +446,7 @@
       "line": 69,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.462Z",
+      "time": "2026-11-02T12:00:30.949Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -454,7 +454,7 @@
       "line": 70,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.587Z",
+      "time": "2026-11-02T12:00:31.074Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -462,7 +462,7 @@
       "line": 71,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.658Z",
+      "time": "2026-11-02T12:00:31.148Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -470,7 +470,7 @@
       "line": 72,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.739Z",
+      "time": "2026-11-02T12:00:31.230Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -478,7 +478,7 @@
       "line": 73,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.829Z",
+      "time": "2026-11-02T12:00:31.320Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -486,7 +486,7 @@
       "line": 74,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:51.927Z",
+      "time": "2026-11-02T12:00:31.413Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -494,7 +494,7 @@
       "line": 75,
       "lines": 1,
       "level": null,
-      "time": "2026-11-02T08:56:52.032Z",
+      "time": "2026-11-02T12:00:31.518Z",
       "zoned": true,
       "component": "logfixture"
     },
@@ -502,7 +502,7 @@
       "line": 76,
       "lines": 3,
       "level": null,
-      "time": "2026-11-02T08:56:52.146Z",
+      "time": "2026-11-02T12:00:31.632Z",
       "zoned": true,
       "component": "logfixture"
     }

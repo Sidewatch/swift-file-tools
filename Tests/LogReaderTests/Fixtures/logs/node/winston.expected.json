@@ -1,5 +1,5 @@
 {
-  "source": "winston 3.19.0 on Node v26.13.0, format combine(timestamp(), errors({stack: true}), json()), defaultMeta {service: \"user-service\"}; levels http -> info, verbose and silly -> trace; script nodelog.js",
+  "source": "winston 3.19.0 on Node v26.13.0, format combine(timestamp(), errors({stack: true}), json()), defaultMeta {service: \"user-service\"}; levels http -> info, verbose and silly -> trace; script json_loggers.js",
   "referenceDate": "2026-10-01",
   "entries": [
     {

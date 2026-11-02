@@ -1,12 +1,12 @@
 {
-  "source": "structlog 26.1.0 on Python 3.14.10, processors add_log_level, TimeStamper(fmt='iso', utc=True), format_exc_info, JSONRenderer; WriteLoggerFactory; script slog.py",
+  "source": "structlog 26.1.0 on Python 3.14.10, processors add_log_level, TimeStamper(fmt='iso', utc=True), format_exc_info, JSONRenderer; WriteLoggerFactory; script structlog_json.py",
   "referenceDate": "2026-10-01",
   "entries": [
     {
       "line": 1,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.314Z",
+      "time": "2026-11-02T11:58:57.920Z",
       "zoned": true,
       "component": "billing"
     },
@@ -14,7 +14,7 @@
       "line": 2,
       "lines": 1,
       "level": "debug",
-      "time": "2026-11-02T08:49:31.330Z",
+      "time": "2026-11-02T11:58:57.934Z",
       "zoned": true,
       "component": "auth"
     },
@@ -22,7 +22,7 @@
       "line": 3,
       "lines": 1,
       "level": "warning",
-      "time": "2026-11-02T08:49:31.346Z",
+      "time": "2026-11-02T11:58:57.949Z",
       "zoned": true,
       "component": "search"
     },
@@ -30,7 +30,7 @@
       "line": 4,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:31.363Z",
+      "time": "2026-11-02T11:58:57.965Z",
       "zoned": true,
       "component": null
     },
@@ -38,7 +38,7 @@
       "line": 5,
       "lines": 1,
       "level": "fatal",
-      "time": "2026-11-02T08:49:31.379Z",
+      "time": "2026-11-02T11:58:57.979Z",
       "zoned": true,
       "component": "billing"
     },
@@ -46,7 +46,7 @@
       "line": 6,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:31.396Z",
+      "time": "2026-11-02T11:58:57.996Z",
       "zoned": true,
       "component": "auth"
     },
@@ -54,7 +54,7 @@
       "line": 7,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.412Z",
+      "time": "2026-11-02T11:58:58.013Z",
       "zoned": true,
       "component": "search"
     },
@@ -62,7 +62,7 @@
       "line": 8,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.429Z",
+      "time": "2026-11-02T11:58:58.030Z",
       "zoned": true,
       "component": null
     },
@@ -70,7 +70,7 @@
       "line": 9,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.445Z",
+      "time": "2026-11-02T11:58:58.046Z",
       "zoned": true,
       "component": "billing"
     },
@@ -78,7 +78,7 @@
       "line": 10,
       "lines": 1,
       "level": "debug",
-      "time": "2026-11-02T08:49:31.461Z",
+      "time": "2026-11-02T11:58:58.062Z",
       "zoned": true,
       "component": "auth"
     },
@@ -86,7 +86,7 @@
       "line": 11,
       "lines": 1,
       "level": "warning",
-      "time": "2026-11-02T08:49:31.478Z",
+      "time": "2026-11-02T11:58:58.079Z",
       "zoned": true,
       "component": "search"
     },
@@ -94,7 +94,7 @@
       "line": 12,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:31.494Z",
+      "time": "2026-11-02T11:58:58.095Z",
       "zoned": true,
       "component": null
     },
@@ -102,7 +102,7 @@
       "line": 13,
       "lines": 1,
       "level": "fatal",
-      "time": "2026-11-02T08:49:31.510Z",
+      "time": "2026-11-02T11:58:58.109Z",
       "zoned": true,
       "component": "billing"
     },
@@ -110,7 +110,7 @@
       "line": 14,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:31.527Z",
+      "time": "2026-11-02T11:58:58.125Z",
       "zoned": true,
       "component": "auth"
     },
@@ -118,7 +118,7 @@
       "line": 15,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.542Z",
+      "time": "2026-11-02T11:58:58.142Z",
       "zoned": true,
       "component": "search"
     },
@@ -126,7 +126,7 @@
       "line": 16,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.557Z",
+      "time": "2026-11-02T11:58:58.158Z",
       "zoned": true,
       "component": null
     },
@@ -134,7 +134,7 @@
       "line": 17,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.573Z",
+      "time": "2026-11-02T11:58:58.175Z",
       "zoned": true,
       "component": "billing"
     },
@@ -142,7 +142,7 @@
       "line": 18,
       "lines": 1,
       "level": "debug",
-      "time": "2026-11-02T08:49:31.587Z",
+      "time": "2026-11-02T11:58:58.191Z",
       "zoned": true,
       "component": "auth"
     },
@@ -150,7 +150,7 @@
       "line": 19,
       "lines": 1,
       "level": "warning",
-      "time": "2026-11-02T08:49:31.604Z",
+      "time": "2026-11-02T11:58:58.207Z",
       "zoned": true,
       "component": "search"
     },
@@ -158,7 +158,7 @@
       "line": 20,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:31.621Z",
+      "time": "2026-11-02T11:58:58.223Z",
       "zoned": true,
       "component": null
     },
@@ -166,7 +166,7 @@
       "line": 21,
       "lines": 1,
       "level": "fatal",
-      "time": "2026-11-02T08:49:31.637Z",
+      "time": "2026-11-02T11:58:58.240Z",
       "zoned": true,
       "component": "billing"
     },
@@ -174,7 +174,7 @@
       "line": 22,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:31.654Z",
+      "time": "2026-11-02T11:58:58.256Z",
       "zoned": true,
       "component": "auth"
     },
@@ -182,7 +182,7 @@
       "line": 23,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.671Z",
+      "time": "2026-11-02T11:58:58.274Z",
       "zoned": true,
       "component": "search"
     },
@@ -190,7 +190,7 @@
       "line": 24,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.687Z",
+      "time": "2026-11-02T11:58:58.288Z",
       "zoned": true,
       "component": null
     },
@@ -198,7 +198,7 @@
       "line": 25,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.703Z",
+      "time": "2026-11-02T11:58:58.305Z",
       "zoned": true,
       "component": "billing"
     },
@@ -206,7 +206,7 @@
       "line": 26,
       "lines": 1,
       "level": "debug",
-      "time": "2026-11-02T08:49:31.720Z",
+      "time": "2026-11-02T11:58:58.320Z",
       "zoned": true,
       "component": "auth"
     },
@@ -214,7 +214,7 @@
       "line": 27,
       "lines": 1,
       "level": "warning",
-      "time": "2026-11-02T08:49:31.736Z",
+      "time": "2026-11-02T11:58:58.336Z",
       "zoned": true,
       "component": "search"
     },
@@ -222,7 +222,7 @@
       "line": 28,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:31.752Z",
+      "time": "2026-11-02T11:58:58.353Z",
       "zoned": true,
       "component": null
     },
@@ -230,7 +230,7 @@
       "line": 29,
       "lines": 1,
       "level": "fatal",
-      "time": "2026-11-02T08:49:31.766Z",
+      "time": "2026-11-02T11:58:58.369Z",
       "zoned": true,
       "component": "billing"
     },
@@ -238,7 +238,7 @@
       "line": 30,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:31.780Z",
+      "time": "2026-11-02T11:58:58.383Z",
       "zoned": true,
       "component": "auth"
     },
@@ -246,7 +246,7 @@
       "line": 31,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.797Z",
+      "time": "2026-11-02T11:58:58.400Z",
       "zoned": true,
       "component": "search"
     },
@@ -254,7 +254,7 @@
       "line": 32,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.814Z",
+      "time": "2026-11-02T11:58:58.416Z",
       "zoned": true,
       "component": null
     },
@@ -262,7 +262,7 @@
       "line": 33,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.831Z",
+      "time": "2026-11-02T11:58:58.432Z",
       "zoned": true,
       "component": "billing"
     },
@@ -270,7 +270,7 @@
       "line": 34,
       "lines": 1,
       "level": "debug",
-      "time": "2026-11-02T08:49:31.847Z",
+      "time": "2026-11-02T11:58:58.449Z",
       "zoned": true,
       "component": "auth"
     },
@@ -278,7 +278,7 @@
       "line": 35,
       "lines": 1,
       "level": "warning",
-      "time": "2026-11-02T08:49:31.861Z",
+      "time": "2026-11-02T11:58:58.465Z",
       "zoned": true,
       "component": "search"
     },
@@ -286,7 +286,7 @@
       "line": 36,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:31.878Z",
+      "time": "2026-11-02T11:58:58.481Z",
       "zoned": true,
       "component": null
     },
@@ -294,7 +294,7 @@
       "line": 37,
       "lines": 1,
       "level": "fatal",
-      "time": "2026-11-02T08:49:31.894Z",
+      "time": "2026-11-02T11:58:58.495Z",
       "zoned": true,
       "component": "billing"
     },
@@ -302,7 +302,7 @@
       "line": 38,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:31.911Z",
+      "time": "2026-11-02T11:58:58.511Z",
       "zoned": true,
       "component": "auth"
     },
@@ -310,7 +310,7 @@
       "line": 39,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.928Z",
+      "time": "2026-11-02T11:58:58.526Z",
       "zoned": true,
       "component": "search"
     },
@@ -318,7 +318,7 @@
       "line": 40,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.945Z",
+      "time": "2026-11-02T11:58:58.541Z",
       "zoned": true,
       "component": null
     },
@@ -326,7 +326,7 @@
       "line": 41,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:31.961Z",
+      "time": "2026-11-02T11:58:58.554Z",
       "zoned": true,
       "component": "billing"
     },
@@ -334,7 +334,7 @@
       "line": 42,
       "lines": 1,
       "level": "debug",
-      "time": "2026-11-02T08:49:31.975Z",
+      "time": "2026-11-02T11:58:58.571Z",
       "zoned": true,
       "component": "auth"
     },
@@ -342,7 +342,7 @@
       "line": 43,
       "lines": 1,
       "level": "warning",
-      "time": "2026-11-02T08:49:31.992Z",
+      "time": "2026-11-02T11:58:58.584Z",
       "zoned": true,
       "component": "search"
     },
@@ -350,7 +350,7 @@
       "line": 44,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:32.008Z",
+      "time": "2026-11-02T11:58:58.598Z",
       "zoned": true,
       "component": null
     },
@@ -358,7 +358,7 @@
       "line": 45,
       "lines": 1,
       "level": "fatal",
-      "time": "2026-11-02T08:49:32.025Z",
+      "time": "2026-11-02T11:58:58.614Z",
       "zoned": true,
       "component": "billing"
     },
@@ -366,7 +366,7 @@
       "line": 46,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:32.040Z",
+      "time": "2026-11-02T11:58:58.631Z",
       "zoned": true,
       "component": "auth"
     },
@@ -374,7 +374,7 @@
       "line": 47,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:32.057Z",
+      "time": "2026-11-02T11:58:58.647Z",
       "zoned": true,
       "component": "search"
     },
@@ -382,7 +382,7 @@
       "line": 48,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:32.070Z",
+      "time": "2026-11-02T11:58:58.661Z",
       "zoned": true,
       "component": null
     },
@@ -390,7 +390,7 @@
       "line": 49,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:32.087Z",
+      "time": "2026-11-02T11:58:58.677Z",
       "zoned": true,
       "component": "billing"
     },
@@ -398,7 +398,7 @@
       "line": 50,
       "lines": 1,
       "level": "debug",
-      "time": "2026-11-02T08:49:32.102Z",
+      "time": "2026-11-02T11:58:58.693Z",
       "zoned": true,
       "component": "auth"
     },
@@ -406,7 +406,7 @@
       "line": 51,
       "lines": 1,
       "level": "warning",
-      "time": "2026-11-02T08:49:32.119Z",
+      "time": "2026-11-02T11:58:58.710Z",
       "zoned": true,
       "component": "search"
     },
@@ -414,7 +414,7 @@
       "line": 52,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:32.135Z",
+      "time": "2026-11-02T11:58:58.726Z",
       "zoned": true,
       "component": null
     },
@@ -422,7 +422,7 @@
       "line": 53,
       "lines": 1,
       "level": "fatal",
-      "time": "2026-11-02T08:49:32.152Z",
+      "time": "2026-11-02T11:58:58.743Z",
       "zoned": true,
       "component": "billing"
     },
@@ -430,7 +430,7 @@
       "line": 54,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:32.168Z",
+      "time": "2026-11-02T11:58:58.758Z",
       "zoned": true,
       "component": "auth"
     },
@@ -438,7 +438,7 @@
       "line": 55,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:32.186Z",
+      "time": "2026-11-02T11:58:58.775Z",
       "zoned": true,
       "component": "search"
     },
@@ -446,7 +446,7 @@
       "line": 56,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:32.202Z",
+      "time": "2026-11-02T11:58:58.791Z",
       "zoned": true,
       "component": null
     },
@@ -454,7 +454,7 @@
       "line": 57,
       "lines": 1,
       "level": "info",
-      "time": "2026-11-02T08:49:32.218Z",
+      "time": "2026-11-02T11:58:58.807Z",
       "zoned": true,
       "component": "billing"
     },
@@ -462,7 +462,7 @@
       "line": 58,
       "lines": 1,
       "level": "debug",
-      "time": "2026-11-02T08:49:32.232Z",
+      "time": "2026-11-02T11:58:58.825Z",
       "zoned": true,
       "component": "auth"
     },
@@ -470,7 +470,7 @@
       "line": 59,
       "lines": 1,
       "level": "warning",
-      "time": "2026-11-02T08:49:32.248Z",
+      "time": "2026-11-02T11:58:58.841Z",
       "zoned": true,
       "component": "search"
     },
@@ -478,7 +478,7 @@
       "line": 60,
       "lines": 1,
       "level": "error",
-      "time": "2026-11-02T08:49:32.265Z",
+      "time": "2026-11-02T11:58:58.858Z",
       "zoned": true,
       "component": null
     }

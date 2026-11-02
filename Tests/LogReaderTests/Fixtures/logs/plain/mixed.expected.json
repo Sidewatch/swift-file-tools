@@ -1,5 +1,5 @@
 {
-  "source": "Python 3.14.10 logging; text lines use '%(asctime)s.%(msecs)03dZ %(levelname)-5s [%(name)s] %(message)s', the gateway and search loggers use a JSON formatter ({ts, level, service, msg, err}); script pylog.py",
+  "source": "Python 3.14.10 logging; text lines use '%(asctime)s.%(msecs)03dZ %(levelname)-5s [%(name)s] %(message)s', the gateway and search loggers use a JSON formatter ({ts, level, service, msg, err}); script stdlib_logging.py",
   "referenceDate": "2026-10-01",
   "entries": [
     {

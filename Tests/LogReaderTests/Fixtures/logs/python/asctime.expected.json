@@ -1,5 +1,5 @@
 {
-  "source": "Python 3.14.10 logging, format '%(asctime)s - %(name)s - %(levelname)s - %(message)s', default datefmt, TZ=UTC; script pylog.py",
+  "source": "Python 3.14.10 logging, format '%(asctime)s - %(name)s - %(levelname)s - %(message)s', default datefmt, TZ=UTC; script stdlib_logging.py",
   "referenceDate": "2026-10-01",
   "entries": [
     {

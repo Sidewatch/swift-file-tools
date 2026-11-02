@@ -1,70 +1,70 @@
-[Mon Nov 02 08:54:53.798846 2026] [mpm_prefork:notice] [pid 7567] AH00163: Apache/2.4.67 (Unix) configured -- resuming normal operations
-[Mon Nov 02 08:54:53.798994 2026] [mpm_prefork:info] [pid 7567] AH00164: Server built: Oct  3 2026 17:07:43
-[Mon Nov 02 08:54:53.799007 2026] [core:notice] [pid 7567] AH00094: Command line: '/usr/sbin/httpd -f /etc/httpd/httpd.conf'
-[Mon Nov 02 08:54:55.908607 2026] [core:info] [pid 7570] [client 203.0.113.7:55363] AH00128: File does not exist: /srv/www/missing.html
-[Mon Nov 02 08:54:56.827846 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55365] AH01626: authorization result of Require all granted: granted
-[Mon Nov 02 08:54:56.828575 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55365] AH01626: authorization result of <RequireAny>: granted
-[Mon Nov 02 08:54:57.189114 2026] [core:info] [pid 7569] [client 203.0.113.7:55367] AH00129: Attempt to serve directory: /srv/www/images/
-[Mon Nov 02 08:54:57.847695 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55369] AH01626: authorization result of Require all denied: denied
-[Mon Nov 02 08:54:57.847840 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55369] AH01626: authorization result of <RequireAny>: denied
-[Mon Nov 02 08:54:57.847847 2026] [authz_core:error] [pid 7570] [client 203.0.113.7:55369] AH01630: client denied by server configuration: /srv/www/private/
-[Mon Nov 02 08:54:58.116867 2026] [cgi:error] [pid 7569] [client 203.0.113.7:55370] AH01215: stderr from /srv/cgi-bin/ok.cgi: warning: cache cold for /reports
-[Mon Nov 02 08:54:58.777180 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55373] malformed header from script 'broken.cgi': Bad header: this is not a header
-[Mon Nov 02 08:55:01.617154 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55383] AH02811: stderr from /srv/cgi-bin/nothere.cgi: script not found or unable to stat
-[Mon Nov 02 08:55:01.974428 2026] [core:info] [pid 7569] [client 2001:db8::7:55384] AH00128: File does not exist: /srv/www/wp-login.php
-[Mon Nov 02 08:55:02.136549 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55385] End of script output before headers: empty.cgi
-[Mon Nov 02 08:55:02.688505 2026] [core:info] [pid 7569] [client 203.0.113.7:55386] AH00128: File does not exist: /srv/www/search
-[Mon Nov 02 08:55:03.951027 2026] [core:info] [pid 7570] [client 203.0.113.7:55393] AH00128: File does not exist: /srv/www/missing.html
-[Mon Nov 02 08:55:05.022147 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55395] AH01626: authorization result of Require all granted: granted
-[Mon Nov 02 08:55:05.022432 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55395] AH01626: authorization result of <RequireAny>: granted
-[Mon Nov 02 08:55:05.677093 2026] [core:info] [pid 7569] [client 203.0.113.7:55396] AH00129: Attempt to serve directory: /srv/www/images/
-[Mon Nov 02 08:55:06.132445 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55399] AH01626: authorization result of Require all denied: denied
-[Mon Nov 02 08:55:06.132628 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55399] AH01626: authorization result of <RequireAny>: denied
-[Mon Nov 02 08:55:06.132638 2026] [authz_core:error] [pid 7570] [client 203.0.113.7:55399] AH01630: client denied by server configuration: /srv/www/private/
-[Mon Nov 02 08:55:06.795375 2026] [cgi:error] [pid 7569] [client 203.0.113.7:55400] AH01215: stderr from /srv/cgi-bin/ok.cgi: warning: cache cold for /reports
-[Mon Nov 02 08:55:07.267209 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55403] malformed header from script 'broken.cgi': Bad header: this is not a header
-[Mon Nov 02 08:55:09.200718 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55411] AH02811: stderr from /srv/cgi-bin/nothere.cgi: script not found or unable to stat
-[Mon Nov 02 08:55:09.560584 2026] [core:info] [pid 7569] [client 2001:db8::7:55412] AH00128: File does not exist: /srv/www/wp-login.php
-[Mon Nov 02 08:55:09.730758 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55415] End of script output before headers: empty.cgi
-[Mon Nov 02 08:55:10.385252 2026] [core:info] [pid 7569] [client 203.0.113.7:55418] AH00128: File does not exist: /srv/www/search
-[Mon Nov 02 08:55:12.551266 2026] [core:info] [pid 7570] [client 203.0.113.7:55423] AH00128: File does not exist: /srv/www/missing.html
-[Mon Nov 02 08:55:13.664373 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55427] AH01626: authorization result of Require all granted: granted
-[Mon Nov 02 08:55:13.664932 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55427] AH01626: authorization result of <RequireAny>: granted
-[Mon Nov 02 08:55:14.218660 2026] [core:info] [pid 7569] [client 203.0.113.7:55428] AH00129: Attempt to serve directory: /srv/www/images/
-[Mon Nov 02 08:55:14.678375 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55429] AH01626: authorization result of Require all denied: denied
-[Mon Nov 02 08:55:14.678691 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55429] AH01626: authorization result of <RequireAny>: denied
-[Mon Nov 02 08:55:14.678704 2026] [authz_core:error] [pid 7570] [client 203.0.113.7:55429] AH01630: client denied by server configuration: /srv/www/private/
-[Mon Nov 02 08:55:14.849568 2026] [cgi:error] [pid 7569] [client 203.0.113.7:55430] AH01215: stderr from /srv/cgi-bin/ok.cgi: warning: cache cold for /reports
-[Mon Nov 02 08:55:15.475650 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55431] malformed header from script 'broken.cgi': Bad header: this is not a header
-[Mon Nov 02 08:55:17.449122 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55441] AH02811: stderr from /srv/cgi-bin/nothere.cgi: script not found or unable to stat
-[Mon Nov 02 08:55:17.581365 2026] [core:info] [pid 7569] [client 2001:db8::7:55442] AH00128: File does not exist: /srv/www/wp-login.php
-[Mon Nov 02 08:55:17.942490 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55443] End of script output before headers: empty.cgi
-[Mon Nov 02 08:55:18.595781 2026] [core:info] [pid 7569] [client 203.0.113.7:55446] AH00128: File does not exist: /srv/www/search
-[Mon Nov 02 08:55:20.251241 2026] [core:info] [pid 7570] [client 203.0.113.7:55453] AH00128: File does not exist: /srv/www/missing.html
-[Mon Nov 02 08:55:21.226561 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55457] AH01626: authorization result of Require all granted: granted
-[Mon Nov 02 08:55:21.226667 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55457] AH01626: authorization result of <RequireAny>: granted
-[Mon Nov 02 08:55:21.342796 2026] [core:info] [pid 7569] [client 203.0.113.7:55458] AH00129: Attempt to serve directory: /srv/www/images/
-[Mon Nov 02 08:55:21.761056 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55459] AH01626: authorization result of Require all denied: denied
-[Mon Nov 02 08:55:21.761086 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55459] AH01626: authorization result of <RequireAny>: denied
-[Mon Nov 02 08:55:21.761091 2026] [authz_core:error] [pid 7570] [client 203.0.113.7:55459] AH01630: client denied by server configuration: /srv/www/private/
-[Mon Nov 02 08:55:21.996385 2026] [cgi:error] [pid 7569] [client 203.0.113.7:55460] AH01215: stderr from /srv/cgi-bin/ok.cgi: warning: cache cold for /reports
-[Mon Nov 02 08:55:22.119356 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55461] malformed header from script 'broken.cgi': Bad header: this is not a header
-[Mon Nov 02 08:55:23.940688 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55469] AH02811: stderr from /srv/cgi-bin/nothere.cgi: script not found or unable to stat
-[Mon Nov 02 08:55:24.390645 2026] [core:info] [pid 7569] [client 2001:db8::7:55470] AH00128: File does not exist: /srv/www/wp-login.php
-[Mon Nov 02 08:55:24.561380 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55471] End of script output before headers: empty.cgi
-[Mon Nov 02 08:55:25.111156 2026] [core:info] [pid 7569] [client 203.0.113.7:55472] AH00128: File does not exist: /srv/www/search
-[Mon Nov 02 08:55:27.060340 2026] [core:info] [pid 7570] [client 203.0.113.7:55479] AH00128: File does not exist: /srv/www/missing.html
-[Mon Nov 02 08:55:28.149271 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55483] AH01626: authorization result of Require all granted: granted
-[Mon Nov 02 08:55:28.149609 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55483] AH01626: authorization result of <RequireAny>: granted
-[Mon Nov 02 08:55:28.406841 2026] [core:info] [pid 7569] [client 203.0.113.7:55484] AH00129: Attempt to serve directory: /srv/www/images/
-[Mon Nov 02 08:55:28.765151 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55487] AH01626: authorization result of Require all denied: denied
-[Mon Nov 02 08:55:28.765190 2026] [authz_core:debug] [pid 7570] mod_authz_core.c(815): [client 203.0.113.7:55487] AH01626: authorization result of <RequireAny>: denied
-[Mon Nov 02 08:55:28.765199 2026] [authz_core:error] [pid 7570] [client 203.0.113.7:55487] AH01630: client denied by server configuration: /srv/www/private/
-[Mon Nov 02 08:55:29.030690 2026] [cgi:error] [pid 7569] [client 203.0.113.7:55488] AH01215: stderr from /srv/cgi-bin/ok.cgi: warning: cache cold for /reports
-[Mon Nov 02 08:55:29.603573 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55491] malformed header from script 'broken.cgi': Bad header: this is not a header
-[Mon Nov 02 08:55:32.137789 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55499] AH02811: stderr from /srv/cgi-bin/nothere.cgi: script not found or unable to stat
-[Mon Nov 02 08:55:32.385179 2026] [core:info] [pid 7569] [client 2001:db8::7:55500] AH00128: File does not exist: /srv/www/wp-login.php
-[Mon Nov 02 08:55:32.960624 2026] [cgi:error] [pid 7570] [client 203.0.113.7:55501] End of script output before headers: empty.cgi
-[Mon Nov 02 08:55:33.614058 2026] [core:info] [pid 7569] [client 203.0.113.7:55504] AH00128: File does not exist: /srv/www/search
-[Mon Nov 02 08:55:34.437388 2026] [core:info] [pid 7567] AH00096: removed PID file /run/httpd/httpd.pid (pid=7567)
-[Mon Nov 02 08:55:34.437908 2026] [mpm_prefork:notice] [pid 7567] AH00169: caught SIGTERM, shutting down
+[Mon Nov 02 11:59:38.752646 2026] [mpm_prefork:notice] [pid 38377] AH00163: Apache/2.4.67 (Unix) configured -- resuming normal operations
+[Mon Nov 02 11:59:38.752831 2026] [mpm_prefork:info] [pid 38377] AH00164: Server built: Oct  3 2026 17:07:43
+[Mon Nov 02 11:59:38.752844 2026] [core:notice] [pid 38377] AH00094: Command line: '/usr/sbin/httpd -f /etc/httpd/httpd.conf'
+[Mon Nov 02 11:59:41.045342 2026] [core:info] [pid 38380] [client 203.0.113.7:53010] AH00128: File does not exist: /srv/www/missing.html
+[Mon Nov 02 11:59:42.050545 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53012] AH01626: authorization result of Require all granted: granted
+[Mon Nov 02 11:59:42.051203 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53012] AH01626: authorization result of <RequireAny>: granted
+[Mon Nov 02 11:59:42.707584 2026] [core:info] [pid 38379] [client 203.0.113.7:53015] AH00129: Attempt to serve directory: /srv/www/images/
+[Mon Nov 02 11:59:42.857543 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53016] AH01626: authorization result of Require all denied: denied
+[Mon Nov 02 11:59:42.857585 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53016] AH01626: authorization result of <RequireAny>: denied
+[Mon Nov 02 11:59:42.857599 2026] [authz_core:error] [pid 38380] [client 203.0.113.7:53016] AH01630: client denied by server configuration: /srv/www/private/
+[Mon Nov 02 11:59:43.235412 2026] [cgi:error] [pid 38379] [client 203.0.113.7:53017] AH01215: stderr from /srv/cgi-bin/ok.cgi: warning: cache cold for /reports
+[Mon Nov 02 11:59:43.697306 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53020] malformed header from script 'broken.cgi': Bad header: this is not a header
+[Mon Nov 02 11:59:46.085300 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53028] AH02811: stderr from /srv/cgi-bin/nothere.cgi: script not found or unable to stat
+[Mon Nov 02 11:59:46.535038 2026] [core:info] [pid 38379] [client 2001:db8::7:53031] AH00128: File does not exist: /srv/www/wp-login.php
+[Mon Nov 02 11:59:47.217642 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53034] End of script output before headers: empty.cgi
+[Mon Nov 02 11:59:47.876250 2026] [core:info] [pid 38379] [client 203.0.113.7:53036] AH00128: File does not exist: /srv/www/search
+[Mon Nov 02 11:59:49.585419 2026] [core:info] [pid 38380] [client 203.0.113.7:53044] AH00128: File does not exist: /srv/www/missing.html
+[Mon Nov 02 11:59:50.378252 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53046] AH01626: authorization result of Require all granted: granted
+[Mon Nov 02 11:59:50.378503 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53046] AH01626: authorization result of <RequireAny>: granted
+[Mon Nov 02 11:59:50.625357 2026] [core:info] [pid 38379] [client 203.0.113.7:53047] AH00129: Attempt to serve directory: /srv/www/images/
+[Mon Nov 02 11:59:50.975929 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53048] AH01626: authorization result of Require all denied: denied
+[Mon Nov 02 11:59:50.975972 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53048] AH01626: authorization result of <RequireAny>: denied
+[Mon Nov 02 11:59:50.975981 2026] [authz_core:error] [pid 38380] [client 203.0.113.7:53048] AH01630: client denied by server configuration: /srv/www/private/
+[Mon Nov 02 11:59:51.431720 2026] [cgi:error] [pid 38379] [client 203.0.113.7:53049] AH01215: stderr from /srv/cgi-bin/ok.cgi: warning: cache cold for /reports
+[Mon Nov 02 11:59:52.017735 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53050] malformed header from script 'broken.cgi': Bad header: this is not a header
+[Mon Nov 02 11:59:54.469779 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53061] AH02811: stderr from /srv/cgi-bin/nothere.cgi: script not found or unable to stat
+[Mon Nov 02 11:59:55.116243 2026] [core:info] [pid 38379] [client 2001:db8::7:53066] AH00128: File does not exist: /srv/www/wp-login.php
+[Mon Nov 02 11:59:55.285294 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53067] End of script output before headers: empty.cgi
+[Mon Nov 02 11:59:55.530978 2026] [core:info] [pid 38379] [client 203.0.113.7:53068] AH00128: File does not exist: /srv/www/search
+[Mon Nov 02 11:59:57.892482 2026] [core:info] [pid 38380] [client 203.0.113.7:53081] AH00128: File does not exist: /srv/www/missing.html
+[Mon Nov 02 11:59:58.503412 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53084] AH01626: authorization result of Require all granted: granted
+[Mon Nov 02 11:59:58.503933 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53084] AH01626: authorization result of <RequireAny>: granted
+[Mon Nov 02 11:59:58.948096 2026] [core:info] [pid 38379] [client 203.0.113.7:53085] AH00129: Attempt to serve directory: /srv/www/images/
+[Mon Nov 02 11:59:59.505618 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53089] AH01626: authorization result of Require all denied: denied
+[Mon Nov 02 11:59:59.506273 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53089] AH01626: authorization result of <RequireAny>: denied
+[Mon Nov 02 11:59:59.506350 2026] [authz_core:error] [pid 38380] [client 203.0.113.7:53089] AH01630: client denied by server configuration: /srv/www/private/
+[Mon Nov 02 12:00:00.165577 2026] [cgi:error] [pid 38379] [client 203.0.113.7:53090] AH01215: stderr from /srv/cgi-bin/ok.cgi: warning: cache cold for /reports
+[Mon Nov 02 12:00:00.346698 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53091] malformed header from script 'broken.cgi': Bad header: this is not a header
+[Mon Nov 02 12:00:02.743281 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53100] AH02811: stderr from /srv/cgi-bin/nothere.cgi: script not found or unable to stat
+[Mon Nov 02 12:00:02.989321 2026] [core:info] [pid 38379] [client 2001:db8::7:53101] AH00128: File does not exist: /srv/www/wp-login.php
+[Mon Nov 02 12:00:03.348603 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53102] End of script output before headers: empty.cgi
+[Mon Nov 02 12:00:03.794314 2026] [core:info] [pid 38379] [client 203.0.113.7:53105] AH00128: File does not exist: /srv/www/search
+[Mon Nov 02 12:00:05.720341 2026] [core:info] [pid 38380] [client 203.0.113.7:53112] AH00128: File does not exist: /srv/www/missing.html
+[Mon Nov 02 12:00:06.724317 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53116] AH01626: authorization result of Require all granted: granted
+[Mon Nov 02 12:00:06.724984 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53116] AH01626: authorization result of <RequireAny>: granted
+[Mon Nov 02 12:00:07.374150 2026] [core:info] [pid 38379] [client 203.0.113.7:53119] AH00129: Attempt to serve directory: /srv/www/images/
+[Mon Nov 02 12:00:07.527173 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53120] AH01626: authorization result of Require all denied: denied
+[Mon Nov 02 12:00:07.527721 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53120] AH01626: authorization result of <RequireAny>: denied
+[Mon Nov 02 12:00:07.527778 2026] [authz_core:error] [pid 38380] [client 203.0.113.7:53120] AH01630: client denied by server configuration: /srv/www/private/
+[Mon Nov 02 12:00:07.787310 2026] [cgi:error] [pid 38379] [client 203.0.113.7:53121] AH01215: stderr from /srv/cgi-bin/ok.cgi: warning: cache cold for /reports
+[Mon Nov 02 12:00:08.135897 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53122] malformed header from script 'broken.cgi': Bad header: this is not a header
+[Mon Nov 02 12:00:10.518443 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53130] AH02811: stderr from /srv/cgi-bin/nothere.cgi: script not found or unable to stat
+[Mon Nov 02 12:00:10.973116 2026] [core:info] [pid 38379] [client 2001:db8::7:53131] AH00128: File does not exist: /srv/www/wp-login.php
+[Mon Nov 02 12:00:11.532062 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53132] End of script output before headers: empty.cgi
+[Mon Nov 02 12:00:12.179819 2026] [core:info] [pid 38379] [client 203.0.113.7:53133] AH00128: File does not exist: /srv/www/search
+[Mon Nov 02 12:00:13.901616 2026] [core:info] [pid 38380] [client 203.0.113.7:53142] AH00128: File does not exist: /srv/www/missing.html
+[Mon Nov 02 12:00:14.689942 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53144] AH01626: authorization result of Require all granted: granted
+[Mon Nov 02 12:00:14.690106 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53144] AH01626: authorization result of <RequireAny>: granted
+[Mon Nov 02 12:00:14.926248 2026] [core:info] [pid 38379] [client 203.0.113.7:53147] AH00129: Attempt to serve directory: /srv/www/images/
+[Mon Nov 02 12:00:15.272076 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53148] AH01626: authorization result of Require all denied: denied
+[Mon Nov 02 12:00:15.272339 2026] [authz_core:debug] [pid 38380] mod_authz_core.c(815): [client 203.0.113.7:53148] AH01626: authorization result of <RequireAny>: denied
+[Mon Nov 02 12:00:15.272351 2026] [authz_core:error] [pid 38380] [client 203.0.113.7:53148] AH01630: client denied by server configuration: /srv/www/private/
+[Mon Nov 02 12:00:15.728530 2026] [cgi:error] [pid 38379] [client 203.0.113.7:53149] AH01215: stderr from /srv/cgi-bin/ok.cgi: warning: cache cold for /reports
+[Mon Nov 02 12:00:16.278487 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53150] malformed header from script 'broken.cgi': Bad header: this is not a header
+[Mon Nov 02 12:00:18.647526 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53160] AH02811: stderr from /srv/cgi-bin/nothere.cgi: script not found or unable to stat
+[Mon Nov 02 12:00:19.287184 2026] [core:info] [pid 38379] [client 2001:db8::7:53161] AH00128: File does not exist: /srv/www/wp-login.php
+[Mon Nov 02 12:00:19.448714 2026] [cgi:error] [pid 38380] [client 203.0.113.7:53162] End of script output before headers: empty.cgi
+[Mon Nov 02 12:00:19.691569 2026] [core:info] [pid 38379] [client 203.0.113.7:53165] AH00128: File does not exist: /srv/www/search
+[Mon Nov 02 12:00:20.491203 2026] [core:info] [pid 38377] AH00096: removed PID file /run/httpd/httpd.pid (pid=38377)
+[Mon Nov 02 12:00:20.491381 2026] [mpm_prefork:notice] [pid 38377] AH00169: caught SIGTERM, shutting down

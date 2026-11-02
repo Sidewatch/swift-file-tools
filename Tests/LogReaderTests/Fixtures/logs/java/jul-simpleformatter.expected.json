@@ -1,5 +1,5 @@
 {
-  "source": "Documentation-derived: java.util.logging.SimpleFormatter default format https://docs.oracle.com/en/java/javase/21/docs/api/java.logging/java/util/logging/SimpleFormatter.html and the throwable layout of Throwable.printStackTrace (a record with a throwable ends with an empty line, part of the entry) https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html#printStackTrace()",
+  "source": "Documentation-derived: java.util.logging.SimpleFormatter default format https://docs.oracle.com/en/java/javase/21/docs/api/java.logging/java/util/logging/SimpleFormatter.html and the throwable layout of Throwable.printStackTrace (a record with a throwable is followed by an empty line, which belongs to no entry; the line shows whole seconds, the answers keep milliseconds) https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html#printStackTrace()",
   "referenceDate": "2026-10-01",
   "entries": [
     {

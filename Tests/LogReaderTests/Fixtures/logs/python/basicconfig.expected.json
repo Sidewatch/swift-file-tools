@@ -1,5 +1,5 @@
 {
-  "source": "Python 3.14.10 logging, logging.BASIC_FORMAT ('%(levelname)s:%(name)s:%(message)s', the basicConfig default); script pylog.py",
+  "source": "Python 3.14.10 logging, logging.BASIC_FORMAT ('%(levelname)s:%(name)s:%(message)s', the basicConfig default); script stdlib_logging.py",
   "referenceDate": "2026-10-01",
   "entries": [
     {

@@ -1,5 +1,5 @@
 {
-  "source": "pino 9.14.0 on Node v26.13.0, default JSON; base set to {pid, hostname: \"web-01\"} (and module: \"worker\" for the second logger) so the real hostname is not written; script nodelog.js",
+  "source": "pino 9.14.0 on Node v26.13.0, default JSON; base set to {pid, hostname: \"web-01\"} (and module: \"worker\" for the second logger) so the real hostname is not written; script json_loggers.js",
   "referenceDate": "2026-10-01",
   "entries": [
     {

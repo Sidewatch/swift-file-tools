@@ -1,139 +1,139 @@
 # Logfile created on 2026-10-01 00:00:00 UTC by logger.rb/66358
-I, [2026-10-01T00:00:00.121275 #6455]  INFO -- : Booting worker pool size=5
-D, [2026-10-01T00:00:01.866023 #6455] DEBUG -- : loaded 31 settings from config/app.yml
-I, [2026-10-01T00:00:02.651344 #6455]  INFO -- : processed job 5521 in 182ms
-W, [2026-10-01T00:00:04.281202 #6455]  WARN -- : queue latency 4.2s above threshold 2s
-E, [2026-10-01T00:00:04.789689 #6455] ERROR -- : SMTP 451 from mail.example.com, will retry
-I, [2026-10-01T00:00:06.420769 #6455]  INFO -- : user-1042 exported 12 reports
-F, [2026-10-01T00:00:07.885046 #6455] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
-E, [2026-10-01T00:00:08.936500 #6455] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:51:in `block (2 levels) in <main>'
-rblog.rb:47:in `times'
-rblog.rb:47:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:46:in `<main>'
-D, [2026-10-01T00:00:11.138759 #6455] DEBUG -- : payload:
+I, [2026-10-01T00:00:00.121275 #37883]  INFO -- : Booting worker pool size=5
+D, [2026-10-01T00:00:01.866023 #37883] DEBUG -- : loaded 31 settings from config/app.yml
+I, [2026-10-01T00:00:02.651344 #37883]  INFO -- : processed job 5521 in 182ms
+W, [2026-10-01T00:00:04.281202 #37883]  WARN -- : queue latency 4.2s above threshold 2s
+E, [2026-10-01T00:00:04.789689 #37883] ERROR -- : SMTP 451 from mail.example.com, will retry
+I, [2026-10-01T00:00:06.420769 #37883]  INFO -- : user-1042 exported 12 reports
+F, [2026-10-01T00:00:07.885046 #37883] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
+E, [2026-10-01T00:00:08.936500 #37883] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:79:in `block (2 levels) in <main>'
+/srv/app/logger.rb:75:in `times'
+/srv/app/logger.rb:75:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:73:in `<main>'
+D, [2026-10-01T00:00:11.138759 #37883] DEBUG -- : payload:
   {"id": 7731,
    "items": 3}
-I, [2026-10-01T00:00:13.043403 #6455]  INFO -- : heartbeat ok
-I, [2026-10-01T00:00:14.666572 #6455]  INFO -- : Booting worker pool size=5
-D, [2026-10-01T00:00:16.716998 #6455] DEBUG -- : loaded 31 settings from config/app.yml
-I, [2026-10-01T00:00:17.253541 #6455]  INFO -- : processed job 5521 in 182ms
-W, [2026-10-01T00:00:18.698469 #6455]  WARN -- : queue latency 4.2s above threshold 2s
-E, [2026-10-01T00:00:20.421330 #6455] ERROR -- : SMTP 451 from mail.example.com, will retry
-I, [2026-10-01T00:00:21.112872 #6455]  INFO -- : user-1042 exported 12 reports
-F, [2026-10-01T00:00:22.309011 #6455] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
-A, [2026-10-01T00:00:24.410223 #6455]   ANY -- : shutdown requested by signal TERM
-D, [2026-10-01T00:00:26.078728 #6455] DEBUG -- : payload:
+I, [2026-10-01T00:00:13.043403 #37883]  INFO -- : heartbeat ok
+I, [2026-10-01T00:00:14.666572 #37883]  INFO -- : Booting worker pool size=5
+D, [2026-10-01T00:00:16.716998 #37883] DEBUG -- : loaded 31 settings from config/app.yml
+I, [2026-10-01T00:00:17.253541 #37883]  INFO -- : processed job 5521 in 182ms
+W, [2026-10-01T00:00:18.698469 #37883]  WARN -- : queue latency 4.2s above threshold 2s
+E, [2026-10-01T00:00:20.421330 #37883] ERROR -- : SMTP 451 from mail.example.com, will retry
+I, [2026-10-01T00:00:21.112872 #37883]  INFO -- : user-1042 exported 12 reports
+F, [2026-10-01T00:00:22.309011 #37883] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
+A, [2026-10-01T00:00:24.410223 #37883]   ANY -- : shutdown requested by signal TERM
+D, [2026-10-01T00:00:26.078728 #37883] DEBUG -- : payload:
   {"id": 7731,
    "items": 3}
-I, [2026-10-01T00:00:26.362106 #6455]  INFO -- : heartbeat ok
-E, [2026-10-01T00:00:27.308305 #6455] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:51:in `block (2 levels) in <main>'
-rblog.rb:47:in `times'
-rblog.rb:47:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:46:in `<main>'
-D, [2026-10-01T00:00:28.738281 #6455] DEBUG -- : loaded 31 settings from config/app.yml
-I, [2026-10-01T00:00:30.891342 #6455]  INFO -- : processed job 5521 in 182ms
-W, [2026-10-01T00:00:31.932028 #6455]  WARN -- : queue latency 4.2s above threshold 2s
-E, [2026-10-01T00:00:32.713151 #6455] ERROR -- : SMTP 451 from mail.example.com, will retry
-I, [2026-10-01T00:00:34.895443 #6455]  INFO -- : user-1042 exported 12 reports
-F, [2026-10-01T00:00:36.824036 #6455] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
-A, [2026-10-01T00:00:39.045166 #6455]   ANY -- : shutdown requested by signal TERM
-D, [2026-10-01T00:00:40.917117 #6455] DEBUG -- : payload:
+I, [2026-10-01T00:00:26.362106 #37883]  INFO -- : heartbeat ok
+E, [2026-10-01T00:00:27.308305 #37883] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:79:in `block (2 levels) in <main>'
+/srv/app/logger.rb:75:in `times'
+/srv/app/logger.rb:75:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:73:in `<main>'
+D, [2026-10-01T00:00:28.738281 #37883] DEBUG -- : loaded 31 settings from config/app.yml
+I, [2026-10-01T00:00:30.891342 #37883]  INFO -- : processed job 5521 in 182ms
+W, [2026-10-01T00:00:31.932028 #37883]  WARN -- : queue latency 4.2s above threshold 2s
+E, [2026-10-01T00:00:32.713151 #37883] ERROR -- : SMTP 451 from mail.example.com, will retry
+I, [2026-10-01T00:00:34.895443 #37883]  INFO -- : user-1042 exported 12 reports
+F, [2026-10-01T00:00:36.824036 #37883] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
+A, [2026-10-01T00:00:39.045166 #37883]   ANY -- : shutdown requested by signal TERM
+D, [2026-10-01T00:00:40.917117 #37883] DEBUG -- : payload:
   {"id": 7731,
    "items": 3}
-I, [2026-10-01T00:00:42.504333 #6455]  INFO -- : heartbeat ok
-I, [2026-10-01T00:00:44.812202 #6455]  INFO -- : Booting worker pool size=5
-D, [2026-10-01T00:00:45.746960 #6455] DEBUG -- : loaded 31 settings from config/app.yml
-I, [2026-10-01T00:00:46.091467 #6455]  INFO -- : processed job 5521 in 182ms
-E, [2026-10-01T00:00:46.791607 #6455] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:51:in `block (2 levels) in <main>'
-rblog.rb:47:in `times'
-rblog.rb:47:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:46:in `<main>'
-E, [2026-10-01T00:00:47.054880 #6455] ERROR -- : SMTP 451 from mail.example.com, will retry
-I, [2026-10-01T00:00:47.621282 #6455]  INFO -- : user-1042 exported 12 reports
-F, [2026-10-01T00:00:48.921385 #6455] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
-A, [2026-10-01T00:00:50.947025 #6455]   ANY -- : shutdown requested by signal TERM
-D, [2026-10-01T00:00:52.258118 #6455] DEBUG -- : payload:
+I, [2026-10-01T00:00:42.504333 #37883]  INFO -- : heartbeat ok
+I, [2026-10-01T00:00:44.812202 #37883]  INFO -- : Booting worker pool size=5
+D, [2026-10-01T00:00:45.746960 #37883] DEBUG -- : loaded 31 settings from config/app.yml
+I, [2026-10-01T00:00:46.091467 #37883]  INFO -- : processed job 5521 in 182ms
+E, [2026-10-01T00:00:46.791607 #37883] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:79:in `block (2 levels) in <main>'
+/srv/app/logger.rb:75:in `times'
+/srv/app/logger.rb:75:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:73:in `<main>'
+E, [2026-10-01T00:00:47.054880 #37883] ERROR -- : SMTP 451 from mail.example.com, will retry
+I, [2026-10-01T00:00:47.621282 #37883]  INFO -- : user-1042 exported 12 reports
+F, [2026-10-01T00:00:48.921385 #37883] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
+A, [2026-10-01T00:00:50.947025 #37883]   ANY -- : shutdown requested by signal TERM
+D, [2026-10-01T00:00:52.258118 #37883] DEBUG -- : payload:
   {"id": 7731,
    "items": 3}
-I, [2026-10-01T00:00:52.603972 #6455]  INFO -- : heartbeat ok
-I, [2026-10-01T00:00:53.247735 #6455]  INFO -- : Booting worker pool size=5
-D, [2026-10-01T00:00:53.359195 #6455] DEBUG -- : loaded 31 settings from config/app.yml
-I, [2026-10-01T00:00:54.619964 #6455]  INFO -- : processed job 5521 in 182ms
-W, [2026-10-01T00:00:56.093270 #6455]  WARN -- : queue latency 4.2s above threshold 2s
-E, [2026-10-01T00:00:58.381653 #6455] ERROR -- : SMTP 451 from mail.example.com, will retry
-I, [2026-10-01T00:00:59.875253 #6455]  INFO -- : user-1042 exported 12 reports
-E, [2026-10-01T00:01:00.196194 #6455] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:51:in `block (2 levels) in <main>'
-rblog.rb:47:in `times'
-rblog.rb:47:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:46:in `<main>'
-A, [2026-10-01T00:01:01.727320 #6455]   ANY -- : shutdown requested by signal TERM
-D, [2026-10-01T00:01:04.115779 #6455] DEBUG -- : payload:
+I, [2026-10-01T00:00:52.603972 #37883]  INFO -- : heartbeat ok
+I, [2026-10-01T00:00:53.247735 #37883]  INFO -- : Booting worker pool size=5
+D, [2026-10-01T00:00:53.359195 #37883] DEBUG -- : loaded 31 settings from config/app.yml
+I, [2026-10-01T00:00:54.619964 #37883]  INFO -- : processed job 5521 in 182ms
+W, [2026-10-01T00:00:56.093270 #37883]  WARN -- : queue latency 4.2s above threshold 2s
+E, [2026-10-01T00:00:58.381653 #37883] ERROR -- : SMTP 451 from mail.example.com, will retry
+I, [2026-10-01T00:00:59.875253 #37883]  INFO -- : user-1042 exported 12 reports
+E, [2026-10-01T00:01:00.196194 #37883] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:79:in `block (2 levels) in <main>'
+/srv/app/logger.rb:75:in `times'
+/srv/app/logger.rb:75:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:73:in `<main>'
+A, [2026-10-01T00:01:01.727320 #37883]   ANY -- : shutdown requested by signal TERM
+D, [2026-10-01T00:01:04.115779 #37883] DEBUG -- : payload:
   {"id": 7731,
    "items": 3}
-I, [2026-10-01T00:01:05.043295 #6455]  INFO -- : heartbeat ok
-I, [2026-10-01T00:01:06.381400 #6455]  INFO -- : Booting worker pool size=5
-D, [2026-10-01T00:01:06.405450 #6455] DEBUG -- : loaded 31 settings from config/app.yml
-I, [2026-10-01T00:01:06.668449 #6455]  INFO -- : processed job 5521 in 182ms
-W, [2026-10-01T00:01:09.126809 #6455]  WARN -- : queue latency 4.2s above threshold 2s
-E, [2026-10-01T00:01:09.524894 #6455] ERROR -- : SMTP 451 from mail.example.com, will retry
-I, [2026-10-01T00:01:11.123884 #6455]  INFO -- : user-1042 exported 12 reports
-F, [2026-10-01T00:01:11.187023 #6455] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
-A, [2026-10-01T00:01:11.426499 #6455]   ANY -- : shutdown requested by signal TERM
-D, [2026-10-01T00:01:13.237908 #6455] DEBUG -- : payload:
+I, [2026-10-01T00:01:05.043295 #37883]  INFO -- : heartbeat ok
+I, [2026-10-01T00:01:06.381400 #37883]  INFO -- : Booting worker pool size=5
+D, [2026-10-01T00:01:06.405450 #37883] DEBUG -- : loaded 31 settings from config/app.yml
+I, [2026-10-01T00:01:06.668449 #37883]  INFO -- : processed job 5521 in 182ms
+W, [2026-10-01T00:01:09.126809 #37883]  WARN -- : queue latency 4.2s above threshold 2s
+E, [2026-10-01T00:01:09.524894 #37883] ERROR -- : SMTP 451 from mail.example.com, will retry
+I, [2026-10-01T00:01:11.123884 #37883]  INFO -- : user-1042 exported 12 reports
+F, [2026-10-01T00:01:11.187023 #37883] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
+A, [2026-10-01T00:01:11.426499 #37883]   ANY -- : shutdown requested by signal TERM
+D, [2026-10-01T00:01:13.237908 #37883] DEBUG -- : payload:
   {"id": 7731,
    "items": 3}
-E, [2026-10-01T00:01:15.720670 #6455] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:51:in `block (2 levels) in <main>'
-rblog.rb:47:in `times'
-rblog.rb:47:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:46:in `<main>'
-I, [2026-10-01T00:01:16.555309 #6455]  INFO -- : Booting worker pool size=5
-D, [2026-10-01T00:01:16.658333 #6455] DEBUG -- : loaded 31 settings from config/app.yml
-I, [2026-10-01T00:01:17.273018 #6455]  INFO -- : processed job 5521 in 182ms
-W, [2026-10-01T00:01:18.978304 #6455]  WARN -- : queue latency 4.2s above threshold 2s
-E, [2026-10-01T00:01:20.034875 #6455] ERROR -- : SMTP 451 from mail.example.com, will retry
-I, [2026-10-01T00:01:21.467079 #6455]  INFO -- : user-1042 exported 12 reports
-F, [2026-10-01T00:01:23.576144 #6455] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
-A, [2026-10-01T00:01:26.042834 #6455]   ANY -- : shutdown requested by signal TERM
-D, [2026-10-01T00:01:26.430969 #6455] DEBUG -- : payload:
+E, [2026-10-01T00:01:15.720670 #37883] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:79:in `block (2 levels) in <main>'
+/srv/app/logger.rb:75:in `times'
+/srv/app/logger.rb:75:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:73:in `<main>'
+I, [2026-10-01T00:01:16.555309 #37883]  INFO -- : Booting worker pool size=5
+D, [2026-10-01T00:01:16.658333 #37883] DEBUG -- : loaded 31 settings from config/app.yml
+I, [2026-10-01T00:01:17.273018 #37883]  INFO -- : processed job 5521 in 182ms
+W, [2026-10-01T00:01:18.978304 #37883]  WARN -- : queue latency 4.2s above threshold 2s
+E, [2026-10-01T00:01:20.034875 #37883] ERROR -- : SMTP 451 from mail.example.com, will retry
+I, [2026-10-01T00:01:21.467079 #37883]  INFO -- : user-1042 exported 12 reports
+F, [2026-10-01T00:01:23.576144 #37883] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
+A, [2026-10-01T00:01:26.042834 #37883]   ANY -- : shutdown requested by signal TERM
+D, [2026-10-01T00:01:26.430969 #37883] DEBUG -- : payload:
   {"id": 7731,
    "items": 3}
-I, [2026-10-01T00:01:27.047905 #6455]  INFO -- : heartbeat ok
-I, [2026-10-01T00:01:28.583094 #6455]  INFO -- : Booting worker pool size=5
-D, [2026-10-01T00:01:28.929780 #6455] DEBUG -- : loaded 31 settings from config/app.yml
-E, [2026-10-01T00:01:29.043495 #6455] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:51:in `block (2 levels) in <main>'
-rblog.rb:47:in `times'
-rblog.rb:47:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:46:in `<main>'
-W, [2026-10-01T00:01:29.767723 #6455]  WARN -- : queue latency 4.2s above threshold 2s
-E, [2026-10-01T00:01:30.706124 #6455] ERROR -- : SMTP 451 from mail.example.com, will retry
-I, [2026-10-01T00:01:31.953478 #6455]  INFO -- : user-1042 exported 12 reports
-F, [2026-10-01T00:01:33.833861 #6455] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
-A, [2026-10-01T00:01:34.704613 #6455]   ANY -- : shutdown requested by signal TERM
-D, [2026-10-01T00:01:36.110002 #6455] DEBUG -- : payload:
+I, [2026-10-01T00:01:27.047905 #37883]  INFO -- : heartbeat ok
+I, [2026-10-01T00:01:28.583094 #37883]  INFO -- : Booting worker pool size=5
+D, [2026-10-01T00:01:28.929780 #37883] DEBUG -- : loaded 31 settings from config/app.yml
+E, [2026-10-01T00:01:29.043495 #37883] ERROR -- : invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:79:in `block (2 levels) in <main>'
+/srv/app/logger.rb:75:in `times'
+/srv/app/logger.rb:75:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:73:in `<main>'
+W, [2026-10-01T00:01:29.767723 #37883]  WARN -- : queue latency 4.2s above threshold 2s
+E, [2026-10-01T00:01:30.706124 #37883] ERROR -- : SMTP 451 from mail.example.com, will retry
+I, [2026-10-01T00:01:31.953478 #37883]  INFO -- : user-1042 exported 12 reports
+F, [2026-10-01T00:01:33.833861 #37883] FATAL -- : cannot open /var/lib/app/state.db: Permission denied
+A, [2026-10-01T00:01:34.704613 #37883]   ANY -- : shutdown requested by signal TERM
+D, [2026-10-01T00:01:36.110002 #37883] DEBUG -- : payload:
   {"id": 7731,
    "items": 3}
-I, [2026-10-01T00:01:36.730536 #6455]  INFO -- : heartbeat ok
+I, [2026-10-01T00:01:36.730536 #37883]  INFO -- : heartbeat ok

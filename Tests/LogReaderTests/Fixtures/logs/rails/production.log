@@ -1,120 +1,120 @@
-I, [2026-10-01T00:00:04.902326 #13135]  INFO -- : [1f3a5c00-0000-4000-8000-000000abc000] Started GET "/articles" for 203.0.113.17 at 2026-10-01 00:00:04 +0000
-I, [2026-10-01T00:00:04.903489 #13135]  INFO -- : [1f3a5c00-0000-4000-8000-000000abc000] Processing by ArticlesController#index as HTML
-I, [2026-10-01T00:00:04.917517 #13135]  INFO -- : [1f3a5c00-0000-4000-8000-000000abc000]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
-I, [2026-10-01T00:00:04.922306 #13135]  INFO -- : [1f3a5c00-0000-4000-8000-000000abc000] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
-I, [2026-10-01T00:00:13.477124 #13135]  INFO -- : [1f3a5fd1-001f-4001-8007-000000abc001] Started GET "/articles/42" for 198.51.100.23 at 2026-10-01 00:00:13 +0000
-I, [2026-10-01T00:00:13.478047 #13135]  INFO -- : [1f3a5fd1-001f-4001-8007-000000abc001] Processing by ArticlesController#show as HTML
-I, [2026-10-01T00:00:13.478195 #13135]  INFO -- : [1f3a5fd1-001f-4001-8007-000000abc001]   Parameters: {"id"=>"42"}
-D, [2026-10-01T00:00:13.478656 #13135] DEBUG -- : [1f3a5fd1-001f-4001-8007-000000abc001]   Article Load (0.4ms)  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2  [["id", 42], ["LIMIT", 1]]
-I, [2026-10-01T00:00:13.481734 #13135]  INFO -- : [1f3a5fd1-001f-4001-8007-000000abc001]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
-I, [2026-10-01T00:00:13.485469 #13135]  INFO -- : [1f3a5fd1-001f-4001-8007-000000abc001] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
-I, [2026-10-01T00:00:15.613273 #13135]  INFO -- : [1f3a63a2-003e-4002-800e-000000abc002] Started POST "/articles" for 192.0.2.44 at 2026-10-01 00:00:15 +0000
-I, [2026-10-01T00:00:15.614662 #13135]  INFO -- : [1f3a63a2-003e-4002-800e-000000abc002] Processing by ArticlesController#create as HTML
-I, [2026-10-01T00:00:15.614884 #13135]  INFO -- : [1f3a63a2-003e-4002-800e-000000abc002]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Hello", "body"=>"First post"}, "commit"=>"Create Article"}
-I, [2026-10-01T00:00:15.618391 #13135]  INFO -- : [1f3a63a2-003e-4002-800e-000000abc002] Redirected to https://www.example.com/articles/43
-I, [2026-10-01T00:00:15.620263 #13135]  INFO -- : [1f3a63a2-003e-4002-800e-000000abc002] Completed 302 Found in 21ms (ActiveRecord: 4.0ms (3 queries, 0 cached) | GC: 0.0ms)
-I, [2026-10-01T00:00:16.111464 #13135]  INFO -- : [1f3a6773-005d-4003-8015-000000abc003] Started GET "/wp-login.php" for 2001:db8::1f at 2026-10-01 00:00:16 +0000
-F, [2026-10-01T00:00:16.112470 #13135] FATAL -- : [1f3a6773-005d-4003-8015-000000abc003]   
+I, [2026-10-01T00:00:04.902326 #37888]  INFO -- : [1f3a5c00-0000-4000-8000-000000abc000] Started GET "/articles" for 203.0.113.17 at 2026-10-01 00:00:04 +0000
+I, [2026-10-01T00:00:04.903489 #37888]  INFO -- : [1f3a5c00-0000-4000-8000-000000abc000] Processing by ArticlesController#index as HTML
+I, [2026-10-01T00:00:04.917517 #37888]  INFO -- : [1f3a5c00-0000-4000-8000-000000abc000]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+I, [2026-10-01T00:00:04.922306 #37888]  INFO -- : [1f3a5c00-0000-4000-8000-000000abc000] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
+I, [2026-10-01T00:00:13.477124 #37888]  INFO -- : [1f3a5fd1-001f-4001-8007-000000abc001] Started GET "/articles/42" for 198.51.100.23 at 2026-10-01 00:00:13 +0000
+I, [2026-10-01T00:00:13.478047 #37888]  INFO -- : [1f3a5fd1-001f-4001-8007-000000abc001] Processing by ArticlesController#show as HTML
+I, [2026-10-01T00:00:13.478195 #37888]  INFO -- : [1f3a5fd1-001f-4001-8007-000000abc001]   Parameters: {"id"=>"42"}
+D, [2026-10-01T00:00:13.478656 #37888] DEBUG -- : [1f3a5fd1-001f-4001-8007-000000abc001]   Article Load (0.4ms)  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2  [["id", 42], ["LIMIT", 1]]
+I, [2026-10-01T00:00:13.481734 #37888]  INFO -- : [1f3a5fd1-001f-4001-8007-000000abc001]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+I, [2026-10-01T00:00:13.485469 #37888]  INFO -- : [1f3a5fd1-001f-4001-8007-000000abc001] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
+I, [2026-10-01T00:00:15.613273 #37888]  INFO -- : [1f3a63a2-003e-4002-800e-000000abc002] Started POST "/articles" for 192.0.2.44 at 2026-10-01 00:00:15 +0000
+I, [2026-10-01T00:00:15.614662 #37888]  INFO -- : [1f3a63a2-003e-4002-800e-000000abc002] Processing by ArticlesController#create as HTML
+I, [2026-10-01T00:00:15.614884 #37888]  INFO -- : [1f3a63a2-003e-4002-800e-000000abc002]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Hello", "body"=>"First post"}, "commit"=>"Create Article"}
+I, [2026-10-01T00:00:15.618391 #37888]  INFO -- : [1f3a63a2-003e-4002-800e-000000abc002] Redirected to https://www.example.com/articles/43
+I, [2026-10-01T00:00:15.620263 #37888]  INFO -- : [1f3a63a2-003e-4002-800e-000000abc002] Completed 302 Found in 21ms (ActiveRecord: 4.0ms (3 queries, 0 cached) | GC: 0.0ms)
+I, [2026-10-01T00:00:16.111464 #37888]  INFO -- : [1f3a6773-005d-4003-8015-000000abc003] Started GET "/wp-login.php" for 2001:db8::1f at 2026-10-01 00:00:16 +0000
+F, [2026-10-01T00:00:16.112470 #37888] FATAL -- : [1f3a6773-005d-4003-8015-000000abc003]   
 [1f3a6773-005d-4003-8015-000000abc003] ActionController::RoutingError (No route matches [GET] "/wp-login.php"):
 [1f3a6773-005d-4003-8015-000000abc003]   
 [1f3a6773-005d-4003-8015-000000abc003] actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:33:in `call'
 [1f3a6773-005d-4003-8015-000000abc003] actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 [1f3a6773-005d-4003-8015-000000abc003] railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
-I, [2026-10-01T00:00:17.613053 #13135]  INFO -- : [1f3a6b44-007c-4004-801c-000000abc004] Started GET "/reports/monthly" for 203.0.113.17 at 2026-10-01 00:00:17 +0000
-I, [2026-10-01T00:00:17.613965 #13135]  INFO -- : [1f3a6b44-007c-4004-801c-000000abc004] Processing by ReportsController#show as HTML
-I, [2026-10-01T00:00:17.614286 #13135]  INFO -- : [1f3a6b44-007c-4004-801c-000000abc004]   Parameters: {"id"=>"monthly"}
-E, [2026-10-01T00:00:17.619560 #13135] ERROR -- : [1f3a6b44-007c-4004-801c-000000abc004] Report generation failed: upstream api.example.com returned 502
-I, [2026-10-01T00:00:17.620819 #13135]  INFO -- : [1f3a6b44-007c-4004-801c-000000abc004] Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
-F, [2026-10-01T00:00:17.621591 #13135] FATAL -- : [1f3a6b44-007c-4004-801c-000000abc004]   
+I, [2026-10-01T00:00:17.613053 #37888]  INFO -- : [1f3a6b44-007c-4004-801c-000000abc004] Started GET "/reports/monthly" for 203.0.113.17 at 2026-10-01 00:00:17 +0000
+I, [2026-10-01T00:00:17.613965 #37888]  INFO -- : [1f3a6b44-007c-4004-801c-000000abc004] Processing by ReportsController#show as HTML
+I, [2026-10-01T00:00:17.614286 #37888]  INFO -- : [1f3a6b44-007c-4004-801c-000000abc004]   Parameters: {"id"=>"monthly"}
+E, [2026-10-01T00:00:17.619560 #37888] ERROR -- : [1f3a6b44-007c-4004-801c-000000abc004] Report generation failed: upstream api.example.com returned 502
+I, [2026-10-01T00:00:17.620819 #37888]  INFO -- : [1f3a6b44-007c-4004-801c-000000abc004] Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
+F, [2026-10-01T00:00:17.621591 #37888] FATAL -- : [1f3a6b44-007c-4004-801c-000000abc004]   
 [1f3a6b44-007c-4004-801c-000000abc004] ReportsController::UpstreamError (upstream api.example.com returned 502):
 [1f3a6b44-007c-4004-801c-000000abc004]   
 [1f3a6b44-007c-4004-801c-000000abc004] app/services/report_builder.rb:27:in `fetch'
 [1f3a6b44-007c-4004-801c-000000abc004] app/controllers/reports_controller.rb:9:in `show'
-I, [2026-10-01T00:00:26.359120 #13135]  INFO -- : [1f3a6f15-009b-4005-8023-000000abc005] Started PATCH "/articles/42" for 198.51.100.23 at 2026-10-01 00:00:26 +0000
-I, [2026-10-01T00:00:26.361018 #13135]  INFO -- : [1f3a6f15-009b-4005-8023-000000abc005] Processing by ArticlesController#update as TURBO_STREAM
-I, [2026-10-01T00:00:26.361533 #13135]  INFO -- : [1f3a6f15-009b-4005-8023-000000abc005]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>""}, "id"=>"42"}
-W, [2026-10-01T00:00:26.369361 #13135]  WARN -- : [1f3a6f15-009b-4005-8023-000000abc005] Can't verify CSRF token authenticity.
-I, [2026-10-01T00:00:26.378222 #13135]  INFO -- : [1f3a6f15-009b-4005-8023-000000abc005] Completed 422 Unprocessable Content in 3ms (ActiveRecord: 0.0ms | GC: 0.0ms)
-I, [2026-10-01T00:00:29.222200 #13135]  INFO -- : [1f3a72e6-00ba-4006-802a-000000abc006] Started GET "/api/orders/1042" for 192.0.2.44 at 2026-10-01 00:00:29 +0000
-I, [2026-10-01T00:00:29.223711 #13135]  INFO -- : [1f3a72e6-00ba-4006-802a-000000abc006] Processing by Api::OrdersController#show as JSON
-I, [2026-10-01T00:00:29.224475 #13135]  INFO -- : [1f3a72e6-00ba-4006-802a-000000abc006]   Parameters: {"id"=>"1042"}
-D, [2026-10-01T00:00:29.224656 #13135] DEBUG -- : [1f3a72e6-00ba-4006-802a-000000abc006]   Article Load (0.4ms)  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2  [["id", 42], ["LIMIT", 1]]
-I, [2026-10-01T00:00:29.243773 #13135]  INFO -- : [1f3a72e6-00ba-4006-802a-000000abc006] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
-I, [2026-10-01T00:00:35.344641 #13135]  INFO -- : [1f3a76b7-00d9-4007-8031-000000abc007] Started GET "/articles" for 2001:db8::1f at 2026-10-01 00:00:35 +0000
-I, [2026-10-01T00:00:35.345990 #13135]  INFO -- : [1f3a76b7-00d9-4007-8031-000000abc007] Processing by ArticlesController#index as HTML
-I, [2026-10-01T00:00:35.348736 #13135]  INFO -- : [1f3a76b7-00d9-4007-8031-000000abc007]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
-I, [2026-10-01T00:00:35.352603 #13135]  INFO -- : [1f3a76b7-00d9-4007-8031-000000abc007] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
-I, [2026-10-01T00:00:41.211659 #13135]  INFO -- : [1f3a7a88-00f8-4008-8038-000000abc008] Started GET "/articles/42" for 203.0.113.17 at 2026-10-01 00:00:41 +0000
-I, [2026-10-01T00:00:41.213224 #13135]  INFO -- : [1f3a7a88-00f8-4008-8038-000000abc008] Processing by ArticlesController#show as HTML
-I, [2026-10-01T00:00:41.213722 #13135]  INFO -- : [1f3a7a88-00f8-4008-8038-000000abc008]   Parameters: {"id"=>"42"}
-I, [2026-10-01T00:00:41.216929 #13135]  INFO -- : [1f3a7a88-00f8-4008-8038-000000abc008]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
-I, [2026-10-01T00:00:41.222373 #13135]  INFO -- : [1f3a7a88-00f8-4008-8038-000000abc008] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
-I, [2026-10-01T00:00:45.554954 #13135]  INFO -- : [1f3a7e59-0117-4009-803f-000000abc009] Started POST "/articles" for 198.51.100.23 at 2026-10-01 00:00:45 +0000
-I, [2026-10-01T00:00:45.556032 #13135]  INFO -- : [1f3a7e59-0117-4009-803f-000000abc009] Processing by ArticlesController#create as HTML
-I, [2026-10-01T00:00:45.556527 #13135]  INFO -- : [1f3a7e59-0117-4009-803f-000000abc009]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Hello", "body"=>"First post"}, "commit"=>"Create Article"}
-I, [2026-10-01T00:00:45.563807 #13135]  INFO -- : [1f3a7e59-0117-4009-803f-000000abc009] Redirected to https://www.example.com/articles/43
-I, [2026-10-01T00:00:45.567464 #13135]  INFO -- : [1f3a7e59-0117-4009-803f-000000abc009] Completed 302 Found in 21ms (ActiveRecord: 4.0ms (3 queries, 0 cached) | GC: 0.0ms)
-I, [2026-10-01T00:00:48.681134 #13135]  INFO -- : [1f3a822a-0136-400a-8046-000000abc00a] Started GET "/wp-login.php" for 192.0.2.44 at 2026-10-01 00:00:48 +0000
-F, [2026-10-01T00:00:48.682005 #13135] FATAL -- : [1f3a822a-0136-400a-8046-000000abc00a]   
+I, [2026-10-01T00:00:26.359120 #37888]  INFO -- : [1f3a6f15-009b-4005-8023-000000abc005] Started PATCH "/articles/42" for 198.51.100.23 at 2026-10-01 00:00:26 +0000
+I, [2026-10-01T00:00:26.361018 #37888]  INFO -- : [1f3a6f15-009b-4005-8023-000000abc005] Processing by ArticlesController#update as TURBO_STREAM
+I, [2026-10-01T00:00:26.361533 #37888]  INFO -- : [1f3a6f15-009b-4005-8023-000000abc005]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>""}, "id"=>"42"}
+W, [2026-10-01T00:00:26.369361 #37888]  WARN -- : [1f3a6f15-009b-4005-8023-000000abc005] Can't verify CSRF token authenticity.
+I, [2026-10-01T00:00:26.378222 #37888]  INFO -- : [1f3a6f15-009b-4005-8023-000000abc005] Completed 422 Unprocessable Content in 3ms (ActiveRecord: 0.0ms | GC: 0.0ms)
+I, [2026-10-01T00:00:29.222200 #37888]  INFO -- : [1f3a72e6-00ba-4006-802a-000000abc006] Started GET "/api/orders/1042" for 192.0.2.44 at 2026-10-01 00:00:29 +0000
+I, [2026-10-01T00:00:29.223711 #37888]  INFO -- : [1f3a72e6-00ba-4006-802a-000000abc006] Processing by Api::OrdersController#show as JSON
+I, [2026-10-01T00:00:29.224475 #37888]  INFO -- : [1f3a72e6-00ba-4006-802a-000000abc006]   Parameters: {"id"=>"1042"}
+D, [2026-10-01T00:00:29.224656 #37888] DEBUG -- : [1f3a72e6-00ba-4006-802a-000000abc006]   Article Load (0.4ms)  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2  [["id", 42], ["LIMIT", 1]]
+I, [2026-10-01T00:00:29.243773 #37888]  INFO -- : [1f3a72e6-00ba-4006-802a-000000abc006] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
+I, [2026-10-01T00:00:35.344641 #37888]  INFO -- : [1f3a76b7-00d9-4007-8031-000000abc007] Started GET "/articles" for 2001:db8::1f at 2026-10-01 00:00:35 +0000
+I, [2026-10-01T00:00:35.345990 #37888]  INFO -- : [1f3a76b7-00d9-4007-8031-000000abc007] Processing by ArticlesController#index as HTML
+I, [2026-10-01T00:00:35.348736 #37888]  INFO -- : [1f3a76b7-00d9-4007-8031-000000abc007]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+I, [2026-10-01T00:00:35.352603 #37888]  INFO -- : [1f3a76b7-00d9-4007-8031-000000abc007] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
+I, [2026-10-01T00:00:41.211659 #37888]  INFO -- : [1f3a7a88-00f8-4008-8038-000000abc008] Started GET "/articles/42" for 203.0.113.17 at 2026-10-01 00:00:41 +0000
+I, [2026-10-01T00:00:41.213224 #37888]  INFO -- : [1f3a7a88-00f8-4008-8038-000000abc008] Processing by ArticlesController#show as HTML
+I, [2026-10-01T00:00:41.213722 #37888]  INFO -- : [1f3a7a88-00f8-4008-8038-000000abc008]   Parameters: {"id"=>"42"}
+I, [2026-10-01T00:00:41.216929 #37888]  INFO -- : [1f3a7a88-00f8-4008-8038-000000abc008]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+I, [2026-10-01T00:00:41.222373 #37888]  INFO -- : [1f3a7a88-00f8-4008-8038-000000abc008] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
+I, [2026-10-01T00:00:45.554954 #37888]  INFO -- : [1f3a7e59-0117-4009-803f-000000abc009] Started POST "/articles" for 198.51.100.23 at 2026-10-01 00:00:45 +0000
+I, [2026-10-01T00:00:45.556032 #37888]  INFO -- : [1f3a7e59-0117-4009-803f-000000abc009] Processing by ArticlesController#create as HTML
+I, [2026-10-01T00:00:45.556527 #37888]  INFO -- : [1f3a7e59-0117-4009-803f-000000abc009]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Hello", "body"=>"First post"}, "commit"=>"Create Article"}
+I, [2026-10-01T00:00:45.563807 #37888]  INFO -- : [1f3a7e59-0117-4009-803f-000000abc009] Redirected to https://www.example.com/articles/43
+I, [2026-10-01T00:00:45.567464 #37888]  INFO -- : [1f3a7e59-0117-4009-803f-000000abc009] Completed 302 Found in 21ms (ActiveRecord: 4.0ms (3 queries, 0 cached) | GC: 0.0ms)
+I, [2026-10-01T00:00:48.681134 #37888]  INFO -- : [1f3a822a-0136-400a-8046-000000abc00a] Started GET "/wp-login.php" for 192.0.2.44 at 2026-10-01 00:00:48 +0000
+F, [2026-10-01T00:00:48.682005 #37888] FATAL -- : [1f3a822a-0136-400a-8046-000000abc00a]   
 [1f3a822a-0136-400a-8046-000000abc00a] ActionController::RoutingError (No route matches [GET] "/wp-login.php"):
 [1f3a822a-0136-400a-8046-000000abc00a]   
 [1f3a822a-0136-400a-8046-000000abc00a] actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:33:in `call'
 [1f3a822a-0136-400a-8046-000000abc00a] actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 [1f3a822a-0136-400a-8046-000000abc00a] railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
-I, [2026-10-01T00:00:56.278729 #13135]  INFO -- : [1f3a85fb-0155-400b-804d-000000abc00b] Started GET "/reports/monthly" for 2001:db8::1f at 2026-10-01 00:00:56 +0000
-I, [2026-10-01T00:00:56.279058 #13135]  INFO -- : [1f3a85fb-0155-400b-804d-000000abc00b] Processing by ReportsController#show as HTML
-I, [2026-10-01T00:00:56.279912 #13135]  INFO -- : [1f3a85fb-0155-400b-804d-000000abc00b]   Parameters: {"id"=>"monthly"}
-D, [2026-10-01T00:00:56.280463 #13135] DEBUG -- : [1f3a85fb-0155-400b-804d-000000abc00b]   Article Load (0.4ms)  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2  [["id", 42], ["LIMIT", 1]]
-E, [2026-10-01T00:00:56.282263 #13135] ERROR -- : [1f3a85fb-0155-400b-804d-000000abc00b] Report generation failed: upstream api.example.com returned 502
-I, [2026-10-01T00:00:56.286424 #13135]  INFO -- : [1f3a85fb-0155-400b-804d-000000abc00b] Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
-F, [2026-10-01T00:00:56.287194 #13135] FATAL -- : [1f3a85fb-0155-400b-804d-000000abc00b]   
+I, [2026-10-01T00:00:56.278729 #37888]  INFO -- : [1f3a85fb-0155-400b-804d-000000abc00b] Started GET "/reports/monthly" for 2001:db8::1f at 2026-10-01 00:00:56 +0000
+I, [2026-10-01T00:00:56.279058 #37888]  INFO -- : [1f3a85fb-0155-400b-804d-000000abc00b] Processing by ReportsController#show as HTML
+I, [2026-10-01T00:00:56.279912 #37888]  INFO -- : [1f3a85fb-0155-400b-804d-000000abc00b]   Parameters: {"id"=>"monthly"}
+D, [2026-10-01T00:00:56.280463 #37888] DEBUG -- : [1f3a85fb-0155-400b-804d-000000abc00b]   Article Load (0.4ms)  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2  [["id", 42], ["LIMIT", 1]]
+E, [2026-10-01T00:00:56.282263 #37888] ERROR -- : [1f3a85fb-0155-400b-804d-000000abc00b] Report generation failed: upstream api.example.com returned 502
+I, [2026-10-01T00:00:56.286424 #37888]  INFO -- : [1f3a85fb-0155-400b-804d-000000abc00b] Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
+F, [2026-10-01T00:00:56.287194 #37888] FATAL -- : [1f3a85fb-0155-400b-804d-000000abc00b]   
 [1f3a85fb-0155-400b-804d-000000abc00b] ReportsController::UpstreamError (upstream api.example.com returned 502):
 [1f3a85fb-0155-400b-804d-000000abc00b]   
 [1f3a85fb-0155-400b-804d-000000abc00b] app/services/report_builder.rb:27:in `fetch'
 [1f3a85fb-0155-400b-804d-000000abc00b] app/controllers/reports_controller.rb:9:in `show'
-I, [2026-10-01T00:00:59.784793 #13135]  INFO -- : [1f3a89cc-0174-400c-8054-000000abc00c] Started PATCH "/articles/42" for 203.0.113.17 at 2026-10-01 00:00:59 +0000
-I, [2026-10-01T00:00:59.786633 #13135]  INFO -- : [1f3a89cc-0174-400c-8054-000000abc00c] Processing by ArticlesController#update as TURBO_STREAM
-I, [2026-10-01T00:00:59.786946 #13135]  INFO -- : [1f3a89cc-0174-400c-8054-000000abc00c]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>""}, "id"=>"42"}
-W, [2026-10-01T00:00:59.793940 #13135]  WARN -- : [1f3a89cc-0174-400c-8054-000000abc00c] Can't verify CSRF token authenticity.
-I, [2026-10-01T00:00:59.795863 #13135]  INFO -- : [1f3a89cc-0174-400c-8054-000000abc00c] Completed 422 Unprocessable Content in 3ms (ActiveRecord: 0.0ms | GC: 0.0ms)
-I, [2026-10-01T00:01:00.179151 #13135]  INFO -- : [1f3a8d9d-0193-400d-805b-000000abc00d] Started GET "/api/orders/1042" for 198.51.100.23 at 2026-10-01 00:01:00 +0000
-I, [2026-10-01T00:01:00.180336 #13135]  INFO -- : [1f3a8d9d-0193-400d-805b-000000abc00d] Processing by Api::OrdersController#show as JSON
-I, [2026-10-01T00:01:00.180778 #13135]  INFO -- : [1f3a8d9d-0193-400d-805b-000000abc00d]   Parameters: {"id"=>"1042"}
-I, [2026-10-01T00:01:00.191989 #13135]  INFO -- : [1f3a8d9d-0193-400d-805b-000000abc00d] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
-I, [2026-10-01T00:01:01.344066 #13135]  INFO -- : [1f3a916e-01b2-400e-8062-000000abc00e] Started GET "/articles" for 192.0.2.44 at 2026-10-01 00:01:01 +0000
-I, [2026-10-01T00:01:01.345664 #13135]  INFO -- : [1f3a916e-01b2-400e-8062-000000abc00e] Processing by ArticlesController#index as HTML
-I, [2026-10-01T00:01:01.355843 #13135]  INFO -- : [1f3a916e-01b2-400e-8062-000000abc00e]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
-I, [2026-10-01T00:01:01.360251 #13135]  INFO -- : [1f3a916e-01b2-400e-8062-000000abc00e] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
-I, [2026-10-01T00:01:09.573060 #13135]  INFO -- : [1f3a953f-01d1-400f-8069-000000abc00f] Started GET "/articles/42" for 2001:db8::1f at 2026-10-01 00:01:09 +0000
-I, [2026-10-01T00:01:09.574562 #13135]  INFO -- : [1f3a953f-01d1-400f-8069-000000abc00f] Processing by ArticlesController#show as HTML
-I, [2026-10-01T00:01:09.575381 #13135]  INFO -- : [1f3a953f-01d1-400f-8069-000000abc00f]   Parameters: {"id"=>"42"}
-I, [2026-10-01T00:01:09.580849 #13135]  INFO -- : [1f3a953f-01d1-400f-8069-000000abc00f]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
-I, [2026-10-01T00:01:09.584030 #13135]  INFO -- : [1f3a953f-01d1-400f-8069-000000abc00f] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
-I, [2026-10-01T00:01:13.165816 #13135]  INFO -- : [1f3a9910-01f0-4010-8070-000000abc010] Started POST "/articles" for 203.0.113.17 at 2026-10-01 00:01:13 +0000
-I, [2026-10-01T00:01:13.166615 #13135]  INFO -- : [1f3a9910-01f0-4010-8070-000000abc010] Processing by ArticlesController#create as HTML
-I, [2026-10-01T00:01:13.167107 #13135]  INFO -- : [1f3a9910-01f0-4010-8070-000000abc010]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Hello", "body"=>"First post"}, "commit"=>"Create Article"}
-D, [2026-10-01T00:01:13.167432 #13135] DEBUG -- : [1f3a9910-01f0-4010-8070-000000abc010]   Article Load (0.4ms)  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2  [["id", 42], ["LIMIT", 1]]
-I, [2026-10-01T00:01:13.173590 #13135]  INFO -- : [1f3a9910-01f0-4010-8070-000000abc010] Redirected to https://www.example.com/articles/43
-I, [2026-10-01T00:01:13.178725 #13135]  INFO -- : [1f3a9910-01f0-4010-8070-000000abc010] Completed 302 Found in 21ms (ActiveRecord: 4.0ms (3 queries, 0 cached) | GC: 0.0ms)
-I, [2026-10-01T00:01:19.028345 #13135]  INFO -- : [1f3a9ce1-020f-4011-8077-000000abc011] Started GET "/wp-login.php" for 198.51.100.23 at 2026-10-01 00:01:19 +0000
-F, [2026-10-01T00:01:19.030218 #13135] FATAL -- : [1f3a9ce1-020f-4011-8077-000000abc011]   
+I, [2026-10-01T00:00:59.784793 #37888]  INFO -- : [1f3a89cc-0174-400c-8054-000000abc00c] Started PATCH "/articles/42" for 203.0.113.17 at 2026-10-01 00:00:59 +0000
+I, [2026-10-01T00:00:59.786633 #37888]  INFO -- : [1f3a89cc-0174-400c-8054-000000abc00c] Processing by ArticlesController#update as TURBO_STREAM
+I, [2026-10-01T00:00:59.786946 #37888]  INFO -- : [1f3a89cc-0174-400c-8054-000000abc00c]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>""}, "id"=>"42"}
+W, [2026-10-01T00:00:59.793940 #37888]  WARN -- : [1f3a89cc-0174-400c-8054-000000abc00c] Can't verify CSRF token authenticity.
+I, [2026-10-01T00:00:59.795863 #37888]  INFO -- : [1f3a89cc-0174-400c-8054-000000abc00c] Completed 422 Unprocessable Content in 3ms (ActiveRecord: 0.0ms | GC: 0.0ms)
+I, [2026-10-01T00:01:00.179151 #37888]  INFO -- : [1f3a8d9d-0193-400d-805b-000000abc00d] Started GET "/api/orders/1042" for 198.51.100.23 at 2026-10-01 00:01:00 +0000
+I, [2026-10-01T00:01:00.180336 #37888]  INFO -- : [1f3a8d9d-0193-400d-805b-000000abc00d] Processing by Api::OrdersController#show as JSON
+I, [2026-10-01T00:01:00.180778 #37888]  INFO -- : [1f3a8d9d-0193-400d-805b-000000abc00d]   Parameters: {"id"=>"1042"}
+I, [2026-10-01T00:01:00.191989 #37888]  INFO -- : [1f3a8d9d-0193-400d-805b-000000abc00d] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
+I, [2026-10-01T00:01:01.344066 #37888]  INFO -- : [1f3a916e-01b2-400e-8062-000000abc00e] Started GET "/articles" for 192.0.2.44 at 2026-10-01 00:01:01 +0000
+I, [2026-10-01T00:01:01.345664 #37888]  INFO -- : [1f3a916e-01b2-400e-8062-000000abc00e] Processing by ArticlesController#index as HTML
+I, [2026-10-01T00:01:01.355843 #37888]  INFO -- : [1f3a916e-01b2-400e-8062-000000abc00e]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+I, [2026-10-01T00:01:01.360251 #37888]  INFO -- : [1f3a916e-01b2-400e-8062-000000abc00e] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
+I, [2026-10-01T00:01:09.573060 #37888]  INFO -- : [1f3a953f-01d1-400f-8069-000000abc00f] Started GET "/articles/42" for 2001:db8::1f at 2026-10-01 00:01:09 +0000
+I, [2026-10-01T00:01:09.574562 #37888]  INFO -- : [1f3a953f-01d1-400f-8069-000000abc00f] Processing by ArticlesController#show as HTML
+I, [2026-10-01T00:01:09.575381 #37888]  INFO -- : [1f3a953f-01d1-400f-8069-000000abc00f]   Parameters: {"id"=>"42"}
+I, [2026-10-01T00:01:09.580849 #37888]  INFO -- : [1f3a953f-01d1-400f-8069-000000abc00f]   Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+I, [2026-10-01T00:01:09.584030 #37888]  INFO -- : [1f3a953f-01d1-400f-8069-000000abc00f] Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
+I, [2026-10-01T00:01:13.165816 #37888]  INFO -- : [1f3a9910-01f0-4010-8070-000000abc010] Started POST "/articles" for 203.0.113.17 at 2026-10-01 00:01:13 +0000
+I, [2026-10-01T00:01:13.166615 #37888]  INFO -- : [1f3a9910-01f0-4010-8070-000000abc010] Processing by ArticlesController#create as HTML
+I, [2026-10-01T00:01:13.167107 #37888]  INFO -- : [1f3a9910-01f0-4010-8070-000000abc010]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Hello", "body"=>"First post"}, "commit"=>"Create Article"}
+D, [2026-10-01T00:01:13.167432 #37888] DEBUG -- : [1f3a9910-01f0-4010-8070-000000abc010]   Article Load (0.4ms)  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2  [["id", 42], ["LIMIT", 1]]
+I, [2026-10-01T00:01:13.173590 #37888]  INFO -- : [1f3a9910-01f0-4010-8070-000000abc010] Redirected to https://www.example.com/articles/43
+I, [2026-10-01T00:01:13.178725 #37888]  INFO -- : [1f3a9910-01f0-4010-8070-000000abc010] Completed 302 Found in 21ms (ActiveRecord: 4.0ms (3 queries, 0 cached) | GC: 0.0ms)
+I, [2026-10-01T00:01:19.028345 #37888]  INFO -- : [1f3a9ce1-020f-4011-8077-000000abc011] Started GET "/wp-login.php" for 198.51.100.23 at 2026-10-01 00:01:19 +0000
+F, [2026-10-01T00:01:19.030218 #37888] FATAL -- : [1f3a9ce1-020f-4011-8077-000000abc011]   
 [1f3a9ce1-020f-4011-8077-000000abc011] ActionController::RoutingError (No route matches [GET] "/wp-login.php"):
 [1f3a9ce1-020f-4011-8077-000000abc011]   
 [1f3a9ce1-020f-4011-8077-000000abc011] actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:33:in `call'
 [1f3a9ce1-020f-4011-8077-000000abc011] actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 [1f3a9ce1-020f-4011-8077-000000abc011] railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
-I, [2026-10-01T00:01:27.708796 #13135]  INFO -- : [1f3aa0b2-022e-4012-807e-000000abc012] Started GET "/reports/monthly" for 192.0.2.44 at 2026-10-01 00:01:27 +0000
-I, [2026-10-01T00:01:27.709219 #13135]  INFO -- : [1f3aa0b2-022e-4012-807e-000000abc012] Processing by ReportsController#show as HTML
-I, [2026-10-01T00:01:27.710023 #13135]  INFO -- : [1f3aa0b2-022e-4012-807e-000000abc012]   Parameters: {"id"=>"monthly"}
-E, [2026-10-01T00:01:27.714024 #13135] ERROR -- : [1f3aa0b2-022e-4012-807e-000000abc012] Report generation failed: upstream api.example.com returned 502
-I, [2026-10-01T00:01:27.718862 #13135]  INFO -- : [1f3aa0b2-022e-4012-807e-000000abc012] Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
-F, [2026-10-01T00:01:27.719585 #13135] FATAL -- : [1f3aa0b2-022e-4012-807e-000000abc012]   
+I, [2026-10-01T00:01:27.708796 #37888]  INFO -- : [1f3aa0b2-022e-4012-807e-000000abc012] Started GET "/reports/monthly" for 192.0.2.44 at 2026-10-01 00:01:27 +0000
+I, [2026-10-01T00:01:27.709219 #37888]  INFO -- : [1f3aa0b2-022e-4012-807e-000000abc012] Processing by ReportsController#show as HTML
+I, [2026-10-01T00:01:27.710023 #37888]  INFO -- : [1f3aa0b2-022e-4012-807e-000000abc012]   Parameters: {"id"=>"monthly"}
+E, [2026-10-01T00:01:27.714024 #37888] ERROR -- : [1f3aa0b2-022e-4012-807e-000000abc012] Report generation failed: upstream api.example.com returned 502
+I, [2026-10-01T00:01:27.718862 #37888]  INFO -- : [1f3aa0b2-022e-4012-807e-000000abc012] Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
+F, [2026-10-01T00:01:27.719585 #37888] FATAL -- : [1f3aa0b2-022e-4012-807e-000000abc012]   
 [1f3aa0b2-022e-4012-807e-000000abc012] ReportsController::UpstreamError (upstream api.example.com returned 502):
 [1f3aa0b2-022e-4012-807e-000000abc012]   
 [1f3aa0b2-022e-4012-807e-000000abc012] app/services/report_builder.rb:27:in `fetch'
 [1f3aa0b2-022e-4012-807e-000000abc012] app/controllers/reports_controller.rb:9:in `show'
-I, [2026-10-01T00:01:34.419533 #13135]  INFO -- : [1f3aa483-024d-4013-8085-000000abc013] Started PATCH "/articles/42" for 2001:db8::1f at 2026-10-01 00:01:34 +0000
-I, [2026-10-01T00:01:34.420702 #13135]  INFO -- : [1f3aa483-024d-4013-8085-000000abc013] Processing by ArticlesController#update as TURBO_STREAM
-I, [2026-10-01T00:01:34.420972 #13135]  INFO -- : [1f3aa483-024d-4013-8085-000000abc013]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>""}, "id"=>"42"}
-W, [2026-10-01T00:01:34.429775 #13135]  WARN -- : [1f3aa483-024d-4013-8085-000000abc013] Can't verify CSRF token authenticity.
-I, [2026-10-01T00:01:34.430927 #13135]  INFO -- : [1f3aa483-024d-4013-8085-000000abc013] Completed 422 Unprocessable Content in 3ms (ActiveRecord: 0.0ms | GC: 0.0ms)
+I, [2026-10-01T00:01:34.419533 #37888]  INFO -- : [1f3aa483-024d-4013-8085-000000abc013] Started PATCH "/articles/42" for 2001:db8::1f at 2026-10-01 00:01:34 +0000
+I, [2026-10-01T00:01:34.420702 #37888]  INFO -- : [1f3aa483-024d-4013-8085-000000abc013] Processing by ArticlesController#update as TURBO_STREAM
+I, [2026-10-01T00:01:34.420972 #37888]  INFO -- : [1f3aa483-024d-4013-8085-000000abc013]   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>""}, "id"=>"42"}
+W, [2026-10-01T00:01:34.429775 #37888]  WARN -- : [1f3aa483-024d-4013-8085-000000abc013] Can't verify CSRF token authenticity.
+I, [2026-10-01T00:01:34.430927 #37888]  INFO -- : [1f3aa483-024d-4013-8085-000000abc013] Completed 422 Unprocessable Content in 3ms (ActiveRecord: 0.0ms | GC: 0.0ms)

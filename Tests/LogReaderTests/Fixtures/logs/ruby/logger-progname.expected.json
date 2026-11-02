@@ -1,5 +1,5 @@
 {
-  "source": "Ruby 2.6.10 stdlib Logger (logger.rb 1.3.0) default Formatter, simulated clock, TZ=UTC; script rblog.rb; Logger.new(io, progname: \"mailer\"), some calls pass their own progname",
+  "source": "Ruby 2.6.10 stdlib Logger (logger.rb 1.3.0) default Formatter, simulated clock, TZ=UTC; script logger.rb; Logger.new(io, progname: \"mailer\"), some calls pass their own progname",
   "referenceDate": "2026-10-01",
   "entries": [
     {

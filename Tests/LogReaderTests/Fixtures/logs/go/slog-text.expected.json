@@ -1,5 +1,5 @@
 {
-  "source": "Documentation-derived: log/slog TextHandler 'time=\u2026 level=\u2026 msg=\u2026 key=value' https://pkg.go.dev/log/slog#TextHandler (time as RFC 3339 with milliseconds; levels between the named ones are written as e.g. ERROR+4) ; UTC",
+  "source": "Documentation-derived: log/slog TextHandler 'time=… level=… msg=… key=value' https://pkg.go.dev/log/slog#TextHandler (time as RFC 3339 with milliseconds; levels between the named ones are written as e.g. ERROR+4) ; UTC",
   "referenceDate": "2026-10-01",
   "entries": [
     {

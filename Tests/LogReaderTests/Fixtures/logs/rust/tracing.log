@@ -1,92 +1,92 @@
-2026-11-02T08:48:08.108523Z  INFO request{method="GET" path="/api/orders" user_id=1000}: logfixture::db: server listening on 0.0.0.0:8080 attempt=0
-2026-11-02T08:48:08.112346Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=1
-2026-11-02T08:48:08.132456Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=2
-2026-11-02T08:48:08.166537Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=3
-2026-11-02T08:48:08.213624Z  WARN request{method="GET" path="/api/orders" user_id=1148}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=4
-2026-11-02T08:48:08.232466Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=5
-2026-11-02T08:48:08.265554Z  INFO logfixture::db: cache warm: 1200 keys attempt=6
-2026-11-02T08:48:08.311657Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=7
-2026-11-02T08:48:08.329255Z ERROR request{method="GET" path="/api/orders" user_id=1296}: logfixture::cache: request failed: upstream timeout
+2026-11-02T11:59:36.260314Z  INFO request{method="GET" path="/api/orders" user_id=1000}: logfixture::db: server listening on 0.0.0.0:8080 attempt=0
+2026-11-02T11:59:36.264571Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=1
+2026-11-02T11:59:36.284210Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=2
+2026-11-02T11:59:36.315491Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=3
+2026-11-02T11:59:36.362171Z  WARN request{method="GET" path="/api/orders" user_id=1148}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=4
+2026-11-02T11:59:36.378124Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=5
+2026-11-02T11:59:36.410385Z  INFO logfixture::db: cache warm: 1200 keys attempt=6
+2026-11-02T11:59:36.457201Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=7
+2026-11-02T11:59:36.475267Z ERROR request{method="GET" path="/api/orders" user_id=1296}: logfixture::cache: request failed: upstream timeout
 caused by: deadline has elapsed
 caused by: operation timed out attempt=8
-2026-11-02T08:48:08.361352Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=9
-2026-11-02T08:48:08.404116Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=10
-2026-11-02T08:48:08.420471Z TRACE logfixture::cache: entered handler orders::show attempt=11
-2026-11-02T08:48:08.451581Z  INFO request{method="GET" path="/api/orders" user_id=1444}: logfixture::db: server listening on 0.0.0.0:8080 attempt=12
-2026-11-02T08:48:08.491557Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=13
-2026-11-02T08:48:08.506656Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=14
-2026-11-02T08:48:08.537103Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=15
-2026-11-02T08:48:08.580201Z  WARN request{method="GET" path="/api/orders" user_id=1592}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=16
-2026-11-02T08:48:08.594134Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=17
-2026-11-02T08:48:08.623262Z  INFO logfixture::db: cache warm: 1200 keys attempt=18
-2026-11-02T08:48:08.662118Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=19
-2026-11-02T08:48:08.675133Z ERROR request{method="GET" path="/api/orders" user_id=1740}: logfixture::cache: request failed: upstream timeout
+2026-11-02T11:59:36.507505Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=9
+2026-11-02T11:59:36.553147Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=10
+2026-11-02T11:59:36.570147Z TRACE logfixture::cache: entered handler orders::show attempt=11
+2026-11-02T11:59:36.601203Z  INFO request{method="GET" path="/api/orders" user_id=1444}: logfixture::db: server listening on 0.0.0.0:8080 attempt=12
+2026-11-02T11:59:36.641110Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=13
+2026-11-02T11:59:36.657212Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=14
+2026-11-02T11:59:36.687231Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=15
+2026-11-02T11:59:36.730494Z  WARN request{method="GET" path="/api/orders" user_id=1592}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=16
+2026-11-02T11:59:36.744589Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=17
+2026-11-02T11:59:36.772600Z  INFO logfixture::db: cache warm: 1200 keys attempt=18
+2026-11-02T11:59:36.815238Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=19
+2026-11-02T11:59:36.828415Z ERROR request{method="GET" path="/api/orders" user_id=1740}: logfixture::cache: request failed: upstream timeout
 caused by: deadline has elapsed
 caused by: operation timed out attempt=20
-2026-11-02T08:48:08.698694Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=21
-2026-11-02T08:48:08.740104Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=22
-2026-11-02T08:48:08.751466Z TRACE logfixture::cache: entered handler orders::show attempt=23
-2026-11-02T08:48:08.778579Z  INFO request{method="GET" path="/api/orders" user_id=1888}: logfixture::db: server listening on 0.0.0.0:8080 attempt=24
-2026-11-02T08:48:08.818242Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=25
-2026-11-02T08:48:08.828378Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=26
-2026-11-02T08:48:08.854137Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=27
-2026-11-02T08:48:08.893238Z  WARN request{method="GET" path="/api/orders" user_id=1136}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=28
-2026-11-02T08:48:08.902133Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=29
-2026-11-02T08:48:08.927239Z  INFO logfixture::db: cache warm: 1200 keys attempt=30
-2026-11-02T08:48:08.962121Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=31
-2026-11-02T08:48:08.970139Z ERROR request{method="GET" path="/api/orders" user_id=1284}: logfixture::cache: request failed: upstream timeout
+2026-11-02T11:59:36.857179Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=21
+2026-11-02T11:59:36.896564Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=22
+2026-11-02T11:59:36.906168Z TRACE logfixture::cache: entered handler orders::show attempt=23
+2026-11-02T11:59:36.933183Z  INFO request{method="GET" path="/api/orders" user_id=1888}: logfixture::db: server listening on 0.0.0.0:8080 attempt=24
+2026-11-02T11:59:36.970257Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=25
+2026-11-02T11:59:36.980664Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=26
+2026-11-02T11:59:37.006266Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=27
+2026-11-02T11:59:37.044426Z  WARN request{method="GET" path="/api/orders" user_id=1136}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=28
+2026-11-02T11:59:37.053534Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=29
+2026-11-02T11:59:37.075568Z  INFO logfixture::db: cache warm: 1200 keys attempt=30
+2026-11-02T11:59:37.109449Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=31
+2026-11-02T11:59:37.117448Z ERROR request{method="GET" path="/api/orders" user_id=1284}: logfixture::cache: request failed: upstream timeout
 caused by: deadline has elapsed
 caused by: operation timed out attempt=32
-2026-11-02T08:48:08.994140Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=33
-2026-11-02T08:48:09.031238Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=34
-2026-11-02T08:48:09.037597Z TRACE logfixture::cache: entered handler orders::show attempt=35
-2026-11-02T08:48:09.060195Z  INFO request{method="GET" path="/api/orders" user_id=1432}: logfixture::db: server listening on 0.0.0.0:8080 attempt=36
-2026-11-02T08:48:09.094126Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=37
-2026-11-02T08:48:09.099207Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=38
-2026-11-02T08:48:09.120525Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=39
-2026-11-02T08:48:09.155618Z  WARN request{method="GET" path="/api/orders" user_id=1580}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=40
-2026-11-02T08:48:09.159462Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=41
-2026-11-02T08:48:09.179543Z  INFO logfixture::db: cache warm: 1200 keys attempt=42
-2026-11-02T08:48:09.213619Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=43
-2026-11-02T08:48:09.261136Z ERROR request{method="GET" path="/api/orders" user_id=1728}: logfixture::cache: request failed: upstream timeout
+2026-11-02T11:59:37.141676Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=33
+2026-11-02T11:59:37.175186Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=34
+2026-11-02T11:59:37.181216Z TRACE logfixture::cache: entered handler orders::show attempt=35
+2026-11-02T11:59:37.203155Z  INFO request{method="GET" path="/api/orders" user_id=1432}: logfixture::db: server listening on 0.0.0.0:8080 attempt=36
+2026-11-02T11:59:37.239150Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=37
+2026-11-02T11:59:37.244670Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=38
+2026-11-02T11:59:37.263181Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=39
+2026-11-02T11:59:37.297439Z  WARN request{method="GET" path="/api/orders" user_id=1580}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=40
+2026-11-02T11:59:37.302147Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=41
+2026-11-02T11:59:37.322670Z  INFO logfixture::db: cache warm: 1200 keys attempt=42
+2026-11-02T11:59:37.355566Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=43
+2026-11-02T11:59:37.400239Z ERROR request{method="GET" path="/api/orders" user_id=1728}: logfixture::cache: request failed: upstream timeout
 caused by: deadline has elapsed
 caused by: operation timed out attempt=44
-2026-11-02T08:48:09.280117Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=45
-2026-11-02T08:48:09.313199Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=46
-2026-11-02T08:48:09.359297Z TRACE logfixture::cache: entered handler orders::show attempt=47
-2026-11-02T08:48:09.377111Z  INFO request{method="GET" path="/api/orders" user_id=1876}: logfixture::db: server listening on 0.0.0.0:8080 attempt=48
-2026-11-02T08:48:09.409187Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=49
-2026-11-02T08:48:09.454280Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=50
-2026-11-02T08:48:09.470626Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=51
-2026-11-02T08:48:09.502125Z  WARN request{method="GET" path="/api/orders" user_id=1124}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=52
-2026-11-02T08:48:09.546211Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=53
-2026-11-02T08:48:09.561291Z  INFO logfixture::db: cache warm: 1200 keys attempt=54
-2026-11-02T08:48:09.591403Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=55
-2026-11-02T08:48:09.634516Z ERROR request{method="GET" path="/api/orders" user_id=1272}: logfixture::cache: request failed: upstream timeout
+2026-11-02T11:59:37.419202Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=45
+2026-11-02T11:59:37.451622Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=46
+2026-11-02T11:59:37.496665Z TRACE logfixture::cache: entered handler orders::show attempt=47
+2026-11-02T11:59:37.512718Z  INFO request{method="GET" path="/api/orders" user_id=1876}: logfixture::db: server listening on 0.0.0.0:8080 attempt=48
+2026-11-02T11:59:37.544632Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=49
+2026-11-02T11:59:37.588590Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=50
+2026-11-02T11:59:37.605114Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=51
+2026-11-02T11:59:37.634132Z  WARN request{method="GET" path="/api/orders" user_id=1124}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=52
+2026-11-02T11:59:37.678664Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=53
+2026-11-02T11:59:37.692136Z  INFO logfixture::db: cache warm: 1200 keys attempt=54
+2026-11-02T11:59:37.721142Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=55
+2026-11-02T11:59:37.761173Z ERROR request{method="GET" path="/api/orders" user_id=1272}: logfixture::cache: request failed: upstream timeout
 caused by: deadline has elapsed
 caused by: operation timed out attempt=56
-2026-11-02T08:48:09.648376Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=57
-2026-11-02T08:48:09.674526Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=58
-2026-11-02T08:48:09.716630Z TRACE logfixture::cache: entered handler orders::show attempt=59
-2026-11-02T08:48:09.729244Z  INFO request{method="GET" path="/api/orders" user_id=1420}: logfixture::db: server listening on 0.0.0.0:8080 attempt=60
-2026-11-02T08:48:09.753462Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=61
-2026-11-02T08:48:09.794554Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=62
-2026-11-02T08:48:09.806130Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=63
-2026-11-02T08:48:09.832131Z  WARN request{method="GET" path="/api/orders" user_id=1568}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=64
-2026-11-02T08:48:09.872217Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=65
-2026-11-02T08:48:09.880331Z  INFO logfixture::db: cache warm: 1200 keys attempt=66
-2026-11-02T08:48:09.906407Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=67
-2026-11-02T08:48:09.945513Z ERROR request{method="GET" path="/api/orders" user_id=1716}: logfixture::cache: request failed: upstream timeout
+2026-11-02T11:59:37.773131Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=57
+2026-11-02T11:59:37.799136Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=58
+2026-11-02T11:59:37.841464Z TRACE logfixture::cache: entered handler orders::show attempt=59
+2026-11-02T11:59:37.853591Z  INFO request{method="GET" path="/api/orders" user_id=1420}: logfixture::db: server listening on 0.0.0.0:8080 attempt=60
+2026-11-02T11:59:37.880319Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=61
+2026-11-02T11:59:37.921608Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=62
+2026-11-02T11:59:37.933363Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=63
+2026-11-02T11:59:37.961136Z  WARN request{method="GET" path="/api/orders" user_id=1568}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=64
+2026-11-02T11:59:38.000484Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=65
+2026-11-02T11:59:38.011155Z  INFO logfixture::db: cache warm: 1200 keys attempt=66
+2026-11-02T11:59:38.037219Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=67
+2026-11-02T11:59:38.076167Z ERROR request{method="GET" path="/api/orders" user_id=1716}: logfixture::cache: request failed: upstream timeout
 caused by: deadline has elapsed
 caused by: operation timed out attempt=68
-2026-11-02T08:48:09.954360Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=69
-2026-11-02T08:48:09.978452Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=70
-2026-11-02T08:48:10.016583Z TRACE logfixture::cache: entered handler orders::show attempt=71
-2026-11-02T08:48:10.024190Z  INFO request{method="GET" path="/api/orders" user_id=1864}: logfixture::db: server listening on 0.0.0.0:8080 attempt=72
-2026-11-02T08:48:10.048109Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=73
-2026-11-02T08:48:10.082127Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=74
-2026-11-02T08:48:10.088491Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=75
-2026-11-02T08:48:10.111127Z  WARN request{method="GET" path="/api/orders" user_id=1112}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=76
-2026-11-02T08:48:10.147194Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=77
-2026-11-02T08:48:10.152295Z  INFO logfixture::db: cache warm: 1200 keys attempt=78
-2026-11-02T08:48:10.173617Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=79
+2026-11-02T11:59:38.085481Z  WARN logfixture::db: retrying job 7731 (attempt 2 of 5) attempt=69
+2026-11-02T11:59:38.110135Z  INFO logfixture::http::server: user-1042 signed in from 203.0.113.17 attempt=70
+2026-11-02T11:59:38.148423Z TRACE logfixture::cache: entered handler orders::show attempt=71
+2026-11-02T11:59:38.157132Z  INFO request{method="GET" path="/api/orders" user_id=1864}: logfixture::db: server listening on 0.0.0.0:8080 attempt=72
+2026-11-02T11:59:38.179202Z DEBUG logfixture::http::server: loaded 42 routes from config/routes.toml attempt=73
+2026-11-02T11:59:38.217154Z TRACE logfixture::cache: poll tick queue_depth=0 attempt=74
+2026-11-02T11:59:38.228349Z  INFO logfixture::db: GET /api/orders/1042 200 12ms attempt=75
+2026-11-02T11:59:38.249181Z  WARN request{method="GET" path="/api/orders" user_id=1112}: logfixture::http::server: slow query took 812ms: SELECT * FROM orders WHERE user_id = $1 attempt=76
+2026-11-02T11:59:38.281179Z ERROR logfixture::cache: connection to 198.51.100.20:5432 refused attempt=77
+2026-11-02T11:59:38.286644Z  INFO logfixture::db: cache warm: 1200 keys attempt=78
+2026-11-02T11:59:38.307186Z DEBUG logfixture::http::server: pool stats idle=4 busy=1 attempt=79

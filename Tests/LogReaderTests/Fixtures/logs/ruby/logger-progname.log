@@ -1,124 +1,124 @@
-I, [2026-10-01T00:01:38.390003 #6455]  INFO -- mailer: Booting worker pool size=5
-W, [2026-10-01T00:01:38.580495 #6455]  WARN -- scheduler: queue latency 4.2s above threshold 2s
-F, [2026-10-01T00:01:38.692072 #6455] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
-I, [2026-10-01T00:01:40.742906 #6455]  INFO -- mailer: heartbeat ok
-E, [2026-10-01T00:01:41.769297 #6455] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:65:in `block (2 levels) in <main>'
-rblog.rb:61:in `times'
-rblog.rb:61:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:59:in `<main>'
-I, [2026-10-01T00:01:44.007113 #6455]  INFO -- scheduler: user-1042 exported 12 reports
-D, [2026-10-01T00:01:44.334830 #6455] DEBUG -- mailer: payload:
+I, [2026-10-01T00:01:38.390003 #37883]  INFO -- mailer: Booting worker pool size=5
+W, [2026-10-01T00:01:38.580495 #37883]  WARN -- scheduler: queue latency 4.2s above threshold 2s
+F, [2026-10-01T00:01:38.692072 #37883] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
+I, [2026-10-01T00:01:40.742906 #37883]  INFO -- mailer: heartbeat ok
+E, [2026-10-01T00:01:41.769297 #37883] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:99:in `block (2 levels) in <main>'
+/srv/app/logger.rb:94:in `times'
+/srv/app/logger.rb:94:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:92:in `<main>'
+I, [2026-10-01T00:01:44.007113 #37883]  INFO -- scheduler: user-1042 exported 12 reports
+D, [2026-10-01T00:01:44.334830 #37883] DEBUG -- mailer: payload:
   {"id": 7731,
    "items": 3}
-D, [2026-10-01T00:01:45.965820 #6455] DEBUG -- mailer: loaded 31 settings from config/app.yml
-E, [2026-10-01T00:01:48.329183 #6455] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
-A, [2026-10-01T00:01:50.646131 #6455]   ANY -- scheduler: shutdown requested by signal TERM
-I, [2026-10-01T00:01:52.052900 #6455]  INFO -- mailer: Booting worker pool size=5
-W, [2026-10-01T00:01:53.122670 #6455]  WARN -- mailer: queue latency 4.2s above threshold 2s
-F, [2026-10-01T00:01:53.496125 #6455] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
-I, [2026-10-01T00:01:54.459853 #6455]  INFO -- scheduler: heartbeat ok
-I, [2026-10-01T00:01:56.490186 #6455]  INFO -- mailer: processed job 5521 in 182ms
-E, [2026-10-01T00:01:57.917200 #6455] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:65:in `block (2 levels) in <main>'
-rblog.rb:61:in `times'
-rblog.rb:61:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:59:in `<main>'
-D, [2026-10-01T00:01:59.427851 #6455] DEBUG -- mailer: payload:
+D, [2026-10-01T00:01:45.965820 #37883] DEBUG -- mailer: loaded 31 settings from config/app.yml
+E, [2026-10-01T00:01:48.329183 #37883] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
+A, [2026-10-01T00:01:50.646131 #37883]   ANY -- scheduler: shutdown requested by signal TERM
+I, [2026-10-01T00:01:52.052900 #37883]  INFO -- mailer: Booting worker pool size=5
+W, [2026-10-01T00:01:53.122670 #37883]  WARN -- mailer: queue latency 4.2s above threshold 2s
+F, [2026-10-01T00:01:53.496125 #37883] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
+I, [2026-10-01T00:01:54.459853 #37883]  INFO -- scheduler: heartbeat ok
+I, [2026-10-01T00:01:56.490186 #37883]  INFO -- mailer: processed job 5521 in 182ms
+E, [2026-10-01T00:01:57.917200 #37883] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:99:in `block (2 levels) in <main>'
+/srv/app/logger.rb:94:in `times'
+/srv/app/logger.rb:94:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:92:in `<main>'
+D, [2026-10-01T00:01:59.427851 #37883] DEBUG -- mailer: payload:
   {"id": 7731,
    "items": 3}
-D, [2026-10-01T00:02:00.580247 #6455] DEBUG -- scheduler: loaded 31 settings from config/app.yml
-E, [2026-10-01T00:02:01.537984 #6455] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
-A, [2026-10-01T00:02:03.881666 #6455]   ANY -- mailer: shutdown requested by signal TERM
-I, [2026-10-01T00:02:04.899849 #6455]  INFO -- mailer: Booting worker pool size=5
-W, [2026-10-01T00:02:04.934897 #6455]  WARN -- scheduler: queue latency 4.2s above threshold 2s
-F, [2026-10-01T00:02:06.106406 #6455] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
-I, [2026-10-01T00:02:07.611300 #6455]  INFO -- mailer: heartbeat ok
-I, [2026-10-01T00:02:09.372791 #6455]  INFO -- mailer: processed job 5521 in 182ms
-I, [2026-10-01T00:02:09.381307 #6455]  INFO -- scheduler: user-1042 exported 12 reports
-E, [2026-10-01T00:02:11.125404 #6455] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:65:in `block (2 levels) in <main>'
-rblog.rb:61:in `times'
-rblog.rb:61:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:59:in `<main>'
-D, [2026-10-01T00:02:12.894646 #6455] DEBUG -- mailer: loaded 31 settings from config/app.yml
-E, [2026-10-01T00:02:15.155349 #6455] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
-A, [2026-10-01T00:02:15.398709 #6455]   ANY -- scheduler: shutdown requested by signal TERM
-I, [2026-10-01T00:02:16.169218 #6455]  INFO -- mailer: Booting worker pool size=5
-W, [2026-10-01T00:02:16.528184 #6455]  WARN -- mailer: queue latency 4.2s above threshold 2s
-F, [2026-10-01T00:02:16.695651 #6455] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
-I, [2026-10-01T00:02:17.436447 #6455]  INFO -- scheduler: heartbeat ok
-I, [2026-10-01T00:02:18.595480 #6455]  INFO -- mailer: processed job 5521 in 182ms
-I, [2026-10-01T00:02:18.917738 #6455]  INFO -- mailer: user-1042 exported 12 reports
-D, [2026-10-01T00:02:20.450273 #6455] DEBUG -- mailer: payload:
+D, [2026-10-01T00:02:00.580247 #37883] DEBUG -- scheduler: loaded 31 settings from config/app.yml
+E, [2026-10-01T00:02:01.537984 #37883] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
+A, [2026-10-01T00:02:03.881666 #37883]   ANY -- mailer: shutdown requested by signal TERM
+I, [2026-10-01T00:02:04.899849 #37883]  INFO -- mailer: Booting worker pool size=5
+W, [2026-10-01T00:02:04.934897 #37883]  WARN -- scheduler: queue latency 4.2s above threshold 2s
+F, [2026-10-01T00:02:06.106406 #37883] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
+I, [2026-10-01T00:02:07.611300 #37883]  INFO -- mailer: heartbeat ok
+I, [2026-10-01T00:02:09.372791 #37883]  INFO -- mailer: processed job 5521 in 182ms
+I, [2026-10-01T00:02:09.381307 #37883]  INFO -- scheduler: user-1042 exported 12 reports
+E, [2026-10-01T00:02:11.125404 #37883] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:99:in `block (2 levels) in <main>'
+/srv/app/logger.rb:94:in `times'
+/srv/app/logger.rb:94:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:92:in `<main>'
+D, [2026-10-01T00:02:12.894646 #37883] DEBUG -- mailer: loaded 31 settings from config/app.yml
+E, [2026-10-01T00:02:15.155349 #37883] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
+A, [2026-10-01T00:02:15.398709 #37883]   ANY -- scheduler: shutdown requested by signal TERM
+I, [2026-10-01T00:02:16.169218 #37883]  INFO -- mailer: Booting worker pool size=5
+W, [2026-10-01T00:02:16.528184 #37883]  WARN -- mailer: queue latency 4.2s above threshold 2s
+F, [2026-10-01T00:02:16.695651 #37883] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
+I, [2026-10-01T00:02:17.436447 #37883]  INFO -- scheduler: heartbeat ok
+I, [2026-10-01T00:02:18.595480 #37883]  INFO -- mailer: processed job 5521 in 182ms
+I, [2026-10-01T00:02:18.917738 #37883]  INFO -- mailer: user-1042 exported 12 reports
+D, [2026-10-01T00:02:20.450273 #37883] DEBUG -- mailer: payload:
   {"id": 7731,
    "items": 3}
-E, [2026-10-01T00:02:20.616985 #6455] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:65:in `block (2 levels) in <main>'
-rblog.rb:61:in `times'
-rblog.rb:61:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:59:in `<main>'
-E, [2026-10-01T00:02:20.708990 #6455] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
-A, [2026-10-01T00:02:21.838572 #6455]   ANY -- mailer: shutdown requested by signal TERM
-I, [2026-10-01T00:02:23.800335 #6455]  INFO -- mailer: Booting worker pool size=5
-W, [2026-10-01T00:02:25.845283 #6455]  WARN -- scheduler: queue latency 4.2s above threshold 2s
-F, [2026-10-01T00:02:27.392180 #6455] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
-I, [2026-10-01T00:02:28.491102 #6455]  INFO -- mailer: heartbeat ok
-I, [2026-10-01T00:02:30.687341 #6455]  INFO -- mailer: processed job 5521 in 182ms
-I, [2026-10-01T00:02:31.050109 #6455]  INFO -- scheduler: user-1042 exported 12 reports
-D, [2026-10-01T00:02:31.239802 #6455] DEBUG -- mailer: payload:
+E, [2026-10-01T00:02:20.616985 #37883] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:99:in `block (2 levels) in <main>'
+/srv/app/logger.rb:94:in `times'
+/srv/app/logger.rb:94:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:92:in `<main>'
+E, [2026-10-01T00:02:20.708990 #37883] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
+A, [2026-10-01T00:02:21.838572 #37883]   ANY -- mailer: shutdown requested by signal TERM
+I, [2026-10-01T00:02:23.800335 #37883]  INFO -- mailer: Booting worker pool size=5
+W, [2026-10-01T00:02:25.845283 #37883]  WARN -- scheduler: queue latency 4.2s above threshold 2s
+F, [2026-10-01T00:02:27.392180 #37883] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
+I, [2026-10-01T00:02:28.491102 #37883]  INFO -- mailer: heartbeat ok
+I, [2026-10-01T00:02:30.687341 #37883]  INFO -- mailer: processed job 5521 in 182ms
+I, [2026-10-01T00:02:31.050109 #37883]  INFO -- scheduler: user-1042 exported 12 reports
+D, [2026-10-01T00:02:31.239802 #37883] DEBUG -- mailer: payload:
   {"id": 7731,
    "items": 3}
-D, [2026-10-01T00:02:32.039072 #6455] DEBUG -- mailer: loaded 31 settings from config/app.yml
-E, [2026-10-01T00:02:34.309243 #6455] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:65:in `block (2 levels) in <main>'
-rblog.rb:61:in `times'
-rblog.rb:61:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:59:in `<main>'
-A, [2026-10-01T00:02:36.225223 #6455]   ANY -- scheduler: shutdown requested by signal TERM
-I, [2026-10-01T00:02:37.174288 #6455]  INFO -- mailer: Booting worker pool size=5
-W, [2026-10-01T00:02:37.726706 #6455]  WARN -- mailer: queue latency 4.2s above threshold 2s
-F, [2026-10-01T00:02:39.198265 #6455] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
-I, [2026-10-01T00:02:40.612193 #6455]  INFO -- scheduler: heartbeat ok
-I, [2026-10-01T00:02:43.097398 #6455]  INFO -- mailer: processed job 5521 in 182ms
-I, [2026-10-01T00:02:43.969076 #6455]  INFO -- mailer: user-1042 exported 12 reports
-D, [2026-10-01T00:02:44.532135 #6455] DEBUG -- mailer: payload:
+D, [2026-10-01T00:02:32.039072 #37883] DEBUG -- mailer: loaded 31 settings from config/app.yml
+E, [2026-10-01T00:02:34.309243 #37883] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:99:in `block (2 levels) in <main>'
+/srv/app/logger.rb:94:in `times'
+/srv/app/logger.rb:94:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:92:in `<main>'
+A, [2026-10-01T00:02:36.225223 #37883]   ANY -- scheduler: shutdown requested by signal TERM
+I, [2026-10-01T00:02:37.174288 #37883]  INFO -- mailer: Booting worker pool size=5
+W, [2026-10-01T00:02:37.726706 #37883]  WARN -- mailer: queue latency 4.2s above threshold 2s
+F, [2026-10-01T00:02:39.198265 #37883] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
+I, [2026-10-01T00:02:40.612193 #37883]  INFO -- scheduler: heartbeat ok
+I, [2026-10-01T00:02:43.097398 #37883]  INFO -- mailer: processed job 5521 in 182ms
+I, [2026-10-01T00:02:43.969076 #37883]  INFO -- mailer: user-1042 exported 12 reports
+D, [2026-10-01T00:02:44.532135 #37883] DEBUG -- mailer: payload:
   {"id": 7731,
    "items": 3}
-D, [2026-10-01T00:02:46.040427 #6455] DEBUG -- scheduler: loaded 31 settings from config/app.yml
-E, [2026-10-01T00:02:47.778348 #6455] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
-E, [2026-10-01T00:02:49.137830 #6455] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
-rblog.rb:43:in `Integer'
-rblog.rb:43:in `failing'
-rblog.rb:65:in `block (2 levels) in <main>'
-rblog.rb:61:in `times'
-rblog.rb:61:in `block in <main>'
-rblog.rb:29:in `fixture'
-rblog.rb:59:in `<main>'
-I, [2026-10-01T00:02:50.567397 #6455]  INFO -- mailer: Booting worker pool size=5
-W, [2026-10-01T00:02:51.882373 #6455]  WARN -- scheduler: queue latency 4.2s above threshold 2s
-F, [2026-10-01T00:02:54.290482 #6455] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
-I, [2026-10-01T00:02:56.601768 #6455]  INFO -- mailer: heartbeat ok
-I, [2026-10-01T00:02:56.982771 #6455]  INFO -- mailer: processed job 5521 in 182ms
-I, [2026-10-01T00:02:57.722959 #6455]  INFO -- scheduler: user-1042 exported 12 reports
-D, [2026-10-01T00:02:59.780168 #6455] DEBUG -- mailer: payload:
+D, [2026-10-01T00:02:46.040427 #37883] DEBUG -- scheduler: loaded 31 settings from config/app.yml
+E, [2026-10-01T00:02:47.778348 #37883] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
+E, [2026-10-01T00:02:49.137830 #37883] ERROR -- importer: invalid value for Integer(): "forty-two" (ArgumentError)
+/srv/app/logger.rb:67:in `Integer'
+/srv/app/logger.rb:67:in `parse_quantity'
+/srv/app/logger.rb:99:in `block (2 levels) in <main>'
+/srv/app/logger.rb:94:in `times'
+/srv/app/logger.rb:94:in `block in <main>'
+/srv/app/logger.rb:52:in `fixture'
+/srv/app/logger.rb:92:in `<main>'
+I, [2026-10-01T00:02:50.567397 #37883]  INFO -- mailer: Booting worker pool size=5
+W, [2026-10-01T00:02:51.882373 #37883]  WARN -- scheduler: queue latency 4.2s above threshold 2s
+F, [2026-10-01T00:02:54.290482 #37883] FATAL -- mailer: cannot open /var/lib/app/state.db: Permission denied
+I, [2026-10-01T00:02:56.601768 #37883]  INFO -- mailer: heartbeat ok
+I, [2026-10-01T00:02:56.982771 #37883]  INFO -- mailer: processed job 5521 in 182ms
+I, [2026-10-01T00:02:57.722959 #37883]  INFO -- scheduler: user-1042 exported 12 reports
+D, [2026-10-01T00:02:59.780168 #37883] DEBUG -- mailer: payload:
   {"id": 7731,
    "items": 3}
-D, [2026-10-01T00:03:01.451802 #6455] DEBUG -- mailer: loaded 31 settings from config/app.yml
-E, [2026-10-01T00:03:01.597809 #6455] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
-A, [2026-10-01T00:03:03.228745 #6455]   ANY -- scheduler: shutdown requested by signal TERM
+D, [2026-10-01T00:03:01.451802 #37883] DEBUG -- mailer: loaded 31 settings from config/app.yml
+E, [2026-10-01T00:03:01.597809 #37883] ERROR -- mailer: SMTP 451 from mail.example.com, will retry
+A, [2026-10-01T00:03:03.228745 #37883]   ANY -- scheduler: shutdown requested by signal TERM

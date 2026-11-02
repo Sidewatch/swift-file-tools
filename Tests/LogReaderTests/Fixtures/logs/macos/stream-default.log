@@ -1,86 +1,86 @@
 Filtering the log data using "subsystem == "com.example.logfixture""
 Timestamp                       Thread     Type        Activity             PID    TTL  
-2026-11-02 08:56:47.363698+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 12 ms
-2026-11-02 08:56:47.388927+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 301 rows
-2026-11-02 08:56:47.421868+0000 0x1cd480   Debug       0x0                  8384   0    logfixture: [com.example.logfixture:ui] layout pass took 2 ms
-2026-11-02 08:56:47.462732+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
-2026-11-02 08:56:47.510673+0000 0x1cd480   Fault       0x83cb11             8384   14   logfixture: [com.example.logfixture:database] store is corrupt: page 4 checksum mismatch
-2026-11-02 08:56:47.565897+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] signed in user-1035
-2026-11-02 08:56:47.630532+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:database] slow fetch: 806 ms
-2026-11-02 08:56:47.703096+0000 0x1cd480   Fault       0x83cb12             8384   14   logfixture: [com.example.logfixture:ui] window controller missing for document 7
-2026-11-02 08:56:47.783583+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:network] token for <private> refreshed
-2026-11-02 08:56:47.871978+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:database] migration summary:
+2026-11-02 12:00:26.926326+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 12 ms
+2026-11-02 12:00:26.949128+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 301 rows
+2026-11-02 12:00:26.981836+0000 0x2166ee   Debug       0x0                  38651  0    logfixture: [com.example.logfixture:ui] layout pass took 2 ms
+2026-11-02 12:00:27.017974+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
+2026-11-02 12:00:27.066586+0000 0x2166ee   Fault       0x94ae11             38651  14   logfixture: [com.example.logfixture:database] store is corrupt: page 4 checksum mismatch
+2026-11-02 12:00:27.119272+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] signed in user-1035
+2026-11-02 12:00:27.180464+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:database] slow fetch: 806 ms
+2026-11-02 12:00:27.253043+0000 0x2166ee   Fault       0x94ae12             38651  14   logfixture: [com.example.logfixture:ui] window controller missing for document 7
+2026-11-02 12:00:27.333650+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:network] token for <private> refreshed
+2026-11-02 12:00:27.420649+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:database] migration summary:
   applied: 3
   skipped: 1
-2026-11-02 08:56:47.968294+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 22 ms
-2026-11-02 08:56:48.072520+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 311 rows
-2026-11-02 08:56:48.184672+0000 0x1cd480   Debug       0x0                  8384   0    logfixture: [com.example.logfixture:ui] layout pass took 3 ms
-2026-11-02 08:56:48.214746+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
-2026-11-02 08:56:48.252732+0000 0x1cd480   Fault       0x83cb13             8384   14   logfixture: [com.example.logfixture:database] store is corrupt: page 14 checksum mismatch
-2026-11-02 08:56:48.298630+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] signed in user-1105
-2026-11-02 08:56:48.352441+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:database] slow fetch: 816 ms
-2026-11-02 08:56:48.414184+0000 0x1cd480   Fault       0x83cb14             8384   14   logfixture: [com.example.logfixture:ui] window controller missing for document 17
-2026-11-02 08:56:48.483840+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:network] token for <private> refreshed
-2026-11-02 08:56:48.556754+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:database] migration summary:
+2026-11-02 12:00:27.515378+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 22 ms
+2026-11-02 12:00:27.618439+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 311 rows
+2026-11-02 12:00:27.728459+0000 0x2166ee   Debug       0x0                  38651  0    logfixture: [com.example.logfixture:ui] layout pass took 3 ms
+2026-11-02 12:00:27.755582+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
+2026-11-02 12:00:27.791684+0000 0x2166ee   Fault       0x94ae13             38651  14   logfixture: [com.example.logfixture:database] store is corrupt: page 14 checksum mismatch
+2026-11-02 12:00:27.832696+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] signed in user-1105
+2026-11-02 12:00:27.881812+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:database] slow fetch: 816 ms
+2026-11-02 12:00:27.941533+0000 0x2166ee   Fault       0x94ae14             38651  14   logfixture: [com.example.logfixture:ui] window controller missing for document 17
+2026-11-02 12:00:28.011335+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:network] token for <private> refreshed
+2026-11-02 12:00:28.089085+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:database] migration summary:
   applied: 3
   skipped: 1
-2026-11-02 08:56:48.639308+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 32 ms
-2026-11-02 08:56:48.732737+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 321 rows
-2026-11-02 08:56:48.834069+0000 0x1cd480   Debug       0x0                  8384   0    logfixture: [com.example.logfixture:ui] layout pass took 4 ms
-2026-11-02 08:56:48.943326+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
-2026-11-02 08:56:48.970508+0000 0x1cd480   Fault       0x83cb15             8384   14   logfixture: [com.example.logfixture:database] store is corrupt: page 24 checksum mismatch
-2026-11-02 08:56:49.005598+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] signed in user-1175
-2026-11-02 08:56:49.048603+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:database] slow fetch: 826 ms
-2026-11-02 08:56:49.099537+0000 0x1cd480   Fault       0x83cb16             8384   14   logfixture: [com.example.logfixture:ui] window controller missing for document 27
-2026-11-02 08:56:49.158395+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:network] token for <private> refreshed
-2026-11-02 08:56:49.225165+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:database] migration summary:
+2026-11-02 12:00:28.174777+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 32 ms
+2026-11-02 12:00:28.265993+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 321 rows
+2026-11-02 12:00:28.367891+0000 0x2166ee   Debug       0x0                  38651  0    logfixture: [com.example.logfixture:ui] layout pass took 4 ms
+2026-11-02 12:00:28.472781+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
+2026-11-02 12:00:28.495136+0000 0x2166ee   Fault       0x94ae15             38651  14   logfixture: [com.example.logfixture:database] store is corrupt: page 24 checksum mismatch
+2026-11-02 12:00:28.530290+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] signed in user-1175
+2026-11-02 12:00:28.572600+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:database] slow fetch: 826 ms
+2026-11-02 12:00:28.623490+0000 0x2166ee   Fault       0x94ae16             38651  14   logfixture: [com.example.logfixture:ui] window controller missing for document 27
+2026-11-02 12:00:28.682488+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:network] token for <private> refreshed
+2026-11-02 12:00:28.747831+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:database] migration summary:
   applied: 3
   skipped: 1
-2026-11-02 08:56:49.299858+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 42 ms
-2026-11-02 08:56:49.382477+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 331 rows
-2026-11-02 08:56:49.473035+0000 0x1cd480   Debug       0x0                  8384   0    logfixture: [com.example.logfixture:ui] layout pass took 5 ms
-2026-11-02 08:56:49.571495+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
-2026-11-02 08:56:49.676802+0000 0x1cd480   Fault       0x83cb17             8384   14   logfixture: [com.example.logfixture:database] store is corrupt: page 34 checksum mismatch
-2026-11-02 08:56:49.791134+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] signed in user-1245
-2026-11-02 08:56:49.823355+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:database] slow fetch: 836 ms
-2026-11-02 08:56:49.863483+0000 0x1cd480   Fault       0x83cb18             8384   14   logfixture: [com.example.logfixture:ui] window controller missing for document 37
-2026-11-02 08:56:49.911543+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:network] token for <private> refreshed
-2026-11-02 08:56:49.967528+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:database] migration summary:
+2026-11-02 12:00:28.822607+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 42 ms
+2026-11-02 12:00:28.902096+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 331 rows
+2026-11-02 12:00:28.990502+0000 0x2166ee   Debug       0x0                  38651  0    logfixture: [com.example.logfixture:ui] layout pass took 5 ms
+2026-11-02 12:00:29.084193+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
+2026-11-02 12:00:29.189868+0000 0x2166ee   Fault       0x94ae17             38651  14   logfixture: [com.example.logfixture:database] store is corrupt: page 34 checksum mismatch
+2026-11-02 12:00:29.301793+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] signed in user-1245
+2026-11-02 12:00:29.334004+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:database] slow fetch: 836 ms
+2026-11-02 12:00:29.374126+0000 0x2166ee   Fault       0x94ae18             38651  14   logfixture: [com.example.logfixture:ui] window controller missing for document 37
+2026-11-02 12:00:29.419218+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:network] token for <private> refreshed
+2026-11-02 12:00:29.475169+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:database] migration summary:
   applied: 3
   skipped: 1
-2026-11-02 08:56:50.031415+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 52 ms
-2026-11-02 08:56:50.103214+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 341 rows
-2026-11-02 08:56:50.180424+0000 0x1cd480   Debug       0x0                  8384   0    logfixture: [com.example.logfixture:ui] layout pass took 6 ms
-2026-11-02 08:56:50.263178+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
-2026-11-02 08:56:50.358758+0000 0x1cd480   Fault       0x83cb19             8384   14   logfixture: [com.example.logfixture:database] store is corrupt: page 44 checksum mismatch
-2026-11-02 08:56:50.462292+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] signed in user-1315
-2026-11-02 08:56:50.571766+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:database] slow fetch: 846 ms
-2026-11-02 08:56:50.608940+0000 0x1cd480   Fault       0x83cb1a             8384   14   logfixture: [com.example.logfixture:ui] window controller missing for document 47
-2026-11-02 08:56:50.641658+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:network] token for <private> refreshed
-2026-11-02 08:56:50.686636+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:database] migration summary:
+2026-11-02 12:00:29.539083+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 52 ms
+2026-11-02 12:00:29.609009+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 341 rows
+2026-11-02 12:00:29.688712+0000 0x2166ee   Debug       0x0                  38651  0    logfixture: [com.example.logfixture:ui] layout pass took 6 ms
+2026-11-02 12:00:29.776457+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
+2026-11-02 12:00:29.870800+0000 0x2166ee   Fault       0x94ae19             38651  14   logfixture: [com.example.logfixture:database] store is corrupt: page 44 checksum mismatch
+2026-11-02 12:00:29.970387+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] signed in user-1315
+2026-11-02 12:00:30.077590+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:database] slow fetch: 846 ms
+2026-11-02 12:00:30.107061+0000 0x2166ee   Fault       0x94ae1a             38651  14   logfixture: [com.example.logfixture:ui] window controller missing for document 47
+2026-11-02 12:00:30.140486+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:network] token for <private> refreshed
+2026-11-02 12:00:30.183149+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:database] migration summary:
   applied: 3
   skipped: 1
-2026-11-02 08:56:50.739732+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 62 ms
-2026-11-02 08:56:50.800729+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 351 rows
-2026-11-02 08:56:50.869629+0000 0x1cd480   Debug       0x0                  8384   0    logfixture: [com.example.logfixture:ui] layout pass took 7 ms
-2026-11-02 08:56:50.946455+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
-2026-11-02 08:56:51.031210+0000 0x1cd480   Fault       0x83cb1b             8384   14   logfixture: [com.example.logfixture:database] store is corrupt: page 54 checksum mismatch
-2026-11-02 08:56:51.123867+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] signed in user-1385
-2026-11-02 08:56:51.224436+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:database] slow fetch: 856 ms
-2026-11-02 08:56:51.332931+0000 0x1cd480   Fault       0x83cb1c             8384   14   logfixture: [com.example.logfixture:ui] window controller missing for document 57
-2026-11-02 08:56:51.359351+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:network] token for <private> refreshed
-2026-11-02 08:56:51.393670+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:database] migration summary:
+2026-11-02 12:00:30.236330+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 62 ms
+2026-11-02 12:00:30.297453+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 351 rows
+2026-11-02 12:00:30.363485+0000 0x2166ee   Debug       0x0                  38651  0    logfixture: [com.example.logfixture:ui] layout pass took 7 ms
+2026-11-02 12:00:30.440094+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
+2026-11-02 12:00:30.521833+0000 0x2166ee   Fault       0x94ae1b             38651  14   logfixture: [com.example.logfixture:database] store is corrupt: page 54 checksum mismatch
+2026-11-02 12:00:30.614638+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] signed in user-1385
+2026-11-02 12:00:30.715291+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:database] slow fetch: 856 ms
+2026-11-02 12:00:30.822832+0000 0x2166ee   Fault       0x94ae1c             38651  14   logfixture: [com.example.logfixture:ui] window controller missing for document 57
+2026-11-02 12:00:30.848427+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:network] token for <private> refreshed
+2026-11-02 12:00:30.881749+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:database] migration summary:
   applied: 3
   skipped: 1
-2026-11-02 08:56:51.435907+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 72 ms
-2026-11-02 08:56:51.486059+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 361 rows
-2026-11-02 08:56:51.544137+0000 0x1cd480   Debug       0x0                  8384   0    logfixture: [com.example.logfixture:ui] layout pass took 8 ms
-2026-11-02 08:56:51.610152+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
-2026-11-02 08:56:51.681119+0000 0x1cd480   Fault       0x83cb1d             8384   14   logfixture: [com.example.logfixture:database] store is corrupt: page 64 checksum mismatch
-2026-11-02 08:56:51.762976+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:network] signed in user-1455
-2026-11-02 08:56:51.852741+0000 0x1cd480   Error       0x0                  8384   0    logfixture: [com.example.logfixture:database] slow fetch: 866 ms
-2026-11-02 08:56:51.950435+0000 0x1cd480   Fault       0x83cb1e             8384   14   logfixture: [com.example.logfixture:ui] window controller missing for document 67
-2026-11-02 08:56:52.056039+0000 0x1cd480   Info        0x0                  8384   0    logfixture: [com.example.logfixture:network] token for <private> refreshed
-2026-11-02 08:56:52.169555+0000 0x1cd480   Default     0x0                  8384   0    logfixture: [com.example.logfixture:database] migration summary:
+2026-11-02 12:00:30.923805+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] connected to api.example.com:443 in 72 ms
+2026-11-02 12:00:30.973413+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:database] opened store orders.sqlite, 361 rows
+2026-11-02 12:00:31.031597+0000 0x2166ee   Debug       0x0                  38651  0    logfixture: [com.example.logfixture:ui] layout pass took 8 ms
+2026-11-02 12:00:31.097765+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:network] request to /v1/orders failed with status 503
+2026-11-02 12:00:31.171859+0000 0x2166ee   Fault       0x94ae1d             38651  14   logfixture: [com.example.logfixture:database] store is corrupt: page 64 checksum mismatch
+2026-11-02 12:00:31.253870+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:network] signed in user-1455
+2026-11-02 12:00:31.343789+0000 0x2166ee   Error       0x0                  38651  0    logfixture: [com.example.logfixture:database] slow fetch: 866 ms
+2026-11-02 12:00:31.437032+0000 0x2166ee   Fault       0x94ae1e             38651  14   logfixture: [com.example.logfixture:ui] window controller missing for document 67
+2026-11-02 12:00:31.542620+0000 0x2166ee   Info        0x0                  38651  0    logfixture: [com.example.logfixture:network] token for <private> refreshed
+2026-11-02 12:00:31.656290+0000 0x2166ee   Default     0x0                  38651  0    logfixture: [com.example.logfixture:database] migration summary:
   applied: 3
   skipped: 1
