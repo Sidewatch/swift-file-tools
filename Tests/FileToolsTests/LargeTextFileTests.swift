@@ -112,6 +112,26 @@ final class LargeTextFileTests: XCTestCase {
     }
 
     /// A log that grows is read on from where the scan stopped; its unfinished last line gets longer.
+    func testGrowthTakenInWhileAScanRunsIsKeptForTheNextPass() throws {
+        let url = try write(Array("one\ntwo\n".utf8))
+        let file = try XCTUnwrap(LargeTextFile(url: url))
+        var appended = false
+        file.scan(afterChunk: {
+            guard !appended else { return }
+            appended = true
+            let handle = try? FileHandle(forWritingTo: url)
+            _ = try? handle?.seekToEnd()
+            try? handle?.write(contentsOf: Data("three\n".utf8))
+            try? handle?.close()
+            XCTAssertTrue(file.grew())
+        })
+        XCTAssertEqual(file.byteCount, 14, "the scan that was running did not put the size back")
+        XCTAssertFalse(file.progress.isComplete, "there is more to read")
+        file.scan()
+        XCTAssertTrue(file.progress.isComplete)
+        XCTAssertEqual((0..<file.lineCount).compactMap(file.text(ofLine:)), ["one", "two", "three", ""])
+    }
+
     func testAGrowingFileIsReadOn() throws {
         let url = try write(Array("one\ntw".utf8))
         let file = try XCTUnwrap(LargeTextFile(url: url, stride: 2, longLine: 16, chunk: 4))

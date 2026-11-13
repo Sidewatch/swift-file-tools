@@ -111,7 +111,9 @@ public final class LargeTextFile: @unchecked Sendable {
     // MARK: - Scanning
 
     /// Scans for lines on a background queue, from where the last scan stopped. `update` runs on the main queue
-    /// about ten times a second meanwhile and once at the end. A scan already running is left to finish.
+    /// about ten times a second meanwhile and once at the end. A scan already running is left to finish, and reads
+    /// on through any growth ``grew()`` took in while it ran: the caller that asked then was turned away, and a
+    /// writer that has gone quiet sends no second notice.
     public func scanLines(update: @escaping @MainActor @Sendable (LargeTextProgress) -> Void) {
         guard
             lock.withLock({ () -> Bool in
@@ -123,14 +125,22 @@ public final class LargeTextFile: @unchecked Sendable {
         else { return }
         DispatchQueue.global(qos: .userInitiated).async { [self] in
             var reported = ProcessInfo.processInfo.systemUptime
-            scan {
-                let now = ProcessInfo.processInfo.systemUptime
-                guard now - reported > 0.1 else { return }
-                reported = now
-                let snapshot = progress
-                DispatchQueue.main.async { MainActor.assumeIsolated { update(snapshot) } }
+            var readOn = true
+            while readOn {
+                let sizeBefore = byteCount
+                scan {
+                    let now = ProcessInfo.processInfo.systemUptime
+                    guard now - reported > 0.1 else { return }
+                    reported = now
+                    let snapshot = progress
+                    DispatchQueue.main.async { MainActor.assumeIsolated { update(snapshot) } }
+                }
+                readOn = lock.withLock {
+                    if !stopped, size > sizeBefore { return true }
+                    scanning = false
+                    return false
+                }
             }
-            lock.withLock { scanning = false }
             let snapshot = progress
             DispatchQueue.main.async { MainActor.assumeIsolated { update(snapshot) } }
         }
@@ -164,10 +174,12 @@ public final class LargeTextFile: @unchecked Sendable {
     func scan(afterChunk: () -> Void = {}) {
         var (offset, lineStart, count, longestLine, limit) = lock.withLock { (scanned, lastLineStart, newlines, longest, size) }
         var buffer = [UInt8](repeating: 0, count: chunk)
+        var cutShort = false
         while offset < limit, !lock.withLock({ stopped }) {
             let got = buffer.withUnsafeMutableBytes { pread(descriptor, $0.baseAddress, min(chunk, limit - offset), off_t(offset)) }
             guard got > 0 else {
                 limit = offset  // shorter than it was: it ends here now
+                cutShort = true
                 break
             }
             var found: [Int] = []
@@ -201,7 +213,9 @@ public final class LargeTextFile: @unchecked Sendable {
         let (end, start) = (limit, lineStart)
         lock.withLock {
             guard !stopped || offset >= size else { return }
-            if end < size { size = end }
+            // Only a read that came up short ends the file here. A size past this scan's limit is
+            // growth `grew()` took in meanwhile, and stays for the next pass to read.
+            if cutShort, end < size { size = end }
             longest = max(longest, end - start)
             finished = offset >= size
         }

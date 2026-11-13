@@ -189,3 +189,4 @@ The host now keeps the files another writer changes (an agent's writes), not onl
   `TextFileContents.hasBinaryPrefix` and `hasLine(atLeast:in:)` answer from the bytes before any decoding.
   `DirectoryEventStream.EventCallback` is `@Sendable`: it runs on the stream's own queue, and a non-Sendable closure
   written in a host's main-actor code carried the main actor there and trapped. 33 mutants, all caught.
+- 13 Nov 2026 — review. Fixed: growth `grew()` took in while a scan ran was put back by that scan's own end (`LargeTextFile.scan`), and the caller that asked for a scan then had been turned away, so the new lines waited for the file to change again; `scanLines` and `LogIndex.scan` read on through it. `testGrowthTakenInWhileAScanRunsIsKeptForTheNextPass` fails on the code before. Left open: `ProjectSearch.stream` can deliver a batch after its final one; `FileRewrite.write` has no in-place fallback for a writable file in a folder that is not.

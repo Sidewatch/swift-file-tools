@@ -89,7 +89,8 @@ public final class LogIndex: @unchecked Sendable {
     }
 
     /// Reads on from where the last scan stopped, on a background queue; `update` runs on the main queue about ten
-    /// times a second meanwhile and once at the end. A scan already running is left to finish.
+    /// times a second meanwhile and once at the end. A scan already running is left to finish, and reads on through
+    /// any growth the file took in while it ran.
     public func scan(update: @escaping @MainActor @Sendable (LogSummary) -> Void) {
         let start: Bool = lock.withLock {
             guard !scanning else { return false }
@@ -100,10 +101,17 @@ public final class LogIndex: @unchecked Sendable {
         }
         guard start else { return }
         queue.async { [self] in
-            readOn { summary in DispatchQueue.main.async { MainActor.assumeIsolated { update(summary) } } }
-            lock.withLock {
-                scanning = false
-                complete = !stopped
+            var again = true
+            while again {
+                let sizeBefore = file.byteCount
+                readOn { summary in DispatchQueue.main.async { MainActor.assumeIsolated { update(summary) } } }
+                let sizeNow = file.byteCount
+                again = lock.withLock {
+                    if !stopped, sizeNow > sizeBefore { return true }
+                    scanning = false
+                    complete = !stopped
+                    return false
+                }
             }
             let final = summary
             DispatchQueue.main.async { MainActor.assumeIsolated { update(final) } }
