@@ -119,4 +119,65 @@ final class TerminalPathParserTests: XCTestCase {
         // One past the end of a token resolves the token.
         XCTAssertEqual(TerminalPathParser.match(in: "a.txt", at: 5), Match(path: "a.txt"))
     }
+
+    // MARK: - The forms agents and tools print
+
+    func testAPythonTracebackNamesItsLineAfterTheQuote() {
+        let line = #"  File "app/main.py", line 12, in run"#
+        XCTAssertEqual(TerminalPathParser.match(in: line, at: 12), .init(path: "app/main.py", line: 12))
+        XCTAssertEqual(
+            TerminalPathParser.match(in: #"error in "lib/a.rb", line 3, column 9: unexpected"#, at: 12),
+            .init(path: "lib/a.rb", line: 3, column: 9))
+        XCTAssertEqual(
+            TerminalPathParser.match(in: "see src/a.swift, line breaks matter", at: 6), .init(path: "src/a.swift"),
+            "prose after a path is not a position")
+        XCTAssertEqual(TerminalPathParser.match(in: #"File "a.py", line 12"#, at: 7), .init(path: "a.py", line: 12))
+    }
+
+    func testALineAnchorAndARangeGiveTheirFirstLine() {
+        XCTAssertEqual(TerminalPathParser.parse("src/Foo.swift#L42"), .init(path: "src/Foo.swift", line: 42))
+        XCTAssertEqual(TerminalPathParser.parse("src/Foo.swift#L42C7"), .init(path: "src/Foo.swift", line: 42, column: 7))
+        XCTAssertEqual(TerminalPathParser.parse("src/Foo.swift#L42-L50"), .init(path: "src/Foo.swift", line: 42))
+        XCTAssertEqual(TerminalPathParser.parse("src/Foo.swift:10-14"), .init(path: "src/Foo.swift", line: 10))
+        XCTAssertEqual(
+            TerminalPathParser.parse("docs/guide.md#install"), .init(path: "docs/guide.md#install"), "a heading anchor is not a line")
+        XCTAssertEqual(
+            TerminalPathParser.parse("my-file.swift:7"), .init(path: "my-file.swift", line: 7), "a dash in a name is not a range")
+        XCTAssertEqual(TerminalPathParser.parse("a-b/c-d.swift"), .init(path: "a-b/c-d.swift"))
+    }
+
+    func testAPrintedPathIsFoundUnderTheWorkingDirectoryThenTheRoots() {
+        let cwd = URL(fileURLWithPath: "/repo/packages/app"), root = URL(fileURLWithPath: "/repo")
+        let files: Set<String> = ["/repo/packages/app/main.swift", "/repo/src/x.swift", "/repo/a/literal.swift", "/abs/file.c"]
+        let isFile: (URL) -> Bool = { files.contains($0.path) }
+        func resolved(_ path: String) -> String? {
+            TerminalPathParser.resolve(.init(path: path), bases: [cwd, root], isFile: isFile)?.path
+        }
+        XCTAssertEqual(resolved("main.swift"), "/repo/packages/app/main.swift", "under the working directory first")
+        XCTAssertEqual(resolved("src/x.swift"), "/repo/src/x.swift", "an agent names files from the repository's root")
+        XCTAssertEqual(resolved("b/src/x.swift"), "/repo/src/x.swift", "a diff header's b/ is not a folder")
+        XCTAssertEqual(resolved("a/src/x.swift"), "/repo/src/x.swift")
+        XCTAssertEqual(resolved("a/literal.swift"), "/repo/a/literal.swift", "a real folder called a wins over the diff reading")
+        XCTAssertEqual(resolved("/abs/file.c"), "/abs/file.c")
+        XCTAssertNil(resolved("nowhere.swift"))
+        XCTAssertNil(resolved("/abs/missing.c"))
+        XCTAssertEqual(TerminalPathParser.candidates(for: "a/"), ["a/"])
+    }
+
+    func testAPathCutByTheRightEdgeIsReadWhole() {
+        // Width 20: the first two rows are full, so the three are one line.
+        let rows = ["edited Sources/App/M", "ainWindowController.", "swift:42 ok", "next line"]
+        let full: (String) -> Bool = { $0.count == 20 }
+        let (line, column) = TerminalPathParser.logicalLine(rows: rows, row: 1, column: 3, isFull: full)
+        XCTAssertEqual(line, "edited Sources/App/MainWindowController.swift:42 ok")
+        XCTAssertEqual(column, 23)
+        XCTAssertEqual(TerminalPathParser.match(in: line, at: column), .init(path: "Sources/App/MainWindowController.swift", line: 42))
+        let alone = TerminalPathParser.logicalLine(rows: rows, row: 3, column: 2, isFull: full)
+        XCTAssertEqual(alone.line, "next line")
+        XCTAssertEqual(alone.column, 2)
+        XCTAssertEqual(
+            TerminalPathParser.logicalLine(rows: rows, row: 2, column: 0, isFull: full).line,
+            "edited Sources/App/MainWindowController.swift:42 ok")
+        XCTAssertEqual(TerminalPathParser.logicalLine(rows: [], row: 0, column: 0, isFull: full).line, "")
+    }
 }

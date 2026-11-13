@@ -72,8 +72,27 @@ public enum TerminalPathParser {
                 while start > 0, !isBoundary(chars[start - 1]) { start -= 1 }
             }
         }
-        return parse(String(chars[start...end]))
+        guard var found = parse(String(chars[start...end])) else { return nil }
+        // `File "app/main.py", line 12, in run` — Python's traceback, and `"a.rb", line 3, column 9`:
+        // the position is written after the closing quote, outside the token.
+        if found.line == nil, let position = spokenPosition(chars, after: end) {
+            found = Match(path: found.path, line: position.line, column: position.column)
+        }
+        return found
     }
+
+    /// The `, line N` (and `, column C`) written after a quoted path, starting just past the
+    /// token that ends at `end`; nil when what follows is not that.
+    private static func spokenPosition(_ chars: [Character], after end: Int) -> (line: Int, column: Int?)? {
+        let rest = String(chars[min(end + 1, chars.count)...])
+        guard let match = spokenPositionPattern.firstMatch(in: rest, range: NSRange(location: 0, length: (rest as NSString).length)),
+            let line = Int((rest as NSString).substring(with: match.range(at: 1)))
+        else { return nil }
+        let column = match.range(at: 2).location == NSNotFound ? nil : Int((rest as NSString).substring(with: match.range(at: 2)))
+        return (line, column)
+    }
+
+    private static let spokenPositionPattern = try! NSRegularExpression(pattern: #"^["']?,\s+line\s+(\d+)(?:,\s+column\s+(\d+))?"#)
 
     /// The index of the `)` closing a `(line,col)` or `(line)` suffix that starts with the
     /// `(` at `open`, or nil when what follows is not that shape.
@@ -110,6 +129,13 @@ public enum TerminalPathParser {
         while let last = token.last, ".,;:".contains(last) { token.removeLast() }
         while let first = token.first, first == ":" { token.removeFirst() }
         guard !token.isEmpty else { return nil }
+        if let anchored = anchoredPosition(token) { return anchored }
+        // `src/a.swift:10-14` — a range of lines: the reference is its first line.
+        if let dash = token.lastIndex(of: "-"), let colon = token.lastIndex(of: ":"), colon < dash,
+            Int(token[token.index(after: dash)...]) != nil, Int(token[token.index(after: colon)..<dash]) != nil
+        {
+            token = String(token[..<dash])
+        }
 
         var path = token
         var line: Int?
@@ -127,6 +153,30 @@ public enum TerminalPathParser {
             }
         }
 
+        guard looksLikePath(path) else { return nil }
+        return Match(path: path, line: line, column: column)
+    }
+
+    /// `path#L12`, `path#L12C3`, `path#L12-L14`: the line anchor a link to a hosted file carries,
+    /// which agents copy into their prose.
+    private static func anchoredPosition(_ token: String) -> Match? {
+        guard let hash = token.lastIndex(of: "#") else { return nil }
+        let anchor = token[token.index(after: hash)...]
+        guard anchor.first == "L" else { return nil }
+        let digits = anchor.dropFirst().prefix { $0.isNumber }
+        guard let line = Int(digits) else { return nil }
+        var rest = anchor.dropFirst().dropFirst(digits.count)
+        var column: Int?
+        if rest.first == "C" || rest.first == ":" {
+            let columnDigits = rest.dropFirst().prefix { $0.isNumber }
+            column = Int(columnDigits)
+            rest = rest.dropFirst().dropFirst(columnDigits.count)
+        }
+        // What is left is nothing, or the end of a range (`-L14`).
+        guard rest.isEmpty || (rest.first == "-" && rest.dropFirst().allSatisfy { $0 == "L" || $0 == "C" || $0.isNumber }) else {
+            return nil
+        }
+        let path = String(token[..<hash])
         guard looksLikePath(path) else { return nil }
         return Match(path: path, line: line, column: column)
     }
@@ -151,5 +201,50 @@ public enum TerminalPathParser {
         else { return false }
         let ext = s[s.index(after: dot)...]
         return ext.count <= 8 && ext.allSatisfy { $0.isLetter || $0.isNumber }
+    }
+
+    // MARK: - Finding the file a printed path means
+
+    /// The paths a printed `path` may mean, most literal first: as written, then without the
+    /// `a/` or `b/` a diff header puts before a repository path (`--- a/src/x.swift`).
+    public static func candidates(for path: String) -> [String] {
+        guard path.hasPrefix("a/") || path.hasPrefix("b/"), path.count > 2 else { return [path] }
+        return [path, String(path.dropFirst(2))]
+    }
+
+    /// The file `match` names: an absolute path as it is; a relative one under the first of `bases`
+    /// that holds it — the terminal's working directory, then the project and repository roots,
+    /// since an agent prints paths from the repository's root whatever folder its shell stands in
+    /// — trying each of ``candidates(for:)``. Nil when no such file exists. `isFile` answers
+    /// whether a regular file is at a path.
+    public static func resolve(_ match: Match, bases: [URL], isFile: (URL) -> Bool) -> URL? {
+        for candidate in candidates(for: match.path) {
+            if candidate.hasPrefix("/") {
+                let url = URL(fileURLWithPath: candidate)
+                if isFile(url) { return url }
+                continue
+            }
+            for base in bases {
+                // `appendingPathComponent` treats `base` as a directory whether or not it ends in a slash.
+                let url = base.appendingPathComponent(candidate).standardizedFileURL
+                if isFile(url) { return url }
+            }
+        }
+        return nil
+    }
+
+    /// The whole logical line a click on `rows[row]` is in, and the click's place in it: a row that
+    /// fills the terminal's width runs on into the next (the terminal wrapped it), so a path cut by
+    /// the right edge is read whole. `isFull` says whether a row fills the width; at most
+    /// `maximumRows` rows are joined.
+    public static func logicalLine(
+        rows: [String], row: Int, column: Int, maximumRows: Int = 8, isFull: (String) -> Bool
+    ) -> (line: String, column: Int) {
+        guard rows.indices.contains(row) else { return ("", column) }
+        var first = row, last = row
+        while first > 0, row - first < maximumRows, isFull(rows[first - 1]) { first -= 1 }
+        while last + 1 < rows.count, last - row < maximumRows, isFull(rows[last]) { last += 1 }
+        let before = rows[first..<row].reduce(0) { $0 + $1.count }
+        return (rows[first...last].joined(), before + column)
     }
 }
