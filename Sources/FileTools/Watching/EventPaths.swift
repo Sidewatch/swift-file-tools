@@ -52,6 +52,25 @@ public enum EventPaths {
         return changed
     }
 
+    /// The skipped folders below `root` (with its trailing slash) that `paths` lie in, each once:
+    /// `…/plugin/vendor` for every event under it. ``relevant(_:root:skipping:)`` drops those events
+    /// because a tree does not show them, but a repository can track files there (a committed
+    /// `vendor` or `build`), so a host asks git about the checkout holding the folder, at its own
+    /// pace. Version-control folders (`quiet`) are never reported: git's own writes are not changes
+    /// to the working tree.
+    public static func skippedFolders(
+        _ paths: some Sequence<String>, root: String, skipping skipped: Set<String>, quiet: Set<String> = [".git", ".svn", ".hg"]
+    ) -> Set<String> {
+        var folders = Set<String>()
+        for path in paths where path.hasPrefix(root) {
+            let parts = path.dropFirst(root.count).split(separator: "/")
+            guard let index = parts.firstIndex(where: { skipped.contains(String($0)) }) else { continue }
+            if parts[...index].contains(where: { quiet.contains(String($0)) }) { continue }
+            folders.insert(root + parts[...index].joined(separator: "/"))
+        }
+        return folders
+    }
+
     /// Whether a path, as its components below `root`, is or lies inside an engine's cache folder;
     /// each candidate folder is looked up on disk once per batch (`known`, by path).
     private static func passesThroughCache(_ parts: [Substring], under root: String, known: inout [String: Bool]) -> Bool {

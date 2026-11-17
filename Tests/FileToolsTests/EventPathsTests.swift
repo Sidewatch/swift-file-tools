@@ -31,6 +31,27 @@ final class EventPathsTests: XCTestCase {
         XCTAssertEqual(EventPaths.namedByOpenedRoots(paths, roots: [URL(fileURLWithPath: real)]), paths)
     }
 
+    func testEventsUnderASkippedFolderNameThatFolderOnce() {
+        let skipped: Set<String> = [".git", "node_modules", "vendor", "build"]
+        let folders = EventPaths.skippedFolders(
+            [
+                "/work/site/plugins/a/vendor/lib/x.php", "/work/site/plugins/a/vendor/lib/y.php",
+                "/work/site/plugins/b/src/build/out.js", "/work/site/plugins/b/src/main.js",
+                "/work/site/plugins/a/.git/index", "/work/site/plugins/a/.git/vendor/x",
+                "/work/site/plugins/c/vendor/pkg/.git/HEAD", "/elsewhere/vendor/z",
+            ], root: "/work/site/", skipping: skipped)
+        XCTAssertEqual(
+            folders, ["/work/site/plugins/a/vendor", "/work/site/plugins/b/src/build", "/work/site/plugins/c/vendor"],
+            "the first skipped folder of each path; nothing for git's own folder, a shown file or a path outside the root")
+    }
+
+    func testAVersionControlFolderBelowASkippedOneStillNamesTheSkippedFolder() {
+        // The skipped folder is reached first: what lies deeper does not make it quiet.
+        XCTAssertEqual(
+            EventPaths.skippedFolders(["/r/vendor/pkg/.git/HEAD"], root: "/r/", skipping: ["vendor", ".git"]), ["/r/vendor"])
+        XCTAssertEqual(EventPaths.skippedFolders(["/r/.git/modules/vendor/x"], root: "/r/", skipping: ["vendor", ".git"]), [])
+    }
+
     func testTheFilterSkipsBelowTheRootOnly() {
         let kept = EventPaths.relevant(
             ["/p/src/a.swift", "/p/.git/index", "/p/node_modules/x/y.js", "/p/src/build/out.o", "/elsewhere/z"],
